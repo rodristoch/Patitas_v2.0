@@ -1,0 +1,1921 @@
+body {
+    margin: 0;
+    /* background-color: #18515F; */
+}
+
+html {
+    min-height: 100%;
+    position: relative;    /* para poder poner al footer abajo de todo de la pantalla */
+}
+
+
+/* --------------------------header----------------------------------- */
+
+* {
+    font-family: 'Roboto';
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: 250ms;
+}
+
+a:hover {
+    color: #cdd4d6 ;
+}
+
+.nombre-usuario {
+    color: #FECF53; 
+    font-size: 16px; 
+    font-weight: 500;
+    transition: 250ms;
+}
+
+.nombre-usuario:hover {
+    color: #cda840; 
+}
+
+.top {    /* el div del header completo */
+    background: linear-gradient(90deg, #287d93 0%, #24768b 35%, #18515F 100%);
+    margin: 0;
+    padding: 0;
+    /* height: 20%; */
+    width: 100vw;
+}
+    
+.flex-top {  /* contenedor de los 2 divs */
+    width: 100%;
+    height: 60px;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* border: 1px solid violet; */
+    margin: 0;
+    padding: 0;
+
+}
+
+.izquierda {  /* div de la izq */  /* contiene el logo y la barra  */
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 75%;
+    margin: 0;
+    padding: 0;
+}
+
+.derecha {  /* div de la derecha */  /* contiene crear prod., mi cuenta, carrito y menu hamburg.  */
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+}
+
+.div-logo-mobile {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+.logo-mobile {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scale: 80%;
+}
+
+.logo-mobile:hover {
+    color: #cdd4d6
+}
+
+.div-logo-desktop {
+    display: none;
+    /* border: 1px solid red; */
+}
+
+.div-barra-busqueda {
+    /* border: 1px solid green; */
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    margin-left: 15px;
+}
+
+.input {
+    border-radius: 8px; 
+    padding: 5px; 
+    width: 100%;
+    box-sizing: border-box; 
+    border: 0.5px solid black; 
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    top: 5.3px;
+    right: 7px;
+    font-size: 18px;
+    cursor: pointer;
+    color: rgb(99, 99, 99);
+    font-weight: 400;
+}
+
+.mi-cuenta, .mis-compras, .crear-producto {
+    display: none;
+}
+
+.div-logo-carrito {   /* div del carrito */
+    display: flex;
+    /* border: 1px solid red; */
+    padding: 0;
+    width: 20%;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.div-menu-top {   /* div del menu hamburguesa */
+    display: flex;
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    /* z-index: 2;
+    transition: 2s; */
+}
+
+.fa-cart-shopping {  /* el simbolito del carrito */
+    scale: 117%;
+    margin: 0;
+    padding: 0;
+}
+
+.fa-bars {   /* el simbolito del menu hamburguesa */
+    scale: 75%;
+}
+
+.carrito-text {
+    display: none;
+}
+
+.numerito-carrito, .numerito-carrito-mobile {
+    /* display: none; */
+    background-color: #fede87;
+    color: #10353e;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    padding: 3px;
+    text-align: center;
+    border: none;
+    position: absolute;
+    top: 12px;
+    right: 80px;
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #FECF53;
+    box-sizing: content-box;
+}
+
+.numerito-carrito-mobile {
+    height: 10px;
+    width: 10px;
+    padding: 2px;
+    top: -8px;
+    right: -8px;
+    font-size: 9px;
+}
+
+
+/* --- SECCION DEL PANEL LATERAL --- */
+.contendor_ppal-azul {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+    display: none;
+    right: 0;
+    top: 60px;  /* tiene q ser el mismo q el height del header */
+    transition: all 1s ease;
+    position: absolute;
+    /* right: 85px; */
+    /* background-color: white; */
+    background: #f2f9fb;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+    /* box-shadow : 0px 0px 10px #9fafb2; */
+    /* border : 1px solid #bacdd0; */
+    width: 100vw;
+    /* border-radius: 3px; */
+    z-index: 0;
+    text-align: center;
+    /* border : 1px solid blue; */
+    padding: 10px 10px;  /* el padding de arriba y abajo ppal */
+    height: 100vh;  
+    box-sizing: border-box;
+    /* height: auto; */
+   /*  transform: translateX(0-100vw); */
+    opacity: 0;
+}
+
+.contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+    display: none;
+    right: 0;
+    top: 127px;  /* 60px del header + 67px del .contendor_ppal-azul */
+    /* transition: all 2s ease-in-out; */
+    transition: all 1s ease;
+    position: absolute;
+    /* right: 85px; */
+    /* background-color: white; */
+    background: #f2f9fb;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+    /* box-shadow : 0px 0px 10px #9fafb2; */
+    /* border : 1px solid #bacdd0; */
+    width: 100vw;
+    /* border-radius: 3px; */
+    z-index: 0;
+    text-align: center;
+    /* border : 1px solid blue; */
+    padding: 10px 10px;  /* el padding de arriba y abajo ppal */
+    height: 100vh;  
+    box-sizing: border-box;
+    /* height: auto; */
+   /*  transform: translateX(0-100vw); */
+    opacity: 0;
+}
+
+.contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+    display: none;
+    right: 0;
+    top: 170px;  /* 60px del header + 110px del .contendor_ppal-azul */
+    /* transition: all 2s ease-in-out; */
+    transition: all 1s ease;
+    position: absolute;
+    /* right: 85px; */
+    /* background-color: white; */
+    background: #f2f9fb;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+    /* box-shadow : 0px 0px 10px #9fafb2; */
+    /* border : 1px solid #bacdd0; */
+    width: 100vw;
+    /* border-radius: 3px; */
+    z-index: 0;
+    text-align: center;
+    /* border : 1px solid blue; */
+    padding: 10px 10px;  /* el padding de arriba y abajo ppal */
+    height: 100vh;  
+    box-sizing: border-box;
+    /* height: auto; */
+   /*  transform: translateX(0-100vw); */
+    opacity: 0;
+}
+
+.contendor_ppal-azul2, .contendor_ppal-azulabajo2, .contendor_ppal-azulabajo-logueado2 {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+    display: block;
+    position: absolute;
+    /* right: 85px; */
+    /* background-color: white; */
+    background: #f2f9fb;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+    /* box-shadow : 0px 0px 10px #9fafb2; */
+    /* border : 1px solid #bacdd0; */
+    width: 100vw;
+    /* border-radius: 3px; */
+    z-index: 3;
+    text-align: center;
+    /* border : 1px solid blue; */
+    padding: 10px 10px;  /* el padding de arriba y abajo ppal */
+    transition: all .5s ease;
+    /* height: 100vh; */  
+    box-sizing: border-box;
+    height: auto;
+    transform: translateX(0-100vw);
+    opacity: 1;
+}
+
+.contendor_ppal-azul2 {
+    background: linear-gradient(90deg, #287d93 0%, #24768b 35%, #18515F 100%);
+    box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.3);
+    z-index: 4;  /* para poder hacer q se vea la sombra sobre el .contendor_ppal-azulabajo2/.contendor_ppal-azulabajo-logueado2 */
+}
+
+/* .contendor_ppal-azul2 {
+    height: auto;
+} */
+
+.contendor_interior-rojo {
+    /* border: 1px solid red; */
+    height: 100vh auto;
+    /* padding: 10px; */
+    padding: 0 5px;
+    margin: 5px 0;
+    /* margin-top: 5px; */
+}
+
+.contendor_opcion-verde, .contendor_opcion-verde-user {
+    /* border: 1px solid green; */
+    padding: 10px 5px;
+}
+
+.contendor_opcion-verde-user {
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    /* margin-bottom: 15px; */  /* lo mismo q el padding del ppal azul + el del rojo del costado */
+}
+
+.a-panel-user {
+    /* border: 1px solid red; */
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+}
+
+.div-del-logout {
+    /* border: 1px solid red; */
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.contendor_opcion-verde-titulo {
+    /* border: 1px solid green; */
+    padding: 20px 5px 10px;
+    /* padding-bottom: 0; */
+}
+
+/* el contenedor verde de Crear producto */
+.contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
+    padding: 12px 5px 12px;
+    border-radius: 5px;
+}
+
+.contendor_opcion-verde-crear .div-flex-violeta .texto-opcion a {  /* el texto Crear producto en amarillo */
+    color: #ffe7a3;
+    font-weight: 400;
+}
+
+.div-flex-violeta, .div-flex-violeta-miperfil {
+    /* border: 1px solid violet; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.div-flex-violeta-miperfil {
+    justify-content: flex-start;
+    padding-top: 5px;
+}
+
+.div-interno-datos-user { /* el div de todo lo del usuario q incluye: el icon de la foto del usuario, nombre del usuario en negrita y el texto "Mi perfil" */
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    /* margin-bottom: 15px; */
+}
+
+.div-nombre-user-y-mi-perfil { /* el div del nombre del usuario en negrita y el texto "Mi perfil" */
+    /* border: 2px solid green; */
+    /* width: 50%; */
+    /* text-align: center; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.div-nombre-user-y-mi-perfil {
+    width: 100%;
+    height: auto;
+}
+
+#fa-circle-user { /* el icon de la foto del usuario */
+    width: max-content;
+    /* max-width: 20%; */
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+    margin-right: 10px;
+    color: #fce195; 
+    /* scale: 250%; */
+}
+
+.div-imagen-user { /* el icon de la foto del usuario */
+    /* border: 1px solid red; */
+    width: 60px;
+    height: 60px;
+    margin-right: 8px;
+    border-radius: 11px;
+    overflow: hidden;  /* para ocultar lo q sobra de la imagen */
+    display: flex;  /* para centrar la imagen */
+    align-items: center;  /* para centrar la imagen */
+    justify-content: center;  /* para centrar la imagen */
+}
+
+.imagen-user {
+    /* border: 1px solid red; */
+    /* height: fit-content;
+    overflow: hidden; */
+    width: 100%;  /* para no distornsionar la imagen, solo pongo el width */
+    /* height: 100%; */
+    border-radius: 11px;
+}
+
+.fa-right-from-bracket {
+    /* border: 1px solid red; */
+    width: fit-content;
+    font-size: 20px;
+    color: rgb(199, 151, 151);
+    /* margin-left: 10px; */
+}
+
+.texto-opcion-user, .texto-opcion-user-nombre {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid fuchsia; */
+    text-align: left;
+}
+
+.texto-opcion-user-nombre { /* el nombre del usuario en negrita */
+    font-size: 16px;
+    font-weight: 500;
+    color: #FECF53; 
+}
+
+.texto-opcion-user {  /* el texto "Mi perfil" */
+    font-size: 13px;
+    font-weight: 400;
+    width: max-content;
+    color: rgb(211, 211, 211); 
+}
+
+.fa-circle {
+    scale: 75%;
+    margin-right: 2px;
+    color: green;
+    border: 1px solid #154551;
+    border-radius: 50%;
+}
+
+.texto-opcion, .texto-opcion-micuenta, .div-icon, .div-icon-user, .div-icon-micuenta {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(50, 50, 50);
+    text-align: left;
+}
+
+.texto-opcion-crear {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffe7a3;
+    text-align: left;
+    /* border: 1px solid blue; */
+}
+
+.texto-opcion-micuenta, .div-icon-micuenta {
+    color: white;
+}
+
+.texto-opcion a {
+    font-weight: 400;
+    color: rgb(50, 50, 50);
+}
+
+.div-icon, .div-icon-user, .div-icon-micuenta {
+    width: 10%;
+    min-width: 20px;
+    max-width: 25px;
+    /* color: rgb(60, 60, 60); */
+    /* text-align: center; */
+    /* border: 1px solid green; */
+}
+
+.texto-opcion-titulo {
+    /* border: 1px solid brown; */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(130, 130, 130);
+    text-align: left;
+}
+
+
+
+
+
+/* --------------------------------------------------- header2 (en DESKTOP) -------------------------------------------------------- */
+
+.header2 {
+    display: none;
+}
+
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+    
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.dropdown-header {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+    
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1e697b;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #cda840;
+    border-radius: 8px;
+}
+    
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+      
+.dropdown:hover .dropbtn {
+    background-color: #cda840;
+}
+
+.oscuro {
+    background-color: black;
+}
+
+/* el desplegable del usuario */
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #18515f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    border-radius: 8px;
+}
+
+.dropdown-content1 a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    z-index: 2;
+}
+
+.dropdown-content1 a:hover {
+    background-color: #cda840;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.dropdown1:hover .dropdown-content1 {
+    display: block;
+    z-index: 2;
+}
+
+
+/* -----------------------------------------------------------footer------------------------------------------------------------------------ */
+
+footer {
+    background: linear-gradient(90deg, #287d93 0%, #24768b 35%, #18515F 100%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* height: 220px; */
+    /* position: absolute;  */ 
+    /* bottom: 0; */  
+    /* top: 100%; */
+    margin-top: auto;
+}
+
+.div-izquierda {
+    /* border: 1px solid red; */
+    padding: 5px;
+    padding-top: 15px;
+}
+
+.div-derecha {
+    /* border: 1px solid red; */
+    padding: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: none;
+}
+
+.perro-gato {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%;
+}
+
+
+footer h4 {  /* los titulos del footer */
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 7px;
+    color: #cda840;
+    margin-top: 0;
+}
+
+footer p {  /* los textos del footer */
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.logo2 {    /* el perrito del footer */
+    width: 3%;
+    /* height: 30%; */
+    padding: 60px;
+    display: none;
+    /* border: 1px solid red; */
+}
+
+.nosotros {    /* el contenedor de nosotros */
+    color: white;
+    /* text-align: justify; */
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    /* border: 1px solid red; */
+    width: 30%;
+}
+
+.todo-perro {    /* el contenedor de todo para tu perro y el texto */
+    color: white;
+    /* text-align: justify; */
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    /* border: 1px solid red; */
+    width: 30%;
+}
+
+.todo-gato {    /* el contenedor de todo para tu gato y el texto */
+    color: white;
+    /* text-align: justify; */
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    /* border: 1px solid red; */
+    width: 30%;
+}
+
+.contacto {    /* el contenedor de contacto y el texto */
+    color: white;
+    /* text-align: justify; */
+    text-align: center;
+    /* margin: auto; */
+    /* margin-top: -12px; */
+    font-size: 14px;
+    /* border: 1px solid red; */
+    padding: 0;
+    margin: 0;
+    /* padding-bottom: 5px; */
+}
+
+.contacto p {
+    margin-bottom: 6px;
+}
+
+.redes-sociales {    /* el contenedor de redes sociales con su div contenedor de los simbolitos */
+    color: white;
+    /* text-align: justify; */
+    text-align: center;
+    font-size: 14px;
+    /* margin: auto;
+    margin-bottom: 15px; */
+    /* border: 1px solid red; */
+    padding-top: 5px;
+}
+
+.facebook-tablet, .twitter-tablet, .instagram-tablet {
+    display: none;
+}
+
+.rrss-iconos {    /* el div contenedor de los simbolos de las redes */
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    scale: 90%;
+}
+
+.twitter-mobile {    /* los simbolos de las redes */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (max-width: 389px) {
+
+    .flex-top {  /* contenedor de los 2 divs */
+        height: 45px;
+    }
+
+    .div-logo-mobile {
+        width: 45px;
+        /* min-width: 20% */
+    }
+
+    .contendor_ppal-azul {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 45px;  /* tiene q ser el mismo q el height del header */
+    }
+    
+    .contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 102px;  /* 45px del header + 57px del .contendor_ppal-azul */
+    }
+
+    .contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 137px;  /* 45px del header + 92px del .contendor_ppal-azul */
+    }
+
+    .contendor_ppal-azul2, .contendor_ppal-azulabajo2, .contendor_ppal-azulabajo-logueado2 {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        padding: 10px 10px;
+        /* height: auto; */
+    }
+
+    .contendor_interior-rojo {
+        padding: 0px 3px;
+        margin: 3px 0;
+    }
+
+    .contendor_opcion-verde, .contendor_opcion-verde-user {
+        padding: 8px 4px;
+    }
+
+    .contendor_opcion-verde-user {
+        /* margin-bottom: 13px; */  /* lo mismo q el padding del ppal azul + el del rojo del costado */
+    }
+    
+    .contendor_opcion-verde-titulo {
+        padding: 15px 4px 8px;
+        /* padding-bottom: 0; */
+    }
+
+    .div-flex-violeta-miperfil {
+        padding-top: 2px;
+    }
+
+    .fa-circle {
+        scale: 70%;
+        margin-right: 1px;
+    }
+
+    #fa-circle-user { /* el icon de la foto del usuario */
+        font-size: 35px;
+        margin-right: 6px;
+        height: auto;
+    }
+
+    .div-imagen-user { /* el icon de la foto del usuario */
+        width: 50px;
+        height: 50px;
+        margin-right: 6px;
+        border-radius: 8px;
+    }
+    
+    .imagen-user {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+
+    .fa-right-from-bracket {
+        font-size: 15px;
+    }
+
+    .texto-opcion-user-nombre { /* el nombre del usuario en negrita */
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    .texto-opcion-user {  /* el texto "Activo" */
+        font-size: 12px;
+        font-weight: 300;
+        /* margin-top: 2px; */
+    }
+
+    .texto-opcion, .texto-opcion-micuenta, .div-icon, .div-icon-user, .div-icon-micuenta {
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .texto-opcion-micuenta, .div-icon-micuenta {
+        color: white;
+    }
+    
+    .div-icon, .div-icon-user, .div-icon-micuenta {
+        width: 10%;
+        min-width: 20px;
+        max-width: 24px;
+    }
+    
+    .texto-opcion-titulo {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    /* el contenedor verde de Crear producto en el panel */
+    .contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
+        padding: 10px 4px 10px;
+        border-radius: 4px;
+    }
+
+    .contendor_opcion-verde-crear .div-flex-violeta .texto-opcion a {  /* el texto Crear producto en amarillo */
+        color: #ffe7a3;
+        font-weight: 400;
+    }
+
+
+    /* otras cosas q ya estaban */
+    .input {
+        border-radius: 8px;
+    }
+
+    .input::placeholder {
+        color: white;
+    }
+
+    .fa-magnifying-glass {
+        position: absolute;
+        top: 5.5px;
+        right: 6px;
+        font-size: 16px;
+    }
+
+    .fa-cart-shopping {  /* el simbolito del carrito */
+        scale: 95%;
+    }
+    
+    .fa-bars {   /* el simbolito del menu hamburguesa */
+        scale: 60%;
+    }
+
+    .numerito-carrito-mobile {
+        height: 8px;
+        width: 8px;
+        padding: 2px;
+        top: -8px;
+        right: -8px;
+        font-size: 9px;
+    }
+}
+
+@media (min-width: 465px) {
+
+    .div-barra-busqueda {
+        width: 60%;
+        height: 35px;
+    }
+
+    .input {
+        border-radius: 10px;
+        height: 35px;
+        padding-top: 7px;
+        padding-left: 5px;
+    }
+
+    .input::placeholder {
+        font-size: 15px;
+    }
+
+    .fa-magnifying-glass {
+        top: 6px;
+        right: 8px;
+        font-size: 22px;
+    }
+
+    .div-logo-carrito {   /* div del carrito */
+        width: 22%;
+        height: 30px;
+    }
+    
+    .div-menu-top {   /* div del menu hamburguesa */
+        width: 30%;
+        height: 30px;
+    }
+    
+    .fa-cart-shopping {
+        scale: 160%;
+    }
+    
+    .fa-bars {
+        scale: 100%;
+    }
+
+    .numerito-carrito-mobile {
+        height: 12px;
+        width: 12px;
+        padding: 3px;
+        top: -9px;
+        right: -10px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    footer h4 {  /* los titulos del footer */
+        font-size: 16px;
+    }
+    
+    footer p {  /* los textos del footer */
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 500px) {
+
+     .flex-top {  /* contenedor de los 2 divs */
+        height: 65px;
+    }
+
+    .div-logo-mobile {
+        width: 65px;
+        height: 65px;
+        /* min-width: 18% */
+    }
+
+    .contendor_ppal-azul {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 65px;  /* tiene q ser el mismo q el height del header */
+    }
+    
+    .contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 147px;  /* 65px del header + 82px del .contendor_ppal-azul */
+    }
+
+    .contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 194px;  /* 65px del header + 129px del .contendor_ppal-azul */
+    }
+
+    .contendor_ppal-azul2, .contendor_ppal-azulabajo2, .contendor_ppal-azulabajo-logueado2 {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        padding: 12px 12px; /* antes era 10px 10px */
+        /* height: auto; */
+    }
+
+    .contendor_interior-rojo {
+        padding: 0px 8px;
+        margin: 8px 0;
+    }
+
+    .contendor_opcion-verde, .contendor_opcion-verde-user {
+        padding: 12px 8px;
+    }
+
+    .contendor_opcion-verde-user {
+        /* margin-bottom: 20px; */  /* lo mismo q el padding del ppal azul + el del rojo del costado */
+    }
+    
+    .contendor_opcion-verde-titulo {
+        padding: 22px 8px 12px;
+        /* padding-bottom: 0; */
+    }
+
+    #fa-circle-user { /* el icon de la foto del usuario */
+        font-size: 45px;
+        margin-right: 12px;
+        height: auto;
+    }
+
+    .div-imagen-user { /* el icon de la foto del usuario */
+        width: 65px;
+        height: 65px;
+        margin-right: 8px;
+        border-radius: 12px;
+    }
+
+    .imagen-user {
+        border-radius: 12px;
+    }
+
+    .fa-right-from-bracket {
+        font-size: 23px;
+    }
+
+    .texto-opcion-user-nombre { /* el nombre del usuario en negrita */
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .texto-opcion-user { /* el texto "Mi perfil" */
+        font-size: 15px;
+        /* font-weight: 300; */
+    }
+
+    .texto-opcion, .texto-opcion-micuenta, .div-icon, .div-icon-user, .div-icon-micuenta {
+        font-size: 15px;
+        font-weight: 400;
+        color: rgb(50, 50, 50);
+    }
+
+    .texto-opcion-micuenta, .div-icon-micuenta {
+        color: white;
+    }
+    
+    .div-icon, .div-icon-user, .div-icon-micuenta {
+        width: 11%;
+        min-width: 22px;
+        max-width: 27px;
+    }
+    
+    .texto-opcion-titulo {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgb(130, 130, 130);
+    }
+
+    /* el contenedor verde de Crear producto */
+    .contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
+        padding: 15px 8px 15px;
+        border-radius: 6px;
+    }
+    
+    .contendor_opcion-verde-crear .div-flex-violeta .texto-opcion a {  /* el texto Crear producto en amarillo */
+        color: #ffe7a3;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 600px) {
+
+    .flex-top {  /* contenedor de los 2 divs */
+        height: 70px;
+    }
+
+    .div-logo-mobile {
+        width: 70px;
+        height: 70px;
+        /* min-width: 18% */
+    }
+
+    .contendor_ppal-azul {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 70px;  /* tiene q ser el mismo q el height del header */
+    }
+    
+    .contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 166px;  /* 70px del header + 96px del .contendor_ppal-azul */
+    }
+
+    .contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 221px;  /* 70px del header + 151px del .contendor_ppal-azul */
+    }
+
+    .contendor_ppal-azul2, .contendor_ppal-azulabajo2, .contendor_ppal-azulabajo-logueado2 {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        padding: 15px 15px; /* antes era 12px 12px */
+        /* height: auto; */
+    }
+
+    .contendor_interior-rojo {
+        padding: 0px 10px;
+        margin: 10px 0;
+    }
+
+    .contendor_opcion-verde, .contendor_opcion-verde-user {
+        padding: 13px 9px;
+    }
+
+    .contendor_opcion-verde-user {
+        /* margin-bottom: 25px; */  /* lo mismo q el padding del ppal azul + el del rojo del costado */
+    }
+    
+    .contendor_opcion-verde-titulo {
+        padding: 25px 9px 13px;
+        /* padding-bottom: 0; */
+    }
+
+    #fa-circle-user { /* el icon de la foto del usuario */
+        font-size: 50px;
+        margin-right: 13px;
+        height: auto;
+    }
+
+    .div-imagen-user { /* el icon de la foto del usuario */
+        width: 75px;
+        height: 75px;
+        margin-right: 10px;
+        border-radius: 15px;
+    }
+
+    .imagen-user {
+        border-radius: 15px;
+    }
+
+    .fa-right-from-bracket {
+        font-size: 26px;
+    }
+
+    .texto-opcion-user-nombre { /* el nombre del usuario en negrita */
+        font-size: 22px;
+        font-weight: 500;
+    }
+    
+    .texto-opcion-user {  /* el texto "Activo" */
+        font-size: 17px;
+        /* font-weight: 300; */
+        margin-top: 2px;
+    }
+
+    .texto-opcion, .texto-opcion-micuenta, .div-icon, .div-icon-user, .div-icon-micuenta {
+        font-size: 16.5px;
+        font-weight: 400;
+    }
+    
+    .texto-opcion-micuenta, .div-icon-micuenta {
+        color: white;
+    }
+    
+    .div-icon, .div-icon-user, .div-icon-micuenta {
+        width: 11%;
+        min-width: 23px;
+        max-width: 28px;
+    }
+    
+    .texto-opcion-titulo {
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    /* el contenedor verde de Crear producto */
+    .contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
+        padding: 16px 9px 16px;
+        border-radius: 6px;
+    }
+    
+    .contendor_opcion-verde-crear .div-flex-violeta .texto-opcion a {  /* el texto Crear producto en amarillo */
+        color: #ffe7a3;
+        font-weight: 500;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .flex-top {  /* contenedor de los 2 divs */
+        height: 80px;
+    }
+
+    .div-logo-mobile {
+        height: 80px;
+        width: 80px;
+        /* min-width: 18% */
+    }
+
+    .contendor_ppal-azul {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 80px;  /* tiene q ser el mismo q el height del header */
+    }
+    
+    .contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 194px;  /* 80px del header + 114px del .contendor_ppal-azul */
+    }
+
+    .contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        right: 0;
+        top: 262px;  /* 80px del header + 182px del .contendor_ppal-azul */
+    }
+
+    .contendor_ppal-azul2, .contendor_ppal-azulabajo2, .contendor_ppal-azulabajo-logueado2 {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
+        padding: 18px 18px; /* antes era 15px 15px */
+        /* height: auto; */
+    }
+
+    .contendor_interior-rojo {
+        padding: 0px 12px;
+        margin: 12px 0;
+    }
+
+    .contendor_opcion-verde, .contendor_opcion-verde-user {
+        padding: 16px 10px;
+    }
+
+    .contendor_opcion-verde-user {
+        /* margin-bottom: 30px; */  /* lo mismo q el padding del ppal azul + el del rojo del costado */
+    }
+    
+    .contendor_opcion-verde-titulo {
+        padding: 30px 10px 16px;
+        /* padding-bottom: 0; */
+    }
+
+    #fa-circle-user { /* el icon de la foto del usuario */
+        font-size: 60px;
+        margin-right: 15px;
+        height: auto;
+    }
+
+    .div-imagen-user { /* el icon de la foto del usuario */
+        width: 90px;
+        height: 90px;
+        margin-right: 12px;
+        border-radius: 20px;
+    }
+
+    .imagen-user {
+        border-radius: 20px;
+    }
+
+    .fa-right-from-bracket {
+        font-size: 30px;
+        margin-left: 15px;
+    }
+
+    .texto-opcion-user-nombre { /* el nombre del usuario en negrita */
+        font-size: 26px;
+        font-weight: 500;
+    }
+    
+    .texto-opcion-user { /* el texto "Mi perfil" */
+        font-size: 20px;
+        /* font-weight: 300; */
+        margin-top: 3px;
+    }
+
+    .texto-opcion, .texto-opcion-micuenta, .div-icon, .div-icon-user, .div-icon-micuenta {
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+    .texto-opcion-micuenta, .div-icon-micuenta {
+        color: white;
+    }
+
+    .div-icon, .div-icon-user, .div-icon-micuenta {
+        width: 12%;
+        min-width: 25px;
+        max-width: 29px;
+    }
+    
+    .texto-opcion-titulo {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    /* el contenedor verde de Crear producto */
+    .contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
+        padding: 18px 10px 18px;
+        border-radius: 6.5px;
+    }
+    
+    .contendor_opcion-verde-crear .div-flex-violeta .texto-opcion a {  /* el texto Crear producto en amarillo */
+        color: #ffe7a3;
+        font-weight: 500;
+    }
+
+    
+    /* otras cosas q ya estaban */
+    .div-barra-busqueda {
+        height: 40px;
+    }
+
+    .input {
+        height: 40px;
+        padding-top: 8px;
+        padding-left: 6px;
+    }
+
+    .input::placeholder {
+        font-size: 17px;
+    }
+
+    .fa-magnifying-glass {
+        top: 8px;
+        right: 8px;
+        font-size: 24px;
+    }
+
+    .div-logo-carrito {   /* div del carrito */
+        width: 20%;
+        height: 40px;
+    }
+    
+    .div-menu-top {   /* div del menu hamburguesa */
+        width: 20%;
+        height: 40px;
+    }
+
+    .fa-cart-shopping {
+        scale: 185%;
+    }
+    
+    .fa-bars {
+        scale: 115%;
+    }
+
+    .numerito-carrito-mobile {
+        height: 14px;
+        width: 14px;
+        padding: 4px;
+        top: -9px;
+        right: -10px;
+        font-size: 14px;
+    }
+
+    /* ----------------------- cosas desktop q NO se ven ----------------------- */
+
+    .mis-compras, .mi-cuenta, .crear-producto {  /* .mi-cuenta pertenece a los divs de listado de usuarios, mi cuenta y del carrito */
+        display: none;
+    }
+    
+    /* .crear-producto {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+    } */
+    
+    /* .mis-compras {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+    }
+    
+    .mi-cuenta {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+    } */
+
+    footer h4 {  /* los titulos del footer */
+        font-weight: 500;
+        font-size: 18px;
+    }
+    
+    footer p {  /* los textos del footer */
+        font-size: 16px;
+    }
+
+    .div-izquierda {
+        padding: 7px;
+        padding-top: 20px;
+    }
+
+    .div-derecha {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 7px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .redes-sociales {
+        padding-top: 0;
+    }
+
+    .contacto p {
+        padding: 0;
+        margin: 0;
+        margin-top: 6px;
+    }
+
+    .rrss-iconos {    /* el div contenedor de los simbolos de las redes */
+        scale: 95%;
+    }
+}
+
+
+@media(min-width: 1024px){
+
+    .top {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ----------------------- cosas de mobile q se van ----------------------- */
+
+    .div-logo-mobile {  /* logo perrito */
+        display: none;
+    }
+
+    .div-menu-top {  /* menu hamburguesa */
+        display: none;
+    }
+
+    .div-logo-carrito {   /* el div del carrito en mobile */
+        display: none;
+    }
+
+
+    /* ----------------------- cosas desktop q se ven ----------------------- */
+
+    .numerito-carrito {
+        background-color: #fede87;
+        border: 1px solid #FECF53;
+        border-radius: 50%;
+        height: 13px;
+        width: 13px;
+        padding: 3px;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        right: 16px;
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .div-logo-desktop {
+        display: block;
+        /* border: 1px solid red; */
+        margin: 0;
+        padding: 0;
+        width: 30%;
+        scale: 85%;
+    }
+
+    .div-logo-desktop a {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .logo-desktop {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .izquierda {  /* div de la izq */  /* contiene el logo y la barra  */
+        width: 55%;
+    }
+    
+    .derecha {  /* div de la derecha */  /* contiene: listado de usuarios, crear prod., mi cuenta, carrito (y menu hamburg. en mobile) */
+        width: 45%;
+        justify-content: center;
+    }
+
+    .div-barra-busqueda {
+        width: 50%;
+        margin-left: 55px;
+    }
+
+    .mis-compras, .mi-cuenta, .crear-producto {
+        display: flex;
+    }
+
+    .crear-producto {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+        border: 1px dashed #ffe7a3;;
+        width: 20%;
+        /* margin: 0; */
+        padding: 0;
+        padding-top: 12px;
+        margin-right: 5px;
+    }
+
+    .crear-producto p {
+        font-size: 12px;
+    }
+    
+    .mis-compras {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+        /* border: 1px solid red; */
+        width: 20%;
+        /* margin: 0; */
+        padding: 0;
+        padding-top: 12px;
+    }
+
+    .mis-compras p {
+        font-size: 12px;
+    }
+    
+    .mi-cuenta {   /* el div del carrito desktop tambien es */
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+        /* border: 1px solid red; */
+        width: 17%;
+        /* margin: 0; */
+        padding: 0;
+        padding-top: 12px;
+        position: relative;
+    }
+
+    .mi-cuenta p {
+        font-size: 12px;
+    }
+    
+    .fa-cart-shopping {   /* el simbolito del carrito en desktop */
+        scale: 100%;
+    }
+
+
+    /* -------------------------------------------------------------header2-------------------------------------------------------------- */
+    
+    .header2 {
+        display: flex;
+        height: 35px;
+        background: linear-gradient(90deg, #287d93 0%, #24768b 35%, #18515F 100%);
+        /* border-top: 0.1px solid #154551; */
+        border-bottom: 0.1px solid #154551;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .header2-opciones {
+        color: white;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+    }
+    
+    .fa-circle-arrow-down {
+        margin-left: 10px;
+    }
+    
+    .flex-top {
+        height: 10%;
+    }
+
+    .dropbtn {
+        font-size: 12px;
+    }
+
+    .dropdown-content {
+        font-size: 12px;
+    }
+    
+    /* ---------------------------------------------------------footer----------------------------------------------------------------- */
+    
+    footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        /* padding-top: 0px;
+        padding-bottom: 15px; */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        /* position: absolute; */  
+        /* bottom: 0; */
+        /* top: 100%; */    /* hace q siempre esté del viewport inferior para abajo */
+        height: 140px;
+        /* top: -100%; */
+        /* bottom: 0; */
+        /* margin: 0; */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    footer h4 {  /* los titulos del footer */
+        font-size: 15px;
+    }
+    
+    footer p {  /* los textos del footer */
+        font-size: 13px;
+    }
+
+    .logo2 {
+        display: block;
+        width: 4.5%;
+        scale: 100%;
+        padding: 0;
+        margin-left: 10px;
+    }
+    
+    .div-izquierda {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red; */
+        width: 42%;
+        padding-top: 0;
+    }
+    
+    .div-derecha {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 1px solid red; */
+        padding-right: 0;
+        width: 48%;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .nosotros {
+        width: 20%;
+        font-size: 12px;
+    }
+    
+    .todo-perro {
+        width: 32%;
+        font-size: 12px;
+    }
+    
+    .todo-gato {
+        width: 32%;
+        font-size: 12px;
+    }
+    
+    .contacto {
+        width: 67%;
+        font-size: 12px;
+    }
+
+    .contacto p {
+        padding: 0;
+        margin: 0;
+        margin-top: 6px;
+    }
+ 
+    .redes-sociales {
+        /* margin: auto; */
+        width: 25%;
+        font-size: 12px;
+        /* padding-top: 0;
+        margin-top: 0; */
+    }
+    
+    .redes-sociales h4 {
+        margin: 0;
+    }
+    
+    .twitter-mobile {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* .contacto p {
+        margin-bottom: 7px;
+    } */
+
+    .rrss-iconos {    /* el div contenedor de los simbolos de las redes */
+        scale: 110%;
+    }
+}
+
+
+@media(min-width: 1200px) {
+
+    /* ----------------------------- cosas desktop q se ven --------------------------------- */
+    
+    .derecha {
+        justify-content: right;
+        padding-right: 15px;
+    }
+
+    .mis-compras, .mi-cuenta, .crear-producto {
+        display: flex;
+    }
+
+    .crear-producto {
+        width: 20%;
+        padding-top: 12px;
+        margin-right: 35px;
+    }
+
+    .crear-producto p {
+        font-size: 13px;
+    }
+    
+    .mis-compras {
+        width: 20%;
+        padding-top: 12px;
+    }
+
+    .mis-compras p {
+        font-size: 13px;
+    }
+    
+    .mi-cuenta {   /* el div del carrito desktop tambien es */
+        width: 15%;
+        padding-top: 12px;
+    }
+
+    .mi-cuenta p {
+        font-size: 13px;
+    }
+    
+    .fa-cart-shopping, .fa-plus, .fa-lock, .fa-circle-user {   /* simbolitos en desktop */
+        scale: 110%;
+    }
+
+    .numerito-carrito {
+        height: 13px;
+        width: 13px;
+        padding: 3px;
+        top: 0;
+        right: 16px;
+        font-size: 13px;
+    }
+
+    /* -------------------------------------------------------------header2-------------------------------------------------------------- */
+    
+    .dropbtn {
+        font-size: 14px;
+    }
+
+    .dropdown-content {
+        font-size: 14px;
+    }
+
+    /* ----------------------------------------------------------- footer ------------------------------------------------------------- */
+
+    .logo2 {
+        width: 4%;
+        scale: 100%;
+    }
+
+    footer h4 {  /* los titulos del footer */
+        font-size: 16px;
+    }
+    
+    footer p {  /* los textos del footer */
+        font-size: 14px;
+    }
+
+    .contacto p {
+        padding: 0;
+        margin: 0;
+        margin-top: 8px;
+    }
+
+}
+
+@media(min-width: 1320px) {
+
+    .numerito-carrito {
+        right: 18px;
+    }
+}
+
+@media(min-width: 1400px){
+
+    .numerito-carrito {
+        right: 20px;
+    }
+}
+
+@media(min-width: 1500px){
+
+    .numerito-carrito {
+        right: 25px;
+    }
+
+    .logo2 {
+        width: 3.5%;
+    }
+}
+
+@media(min-width: 1600px){
+
+    .flex-top {
+        height: 110px;
+    }
+
+    /* ----------------------------- cosas desktop q se ven --------------------------------- */
+
+    .derecha {
+        padding-right: 20px;
+    }
+
+    .crear-producto {
+        width: 15%;
+        padding-top: 12px;
+        margin-right: 50px;
+    }
+
+    .crear-producto p {
+        font-size: 15px;
+    }
+    
+    .mis-compras {
+        width: 15%;
+        padding-top: 12px;
+    }
+
+    .mis-compras p {
+        font-size: 15px;
+    }
+    
+    .mi-cuenta {   /* el div del carrito desktop tambien es */
+        width: 12%;
+        padding-top: 12px;
+    }
+
+    .mi-cuenta p {
+        font-size: 15px;
+    }
+    
+    .fa-cart-shopping, .fa-plus, .fa-lock, .fa-circle-user {   /* simbolitos en desktop */
+        scale: 120%;
+    }
+
+    .numerito-carrito {
+        height: 14px;
+        width: 14px;
+        padding: 3px;
+        top: -3px;
+        right: 22px;
+        font-size: 12px;
+        box-sizing: content-box;
+    }
+
+    /* ------------------------------------------------------------- header2 -------------------------------------------------------------- */
+    
+    .dropbtn {
+        font-size: 15px;
+    }
+
+    .dropdown-content {
+        font-size: 15px;
+    }
+
+    /* ------------------------------------------------------------- footer -------------------------------------------------------------- */
+
+
+}

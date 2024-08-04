@@ -1,0 +1,1731 @@
+/* --- Estilos generales --- */
+a {
+    text-decoration: none;
+    /* color: white; */
+    transition: 250ms;
+}
+
+a:hover {
+    color: #cdd4d6;
+}
+
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    background-image: url("/img/perro-gato-erc4n51-pxhere.webp");
+    background-position: center;
+    background-size: cover;
+    
+    /* la magia para q el footer se pegue SIEMPRE en la parte de abajo sin importar el tamaño de pantalla, y en el footer.css ponerle al footer margin-top:auto */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------------------------- */
+.main2 {  /* para el js panel.js */
+    opacity: 0.2;
+    transition: all 1s ease;
+    z-index: 1;
+    display: none;
+}
+
+.footer-chau {  /* para el js panel.js */
+    display: none;
+}
+
+.body2 {  /* para el js panel.js */
+    background-image: none;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+}
+/* ---------------------------------------------------------------------------------- */
+
+/* --- Main --- */
+main, .main-login, .main-perfil, .main-ya-podes-loguearte {
+    height: auto;  /* el alto se ajusta dependiendo del alto de los contenedores hijos */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 0; */
+    /* margin: auto; */
+    /* overflow: hidden; */
+    padding: 5% 0;  /* la separacion del main con el header y el footer */
+    /* imagen del fondo */
+    /* background-image: url("/img/perro-gato-erc4n51-pxhere.webp");
+    background-position: center;
+    background-size: cover; */
+
+}
+
+.main-login {
+    padding: 5% 0 30%;  /* la separacion del main con el header y el footer */
+}
+
+.main-perfil {
+    padding: 5% 0 77%;  /* la separacion del main con el header y el footer */
+}
+
+.main-ya-podes-loguearte {
+    padding: 5% 0 109%;  /* la separacion del main con el header y el footer */
+}
+
+/* --- Contenedor --- */
+.contenedor, .contenedor-login, .contenedor-perfil, .contenedor-ya-podes-loguearte {  /* el contenedor entre el main y el centrado del formulario */
+    /* position: absolute; */
+    width: 90%;
+    /* border: 1px solid blue; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* background-image: url("/img/Imagen_register.png");
+    background-position: center; */
+    /* background-size: cover; */
+    margin: auto;
+    overflow: hidden;
+    height: auto;
+    backdrop-filter: blur(0) saturate(180%);
+    -webkit-backdrop-filter: blur(0) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 8px; /* 12 */
+    padding: 15px 15px 15px 15px; /* 20 */
+    /* border: 1px solid rgba(255, 255, 255, 0.125); */
+    /* margin-top: 0; */  /* esto me tiraba el contenedor siempre arriba */
+    /* min-height: 600px; */
+}
+
+.contenedor-perfil {
+    width: auto;
+    max-width: 90%;
+    height: 210;  /* 0,6 del width */
+}
+
+.contenedor-ya-podes-loguearte {
+    width: auto;
+    min-width: 60%;
+    max-width: 90%;
+    height: 210;  /* 0,6 del width */
+}
+
+.hr-login {  /* la linea del login */
+    margin-top: 22px;
+    margin-bottom: 18px;
+}
+
+/* ------- Formulario ------- */
+.formulario {
+    z-index: 1;
+    padding: 0px;
+}
+
+.centrado {  /* el contenedor del formulario */
+    /* width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    height: 100%; */
+    border: none;
+}
+
+/* -- Titulo -- */
+.flex-enlinea-titulo {
+    /* margin-top: 16px; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+}
+
+.logo {  /* el logo para DESKTOP */
+    display: none;
+}
+
+h2 {  /* el titulo de bienvenido y crear cuenta */
+    /* line-height: 10px; */
+    color: #18515F;
+    /* text-align: center; */
+    /* margin-left: 10px; */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.editar-titulo, .titulo-yapodesloguearte {   /* el titulo en la pagina de editar usuario y el del Ya podes loguearte cuando creas un usuario nuevo */
+    /* margin-top: 40px;
+    line-height: 20px; */
+    color: #18515F;
+    /* text-align: center; */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    /* border: 1px solid green; */
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.titulo-yapodesloguearte {
+    margin-bottom: 15px;
+}
+
+.flex-campo-img {  /* contiene los divs campo-img1 y 2 */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.campo-img1, .campo-img2 {
+    width: 49%;
+    /* border: 1px solid red; */
+}
+
+.campo-img1 {
+    width: fit-content;
+}
+
+.campo-img2 {
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+/* Inputs del formulario */
+#nombre, #apellido, #email, #password, #passwordrepeat {
+    border: 1px solid rgb(99, 183, 252);  /* EXCLUSIVO de edit-user */
+    font-size: 13px; /* 16px tenia */
+    border-radius: 6px; /* 8px tenia */
+    padding: 10px 14px; /* 12px 16px tenia */
+    /* padding-left: 16px; */
+    height: 44px; /* 48px tenia */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    background-color: rgb(206, 218, 228);  /* EXCLUSIVO de edit-user */
+    line-height: 24px;
+}
+
+.input_imagen {
+    border: 1px solid transparent;
+    background-color: transparent;
+    height: 44px; /* 48px tenia */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+    width: 100%;
+    font-size: 12px; /* 16px tenia */
+    border-radius: 6px; /* 8px tenia */
+    padding: 10px 14px; /* 12px 16px tenia */
+    color: rgb(61, 61, 61);
+    line-height: 24px;
+}
+
+/* -- en edit-user.ejs -- */
+.div-img-externo {
+    width: 125px;
+    height: 125px;
+    /* min-width: 40%;
+    max-height: 100%; */
+    /* border-radius: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+    /* border: 1px solid red; */
+    border-radius: 25px;
+    background: rgb(255, 255, 255, 0.5);
+    border: 0.5px solid rgb(210, 210, 210);
+}
+
+.div-img {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    width: 100%;
+    height: 100%;
+    /* padding: 5px; */ /* aca no puede ir padding, sino me saca el width */
+    /* border: 1px solid red; */
+}
+
+.imagen-act {
+    width: 100%;
+    border-radius: 18px;
+    /* border: 1px solid red; */
+}
+/* ----------------------- */
+
+#nombre:hover, #apellido:hover, #email:hover, #password:hover, #passwordrepeat:hover {  /* en desktop */
+    border: 1px solid rgb(25, 127, 210);  /* EXCLUSIVO de edit-user */
+}
+
+#nombre:focus, #apellido:focus, #email:focus, #password:focus, #passwordrepeat:focus {
+    outline: none;
+    border: 1px solid rgb(5, 47, 81);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+    background-color: rgb(221, 230, 237);
+}
+
+#nombre::placeholder, #apellido::placeholder, #email::placeholder, #password::placeholder, #passwordrepeat::placeholder {  /* el texto en cada input */
+    font-size: 13px; /* 15px tenia */
+    color: #757d80;   /* cuando hay un ejemplo de lo q podes escribir en el input */
+    /* line-height: 48px; */
+    font-weight: 300;
+}
+
+.titulo, .titulo-nombre, .titulo-apellido, .titulo-email, .titulo-pass, .titulo-repass {  /* los p arriba de cada input */
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-top: 18px; /* tenia 20px */
+    margin-bottom: 3px; /* tenia 4 o 5px */
+    margin-left: 10px;
+    color: rgb(50, 50, 50);
+    /* margin: 0;
+    padding: 0; */
+}
+
+.titulo-error {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 100%;
+    margin-bottom: 8px;
+    color: red;
+}
+
+.flex-enlinea {  /* el section del checkbox y los terminos */
+    margin-top: 16px;  /* tenia 16px */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+    /* border: 1px solid red; */
+}
+
+.recordar {  /* el texto "Recordarme" del checkbox en login y "Aceptar" solo sin terminos y condiciones del register */
+    margin-left: 2px;
+    font-size: 13px; 
+    /* width: 100%; */
+    /* border: 1px solid red; */
+}
+
+#terminos, #recordarme {  /* los checkbox en el register y en el login */
+    scale: 80%;
+    /* border: 1px solid blue; */
+    /* width: fit-content; */
+}
+
+.label-terminos, .label-recordarme {
+    width: fit-content;
+    /* border: 1px solid blue; */
+}
+
+.leer-terminos {  /* el link de leer terminos y condiciones */
+    color: #1e697b;
+    font-size: 13px;
+    width: 100%;
+    /* border: 1px solid #1e697b; */
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    transition: 450ms;
+    font-weight: 500;
+}
+
+.leer-terminos:hover {
+    color: black;
+}
+
+.div-terminos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: 1px solid blue; */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
+}
+
+.semibold {  /* el No tenes cuenta? del login */
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.aclaracion-importante { /* la leyenda de aclaracion importante en el edit-user.ejs */
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    color: #1f67da;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.aclaracion-importante-texto { /* la leyenda de aclaracion importante en el edit-user.ejs */
+    font-size: 14px;
+    font-weight: 300;
+    color: #1f67da;
+    margin-top: 0;
+}
+
+/* ----------- Labels de error ------------ */
+/* ----- en el back ----- */
+.error {
+    color: red;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input_error {
+    border: 1px solid red;
+    margin-bottom: 8px;
+}
+
+/* ----- en el front ----- */
+/* .input_error-front {
+    border: 1px solid red;
+    background-color: rgb(255, 236, 236);
+}
+
+.input_good-front {
+    border: 1px solid green;
+    background-color: rgb(232, 255, 232);
+} */
+
+/* ----- validaciones en el front ----- */
+.errorNombre, .errorApellido, .errorEmail, .errorPasswordrepeat, .errorPassword, .errorTerminos {
+    font-weight: 400;
+    font-size: 13px; /* tenia 14px */
+    /* margin-left: 10px; */
+    color: red;
+    /* font-style: italic; */
+}
+
+#span1, #span2, #span12, #span22, #span3, #span32, #span4, #span42, #span5, #span52 {
+    display: none;
+}
+
+.fa-circle-exclamation {
+    color: red;
+    font-size: 13px; /* tenia 14px */
+    /* margin-bottom: 5px; */
+    margin-left: 4px;
+    margin-right: 3px;
+}
+
+.fa-circle-check {
+    color: green;
+    font-size: 13px; /* tenia 14px */
+    /* margin-bottom: 5px; */
+    margin-left: 4px;
+    margin-right: 3px;
+}
+
+
+/* --------- Checkbox ---------*/
+.flex-enlinea2 {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+}
+
+input[type="checkbox"] + p {
+    margin-left: 12px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #18515F;
+}
+
+/* -------- buttons --------- */
+.btnIniciarSesion, .btnIniciarSesion2, .btnCrearCuenta, .btnEditarDatos {
+    border-radius: 6px;  /* tenia 8px */
+    padding: 10px 32px;  /* tenia 10px 32px */
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    font-size: 17px;  /* tenia 18px */
+    font-weight: 400;
+    height: 44px;  /* tenia 48px */
+    margin: 0px 0px 0px 0px;  /* tenia 16px 0 16px 0 */
+    cursor: pointer;
+    transition: 350ms;
+    margin-bottom: 0; /* porq ya tiene padding el contenedor azul */
+    line-height: 24px;
+}
+
+.btnEditarDatos {
+    margin-top: 15px;  /* lo mismo q el padding del contenedor azul ppal */
+}
+
+.btnIniciarSesion, .btnEditarDatos {
+    color: white;
+    background: conic-gradient(from 0deg, #b5cacf 18%, #4d94a5 35%, #1e697b 65%, #144d5c);
+    border: none;
+}
+
+.btnIniciarSesion2 {
+    color: white;
+    background: conic-gradient(from 180deg, #b5cacf 20%, #4d94a5 35%, #1e697b 75%, #0e414f);
+    border: none;
+}
+
+.btnCrearCuenta {
+    color: #1e697b;
+    background-color: transparent;
+    border: 1.5px solid #1e697b;
+    margin-top: -2px;
+}
+
+.btnIniciarSesion:hover, .btnEditarDatos:hover {
+    color: rgb(72, 72, 72);
+    font-weight: 300;
+    background: conic-gradient(from 0deg, #f3f5f5 18%, #cfeff8 35%, #5f9cac 65%, #318ba4);
+    border: none;
+    /* opacity: 0.7; */
+}
+
+.btnIniciarSesion2:hover {
+    color: rgb(61, 61, 61);
+    font-weight: 300;
+    background: conic-gradient(from 180deg, #f3f5f5 10%, #bce1eb 25%, #5f9cac 75%, #318ba4);
+    border: none;
+}
+
+.btnCrearCuenta:hover {
+    background-color: rgba(245, 245, 245, 0.4);
+    color: #349fba;
+    border: 2px solid #349fba;
+}
+
+.btn-icon {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: #18515F;
+    background-color: white;
+    border: 1px solid #18515F;
+    cursor: pointer;
+}
+
+.btn-icon:hover {
+    background-color: #DEF2F7 ;
+    border: 1px solid #ffffff;
+}
+
+/* --- Login --- */
+.tamano-icono {
+    width: 28px;
+    margin-left: 12px;
+}
+
+/* --- Cosas exclusivas del pefil-user.ejs --- */
+.flex-datosusuario { /* el ppal */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid rgb(221, 221, 221);
+    /* border: 1px solid blue; */
+    padding: 10px;
+    margin-top: 15px;  /* lo mismo q el padding del contenedor azul ppal */
+    border-radius: 6px;
+    background-color: rgba(245, 245, 245, 0.6);
+}
+
+.flex-datosusuario-interno { /* 50% del .flex-datosusuario *//* el q le sigue, contiene: .flex-nombreusuario y .flex-emailusuario */
+    /* border: 1px solid violet; */
+    width: fit-content;
+    /* max-width: 50%; */
+    height: auto;
+    margin: 0;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    /* margin-right: 10px; */
+
+}
+
+.flex-imagenusuario { /* 50% del .flex-datosusuario */
+    /* border: 1px solid violet; */
+    /* width: 200px; */
+    width: 125px;
+    height: 125px;
+    min-width: 40%;
+    max-height: 100%;
+    /* border-radius: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-nombreusuario, .flex-emailusuario { /* 50% del .flex-datosusuario-interno */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.usuario-patitas {
+    color: #1e697b;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    /* margin-bottom: 5px; */
+}
+
+.texto-usuario, .texto-email { /* dentro de .flex-nombreusuario y .flex-emailusuario, los textos chiquitos arriba del nombre y del email */
+    /* border: 1px solid brown; */
+    font-size: 11px;
+    font-weight: 300;
+    color: rgb(71, 71, 71);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2px;
+    margin-top: 12px;
+}
+
+.nombre-usuario-logueado, .email-usuario-logueado { /* dentro de .flex-nombreusuario y .flex-emailusuario */
+    /* border: 1px solid rgb(232, 10, 195); */
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    /* margin-left: 3px; */
+    width: 100%;
+    padding: 0;
+    font-style: italic;
+    /* margin-bottom: 5px; */
+}
+
+.nombre-usuario-logueado {
+    font-size: 15px;
+}
+
+.email-usuario-logueado {
+    font-weight: 400;
+}
+
+.div-imagenDePerfil { /* dentro de .flex-imagenusuario, ocupa su 100% */
+    /* width: 100%;
+    height: fit-content; */
+    /* border: 1px solid green; */
+    /* margin: auto; */
+    /* border-radius: 50%; */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 265px; */
+    border-radius: 25px;
+    width: 100%;
+    max-height: 100%;
+}
+
+.imagenDePerfil { /* dentro del div .div-imagenDePerfil, ocupa su 100% */
+    width: 100%;
+    /* height: 50%; */
+    border-radius: 25px;
+}
+
+.btnEditarDatos {
+    margin-top: 15px;  /* lo mismo q el padding del contenedor azul ppal */
+}
+
+@media (max-width: 389px){
+
+    main, .main-login, .main-perfil {
+        height: auto;  /* el alto se ajusta dependiendo del alto de los contenedores hijos */
+        padding: 4% 4%;  /* la separacion del main con el header y el footer */
+    }
+
+    .main-login {
+        padding: 4% 4% 30%;  /* la separacion del main con el header y el footer */
+    }
+
+    .main-perfil {
+        padding: 4% 4% 80%;  /* la separacion del main con el header y el footer */
+    }
+
+    .main-ya-podes-loguearte {
+        padding: 5% 0 122%;  /* la separacion del main con el header y el footer */
+    }
+
+    .contenedor, .contenedor-login, .contenedor-perfil {  /* el contenedor entre el main y el centrado del formulario */
+        width: 100%;
+        border-radius: 6.5px; /* antes 8 */
+        padding: 14px 14px 14px 14px; /* antes 15px 15px 15px 15px; */
+    }
+
+    .contenedor-perfil {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .editar-titulo, .titulo-yapodesloguearte {   /* el titulo en la pagina de editar usuario y el del Ya podes loguearte cuando creas un usuario nuevo */
+        font-size: 18px; /* antes 20 */
+        font-weight: 500; /* antes 500 */
+    }
+
+    .titulo-yapodesloguearte {
+        margin-bottom: 14px;
+    }
+
+    .titulo, .titulo-nombre, .titulo-apellido, .titulo-email, .titulo-pass, .titulo-repass {  /* los p arriba de cada input */
+        font-size: 12px; /* antes 13.5 */
+        font-weight: 300; /* antes 300 */
+        margin-top: 17px; /* antes 18 */
+        margin-bottom: 2.8px; /* antes 3 */
+        margin-left: 9.5px; /* antes 10 */
+    }
+    
+    .titulo-error {  /* los p en rojo cuando da error un input */
+        font-size: 14.5px; /* antes 16 */
+        font-weight: 300; /* antes 300 */
+        margin-bottom: 8px; /* antes 8 */
+    }
+
+    #nombre, #apellido, #email, #password, #passwordrepeat, .input_imagen {
+        font-size: 11px; /* antes 13 */ /* este modifica el texto del Choose file y el texto q le sigue */
+        border-radius: 5px; /* antes 6 */
+        padding: 10px 14px; /* antes 10px 14px */
+        height: 40px; /* antes 44 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+        line-height: 22px;
+    }
+    
+    #nombre::placeholder, #apellido::placeholder, #email::placeholder, #password::placeholder, #passwordrepeat::placeholder {
+        font-size: 12px; /* antes 13 */ /* este modifica el texto del input */
+    }
+    
+    .flex-enlinea {  /* el section del checkbox y los terminos */
+        margin-top: 15px; /* antes 16 */
+    }
+
+    .recordar {  /* el texto "Recordarme" del checkbox en login y "Aceptar" solo sin terminos y condiciones del register */
+        margin-left: 1.8px; /* antes 2 */
+        font-size: 12.5px;  /* antes 13 */
+    }
+    
+    #terminos, #recordarme {  /* el checkbox */
+        scale: 78%;  /* antes 80 */
+    }
+
+    .leer-terminos {  /* el link de leer terminos y condiciones */
+        font-size: 12px;  /* antes 13 */
+        margin-top: 10px;  /* antes 10 */
+        font-weight: 400;  /* antes 500 */
+    }
+
+    .aclaracion-importante { /* la leyenda de aclaracion importante en el edit-user.ejs */
+        font-size: 12.5px;
+        margin-top: 18px;
+        margin-bottom: 7px;
+    }
+    
+    .aclaracion-importante-texto { /* la leyenda de aclaracion importante en el edit-user.ejs */
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .btnIniciarSesion, .btnIniciarSesion2, .btnCrearCuenta, .btnEditarDatos {
+        border-radius: 5px;   /* antes 6 */
+        padding: 10px 32px;    /* antes 10px 32px */
+        font-size: 15.5px;    /* antes 16 */
+        font-weight: 400;  /* antes 300 */
+        height: 40px;    /* antes 44 */
+        margin: 0px 0px 0px 0px;  /* antes 0 0 16px 0 */
+        line-height: 22px;
+    }
+
+    .hr-login {  /* la linea del login */
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* -- en edit-user.ejs -- */ /* la imagen de usuario */
+    .div-img-externo {
+        width: 100px; /* antes 125px */
+        height: 100px; /* antes 125px */
+        padding: 7px;  /* antes 10px */
+        border-radius: 20px; /* antes 25px */
+    }
+
+    .div-img, .imagen-act {
+        border-radius: 15px;  /* antes 18px */
+    }
+
+    .campo-img2 {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    /* ----------------------- */
+
+    /* ----- validaciones en el front ----- */
+    .errorNombre, .errorApellido, .errorEmail, .errorPasswordrepeat, .errorPassword, .errorTerminos {  /* los errores rojos al lado del simbolo de exclamation */
+        font-weight: 400;  /* antes 400 */
+        font-size: 12px;  /* antes 13 */
+    }
+    
+    .fa-circle-exclamation {
+        font-size: 12.5px;  /* antes 13 */
+        margin-left: 3.8px;  /* antes 4 */
+        margin-right: 2.8px;  /* antes 3 */
+    }
+    
+    .fa-circle-check {
+        font-size: 12.5px;  /* antes 13 */
+        margin-left: 3.8px;  /* antes 4 */
+        margin-right: 2.8px;  /* antes 3 */
+    }
+
+    /* --- Cosas exclusivas del pefil-user.ejs --- */
+    .flex-datosusuario { /* el ppal */
+        /* border: 1px solid blue; */
+        justify-content: center;
+        gap: 7px;
+        padding: 7px;
+        margin-top: 14px;  /* lo mismo q el padding del contenedor azul ppal */
+        border-radius: 5px; /* el mismo q el boton y los input */
+    }
+
+    .flex-datosusuario-interno { /* 50% del .flex-datosusuario *//* el q le sigue, contiene: .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid violet; */
+        width: fit-content;
+    }
+
+    .flex-imagenusuario { /* 50% del .flex-datosusuario */
+        /* border: 1px solid violet; */
+        width: 100px;
+        height: 100px;
+        max-height: 100%;
+    }
+
+    .flex-nombreusuario, .flex-emailusuario { /* 50% del .flex-datosusuario-interno */
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+
+    .usuario-patitas {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+    }
+
+    .texto-usuario, .texto-email { /* dentro de .flex-nombreusuario y .flex-emailusuario, los textos chiquitos arriba del nombre y del email */
+        /* border: 1px solid brown; */
+        font-size: 9px;
+        font-weight: 300;
+        color: rgb(71, 71, 71);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 1px;
+        margin-top: 9px;
+    }
+
+    .nombre-usuario-logueado, .email-usuario-logueado { /* dentro de .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid rgb(232, 10, 195); */
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    .email-usuario-logueado {
+        font-weight: 400;
+    }
+
+    .div-imagenDePerfil { /* dentro de .flex-imagenusuario, ocupa su 100% */
+        /* border: 1px solid green; */
+        border-radius: 20px;
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .imagenDePerfil { /* dentro del div .div-imagenDePerfil, ocupa su 100% */
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .btnEditarDatos {
+        margin-top: 14px;  /* lo mismo q el padding del contenedor azul ppal */
+    }
+
+}
+
+@media (min-width: 500px){
+
+    main, .main-login {
+        height: auto;  /* el alto se ajusta dependiendo del alto de los contenedores hijos */
+        padding: 5% 0;  /* la separacion del main con el header y el footer */
+    }
+
+    .main-login {
+        padding: 5% 0 35%;  /* la separacion del main con el header y el footer */
+    }
+
+    .main-ya-podes-loguearte {
+        padding: 5% 0 108%;  /* la separacion del main con el header y el footer */
+    }
+
+    .contenedor, .contenedor-login, .contenedor-perfil, .contenedor-ya-podes-loguearte {  /* el contenedor entre el main y el centrado del formulario */
+        width: 90%;
+        border-radius: 10px; /* antes 8 */
+        padding: 16px 16px 16px 16px; /* antes 15px 15px 15px 15px; */
+    }
+
+    .contenedor-perfil {
+        width: auto;
+        min-height: 240px;  /* 0,6 del width */
+        max-width: 90%;
+    }
+
+    .contenedor-ya-podes-loguearte {
+        width: auto;
+        min-width: 60%;
+    }
+
+    .editar-titulo, .titulo-yapodesloguearte {   /* el titulo en la pagina de editar usuario y el del Ya podes loguearte cuando creas un usuario nuevo */
+        font-size: 22px; /* antes 20 */
+        font-weight: 500; /* antes 500 */
+    }
+
+    .titulo-yapodesloguearte {
+        margin-bottom: 16px;
+    }
+
+    .titulo, .titulo-nombre, .titulo-apellido, .titulo-email, .titulo-pass, .titulo-repass {  /* los p arriba de cada input */
+        font-size: 14px; /* antes 13.5 */
+        font-weight: 300; /* antes 300 */
+        margin-top: 20px; /* antes 18 */
+        margin-bottom: 3.5px; /* antes 3 */
+        margin-left: 11px; /* antes 10 */
+    }
+    
+    .titulo-error {  /* los p en rojo cuando da error un input */
+        font-size: 14.5px; /* antes 16 */
+        font-weight: 300; /* antes 300 */
+        margin-bottom: 8px; /* antes 8 */
+    }
+
+    #nombre, #apellido, #email, #password, #passwordrepeat, .input_imagen {
+        font-size: 14px; /* antes 13 */ /* este modifica el texto del Choose file y el texto q le sigue */
+        border-radius: 7px; /* antes 6 */
+        padding: 10px 14px; /* antes 10px 14px */
+        height: 46px; /* antes 44 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+        line-height: 26px;
+    }
+    
+    #nombre::placeholder, #apellido::placeholder, #email::placeholder, #password::placeholder, #passwordrepeat::placeholder {
+        font-size: 14px; /* antes 13 */ /* este modifica el texto del input */
+    }
+    
+    .flex-enlinea {  /* el section del checkbox y los terminos */
+        margin-top: 17px; /* antes 16 */
+    }
+
+    .recordar {  /* el texto "Recordarme" del checkbox en login y "Aceptar" solo sin terminos y condiciones del register */
+        margin-left: 2.3px; /* antes 2 */
+        font-size: 14px;  /* antes 13 */
+    }
+    
+    #terminos, #recordarme {  /* el checkbox */
+        scale: 85%;  /* antes 80 */
+    }
+
+    .leer-terminos {  /* el link de leer terminos y condiciones */
+        font-size: 14px;  /* antes 13 */
+        margin-top: 10px;  /* antes 10 */
+        font-weight: 500;  /* antes 500 */
+    }
+
+    .aclaracion-importante { /* la leyenda de aclaracion importante en el edit-user.ejs */
+        font-size: 15px;
+        margin-top: 23px;
+        margin-bottom: 8px;
+    }
+    
+    .aclaracion-importante-texto { /* la leyenda de aclaracion importante en el edit-user.ejs */
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    .btnIniciarSesion, .btnIniciarSesion2, .btnCrearCuenta, .btnEditarDatos {
+        border-radius: 7px;   /* antes 6 */
+        padding: 10px 32px;    /* antes 10px 32px */
+        font-size: 16.5px;    /* antes 16 */
+        font-weight: 400;  /* antes 300 */
+        height: 46px;    /* antes 44 */
+        margin: 0px 0px 0px 0px;  /* antes 0 0 16px 0 */
+        line-height: 26px;
+    }
+
+    /* ----- validaciones en el front ----- */
+    .errorNombre, .errorApellido, .errorEmail, .errorPasswordrepeat, .errorPassword, .errorTerminos {  /* los errores rojos al lado del simbolo de exclamation */
+        font-weight: 400;  /* antes 400 */
+        font-size: 13.5px;  /* antes 13 */
+    }
+    
+    .fa-circle-exclamation {
+        font-size: 13.5px;  /* antes 13 */
+        margin-left: 4.3px;  /* antes 4 */
+        margin-right: 3.3px;  /* antes 3 */
+    }
+    
+    .fa-circle-check {
+        font-size: 13.5px;  /* antes 13 */
+        margin-left: 4.3px;  /* antes 4 */
+        margin-right: 3.3px;  /* antes 3 */
+    }
+
+    /* -- en edit-user.ejs -- */ /* la imagen de usuario */
+    .div-img-externo {
+        width: 135px; /* antes 125px */
+        height: 135px; /* antes 125px */
+        padding: 10px;  /* antes 10px */
+        border-radius: 25px; /* antes 25px */
+    }
+
+    .div-img, .imagen-act {
+        border-radius: 18px;  /* antes 18px */
+    }
+
+    .campo-img2 {
+        margin-top: 25px;
+        margin-left: 5px;
+    }
+    /* ----------------------- */
+
+    /* --- Cosas exclusivas del pefil-user.ejs --- */
+    .flex-datosusuario { /* el ppal */
+        /* border: 1px solid blue; */
+        gap: 12px; /* antes 10px */
+        padding: 12px; /* antes 10px */
+        margin-top: 16px;  /* lo mismo q el padding del contenedor azul ppal *//* antes 15px */
+        border-radius: 7px; /* antes 6px */ /* el mismo q el boton y los input */
+    }
+
+    .flex-datosusuario-interno { /* 50% del .flex-datosusuario *//* el q le sigue, contiene: .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid violet; */
+        width: fit-content;
+        height: fit-content;
+        /* max-width: 50%; */
+    }
+
+    .flex-imagenusuario { /* 50% del .flex-datosusuario */
+        /* border: 1px solid violet; */
+        width: 150px; /* antes 120px */
+        height: 150px; /* antes 120px */
+        min-width: 40%;
+        max-height: 100%;
+    }
+
+    .flex-nombreusuario, .flex-emailusuario { /* 50% del .flex-datosusuario-interno */
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+
+    .usuario-patitas {
+        font-size: 19.5px; /* antes 17px */
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+    }
+
+    .texto-usuario, .texto-email { /* dentro de .flex-nombreusuario y .flex-emailusuario, los textos chiquitos arriba del nombre y del email */
+        /* border: 1px solid brown; */
+        font-size: 12px; /* antes 11px */
+        font-weight: 300;
+        color: rgb(71, 71, 71);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 3px; /* antes 2px */
+        margin-top: 16px; /* antes 10px */
+    }
+
+    .nombre-usuario-logueado, .email-usuario-logueado { /* dentro de .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid rgb(232, 10, 195); */
+        font-size: 18px; /* antes 15px */
+        font-weight: 500;
+    }
+
+    .email-usuario-logueado {
+        font-weight: 400;
+    }
+
+    .div-imagenDePerfil { /* dentro de .flex-imagenusuario, ocupa su 100% */
+        /* border: 1px solid green; */
+        border-radius: 30px; /* antes 25px */
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .imagenDePerfil { /* dentro del div .div-imagenDePerfil, ocupa su 100% */
+        width: 100%;
+        border-radius: 30px; /* antes 25px */
+    }
+
+    .btnEditarDatos {
+        margin-top: 16px;  /* lo mismo q el padding del contenedor azul ppal */
+    }
+}
+
+
+@media (min-width: 600px){
+
+    main, .main-login {
+        height: auto;  /* el alto se ajusta dependiendo del alto de los contenedores hijos */
+        padding: 5% 0;  /* la separacion del main con el header y el footer */ /* antes 5% 0 */
+    }
+
+    .main-login {
+        padding: 5% 0 22%;  /* la separacion del main con el header y el footer */
+    }
+
+    .main-perfil {
+        padding: 5% 0 45%;  /* la separacion del main con el header y el footer */
+    }
+
+    .main-ya-podes-loguearte {
+        padding: 5% 0 84%;  /* la separacion del main con el header y el footer */
+    }
+
+    .contenedor, .contenedor-login, .contenedor-perfil, .contenedor-ya-podes-loguearte {  /* el contenedor entre el main y el centrado del formulario */
+        width: 75%; /* antes 90 */ /* compensa con el padding del main */
+        border-radius: 11px; /* antes 10 */
+        padding: 18px 18px 18px 18px; /* antes 16px 16px 16px 16px; */
+    }
+
+    .contenedor-perfil {
+        width: auto;
+        max-width: 75%;
+    }
+
+    .contenedor-ya-podes-loguearte {
+        width: auto;
+        min-width: 60%;
+    }
+
+    .editar-titulo, .titulo-yapodesloguearte {   /* el titulo en la pagina de editar usuario y el del Ya podes loguearte cuando creas un usuario nuevo */
+        font-size: 23px; /* antes 22 */
+        font-weight: 500; /* antes 500 */
+    }
+
+    .titulo-yapodesloguearte {
+        margin-bottom: 18px;
+    }
+
+    .titulo, .titulo-nombre, .titulo-apellido, .titulo-email, .titulo-pass, .titulo-repass {  /* los p arriba de cada input */
+        font-size: 14.5px; /* antes 14 */
+        font-weight: 300; /* antes 300 */
+        margin-top: 22px; /* antes 21 */
+        margin-bottom: 4px; /* antes 3.5 */
+        margin-left: 11.5px; /* antes 11 */
+    }
+    
+    .titulo-error {  /* los p en rojo cuando da error un input */
+        font-size: 14.5px; /* antes 14.5 */
+        font-weight: 300; /* antes 300 */
+        margin-bottom: 8px; /* antes 8 */
+    }
+
+    #nombre, #apellido, #email, #password, #passwordrepeat, .input_imagen {
+        font-size: 14.5px; /* antes 14 */ /* este modifica el texto del Choose file y el texto q le sigue */
+        border-radius: 7.5px; /* antes 7 */
+        padding: 10px 14px; /* antes 10px 14px */
+        height: 48px; /* antes 46 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+        line-height: 28px;
+    }
+    
+    #nombre::placeholder, #apellido::placeholder, #email::placeholder, #password::placeholder, #passwordrepeat::placeholder {
+        font-size: 14.5px; /* antes 14 */ /* este modifica el texto del input */
+    }
+    
+    .flex-enlinea {  /* el section del checkbox y los terminos */
+        margin-top: 18px; /* antes 17 */
+    }
+
+    .recordar {  /* el texto "Recordarme" del checkbox en login y "Aceptar" solo sin terminos y condiciones del register */
+        margin-left: 2.5px; /* antes 2.3 */
+        font-size: 14.5px;  /* antes 14 */
+    }
+    
+    #terminos, #recordarme {  /* el checkbox */
+        scale: 88%;  /* antes 85 */
+    }
+
+    .leer-terminos {  /* el link de leer terminos y condiciones */
+        font-size: 14.5px;  /* antes 14 */
+        margin-top: 12px;  /* antes 10 */
+        font-weight: 500;  /* antes 500 */
+    }
+
+    .aclaracion-importante { /* la leyenda de aclaracion importante en el edit-user.ejs */
+        font-size: 16px;
+        margin-top: 25px;
+        margin-bottom: 9px;
+    }
+    
+    .aclaracion-importante-texto { /* la leyenda de aclaracion importante en el edit-user.ejs */
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .btnIniciarSesion, .btnIniciarSesion2, .btnCrearCuenta, .btnEditarDatos {
+        border-radius: 7.5px;   /* antes 7 */
+        padding: 10px 32px;    /* antes 10px 32px */
+        font-size: 17px;    /* antes 16.5 */
+        font-weight: 400;  /* antes 400 */
+        height: 48px;    /* antes 46 */
+        margin: 0px 0px 0px 0px;  /* antes 0 0 0 0 */
+        line-height: 28px;
+    }
+
+    /* ----- validaciones en el front ----- */
+    .errorNombre, .errorApellido, .errorEmail, .errorPasswordrepeat, .errorPassword, .errorTerminos {  /* los errores rojos al lado del simbolo de exclamation */
+        font-weight: 400;  /* antes 400 */
+        font-size: 14px;  /* antes 13.5 */
+    }
+    
+    .fa-circle-exclamation {
+        font-size: 14px;  /* antes 13.5 */
+        margin-left: 4.5px;  /* antes 4.3 */
+        margin-right: 3.5px;  /* antes 3.3 */
+    }
+    
+    .fa-circle-check {
+        font-size: 14px;  /* antes 13.5 */
+        margin-left: 4.5px;  /* antes 4.3 */
+        margin-right: 3.5px;  /* antes 3.3 */
+    }
+
+    /* --- Cosas exclusivas del pefil-user.ejs --- */
+    .flex-datosusuario { /* el ppal */
+        /* border: 1px solid blue; */
+        gap: 13px; /* antes 12px */
+        padding: 13px; /* antes 12px */
+        margin-top: 18px;  /* lo mismo q el padding del contenedor azul ppal *//* antes 16px */
+        border-radius: 7.5px; /* antes 7px */ /* el mismo q el boton y los input */
+    }
+
+    .flex-datosusuario-interno { /* 50% del .flex-datosusuario *//* el q le sigue, contiene: .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid violet; */
+        width: fit-content;
+        height: fit-content;
+        /* max-width: 50%; */
+    }
+
+    .flex-imagenusuario { /* 50% del .flex-datosusuario */
+        /* border: 1px solid violet; */
+        width: 160px; /* antes 150px */
+        height: 160px; /* antes 150px */
+        min-width: 40%;
+        max-height: 100%;
+    }
+
+    .flex-nombreusuario, .flex-emailusuario { /* 50% del .flex-datosusuario-interno */
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+
+    .usuario-patitas {
+        font-size: 21px; /* antes 19.5px */
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+    }
+
+    .texto-usuario, .texto-email { /* dentro de .flex-nombreusuario y .flex-emailusuario, los textos chiquitos arriba del nombre y del email */
+        /* border: 1px solid brown; */
+        font-size: 13px; /* antes 12px */
+        font-weight: 300;
+        color: rgb(71, 71, 71);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 3px; /* antes 3px */
+        margin-top: 18px; /* antes 16px */
+    }
+
+    .nombre-usuario-logueado, .email-usuario-logueado { /* dentro de .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid rgb(232, 10, 195); */
+        font-size: 19.5px; /* antes 18px */
+        font-weight: 500;
+    }
+
+    .email-usuario-logueado {
+        font-weight: 400;
+    }
+
+    .div-imagenDePerfil { /* dentro de .flex-imagenusuario, ocupa su 100% */
+        /* border: 1px solid green; */
+        border-radius: 35px; /* antes 30px */
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .imagenDePerfil { /* dentro del div .div-imagenDePerfil, ocupa su 100% */
+        width: 100%;
+        border-radius: 35px; /* antes 30px */
+    }
+
+    .btnEditarDatos {
+        margin-top: 18px;  /* lo mismo q el padding del contenedor azul ppal */
+    }
+}
+
+
+@media (min-width: 769px){
+
+    main {
+        padding: 5% 0; /* antes 5% 7% */
+    }
+
+    .main-login {
+        padding: 5% 0 20%;  /* la separacion del main con el header y el footer */
+    }
+
+    .main-ya-podes-loguearte {
+        padding: 5% 0 70%;  /* la separacion del main con el header y el footer */
+    }
+
+    .contenedor, .contenedor-login, .contenedor-perfil, .contenedor-ya-podes-loguearte {  /* el contenedor entre el main y el centrado del formulario */
+        width: 70%;
+        padding: 20px 20px 20px 20px;
+    }
+
+    .contenedor-perfil {
+        width: auto;
+        max-width: 70%;
+    }
+
+    .contenedor-ya-podes-loguearte {
+        width: auto;
+        min-width: 60%;
+    }
+
+    .editar-titulo, .titulo-yapodesloguearte {   /* el titulo en la pagina de editar usuario y el del Ya podes loguearte cuando creas un usuario nuevo */
+        font-size: 24px; /* antes 23 */
+        font-weight: 500; /* antes 500 */
+    }
+
+    .titulo-yapodesloguearte {
+        margin-bottom: 20px;
+    }
+
+    .titulo, .titulo-nombre, .titulo-apellido, .titulo-email, .titulo-pass, .titulo-repass {  /* los p arriba de cada input */
+        font-size: 14.8px; /* antes 14.5 */
+        font-weight: 300; /* antes 300 */
+        margin-top: 23px; /* antes 22 */
+        margin-bottom: 4.3px; /* antes 4 */
+        margin-left: 11.8px; /* antes 11.5 */
+    }
+    
+    .titulo-error {  /* los p en rojo cuando da error un input */
+        font-size: 14.5px; /* antes 14.5 */
+        font-weight: 300; /* antes 300 */
+        margin-bottom: 8px; /* antes 8 */
+    }
+
+    #nombre, #apellido, #email, #password, #passwordrepeat, .input_imagen {
+        font-size: 14.8px; /* antes 14.5 */ /* este modifica el texto del Choose file y el texto q le sigue */
+        border-radius: 8px; /* antes 7.5 */
+        padding: 10px 14px; /* antes 10px 14px */
+        height: 50px; /* antes 48 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+        line-height: 30px;
+    }
+    
+    #nombre::placeholder, #apellido::placeholder, #email::placeholder, #password::placeholder, #passwordrepeat::placeholder {
+        font-size: 14.8px; /* antes 14.5 */ /* este modifica el texto del input */
+    }
+    
+    .flex-enlinea {  /* el section del checkbox y los terminos */
+        margin-top: 20px; /* antes 18 */
+    }
+
+    .recordar {  /* el texto "Recordarme" del checkbox en login y "Aceptar" solo sin terminos y condiciones del register */
+        margin-left: 2.5px; /* antes 2.5 */
+        font-size: 15px;  /* antes 14.5 */
+    }
+    
+    #terminos, #recordarme {  /* el checkbox */
+        scale: 90%;  /* antes 88 */
+    }
+
+    .leer-terminos {  /* el link de leer terminos y condiciones */
+        font-size: 15px;  /* antes 14.5 */
+        margin-top: 12px;  /* antes 12 */
+        font-weight: 500;  /* antes 500 */
+    }
+
+    .aclaracion-importante { /* la leyenda de aclaracion importante en el edit-user.ejs */
+        font-size: 18px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .aclaracion-importante-texto { /* la leyenda de aclaracion importante en el edit-user.ejs */
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .btnIniciarSesion, .btnIniciarSesion2, .btnCrearCuenta, .btnEditarDatos {
+        border-radius: 8px;   /* antes 7.5 */
+        padding: 10px 32px;    /* antes 10px 32px */
+        font-size: 18px;    /* antes 17 */
+        font-weight: 400;  /* antes 400 */
+        height: 50px;    /* antes 48 */
+        margin: 0px 0px 0px 0px;  /* antes 0 0 0 0 */
+        line-height: 30px;
+    }
+
+    /* ----- validaciones en el front ----- */
+    .errorNombre, .errorApellido, .errorEmail, .errorPasswordrepeat, .errorPassword, .errorTerminos {  /* los errores rojos al lado del simbolo de exclamation */
+        font-weight: 400;  /* antes 400 */
+        font-size: 14.5px;  /* antes 14 */
+    }
+    
+    .fa-circle-exclamation {
+        font-size: 14.5px;  /* antes 14 */
+        margin-left: 4.8px;  /* antes 4.5 */
+        margin-right: 3.8px;  /* antes 3.5 */
+    }
+    
+    .fa-circle-check {
+        font-size: 14.5px;  /* antes 14 */
+        margin-left: 4.8px;  /* antes 4.5 */
+        margin-right: 3.8px;  /* antes 3.5 */
+    }
+
+    /* -- en edit-user.ejs -- */ /* la imagen de usuario */
+    .div-img-externo {
+        width: 145px; /* antes 135px */
+        height: 145px; /* antes 135px */
+        padding: 12px;  /* antes 10px */
+        border-radius: 30px; /* antes 25px */
+    }
+
+    .div-img, .imagen-act {
+        border-radius: 20px;  /* antes 18px */
+    }
+
+    .campo-img2 {
+        margin-top: 30px;  /* antes 25px */
+        margin-left: 6px;  /* antes 5px */
+    }
+
+    /* --- Cosas exclusivas del pefil-user.ejs --- */
+    .flex-datosusuario { /* el ppal */
+        /* border: 1px solid blue; */
+        gap: 15px; /* antes 13px */
+        padding: 15px; /* antes 13px */
+        margin-top: 20px;  /* lo mismo q el padding del contenedor azul ppal *//* antes 18px */
+        border-radius: 8px; /* antes 7.5px */ /* el mismo q el boton y los input */
+    }
+
+    .flex-datosusuario-interno { /* 50% del .flex-datosusuario *//* el q le sigue, contiene: .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid violet; */
+        width: fit-content;
+        height: fit-content;
+        /* max-width: 50%; */
+    }
+
+    .flex-imagenusuario { /* 50% del .flex-datosusuario */
+        /* border: 1px solid violet; */
+        width: 170px; /* antes 160px */
+        height: 170px; /* antes 160px */
+        min-width: 40%;
+        max-height: 100%;
+    }
+
+    .flex-nombreusuario, .flex-emailusuario { /* 50% del .flex-datosusuario-interno */
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+
+    .usuario-patitas {
+        font-size: 22.5px; /* antes 21px */
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+    }
+
+    .texto-usuario, .texto-email { /* dentro de .flex-nombreusuario y .flex-emailusuario, los textos chiquitos arriba del nombre y del email */
+        /* border: 1px solid brown; */
+        font-size: 14px; /* antes 13px */
+        font-weight: 300;
+        color: rgb(71, 71, 71);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 3.3px; /* antes 3px */
+        margin-top: 19px; /* antes 18px */
+    }
+
+    .nombre-usuario-logueado, .email-usuario-logueado { /* dentro de .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid rgb(232, 10, 195); */
+        font-size: 21px; /* antes 19.5px */
+        font-weight: 500;
+    }
+
+    .email-usuario-logueado {
+        font-weight: 400;
+    }
+
+    .div-imagenDePerfil { /* dentro de .flex-imagenusuario, ocupa su 100% */
+        /* border: 1px solid green; */
+        border-radius: 40px; /* antes 35px */
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .imagenDePerfil { /* dentro del div .div-imagenDePerfil, ocupa su 100% */
+        width: 100%;
+        border-radius: 40px; /* antes 35px */
+    }
+
+    .btnEditarDatos {
+        margin-top: 20px;  /* lo mismo q el padding del contenedor azul ppal */
+    }
+
+    
+}
+
+@media (min-width: 820px){   /* ipad air */
+
+    main {
+        padding: 5% 0; /* antes 5% 7% */
+    }
+
+    .main-login {
+        padding: 5% 0 30%;  /* la separacion del main con el header y el footer */
+    }
+
+    .main-perfil {
+        padding: 5% 0 50%;
+    }
+
+    .main-ya-podes-loguearte {
+        padding: 5% 0 76%;  /* la separacion del main con el header y el footer */
+    }
+}
+
+@media (min-width: 1024px){
+
+    main {
+        padding: 30px 0; /* antes 6% 8% */
+    }
+
+    .main-login {
+        padding: 40px 0 94px; /* antes 6% 8% */
+    }
+
+    .main-perfil {
+        padding: 40px 0 260px;
+    }
+
+    .main-ya-podes-loguearte {
+        padding: 40px 0 490px;  /* la separacion del main con el header y el footer */
+    }
+
+    .tamano-imagen {
+        display: block;
+    }
+
+    .logo {
+        display: block;
+        height: 40px;
+        width: auto;
+    }
+
+    .contenedor, .contenedor-login {  /* el contenedor entre el main y el centrado del formulario */
+        max-width: 650px;
+        width: 70%;
+        padding: 18px 20px 20px 20px;
+    }
+
+    .contenedor-perfil {
+        width: auto;
+        max-width: 70%;
+        padding: 18px 20px 20px 20px;
+    }
+
+    .contenedor-ya-podes-loguearte {
+        width: auto;
+        min-width: 40%;
+        padding: 20px;
+    }
+
+    .flex-enlinea-titulo {
+        gap: 10px;
+        justify-content: end;
+    }
+
+    .btnCrearCuenta {
+        border: 2px solid #1e697b;
+    }
+
+
+    /* --- Cosas exclusivas del pefil-user.ejs --- */
+    .flex-datosusuario { /* el ppal */
+        /* border: 1px solid blue; */
+        gap: 15px; /* antes 13px */
+        padding: 15px; /* antes 13px */
+        margin-top: 20px;  /* lo mismo q el padding del contenedor azul ppal *//* antes 18px */
+        border-radius: 8px; /* antes 7.5px */ /* el mismo q el boton y los input */
+    }
+
+    .flex-datosusuario-interno { /* 50% del .flex-datosusuario *//* el q le sigue, contiene: .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid violet; */
+        width: fit-content;
+        height: fit-content;
+        /* max-width: 50%; */
+    }
+
+    .flex-imagenusuario { /* 50% del .flex-datosusuario */
+        /* border: 1px solid violet; */
+        width: 170px; /* antes 160px */
+        height: 170px; /* antes 160px */
+        min-width: 40%;
+        max-height: 100%;
+    }
+
+    .flex-nombreusuario, .flex-emailusuario { /* 50% del .flex-datosusuario-interno */
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+
+    .usuario-patitas {
+        font-size: 22.5px; /* antes 21px */
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+    }
+
+    .texto-usuario, .texto-email { /* dentro de .flex-nombreusuario y .flex-emailusuario, los textos chiquitos arriba del nombre y del email */
+        /* border: 1px solid brown; */
+        font-size: 14px; /* antes 13px */
+        font-weight: 300;
+        color: rgb(71, 71, 71);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 3.3px; /* antes 3px */
+        margin-top: 19px; /* antes 18px */
+    }
+
+    .nombre-usuario-logueado, .email-usuario-logueado { /* dentro de .flex-nombreusuario y .flex-emailusuario */
+        /* border: 1px solid rgb(232, 10, 195); */
+        font-size: 21px; /* antes 19.5px */
+        font-weight: 500;
+    }
+
+    .email-usuario-logueado {
+        font-weight: 400;
+    }
+
+    .div-imagenDePerfil { /* dentro de .flex-imagenusuario, ocupa su 100% */
+        /* border: 1px solid green; */
+        border-radius: 40px; /* antes 35px */
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .imagenDePerfil { /* dentro del div .div-imagenDePerfil, ocupa su 100% */
+        width: 100%;
+        border-radius: 40px; /* antes 35px */
+    }
+
+    .btnEditarDatos {
+        margin-top: 20px;  /* lo mismo q el padding del contenedor azul ppal */
+    }
+}
+
+@media (min-width: 1200px){
+
+    .contenedor, .contenedor-login {  /* el contenedor entre el main y el centrado del formulario */
+        max-width: 650px;
+        width: 70%;
+    }
+
+    .contenedor-ya-podes-loguearte {
+        width: auto;
+        min-width: 30%;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1440px){
+
+    .contenedor, .contenedor-login {  /* el contenedor entre el main y el centrado del formulario */
+        max-width: 650px;
+        width: 60%;
+    }
+
+    .contenedor-ya-podes-loguearte {
+        width: auto;
+        min-width: 25%;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1600px){
+
+    .contenedor, .contenedor-login {  /* el contenedor entre el main y el centrado del formulario */
+        max-width: 650px;
+        width: 50%;
+    }
+
+    .contenedor-ya-podes-loguearte {
+        width: auto;
+        min-width: 22%;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 2000px){
+
+    .main-login {
+        padding: 40px 0 90px; /* antes 6% 8% */
+    }
+
+    .main-perfil {
+        padding: 40px 0 250px;
+    }
+
+    .main-ya-podes-loguearte {
+        padding: 40px 0 490px;  /* la separacion del main con el header y el footer */
+    }
+
+    .contenedor, .contenedor-login {  /* el contenedor entre el main y el centrado del formulario */
+        max-width: 650px;
+        width: 70%;
+    }
+
+    .contenedor-ya-podes-loguearte {
+        width: auto;
+        min-width: 20%;
+        padding: 20px;
+    }
+}
+

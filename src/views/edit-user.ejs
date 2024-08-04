@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head.ejs", {cssSheet: "edit-user", title: "Edición de usuario"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
+
+<body>
+
+    <%- include("./partials/header.ejs") %>
+    <%- include("./partials/header2.ejs") %>
+
+    <main>
+        
+        <article class="contenedor">
+            
+            <form class="formulario"  id="formulario" action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="centrado">
+
+                    <article class="flex-enlinea-titulo">
+                        <img src="/img/header/logoV.png" alt="Logo" class="logo">
+                        <h2 class="editar-titulo">Editá tus datos</h2>
+                    </article>
+                    
+                    <!--Input Nombre-->
+                    <p class="<%= (locals.errors && locals.errors.nombre) ? 'titulo-error' : 'titulo-nombre' %>">Nombre<span id="span1"><i class="fa-solid fa-circle-check"></i></span><span id="span12"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorNombre"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.nombre) ? 'input_error' : '' %>" type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" value="<%= userToEdit.nombre %>%>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="" style="margin-top: 10px;" id=""><small class="errorNombre" style="color: red; font-size: 16px;"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.nombre) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.nombre.msg %></label>
+                    <% } %>
+
+                    <!--Input Apellido-->
+                    <p class="<%= (locals.errors && locals.errors.apellido) ? 'titulo-error' : 'titulo-apellido' %>">Apellido<span id="span2"><i class="fa-solid fa-circle-check"></i></span><span id="span22"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorApellido"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.apellido) ? 'input_error' : '' %>"type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" value="<%= userToEdit.apellido %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="" style="margin-top: 10px;" id=""><small class="errorApellido" style="color: red; font-size: 16px;"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.apellido) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.apellido.msg %></label>
+                    <% } %>
+                    
+                    <div class="flex-campo-img">
+                        <!--Imagen actual-->
+                        <div class="campo-img1">
+                            <p class="titulo" for="">Foto actual</p>
+                            <div class="div-img-externo">
+                                <div class="div-img">
+                                    <img src="/img/usersImage/<%= userToEdit.imagen %>" class="imagen-act">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="campo-img2">
+                            <!--Input cambiar imagen-->
+                            <p class="titulo" for="">Cambiar foto</p>
+                            <input type="file" name="imagen_user" class="input_imagen">
+                        </div>
+                    </div>
+                    
+                    <!--Input email-->
+                    <p class="<%= (locals.errors && locals.errors.email) ? 'titulo-error' : 'titulo-email' %>">Email<span id="span3"><i class="fa-solid fa-circle-check"></i></span><span id="span32"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorEmail"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.email) ? 'input_error' : '' %>" type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1" value="<%= userToEdit.email %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="" style="margin-top: 10px;" id=""><small class="errorEmail" style="color: red; font-size: 16px;"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.email) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.email.msg %></label>
+                    <% } %>
+
+                    <!--Input contraseña-->
+                    <p class="<%= (locals.errors && locals.errors.password) ? 'titulo-error' : 'titulo-pass' %>">Contraseña<span id="span4"><i class="fa-solid fa-circle-check"></i></span><span id="span42"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorPassword"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.password) ? 'input_error' : '' %>" type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1" value="<%= userToEdit.password %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="" style="margin-top: 10px;" id=""><small class="errorPassword" style="color: red; font-size: 16px;"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.email) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.password.msg %></label>
+                    <% } %>
+
+                    <!--Input reingreso de contraseña -->
+                    <p class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'titulo-error' : 'titulo-repass' %>">Reingresar contraseña<span id="span5"><i class="fa-solid fa-circle-check"></i></span><span id="span52"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorPasswordrepeat"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'input_error' : '' %>" type="password" name="passwordrepeat" id="passwordrepeat" placeholder="Reingresa la contraseña" class="input1" value="<%= userToEdit.passwordrepeat %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="" style="margin-top: 10px;" id=""><small class="errorPasswordrepeat" style="color: red; font-size: 16px;"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.passwordrepeat) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.passwordrepeat.msg %></label>
+                    <% } %>
+
+                    <p class="aclaracion-importante">Aclaración importante: </p>
+                    <p class="aclaracion-importante-texto">para que los cambios surjan efecto, debes volver a loguearte.</p>
+
+                    <button id="btnSubmit" class="btnIniciarSesion" type="submit">Guardar cambios</button>
+                    
+                </div>
+            </form>
+        </article>
+
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+
+    <script src="/js/validacionEdit.js"></script>
+    
+</body>
+</html>

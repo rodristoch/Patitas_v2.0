@@ -1,0 +1,321 @@
+<header class="top">
+    <div class="flex-top">
+        <div class="izquierda">
+            <div class="div-logo-desktop">
+                <a href="/">
+                    <!-- el logo en desktop -->
+                    <img src="/img/header/LogoHeadBF2.png" alt="logo-desktop">
+                    <!-- <img src="/img/header/logoBlancoPerrito.png" alt="logo-desktop-perrito">
+                    <img src="/img/header/patitas texto logo3.png" alt="logo-desktop-texto"> -->
+                </a>
+            </div>
+
+            <div class="div-logo-mobile">
+                <a href="/">
+                    <!-- el logo en mobile y tablet -->
+                    <img src="/img/header/logoB.png" alt="logoB" class="logo-mobile"> 
+                </a>
+            </div>
+               
+           <!-- barra busqueda -->
+           <div class="div-barra-busqueda">
+                <form action="/productos/buscar" method="POST" class="form-barra">
+                    <input type="search" name="producto" placeholder="Buscar producto" class="input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </form>
+           </div>
+        </div>
+        
+        <div class="derecha">
+
+            <% if (userALoguearse && userALoguearse.permiso_id == 1) { %>
+                <!-- listado de usuarios -->
+                <div class="mi-cuenta">
+                    <a href="/users/usuariosListado">
+                        <i class="fa-solid fa-users"></i>
+                        <p>Usuarios</p>
+                    </a>
+                </div>
+            <% } %>
+
+            <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
+                <!-- crear producto -->
+                <div class="crear-producto">
+                    <a href="/productos/alta">
+                        <i class="fa-solid fa-plus" style="color: #ffe7a3;"></i>
+                        <p style="color: #ffe7a3;">Crear Producto</p>
+                    </a>
+                </div>
+            <% } %>
+
+            <!-- mis compras DESKTOP -->
+            <div class="mis-compras">
+                <% if(userALoguearse){ %>
+                    <a href="/users/perfil/<%= userALoguearse.id %>">
+                        <i class="fa-solid fa-lock"></i>
+                        <p>Mis compras</p>
+                    </a>
+                <% } else { %>
+                    <a href="/users/login">
+                        <i class="fa-solid fa-lock"></i>
+                        <p>Mis compras</p>
+                    </a>
+                <% } %>
+            </div>
+
+            <!-- mi cuenta DESKTOP -->
+            <div class="mi-cuenta">
+                <% if(userALoguearse){ %> <!-- si hay usuario, te muestra el nombre y hay un div desplegable para editar usuario al apretarlo -->
+                    <div class="dropdown1">
+                        <a href="/users/perfil/<%= userALoguearse.id %>">
+                            <i class="fa-solid fa-circle-user" style="color: #FECF53;"></i>
+                            <p class="nombre-usuario"><%= userALoguearse.nombre %></p>
+                        </a>
+                        
+                        <div class="dropdown-content1">
+                            <a href="/users/perfil/<%= userALoguearse.id %>" style="text-align: left;">Mi perfil</a>
+                            <a href="/users/edit/<%= userALoguearse.id %>" style="text-align: left;">Editá tus datos</a>
+                            <a href="/users/logout" style="text-align: left;">Cerrar sesión</a>
+                        </div>
+                    </div>
+                <% } else { %> <!-- si no hay usuario, te lleva al login -->
+                    <div>
+                        <a href="/users/login">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <p>Mi cuenta</p>
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+
+            <!-- carrito DESKTOP -->
+            <div class="mi-cuenta">
+                <a href="/users/carrito2">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>Carrito</p>
+                    <% if(userALoguearse){ %>
+                        <div class="numerito-carrito">0</div>
+                    <% } %>
+                </a>
+            </div>
+
+            <!-- carrito MOBILE -->
+            <div class="div-logo-carrito">
+                <a href="/users/carrito2">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <%  if(userALoguearse){  %>
+                        <div class="numerito-carrito-mobile">0</div>
+                    <%  }  %>
+                </a>
+            </div>
+
+            <!-- mi cuenta MOBILE CON FUNC -->
+            <div class="div-menu-top">
+                <i class="fa-solid fa-bars fa-2xl" style="color: white;" id="menuH"></i> <!-- menu hamburguesa -->
+                <% if(userALoguearse){ %>
+                    
+                <!-- <i class="fa-regular fa-xmark" style="color: white;"></i> --> <!-- cruz -->
+                    <div class="contendor_ppal-azul">
+                        <div class="contendor_interior-rojo">
+                            <div class="contendor_opcion-verde-user">
+                                
+                                <a href="/users/perfil/<%= userALoguearse.id %>" class="a-panel-user">
+
+                                    <div class="div-interno-datos-user"> <!-- el blue, tiene flex -->
+
+                                        <!-- <i class="fa-solid fa-circle-user" id="fa-circle-user"></i> -->
+                                        <div class="div-imagen-user">
+                                            <img src="<%= `http://localhost:3300/img/usersImage/${userALoguearse.imagen}` %>" alt="" class="imagen-user">
+                                        </div>
+                                    
+                                        <div class="div-nombre-user-y-mi-perfil">
+                                            <p class="texto-opcion-user-nombre"><%= userALoguearse.nombre %></p>
+                                            
+                                            <div class="div-flex-violeta-miperfil"><!-- tiene flex -->
+
+                                                <p class="texto-opcion-user"><i class="fa-solid fa-circle"></i> Activo</p>
+                                                <!-- <div class="div-chevron-right">
+                                                    <i class="fa-solid fa-chevron-right"></i>
+                                                </div> -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div class="div-del-logout">
+                                    <a class="adellogout" href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contendor_ppal-azulabajo-logueado">
+                        <div class="contendor_interior-rojo">
+                            <!-- <hr> -->
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-house"></i></p><p class="texto-opcion"><a href="/">Home</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-bag-shopping"></i></p><p class="texto-opcion"><a href="#">Mis compras</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-star"></i></p><p class="texto-opcion"><a href="#">Favoritos</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta">
+                                    <p class="div-icon"><i class="fa-regular fa-circle-dollar"></i></p><p class="texto-opcion"><a href="/productos/promociones">Promociones</a></p>
+                                </div>
+                            </div>
+                            <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
+                                <div class="contendor_opcion-verde-crear" style="background: linear-gradient(90deg, #287d93 0%, #24768b 35%, #18515F 100%);">
+                                    <div class="div-flex-violeta">
+                                        <p class="div-icon"><i class="fa-solid fa-plus" style="color: #ffe7a3; font-weight: 500;"></i></p><p class="texto-opcion"><a href="/productos/alta">Crear producto</a></p>
+                                    </div>
+                                </div>
+                            <% } %>
+                            <div class="contendor_opcion-verde-titulo">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="texto-opcion-titulo">Productos</p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-dog"></i></p><p class="texto-opcion"><a href="/productos/perro">Perro</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-cat"></i></p><p class="texto-opcion"><a href="/productos/gato">Gato</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contendor_opcion-verde-titulo">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="texto-opcion-titulo">Categorías</p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-shirt"></i></p><p class="texto-opcion"><a href="/productos/accesorios">Accesorios</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-meat"></i></p><p class="texto-opcion"><a href="/productos/comida">Comida</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-shower"></i></p><p class="texto-opcion"><a href="/productos/higiene">Higiene</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-light fa-tennis-ball"></i></p><p class="texto-opcion"><a href="/productos/juguetes">Juguetes</a></p>
+                                </div>
+                            </div>
+                            <hr>  
+                        </div>
+                    </div> 
+                
+
+                <% } else { %> <!-- si no hay usuario, te lleva al login -->
+                    <div class="contendor_ppal-azul">
+                        <div class="contendor_interior-rojo">
+                            <div class="contendor_opcion-verde-user">
+
+                                <a href="/users/login" class="a-panel-user">
+                                    <div class="div-interno-datos-user"> <!-- el blue, tiene flex -->
+                                        <p class="div-icon-micuenta"><i class="fa-solid fa-circle-user"></i></p>
+                                        <p class="texto-opcion-micuenta">Mi cuenta</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contendor_ppal-azulabajo">
+                        <div class="contendor_interior-rojo">
+                            <!-- <hr> -->
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-house"></i></p><p class="texto-opcion"><a href="/">Home</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-bag-shopping"></i></p><p class="texto-opcion"><a href="#">Mis compras</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-star"></i></p><p class="texto-opcion"><a href="#">Favoritos</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta">
+                                    <p class="div-icon"><i class="fa-regular fa-circle-dollar"></i></p><p class="texto-opcion"><a href="/productos/promociones">Promociones</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde-titulo">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="texto-opcion-titulo">Productos</p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-dog"></i></p><p class="texto-opcion"><a href="/productos/perro">Perro</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-cat"></i></p><p class="texto-opcion"><a href="/productos/gato">Gato</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contendor_opcion-verde-titulo">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="texto-opcion-titulo">Categorías</p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-shirt"></i></p><p class="texto-opcion"><a href="/productos/accesorios">Accesorios</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-meat"></i></p><p class="texto-opcion"><a href="/productos/comida">Comida</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-shower"></i></p><p class="texto-opcion"><a href="/productos/higiene">Higiene</a></p>
+                                </div>
+                            </div>
+                            <div class="contendor_opcion-verde">
+                                <div class="div-flex-violeta"><!-- tiene flex -->
+                                    <p class="div-icon"><i class="fa-regular fa-light fa-tennis-ball"></i></p><p class="texto-opcion"><a href="/productos/juguetes">Juguetes</a></p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                <% } %> 
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/carrito.js"></script>
+    <script src="/js/panel.js"></script>
+    <!-- <script src="/js/panel2.js"></script> -->
+    
+    
+</header>

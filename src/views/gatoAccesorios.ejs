@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include("./partials/head.ejs", {cssSheet: "categoria", title: "Accesorios Gato"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
+
+<body>
+
+    <%- include("./partials/header.ejs") %>
+    <%- include("./partials/header2.ejs") %>
+    
+    <main>
+
+        <!-------- MOBILE --------->
+        <article class="cantidad-producto">
+            <section class="flex-enlinea-mobile">
+                <p id="cantidad-prod-mobile" class="prod-encontr" style="margin-left: 0;"><%= accesoriosGato.length %> resultados</p>
+                
+                <div class="div-filtros">
+                    <p class="btn-icon">Filtrar por<i class="fa-solid fa-chevron-down"></i></p>
+                    <div class="contendor_opciones">
+                        <p class="opcion-filtro-titulo">Ordenar por</p>
+                        <p class="opcion-filtro">Relevancia</p>
+                        <p class="opcion-filtro">Menor Precio</p>
+                        <p class="opcion-filtro">Mayor Precio</p>
+                        
+                        <p class="opcion-filtro-titulo">Precio</p>
+                        <p class="opcion-filtro">0 a $10</p>
+                        <p class="opcion-filtro">$11 a $20</p>
+                        <p class="opcion-filtro">$21 a $30</p>
+                        <p class="opcion-filtro">Más de $30</p>
+
+                        <p class="opcion-filtro-titulo">Descuentos</p>
+                        <p class="opcion-filtro">Con 20% OFF</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-------- DESKTOP -------->
+        <article class="cantidad-producto-desktop-arriba">
+            <section class="flex-enlinea-desktop">
+                <div class="div-filtros-desktop">
+                    <p class="btn-icon-desktop" style="cursor: default;">Búsquedas relacionadas: <a class="rutas-filtros" href="/productos/gato/comida">Comida gato</a> - <a class="rutas-filtros" href="/productos/gato/higiene">Higiene gato</a> - <a class="rutas-filtros" href="/productos/gato/juguetes">Juguetes gato</a> - <a class="rutas-filtros" href="/productos/gato/promociones">Promociones gato</a> - <a class="rutas-filtros" href="/productos/juguetes">Juguetes</a> - <a class="rutas-filtros" href="/productos/comida">Comida</a></p>
+                </div>
+            </section>
+        </article>
+
+        <article class="cantidad-producto-desktop">
+            <section class="flex-enlinea-desktop">
+                <div class="div-filtros-desktop">
+                    <p style="color: rgb(142, 142, 142); font-weight: 400;" class="btn-icon-desktop"><a style="margin-left: 0;" class="rutas-filtros2" href="/">Volver a home </a> |  <span class="spanVerTambien">Ver también:</span><a class="rutas-filtros3" href="/productos/perro/accesorios">Accesorios perro</a></p>
+                </div>
+                <!-- <div class="div-filtros-desktop">
+                    <a class="rutas-filtros" href="/">Volver a home </a> | <p class="btn-icon-desktop">Ver también:</p><a class="rutas-filtros" href="/productos/perro">Productos perro</a>
+                </div> -->
+                <div class="div-filtros-desktop">
+                    <p class="btn-icon-desktop" id="ezeq">Ordenar por<span class="filtro-elegido" id="juan">Relevancia</span><i class="fa-solid fa-chevron-down" id="flechita-abajo"></i><!-- <i class="fa-solid fa-minus" id="flechita-recta"></i> --></p>
+                    <div class="contendor_opciones-Desktop" id="pepe">
+                        <p class="opcion-filtro" id="rele">Relevancia</p>
+                        <p class="opcion-filtro" id="rodri">Menor Precio</p>
+                        <p class="opcion-filtro" id="pedri">Mayor Precio</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!--  Filtros Desktop + productos -->
+        <section class="contenedor_menu_productos_desktop"> <!-- contiene los filtros DESKTOP y los productos -->
+            <!------- Filtros DESKTOP -------->
+            <div class="contenedor-filtros-desktop"> <!-- -------- Menus de filtros DESKTOP ------- --> 
+                <article class="contenedor_menu_desktop">
+                    <div class="contenedor_filtros">
+
+                        <h2 id="h2tituloGato" class="h2-titulo-desktop">Accesorios Gato</h2>
+                        <p id="cantidad-prod" class="prod-encontr-desktop"><%= accesoriosGato.length %> resultados</p>
+
+                        <section class="lista_filtros_desktop">
+                            <h4>Precio</h4>
+                            <div class="flex_enlinea_menu">
+                                <p class="flex_enlinea_menu-p">0 a $10</p><p class="cantidad-productos">(<%= de0a10.length %>)</p><input type="checkbox" class="checkboxFiltroDesktop" id="pato">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p class="flex_enlinea_menu-p">$11 a $20</p><p class="cantidad-productos">(<%= de10a20.length %>)</p><input type="checkbox" class="checkboxFiltroDesktop" id="mono">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p class="flex_enlinea_menu-p">$21 a $30</p><p class="cantidad-productos">(<%= de20a30.length %>)</p><input type="checkbox" class="checkboxFiltroDesktop" id="perro">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p class="flex_enlinea_menu-p" style="margin-bottom: 0;">Más de $30</p><p class="cantidad-productos" style="margin-bottom: 0;">(<%= de30aX.length %>)</p><input type="checkbox" class="checkboxFiltroDesktop" id="gato" style="margin-bottom: 0;">
+                            </div>
+                        </section>
+
+                        <section class="lista_filtros_desktop">
+                            <h4>Descuentos</h4>
+                            <div class="flex_enlinea_menu">
+                                <p class="flex_enlinea_menu-p" style="margin-bottom: 0;"><a href="#">Con 20% OFF</a></p><p class="cantidad-productos" style="margin-bottom: 0;">(<%= accesorios20OffGato.length %>)</p><input type="checkbox" class="checkboxFiltroDesktop" id="off" style="margin-bottom: 0;">
+                            </div>
+                        </section>
+                    </div>
+                </article>
+            </div>
+            
+            <!---- Contenedor de productos ---->
+            <div class="lista_desktop">
+                <div class="div-lista-desktop">
+
+                    <h2 class="h2-titulo">Accesorios Gato</h2>  <!-- el titulo q se ve en MOBILE -->
+
+                    <div class="lista_flexbox_desktop">
+                        <% for(let producto of accesoriosGato) { %>
+                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                            <% } else { %> <!-- si no tienen descuentos los productos -->
+                                <article class="articulo-productos"> <!-- las cards con borde normal -->
+                            <% } %>
+                                <!-- para saber el contenido de la etiqueta -->
+                                <div class="div-etiqueta">
+                                    <% if(producto.categorias[0].id == 1) { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } else if(producto.categorias[0].id == 2) { %>
+                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } else if(producto.categorias[0].id == 3) { %>
+                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } else if(producto.categorias[0].id == 4) { %>
+                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } %>
+                                </div>
+                                <!-- hasta acá etiqueta -->
+                                <div class="contenedor_imagen">
+                                    <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </a>
+                                </div>
+                                <div class="div-card">
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_descripcion_arriba">
+                                            <P class="descripcion"><%= producto.descripcion %></P>
+                                        </div>
+                                    <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                <p class="descuento">20% OFF</p>
+                                            </div>
+                                            <div class="div-dos">
+                                                <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <% if(userALoguearse){ %>
+                                                    <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                <% } else { %>
+                                                    <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    <% } else { %> <!-- si no tienen descuentos los productos -->
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= producto.precio %></p>
+                                                <p class="descuento" style="color: white;">20% OFF</p>
+                                            </div>
+                                            <div class="div-dos">
+                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <% if(userALoguearse){ %>
+                                                    <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                <% } else { %>
+                                                    <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </article>     
+                        <% } %>
+                        <!-- boton de mostrar mas dentro del div visible -->
+                        <!-- <div class="div-btnver" style="width: 100%; margin: 0; text-align: center;">
+                            <button class="btnver" id="btnver"><i class="fa-solid fa-grip-vertical"></i> Mostrar mas</button>
+                        </div> -->
+                    </div>
+
+                    <!----------------------------- divs para filtros del boton Ordenar por ----------------------------->
+
+                    <div class="lista_flexbox_desktop---menorPrecio">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% for(let producto of accesoriosGatoMenorPrecio) { %>
+                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                            <% } else { %> <!-- si no tienen descuentos los productos -->
+                                <article class="articulo-productos"> <!-- las cards con borde normal -->
+                            <% } %>
+                                <!-- para saber el contenido de la etiqueta -->
+                                <div class="div-etiqueta">
+                                    <% if(producto.categorias[0].id == 1) { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } else if(producto.categorias[0].id == 2) { %>
+                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } else if(producto.categorias[0].id == 3) { %>
+                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } else if(producto.categorias[0].id == 4) { %>
+                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } %>
+                                </div>
+                                <!-- hasta acá etiqueta -->
+                                <div class="contenedor_imagen">
+                                    <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
+                                    <% if(producto.categorias && producto.categorias[0]) { %> 
+                                        <% if(producto.categorias[0].categoria == "comida") { %> 
+                                            <a href="/productos/gato/comida/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                            <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                            <a href="/productos/gato/higiene/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                            <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                        <% } %>
+                                    <% } %>
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                </div>
+                                <div class="div-card">
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                    <div class="texto_descripcion_arriba">
+                                        <P class="descripcion"><%= producto.descripcion %></P>
+                                    </div>
+                                    <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                <p class="descuento">20% OFF</p>
+                                            </div>
+                                            <div class="div-dos">
+                                                <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <% if(userALoguearse){ %>
+                                                    <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                <% } else { %>
+                                                    <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    <% } else { %> <!-- si no tienen descuentos los productos -->
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= producto.precio %></p>
+                                                <p class="descuento" style="color: white;">20% OFF</p>
+                                            </div>
+                                            <div class="div-dos">
+                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <% if(userALoguearse){ %>
+                                                    <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                <% } else { %>
+                                                    <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </article>
+                        <% } %>
+                    </div>
+
+                    <div class="lista_flexbox_desktop---mayorPrecio">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% for(let producto of accesoriosGatoMayorPrecio) { %>
+                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                            <% } else { %> <!-- si no tienen descuentos los productos -->
+                                <article class="articulo-productos"> <!-- las cards con borde normal -->
+                            <% } %>
+                                <!-- para saber el contenido de la etiqueta -->
+                                <div class="div-etiqueta">
+                                    <% if(producto.categorias[0].id == 1) { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } else if(producto.categorias[0].id == 2) { %>
+                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } else if(producto.categorias[0].id == 3) { %>
+                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } else if(producto.categorias[0].id == 4) { %>
+                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                    <% } %>
+                                </div>
+                                <!-- hasta acá etiqueta -->
+                                <div class="contenedor_imagen">
+                                    <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
+                                    <% if(producto.categorias && producto.categorias[0]) { %> 
+                                        <% if(producto.categorias[0].categoria == "comida") { %> 
+                                            <a href="/productos/gato/comida/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                            <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                            <a href="/productos/gato/higiene/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                            <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                        <% } %>
+                                    <% } %>
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                </div>
+                                <div class="div-card">
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                    <div class="texto_descripcion_arriba">
+                                        <P class="descripcion"><%= producto.descripcion %></P>
+                                    </div>
+                                    <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                <p class="descuento">20% OFF</p>
+                                            </div>
+                                            <div class="div-dos">
+                                                <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <% if(userALoguearse){ %>
+                                                    <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                <% } else { %>
+                                                    <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    <% } else { %> <!-- si no tienen descuentos los productos -->
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= producto.precio %></p>
+                                                <p class="descuento" style="color: white;">20% OFF</p>
+                                            </div>
+                                            <div class="div-dos">
+                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <% if(userALoguearse){ %>
+                                                    <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                <% } else { %>
+                                                    <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </article>
+                        <% } %>
+                    </div>
+
+                    <!----------------------------- divs para filtros de precios ----------------------------->
+
+                    <div class="lista_flexbox_desktop---de0a10">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% if(de0a10.length > 0) { %>
+                            <% for(let producto of de0a10) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                    <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                                <% } else { %> <!-- si no tienen descuentos los productos -->
+                                    <article class="articulo-productos"> <!-- las cards con borde normal -->
+                                <% } %>
+                                    <!-- para saber el contenido de la etiqueta -->
+                                    <div class="div-etiqueta">
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>
+                                    </div>
+                                    <!-- hasta acá etiqueta -->                                 
+                                    <div class="contenedor_imagen">
+                                        <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    </div>
+                                    <div class="div-card">
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_descripcion_arriba">
+                                            <P class="descripcion"><%= producto.descripcion %></P>
+                                        </div>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                    <p class="descuento">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } else { %> <!-- si no tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                    <p class="descuento" style="color: white;">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } else { %>
+                            <h3 class="h3-sinResultados">No se encontraron resultados</h3>
+                        <% } %>
+                    </div>
+
+                    <div class="lista_flexbox_desktop---de10a20">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% if(de10a20.length > 0) { %>
+                            <% for(let producto of de10a20) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                    <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                                <% } else { %> <!-- si no tienen descuentos los productos -->
+                                    <article class="articulo-productos"> <!-- las cards con borde normal -->
+                                <% } %>
+                                    <!-- para saber el contenido de la etiqueta -->
+                                    <div class="div-etiqueta">
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>
+                                    </div>
+                                    <!-- hasta acá etiqueta -->                                 
+                                    <div class="contenedor_imagen">
+                                        <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    </div>
+                                    <div class="div-card">
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_descripcion_arriba">
+                                            <P class="descripcion"><%= producto.descripcion %></P>
+                                        </div>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                    <p class="descuento">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } else { %> <!-- si no tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                    <p class="descuento" style="color: white;">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } else { %>
+                            <h3 class="h3-sinResultados">No se encontraron resultados</h3>
+                        <% } %>
+                    </div>
+
+                    <div class="lista_flexbox_desktop---de20a30">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% if(de20a30.length > 0) { %>
+                            <% for(let producto of de20a30) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                    <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                                <% } else { %> <!-- si no tienen descuentos los productos -->
+                                    <article class="articulo-productos"> <!-- las cards con borde normal -->
+                                <% } %>
+                                    <!-- para saber el contenido de la etiqueta -->
+                                    <div class="div-etiqueta">
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>
+                                    </div>
+                                    <!-- hasta acá etiqueta -->                                 
+                                    <div class="contenedor_imagen">
+                                        <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    </div>
+                                    <div class="div-card">
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_descripcion_arriba">
+                                            <P class="descripcion"><%= producto.descripcion %></P>
+                                        </div>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                    <p class="descuento">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } else { %> <!-- si no tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                    <p class="descuento" style="color: white;">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } else { %>
+                            <h3 class="h3-sinResultados">No se encontraron resultados</h3>
+                        <% } %>
+                    </div>
+
+                    <div class="lista_flexbox_desktop---de30aX">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% if(de30aX.length > 0) { %>
+                            <% for(let producto of de30aX) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                    <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                                <% } else { %> <!-- si no tienen descuentos los productos -->
+                                    <article class="articulo-productos"> <!-- las cards con borde normal -->
+                                <% } %>
+                                    <!-- para saber el contenido de la etiqueta -->
+                                    <div class="div-etiqueta">
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>
+                                    </div>
+                                    <!-- hasta acá etiqueta -->                                 
+                                    <div class="contenedor_imagen">
+                                        <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    </div>
+                                    <div class="div-card">
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_descripcion_arriba">
+                                            <P class="descripcion"><%= producto.descripcion %></P>
+                                        </div>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                    <p class="descuento">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } else { %> <!-- si no tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                    <p class="descuento" style="color: white;">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } else { %>
+                            <h3 class="h3-sinResultados">No se encontraron resultados</h3>
+                        <% } %>
+                    </div>
+
+                    <!----------------------------- divs para filtros de productos con OFF ----------------------------->
+
+                    <div class="lista_flexbox_desktop---off">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% if(accesorios20OffGato.length > 0) { %>
+                            <% for(let producto of accesorios20OffGato) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                    <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                                <% } else { %> <!-- si no tienen descuentos los productos -->
+                                    <article class="articulo-productos"> <!-- las cards con borde normal -->
+                                <% } %>
+                                    <!-- para saber el contenido de la etiqueta -->
+                                    <div class="div-etiqueta">
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>
+                                    </div>
+                                    <!-- hasta acá etiqueta -->
+                                    <div class="contenedor_imagen">
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    </div>
+                                    <div class="div-card">
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_descripcion_arriba">
+                                            <P class="descripcion"><%= producto.descripcion %></P>
+                                        </div>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                    <p class="descuento">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } else { %> <!-- si no tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                    <p class="descuento" style="color: white;">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } else { %>
+                            <h3 class="h3-sinResultados">No se encontraron resultados</h3>
+                        <% } %>
+                    </div>
+
+                    <!----------------------------- divs para filtros de precios con descuento ----------------------------->
+
+                    <div class="lista_flexbox_desktop---de0a10ConOff">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% if(de0a10OffGato.length > 0) { %>
+                            <% for(let producto of de0a10OffGato) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                    <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                                <% } else { %> <!-- si no tienen descuentos los productos -->
+                                    <article class="articulo-productos"> <!-- las cards con borde normal -->
+                                <% } %>
+                                    <!-- para saber el contenido de la etiqueta -->
+                                    <div class="div-etiqueta">
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>
+                                    </div>
+                                    <!-- hasta acá etiqueta -->
+                                    <div class="contenedor_imagen">
+                                        <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/gato/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                            <% } %>
+                                        <% } %>
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                    </div>
+                                    <div class="div-card">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_descripcion_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                    <p class="descuento">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } else { %> <!-- si no tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                    <p class="descuento" style="color: white;">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } else { %>
+                            <h3 class="h3-sinResultados">No se encontraron resultados</h3>
+                        <% } %>
+                    </div>
+
+                    <div class="lista_flexbox_desktop---de10a20ConOff">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% if(de10a20OffGato.length > 0) { %>
+                            <% for(let producto of de10a20OffGato) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                    <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                                <% } else { %> <!-- si no tienen descuentos los productos -->
+                                    <article class="articulo-productos"> <!-- las cards con borde normal -->
+                                <% } %>
+                                    <!-- para saber el contenido de la etiqueta -->
+                                    <div class="div-etiqueta">
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>
+                                    </div>
+                                    <!-- hasta acá etiqueta -->
+                                    <div class="contenedor_imagen">
+                                        <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/gato/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                            <% } %>
+                                        <% } %>
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                    </div>
+                                    <div class="div-card">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_descripcion_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                    <p class="descuento">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } else { %> <!-- si no tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                    <p class="descuento" style="color: white;">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } else { %>
+                            <h3 class="h3-sinResultados">No se encontraron resultados</h3>
+                        <% } %>
+                    </div>
+
+                    <div class="lista_flexbox_desktop---de20a30ConOff">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% if(de20a30OffGato.length > 0) { %>
+                            <% for(let producto of de20a30OffGato) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                    <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                                <% } else { %> <!-- si no tienen descuentos los productos -->
+                                    <article class="articulo-productos"> <!-- las cards con borde normal -->
+                                <% } %>
+                                    <!-- para saber el contenido de la etiqueta -->
+                                    <div class="div-etiqueta">
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>
+                                    </div>
+                                    <!-- hasta acá etiqueta -->
+                                    <div class="contenedor_imagen">
+                                        <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/gato/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                            <% } %>
+                                        <% } %>
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                    </div>
+                                    <div class="div-card">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_descripcion_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                    <p class="descuento">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } else { %> <!-- si no tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                    <p class="descuento" style="color: white;">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } else { %>
+                            <h3 class="h3-sinResultados">No se encontraron resultados</h3>
+                        <% } %>
+                    </div>
+
+                    <div class="lista_flexbox_desktop---de30aXConOff">
+                        <!-- div invisible por defecto con la class de arriba ---invisible y visible si se apreta el boton -->
+                        <% if(de30aXOffGato.length > 0) { %>
+                            <% for(let producto of de30aXOffGato) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                    <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                                <% } else { %> <!-- si no tienen descuentos los productos -->
+                                    <article class="articulo-productos"> <!-- las cards con borde normal -->
+                                <% } %>
+                                    <!-- para saber el contenido de la etiqueta -->
+                                    <div class="div-etiqueta">
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>
+                                    </div>
+                                    <!-- hasta acá etiqueta -->
+                                    <div class="contenedor_imagen">
+                                        <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/gato/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                            <% } %>
+                                        <% } %>
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                    </div>
+                                    <div class="div-card">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_descripcion_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                    <p class="descuento">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } else { %> <!-- si no tienen descuentos los productos -->
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                    <p class="descuento" style="color: white;">20% OFF</p>
+                                                </div>
+                                                <div class="div-dos">
+                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                </div>
+                                                <div class="div-boton-comprar">
+                                                    <% if(userALoguearse){ %>
+                                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                                    <% } else { %>
+                                                        <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } else { %>
+                            <h3 class="h3-sinResultados">No se encontraron resultados</h3>
+                        <% } %>
+                    </div>
+                <div>
+            </div>
+        </section>  
+
+        <!-- <button onclick="topFunction()" class="myBtn" title="Go to top"><i class="fa-solid fa-chevron-up"></i></button> --> <!-- ver de arreglar porq aunque tenga display none en el css, igual me suma un margen -->
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+
+    <script src="/js/vermas.js"></script>
+    <script src="/js/checksboxesGatoAccesorios.js"></script>
+    <script src="/js/carrito2.js"></script>
+    <script src="/js/scroll-up.js"></script>
+    <script src="/js/ordenarComida.js"></script>
+
+</body>
+</html>

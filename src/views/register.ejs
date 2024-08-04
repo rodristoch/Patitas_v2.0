@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head.ejs", {cssSheet: "registerLogin_style", title: "Registro"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
+
+<body>
+
+    <%- include("./partials/header.ejs") %>
+    <%- include("./partials/header2.ejs") %>
+
+    <main>
+    
+        <article class="contenedor">
+            <!--Registro-->
+            <form action="/users/register" class="formulario" id="formulario" method="POST" enctype="multipart/form-data">
+                <div class="centrado">
+
+                    <article class="flex-enlinea-titulo">
+                        <img src="/img/header/logoV.png" alt="Logo" class="logo">
+                        <h2 class="editar-titulo">Crea tu cuenta Patitas</h2>
+                    </article>
+                    
+                    <!--Input Nombre-->
+                    <p class="<%= (locals.errors && locals.errors.nombre) ? 'titulo-error' : 'titulo-nombre' %>">Nombre<span id="span1"><i class="fa-solid fa-circle-check"></i></span><span id="span12"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorNombre"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.nombre) ? 'input_error' : '' %>" type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" value="<%= locals.oldData ? locals.oldData.nombre : '' %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="div-small-nombre" style="margin-top: 5px;"><small class="errorNombre"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.nombre) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.nombre.msg %></label>
+                    <% } %>
+            
+        
+                    <!--Input Apellido-->
+                    <p class="<%= (locals.errors && locals.errors.apellido) ? 'titulo-error' : 'titulo-apellido' %>">Apellido<span id="span2"><i class="fa-solid fa-circle-check"></i></span><span id="span22"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorApellido"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.apellido) ? 'input_error' : '' %>" type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" value="<%= locals.oldData ? oldData.apellido : null %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="div-small-apellido" style="margin-top: 5px;"><small class="errorApellido"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.apellido) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.apellido.msg %></label>
+                    <% } %>
+                    
+        
+                    <!--Input imagen-->
+                    <p class="titulo" for="imagen_user">Foto de perfil (Opcional)</p>
+                    <input type="file" name="imagen_user" class="input_imagen" style="border: white;">
+                    
+            
+                    <!--Input email-->
+                    <p class="<%= (locals.errors && locals.errors.email) ? 'titulo-error' : 'titulo-email' %>">Email<span id="span3"><i class="fa-solid fa-circle-check"></i></span><span id="span32"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorEmail"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.email) ? 'input_error' : '' %>" type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1" value="<%= locals.oldData ? oldData.email : null %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="div-small-email" style="margin-top: 5px;"><small class="errorEmail"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.email) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.email.msg %></label>
+                    <% } %>
+                    
+        
+                    <!--Input contraseña-->
+                    <p class="<%= (locals.errors && locals.errors.password) ? 'titulo-error' : 'titulo-pass' %>">Contraseña<span id="span4"><i class="fa-solid fa-circle-check"></i></span><span id="span42"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorPassword"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.password) ? 'input_error' : '' %>" type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1" value="<%= locals.oldData ? oldData.password : null %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="div-small-pass" style="margin-top: 5px;"><small class="errorPassword"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.password) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.password.msg %></label>
+                    <% } %>
+                    
+        
+                    <!--Input reingreso de contraseña -->
+                    <p class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'titulo-error' : 'titulo-repass' %>">Reingresar contraseña<span id="span5"><i class="fa-solid fa-circle-check"></i></span><span id="span52"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorPasswordrepeat"></small></p>
+                    <input class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'input_error' : '' %>" type="password" name="passwordrepeat" id="passwordrepeat" placeholder="Reingresa la contraseña" class="input1" value="<%= locals.oldData ? oldData.passwordrepeat : null %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="div-small-repass" style="margin-top: 5px;"><small class="errorPasswordrepeat"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.passwordrepeat) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.passwordrepeat.msg %></label>
+                    <% } %>
+                    
+        
+                    <!--checkbox + términos y condiciones -->
+                    <section class="flex-enlinea">
+                        <!-- <a href="#"><p class="leer-terminos">Leer términos y condiciones</p></a> -->
+                        <div class="div-terminos">
+                            <input type="checkbox" name="terminos" id="terminos" class="checkboxTerminosRegister" style="margin-left: 0;"><small class="errorTerminos"></small>
+                            <label for="terminos" class="label-terminos">
+                                <p class="recordar">Aceptar <a href="#" class="leer-terminos">términos y condiciones</a></p>
+                            </label>
+                        </div>
+                    </section>
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="div-small-terminos" style="margin-top: 5px;"><small class="errorTerminos"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.terminos) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.terminos.msg %></label>
+                    <% } %>
+                    
+                    <button id="btnSubmit" class="btnIniciarSesion2" type="submit">Crear cuenta</button>
+    
+                </div>
+            </form>
+        </article>
+        
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+
+    <script src="/js/validacionregister.js"></script>
+        
+</body>
+</html>

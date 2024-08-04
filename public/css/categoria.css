@@ -1,0 +1,4233 @@
+colores {
+    color: #29d5de;
+    color: #349fba;
+    color: #287d93;
+    color: #24768b;
+    color: #1e697b;
+    color: #18515F;
+    color: #154551;
+}
+
+/* los colores en degrade del fondo */
+colores { 
+    color: #f2f9fb;
+    color: #dde9ec;
+    color: #bfd2d6;
+}
+
+/* los azules de los links */
+colores {
+    color: #bccbe4;
+    color: #9eb8e0;
+    color: #6191de;
+    color: #1f67da;
+    color: #194da1;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    background: #f2f9fb;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+    font-family:'Roboto';
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+    position: relative;
+    /* margin-bottom: 140px; */
+}
+
+/* ---------------------------------------------------------------------------------- */
+.main2 {  /* para el js panel.js */
+    opacity: 0.2;
+    transition: all 1s ease;
+    z-index: 1;
+    display: none;
+}
+
+.footer-chau {  /* para el js panel.js */
+    display: none;
+}
+
+.body2 {  /* para el js panel.js */
+    background-image: none;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+}
+/* ---------------------------------------------------------------------------------- */
+
+/* ------ Filtros MOBILE ------ */
+.cantidad-producto, .cantidad-producto-desktop, .cantidad-producto-desktop-arriba {   /* el contenedor de los filtros en mobile */
+    /* border: 1px solid blue; */
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 1.8%;
+    margin-bottom: 0.5%;
+    padding: 0;
+    border: 1px solid transparent;
+}
+
+.div-filtros {
+    /* border: 1px solid fuchsia; */
+    border: 1px solid transparent;
+}
+
+.cantidad-producto-desktop-arriba {   /* el contenedor de los filtros desktop de busqueda relacionada */
+    display: none;
+}
+
+.flex-enlinea-mobile, .flex-enlinea-desktop {   /* hijo de .cantidad-producto */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    gap: 12px;  /* la separacion entre los 2 botones */
+    /* border: 1px solid red; */
+}
+
+.contendor_opciones-desktop {  /* el menu desplegable */
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: none;
+    opacity: 0;
+    /* z-index: 2; */
+}
+
+/* --- Botones --- */
+.btn-icon, .btn-icon-desktop, .prod-encontr {   /* los botones de los filtros en mobile y tblet */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: black;
+    cursor: default;
+    border: none;
+    margin: auto;
+    font-weight: 400;
+}
+
+.btn-icon-desktop {  /* para el Busquedas relacionadas y el Ordenar por en DESKTOP */
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.prod-encontr {   /* el NN resultados en MOBILE */
+    color: rgb(130, 130, 130);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.btn-icon {   /* el Filtrar en MOBILE */
+    font-size: 14px;
+    color: #1f67da;
+    font-weight: 400;
+}
+
+.fa-chevron-down {  /* las flechitas */
+    margin-left: 5px;
+    color: #1f67da;
+}
+
+/* .btn-icon:hover{
+    background-color: #c6d7dc;
+} */
+
+/* ----- Cosas para hacer el Filtrar en MOBILE ----- */
+.contendor_opciones, .contendor_opciones-promo, .contendor_opciones-promoBicho, .contendor_opciones-categoria {  /* el primer contenedor oculto, se abre al apretar en filtrar */
+    display: none;
+    transition: 200ms;
+    border : 1px solid #bacdd0;
+}
+
+.contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en filtrar */
+    display: block;
+    position: absolute;
+    right: 2%;
+    top: 32px;
+    background-color: white;
+    box-shadow : 0px 0px 10px #9fafb2;
+    border : 1px solid #bacdd0;
+    width: 250px;
+    border-radius: 5px;
+    z-index: 2;
+    text-align: center;
+    /* border: 1px solid red; */
+    border : 1px solid #bacdd0;
+    padding: 10px 0px;  /* el padding de arriba y abajo ppal */
+    transition: 200ms;
+    height: 330px;  /* 10 padding + 35 primerodearriba + 240 (60 x 4) + 50 ultimodeabajo + 10 padding */ /* los 60 son de cada div verde */
+    box-sizing: content-box;
+}
+
+.contendor_opciones-promo2 {
+    height: 272px;  /* 10 padding + 35 primerodearriba + 180 (60 x 3) + 50 ultimodeabajo + 10 padding */
+}
+
+.contendor_opciones-promoBicho2 {
+    height: 210px;  /* 10 padding + 35 primerodearriba + 120 (60 x 2) + 50 ultimodeabajo + 10 padding */
+}
+
+.contendor_opciones-categoria2 {
+    height: 270px;  /* 10 padding + 35 primerodearriba + 180 (60 x 3) + 50 ultimodeabajo + 10 padding */
+}
+
+/* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+/* ----------------------------------------------- EN PAGINA DE PERRO O GATO -------------------------------------------------------------- */
+/* para la altura del contenedor ppal al apretar en contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+.contendor_opciones2a {  /* al abrir el div verde de ordenar por */
+    height: 480px;  /* 345px del div original + 150px (3 x 50px porq son 3 renglones del div oculto de ordenar por) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en contenedor-flechita-externo2 */ /* (el div verde de Categorias) */
+.contendor_opciones3a {  /* al abrir el div verde de categorias */
+    height: 530px;  /* 345px del div original + 200px (4 x 50px porq son 4 renglones del div oculto de categorias) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en contenedor-flechita-externo3 */ /* (el div verde de Precios) */
+.contendor_opciones4a {  /* al abrir el div verde de precio */
+    height: 530px;  /* 345px del div original + 200px (4 x 50px porq son 4 renglones del div oculto de precios) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en contenedor-flechita-externo4 */ /* (el div verde de Descuentos) */
+.contendor_opciones5a {  /* al abrir el div verde de descuentos */
+    height: 380px;  /* 345px del div original + 50px (1 x 50px porq son 1 renglones del div oculto de descuentos) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div verde de Marcas en PERRO) */
+.contendor_opciones6a {  /* al abrir el div verde de marcas */
+    height: 540px; /* 345px del div original + 200px de los 4 renglones de los filtros de marcas (4 x 50px) + 10px del padding de abajo de todo */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div verde de Marcas en GATO) */
+.contendor_opciones6agato {  /* al abrir el div verde de marcas */
+    height: 590px; /* 345px del div original + 250px de los 5 renglones de los filtros de marcas (5 x 50px) + 10px del padding de abajo de todo */
+    transition: 200ms;
+}
+
+
+/* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+/* ----------------------------------------------- EN PAGINA DE PROMO -------------------------------------------------------------- */
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+.contendor_opciones-promo2a {  /* al abrir el div verde de ordenar por */
+    height: 422px;  /* 272px del div original + 150px (3 x 50px porq son 3 renglones del div oculto de ordenar por) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo2 */ /* (el div verde de Categorias) */
+.contendor_opciones-promo3a {  /* al abrir el div verde de categorias */
+    height: 472px;  /* 272px del div original + 200px (4 x 50px porq son 4 renglones del div oculto de categorias) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo3 */ /* (el div verde de Precios) */
+.contendor_opciones-promo4a {  /* al abrir el div verde de precio */
+    height: 472px;  /* 272px del div original + 200px (4 x 50px porq son 4 renglones del div oculto de precios) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promo */ /* (el div verde de Mascota) */
+.contendor_opciones-promo5a {  /* al abrir el div verde de mascotas */
+    height: 382px; /* 272px del div original + 100px de los 2 renglones de los filtros de mascotas (2 x 50px) + 10px del padding de abajo de todo */
+    transition: 200ms;
+}
+
+
+/* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+/* ----------------------------------------------- EN PAGINA DE PROMO DEL BICHO -------------------------------------------------------------- */
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+.contendor_opciones-promoBicho2a {  /* al abrir el div verde de ordenar por */
+    height: 360px;  /* 210px del div original + 150px (3 x 50px porq son 3 renglones del div oculto de ordenar por) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo2 */ /* (el div verde de Categorias) */
+.contendor_opciones-promoBicho3a {  /* al abrir el div verde de categorias */
+    height: 410px;  /* 210px del div original + 200px (4 x 50px porq son 4 renglones del div oculto de categorias) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promoBicho */ /* (el div verde de Precios) */
+.contendor_opciones-promoBicho4a {  /* al abrir el div verde de precio */
+    height: 420px;  /* 210px del div original + 200px (4 x 50px porq son 4 renglones del div oculto de precios) + 10px del padding de abajo de todo */
+    transition: 200ms;
+}
+
+
+/* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+/* ----------------------------------------------- EN PAGINA DE CATEGORIAS -------------------------------------------------------------- */
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+.contendor_opciones-categoria2a {  /* al abrir el div verde de ordenar por */
+    height: 420px;  /* 270px del div original + 150px (3 x 50px porq son 3 renglones del div oculto de ordenar por) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo3 */ /* (el div verde de Precios) */
+.contendor_opciones-categoria3a {  /* al abrir el div verde de precio */
+    height: 470px;  /* 270px del div original + 200px (4 x 50px porq son 4 renglones del div oculto de precios) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promo */ /* (el div verde de Descuento) */
+.contendor_opciones-categoria4a {  /* al abrir el div verde de descuentos */
+    height: 320px; /* 270px del div original + 50px del renglon del filtro de mascotas (1 x 50px) */
+    transition: 200ms;
+}
+
+/* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promo */ /* (el div verde de Mascota) */
+.contendor_opciones-categoria5a {  /* al abrir el div verde de mascotas */
+    height: 385px; /* 270px del div original + 100px de los 2 renglones de los filtros de mascotas (2 x 50px) + 10px del padding de abajo de todo */
+    transition: 200ms;
+}
+
+
+/* el div interior rojo */
+.contendor_opciones-interior, .contendor_opciones-interior-promo, .contendor_opciones-interior-promoBicho, .contendor_opciones-interior-categoria {  /* el div rojo dentro de .contenedor_opciones */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background-color: white;
+    border : 1px solid white;
+    padding: 0;
+    margin: 0;
+    /* box-sizing: content-box; */
+    height: 325px auto;  /* 35 primerodearriba + 240 (60 de cada div verde x 4) + 50 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones) menos los padding de arriba y abajo */
+}
+
+.contendor_opciones-interior-promo {
+    height: 265px;  /* 35 primerodearriba + 180 (60 de cada div verde x 3) + 50 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+}
+
+.contendor_opciones-interior-promoBicho {
+    height: 205px;  /* 35 primerodearriba + 120 (60 de cada div verde x 2) + 50 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+}
+
+.contendor_opciones-interior-categoria {
+    height: 265px;  /* 35 primerodearriba + 180 (60 de cada div verde x 3) + 50 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+}
+
+.opcion-filtro-tituloPpal {  /* el Filtrar por: */
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    width: 100%;
+    /* padding: 11px; */
+    padding-left: 0;
+    padding-top: 0;
+    margin: 0;
+    border : 1px solid white;
+    text-align: left;
+}
+
+/* ----- los divs verdes ----- */
+.contenedor-flechita-externo1, .contenedor-flechita-externo2, .contenedor-flechita-externo3, .contenedor-flechita-externo4, .contenedor-flechita-externo-ultimodeabajo, .contenedor-flechita-externo-primerodearriba, .contenedor-flechita-externo-ultimodeabajo-promo, .contenedor-flechita-externo-ultimodeabajo-promoBicho {  /* con este le doy el padding de arriba y abajo */
+    width: 100%;
+    border : 1px solid rgb(230, 230, 230);
+    padding: 10px 10px;  /* con esto le doy el padding a cada contenedor (arriba y abajo, y costados) */
+    height: 60px;
+    transition: 200ms;  /* con este manejé el efecto del tiempo del traslado */
+}
+
+.contenedor-flechita-externo-primerodearriba {
+    border : 1px solid rgb(255, 255, 255);
+    /* border-right: transparent;
+    border-left: transparent;
+    border-top: transparent; */
+}
+
+.contenedor-flechita-externo-ultimodeabajo, .contenedor-flechita-externo-ultimodeabajo-promo, .contenedor-flechita-externo-ultimodeabajo-promoBicho {
+    border : 1px solid rgb(255, 255, 255);
+}
+
+/* la traslacion a partir del primer div oculto de los filtros, al hacer click en el div Ordenar por */
+.contenedor-flechita-externo2a, .contenedor-flechita-externo3a, .contenedor-flechita-externo4a, .contenedor-flechita-externo-ultimodeabajoa, .contenedor-flechita-externo-ultimodeabajoa-promo, .contenedor-flechita-externo-ultimodeabajoa-promoBicho {
+    transform: translate(0, 152px); /* 50px x 3 *//* se calcula haciendo la cantidad de renglones q tenga de filtros x la altura de cada uno (q es 50px en este caso), entonces aca es 50px x 3 */
+    transition: 200ms;
+}
+
+/* la traslacion a partir del segundo div oculto de los filtros, al hacer click en el div Categoria */
+.contenedor-flechita-externo3b, .contenedor-flechita-externo4b, .contenedor-flechita-externo-ultimodeabajob, .contenedor-flechita-externo-ultimodeabajob-promo, .contenedor-flechita-externo-ultimodeabajob-promoBicho {
+    transform: translate(0, 202px); /* 50px x 4 *//* para hacer el toggle en el archivo ordenar.js */
+    transition: 200ms;
+}
+
+/* la traslacion a partir del tercer div oculto de los filtros, al hacer click en el div Precio */
+.contenedor-flechita-externo4c, .contenedor-flechita-externo-ultimodeabajoc, .contenedor-flechita-externo-ultimodeabajoc-promo {
+    transform: translate(0, 202px);   /* 50px x 4 *//* para hacer el toggle en el archivo ordenar.js */
+    transition: 200ms;
+}
+
+/* la traslacion a partir del cuarto div oculto de los filtros, al hacer click en el div Descuentos */
+.contenedor-flechita-externo-ultimodeabajod {
+    transform: translate(0, 52px);   /* 50px x 1 *//* para hacer el toggle en el archivo ordenar.js */
+    transition: 200ms;
+}
+
+.contenedor-flechita {  /* contiene la flechita y el titulo Ordenar por u otro */
+    width: 100%;
+    border : 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contenedor-flechita-externo-primerodearriba {
+    padding-top: 0;
+    height: 35px;
+}
+
+.contenedor-flechita-externo-ultimodeabajo, .contenedor-flechita-externo-ultimodeabajo-promo, .contenedor-flechita-externo-ultimodeabajo-promoBicho {
+    padding-bottom: 0;
+    height: 50px;  /* son 60px de cada contenedor verde menos los 10px del padding inferior del div ppal */
+}
+
+.opcion-filtro-titulo {  /* el Ordenar por: y Categoria y Precio, etc */
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    width: 90%;  /* comparte el ancho con #flechita-contenedor-mobile */
+    /* padding: 11px; */
+    padding-left: 0;
+    padding-bottom: 0px; /* separa el titulo del filtro elegido azul */
+    padding-top: 0;
+    margin: 0;
+    border : 1px solid white;
+    text-align: left;
+}
+
+#flechita-contenedor-mobile {  /* las flechitas */
+    color: #1f67da;
+    text-align: center;
+    width: 10%;  /* comparte el ancho con .opcion-filtro-titulo */
+    margin-left: 0;
+    font-size: 13px;
+    /* margin-bottom: 0; */
+}
+
+.opcion-filtro-elegido, .opcion-filtro-elegido1, .opcion-filtro-elegido2, .opcion-filtro-elegido3, .opcion-filtro-elegido4, .opcion-filtro-elegido5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1f67da;
+    width: 100%;
+    /* padding: 11px; */
+    padding-left: 0;
+    padding-bottom: 0px;
+    margin: 0;
+    border : 1px solid white;
+    text-align: left;
+}
+
+/* --- los divs violetas, ocultos con filtros dentro de cada div verde --- */
+.contendor_opciones-dentrodelotro1, .contendor_opciones-dentrodelotro2, .contendor_opciones-dentrodelotro3, .contendor_opciones-dentrodelotro4, .contendor_opciones-dentrodelotro5 {  /* el segundo contenedor oculto, se abre al apretar en cada .contenedor-flechita-externo */
+    /* ocultos desde un ppio */
+    display: none;  
+    transition: 200ms;
+    border: 1px solid white;
+}
+
+.contendor_opciones-dentrodelotro1a, .contendor_opciones-dentrodelotro2a, .contendor_opciones-dentrodelotro3a, .contendor_opciones-dentrodelotro4a, .contendor_opciones-dentrodelotro5a {  /* el segundo contenedor oculto, se abre al apretar en cada .contenedor-flechita-externo */
+    /* al hacer click en cada div verde */
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    background-color: rgb(230, 230, 230);
+    /* box-shadow : 0px 0px 10px #9fafb2; */
+    width: 250px;
+    z-index: 3;
+    text-align: center;
+    border: 1px solid white;
+}
+
+/* --- para sacar la altura de donde aparezca cada div oculto al hacer click en cada div verde --- */
+.contendor_opciones-dentrodelotro1a {  /* el primer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo1 */ /* (el div de Ordenar por) */
+    right: 0;
+    top: 106px;  /* (10px padding + 35px del .contenedor-flechita-externo-primerodearriba + 60px del .contenedor-flechita-externo1 */
+}
+
+.contendor_opciones-dentrodelotro2a {  /* el segundo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo2 */ /* (el div de Categorias) */
+    right: 0;
+    top: 166px; /* (mas 60 del anterior porq cada .contenedor-flechita-externo mide 60px) */
+}
+
+.contendor_opciones-dentrodelotro3a {  /* el tercer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo3 */ /* (el div de Precios) */
+    right: 0;
+    top: 226px; /* (mas 60 del anterior porq cada .contenedor-flechita-externo mide 60px) */
+}
+
+.contendor_opciones-dentrodelotro4a {  /* el cuarto contenedor oculto, se abre al apretar en el .contenedor-flechita-externo4 */ /* (el div de Descuentos) */
+    right: 0;
+    top: 286px; /* (mas 60 del anterior porq cada .contenedor-flechita-externo mide 60px) */
+}
+
+.contendor_opciones-dentrodelotro5a {  /* el ultimo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
+    right: 0;
+    top: 346px; /* (mas 60 del anterior porq cada .contenedor-flechita-externo mide 60px) */
+}
+
+/* los divs azules dentro del violeta */
+.contenedor-opcion-con-checkbox, .contenedor-opcion-con-checkbox-OrdenarPorCategoria, .contenedor-opcion-con-checkbox-OrdenarPorMenorPrecio, .contenedor-opcion-con-checkbox-OrdenarPorMayorPrecio, .contenedor-opcion-con-checkbox-CategoriaAccesorios, .contenedor-opcion-con-checkbox-CategoriaComida, .contenedor-opcion-con-checkbox-CategoriaHigiene, .contenedor-opcion-con-checkbox-CategoriaJuguetes, .contenedor-opcion-con-checkbox-PrecioPrimerRango, .contenedor-opcion-con-checkbox-PrecioSegundoRango, .contenedor-opcion-con-checkbox-PrecioTercerRango, .contenedor-opcion-con-checkbox-PrecioCuartoRango, .contenedor-opcion-con-checkbox-ConDescuento, .contenedor-opcion-con-checkbox-MarcaEukanuba, .contenedor-opcion-con-checkbox-MarcaRoyal, .contenedor-opcion-con-checkbox-MarcaProPlan, .contenedor-opcion-con-checkbox-MarcaOtras, .contenedor-opcion-con-checkbox-MarcaCatit, .contenedor-opcion-con-checkbox-MarcaCancat, .contenedor-opcion-con-checkbox-MarcaPurina, .contenedor-opcion-con-checkbox-perro, .contenedor-opcion-con-checkbox-gato {  /* cada div con cada filtro dentro del contenedor oculto .contendor_opciones-dentrodelotro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    border: 0.5px solid rgb(220, 220, 220);
+    padding: 10px 10px;  /* con esto le doy el padding a cada contenedor (arriba y abajo, y costados) */
+    height: 50px;
+}
+
+.opcion-filtro {  /* las opciones dentro del div .contenedor-opcion-con-checkbox */
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(30, 30, 30);
+    background-color: rgb(240, 240, 240);
+    width: 90%;
+    padding-left: 0;
+    margin: 0;
+    border: 1px solid rgb(240, 240, 240);
+    text-align: left;
+}
+
+.div-del-checkbox {
+    color: rgb(69, 69, 69);
+    background-color: rgb(240, 240, 240);
+    width: 10%;
+    margin: 0;
+    border: 1px solid rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkboxFiltroMobile {
+    appearance: none;
+    border: 1.5px solid gray;
+    background-color: rgb(245, 245, 245);
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='rgb(245, 245, 245)' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    background-size: 150% 150%;
+    background-position: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.checkboxFiltroMobile:checked {
+    background-color: #1f67da;
+    border-color: #1f67da;
+}
+    
+
+
+/* -------- Menus de filtros DESKTOP ------- */
+.cantidad-producto-desktop-arriba { /* el contenedor padre del div de Busquedas relacionadas */ /* DESKTOP */
+    display: none;
+}
+
+.cantidad-producto-desktop { /* el contenedor del boton ordenar por */ /* DESKTOP */
+    display: none;
+}
+
+.contenedor-filtros-desktop { /* el contenedor del box de los filtros laterales */ /* DESKTOP */
+    display: none;
+}
+
+.contenedor_menu_desktop { /* el box de los filtros laterales */ /* DESKTOP */
+    display: none;
+}
+
+.rutas-filtros {
+    display: none;
+}
+
+/* ----- Lista de productos ----- */
+.lista_desktop { /* el box de los productos */
+    width: 90%;
+    margin: auto;
+    /* margin-top: 4.5%; */  /* NO porq estan los botones de los filtros */
+    background-color: white;
+    box-shadow : 0px 0px 20px rgb(180, 180, 180);
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    border: 1px solid white;
+    margin-bottom: 5%;
+}
+
+.div-lista-desktop {
+    /* border: 1px solid blue; */
+    border: 1px solid white;
+    /* margin: 0; */
+}
+
+.h2-titulo {  /* el titulo de Productos Perro/Gato */
+    margin: 0;
+    padding: 0;
+    /* padding-top: 30px; */
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.h3-sinResultados {
+    display: block;
+    font-weight: 300;
+    font-size: 15px;
+    margin: auto;
+    padding-bottom: 10px
+}
+
+.lista_flexbox_desktop {  /* el box de los productos agrupados de determianda manera (visible, invisible, etc) */
+    /* border: 1px solid blue; */
+    border: 1px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    /* ----- la manera en q las cards se separan ----- */
+    justify-content: space-between;
+    /* justify-content: flex-start;    
+    gap: 1.8%; */    
+}
+
+/* ---- CHECKBOXES en pagina de ppal de gato/perro ---- */
+/* divs de productos todos por categoria */
+.lista_flexbox_desktop---comida, .lista_flexbox_desktop---accesorio, .lista_flexbox_desktop---higiene, .lista_flexbox_desktop---juguete {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* justify-content: flex-start;    
+    gap: 1.2%; */
+}
+
+.lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesoriosOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---juguetesOff {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---comidaGato, .lista_flexbox_desktop---accesoriosGato, .lista_flexbox_desktop---higieneGato, .lista_flexbox_desktop---juguetesGato {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---comidaPerro, .lista_flexbox_desktop---accesoriosPerro, .lista_flexbox_desktop---higienePerro, .lista_flexbox_desktop---juguetesPerro {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* divs de productos todos por precio */
+.lista_flexbox_desktop---de0a10, .lista_flexbox_desktop---de10a20, .lista_flexbox_desktop---de20a30, .lista_flexbox_desktop---de30aX {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* div para filtros de productos con descuento */
+.lista_flexbox_desktop---off {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+
+.lista_flexbox_desktop---offGato {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---offPerro {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesorioOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---jugueteOff {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* divs para filtros de marcas */
+.lista_flexbox_desktop---checkboxCatitGato, .lista_flexbox_desktop---checkboxCancatGato, .lista_flexbox_desktop---checkboxPurinaGato, .lista_flexbox_desktop---checkboxProPlanGato, .lista_flexbox_desktop---checkboxOtrasMarcasGato, .lista_flexbox_desktop---checkboxEukanuba, .lista_flexbox_desktop---checkboxRoyal, .lista_flexbox_desktop---checkboxProPlanPerro, .lista_flexbox_desktop---checkboxOtrasMarcasPerro {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* ---- CHECKBOXES en pagina ppal COMBINADOS ---- */
+/* ---- COMBINACIONES DOBLES ---- */
+/* divs para filtros de categorias con descuento */
+.lista_flexbox_desktop---comidaConOff, .lista_flexbox_desktop---accesorioConOff, .lista_flexbox_desktop---higieneConOff, .lista_flexbox_desktop---jugueteConOff {
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* divs para filtros de precios con descuento */
+.lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* divs para filtros de categorias por precio */
+.lista_flexbox_desktop---comida0a10, .lista_flexbox_desktop---accesorio0a10, .lista_flexbox_desktop---higiene0a10, .lista_flexbox_desktop---juguete0a10 {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---comida10a20, .lista_flexbox_desktop---accesorio10a20, .lista_flexbox_desktop---higiene10a20, .lista_flexbox_desktop---juguete10a20 {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---comida20a30, .lista_flexbox_desktop---accesorio20a30, .lista_flexbox_desktop---higiene20a30, .lista_flexbox_desktop---juguete20a30 {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---comida30aX, .lista_flexbox_desktop---accesorio30aX, .lista_flexbox_desktop---higiene30aX, .lista_flexbox_desktop---juguete30aX {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* EN PAGINA DE PROMOCIONES */
+.lista_flexbox_desktop---comidaOffGato, .lista_flexbox_desktop---comidaOffPerro, .lista_flexbox_desktop---accesoriosOffGato, .lista_flexbox_desktop---accesoriosOffPerro, .lista_flexbox_desktop---higieneOffGato, .lista_flexbox_desktop---higieneOffPerro, .lista_flexbox_desktop---juguetesOffGato, .lista_flexbox_desktop---juguetesOffPerro {
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lista_flexbox_desktop---de0a10OffGato, .lista_flexbox_desktop---de0a10OffPerro, .lista_flexbox_desktop---de10a20OffGato, .lista_flexbox_desktop---de10a20OffPerro, .lista_flexbox_desktop---de20a30OffGato, .lista_flexbox_desktop---de20a30OffPerro, .lista_flexbox_desktop---de30aXOffGato, .lista_flexbox_desktop---de30aXOffPerro {
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* divs para filtros de categorias por precio y con descuento */
+/* ---- COMBINACIONES TRIPLES ---- */
+.lista_flexbox_desktop---comida0a10ConOff, .lista_flexbox_desktop---accesorio0a10ConOff, .lista_flexbox_desktop---higiene0a10ConOff, .lista_flexbox_desktop---juguete0a10ConOff {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---comida10a20ConOff, .lista_flexbox_desktop---accesorio10a20ConOff, .lista_flexbox_desktop---higiene10a20ConOff, .lista_flexbox_desktop---juguete10a20ConOff {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---comida20a30ConOff, .lista_flexbox_desktop---accesorio20a30ConOff, .lista_flexbox_desktop---higiene20a30ConOff, .lista_flexbox_desktop---juguete20a30ConOff {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---comida30aXConOff, .lista_flexbox_desktop---accesorio30aXConOff, .lista_flexbox_desktop---higiene30aXConOff, .lista_flexbox_desktop---juguete30aXConOff {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* ----- EN PAGINAS DE CATEGORIAS ----- */
+/* en pagina de categoria comida y por precio */
+.lista_flexbox_desktop---de0a10comida, .lista_flexbox_desktop---de10a20comida, .lista_flexbox_desktop---de20a30comida, .lista_flexbox_desktop---de30aXcomida {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* en pagina de categoria accesorios y por precio */
+.lista_flexbox_desktop---de0a10accesorios, .lista_flexbox_desktop---de10a20accesorios, .lista_flexbox_desktop---de20a30accesorios, .lista_flexbox_desktop---de30aXaccesorios {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* en pagina de categoria juguetes y por precio */
+.lista_flexbox_desktop---de0a10juguetes, .lista_flexbox_desktop---de10a20juguetes, .lista_flexbox_desktop---de20a30juguetes, .lista_flexbox_desktop---de30aXjuguetes {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+/* en pagina de categoria higiene y por precio */
+.lista_flexbox_desktop---de0a10higiene, .lista_flexbox_desktop---de10a20higiene, .lista_flexbox_desktop---de20a30higiene, .lista_flexbox_desktop---de30aXhigiene {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.lista_flexbox_desktop---de0a10comidaPerro {  
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ---- CHECKBOXES EN PAGINA DE PROMOS ---- */
+.lista_flexbox_desktop---contenedorPromoPerro, .lista_flexbox_desktop---contenedorPromoGato {
+    border: 1px solid white;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+
+/* ---- CHECKBOXES EN PAGINA DE MARCAS ---- */
+.lista_flexbox_desktop---eukanuba, .lista_flexbox_desktop---proplan, .lista_flexbox_desktop---royal, .lista_flexbox_desktop---cancat, .lista_flexbox_desktop---catit {
+    display: none;
+    border: 1px solid white;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+
+.lista_flexbox_desktop---gato, .lista_flexbox_desktop---perro {
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* EN PAGINA DE CATRGORIAS */
+.lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lista_flexbox_desktop---de0a10gato, .lista_flexbox_desktop---de10a20gato, .lista_flexbox_desktop---de20a30gato, .lista_flexbox_desktop---de30aXgato {
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lista_flexbox_desktop---de0a10perro, .lista_flexbox_desktop---de10a20perro, .lista_flexbox_desktop---de20a30perro, .lista_flexbox_desktop---de30aXperro {
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lista_flexbox_desktop---gatoOff, .lista_flexbox_desktop---perroOff {
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lista_flexbox_desktop---menorPrecio, .lista_flexbox_desktop---mayorPrecio {
+    border: 1px solid white;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.div-engano {
+    display: none;
+}
+
+/* --- Card producto --- */
+.articulo-productos-descuentos, .articulo-productos {
+    width: 49%;
+    height: auto;
+    border: 0.5px solid rgb(235, 235, 235);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;  /* separacion entre filas de cards *//* el mismo q el padding de lista_desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* min-height: 500px; */
+    background-color: white;
+    /* border: 0.5px solid violet; */
+}
+
+.articulo-productos-descuentos {
+    border: 1px solid #6191de;
+}
+
+.div-etiqueta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid red; */
+    border: 1px solid white;
+    margin-bottom: 10px; /* el mismo q el padding del articulo productos descuentos */
+}
+
+.etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card/* , .etiqueta-gato-card, .etiqueta-perro-card */ {
+    font-weight: 400;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    width: fit-content;
+    text-align: center;
+    margin: 0;
+    /* margin-bottom: 15px; */
+}
+
+.contenedor_imagen {
+    background-color: white;
+    /* width: auto; */
+    overflow: hidden;
+    border: 1px solid white;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    /* border: 1px solid red; */
+    height: 120px;
+}
+
+.img-productos-descuentos {
+    border-radius: 5px;
+    /* border: 1px solid red; */
+    border: 1px solid white;
+    width: 100%;
+    height: 100%;
+    /* margin-top: 10%; */
+}
+
+.div-card {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid blue; */
+    border: 1px solid white;
+}
+
+.texto_nombre_arriba {
+    max-height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* border: 1px solid blue; */
+    border: 1px solid white;
+}
+
+.texto_nombre_arriba h4 {
+    font-weight: 300;
+    font-size: 14px;
+    /* border: 1px solid red; */
+}
+
+.texto_descripcion_arriba {
+    display: none;
+    justify-content: start;
+    align-items: center;
+    /* border: 1px solid green; */
+    max-height: 35px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid white;
+}
+
+.div-dos {
+    /* border: 1px solid fuchsia; */
+    height: 28% auto;
+    min-height: fit-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px solid white;
+}
+
+.descuento, .descuento-descrip {  /* el 20% OFF */
+    color: #349fba;
+    font-weight: 400;
+    font-size: 14px;
+    /* border: 1px solid red; */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+}
+
+.descuento {  /* el 20% OFF */
+    width: fit-content;
+    margin-left: 5px;
+}
+
+.descuento-descrip {
+    display: none;
+}
+
+.div-tres {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 30% auto;
+    min-height: fit-content;
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+}
+
+.div-tres-b {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 30% auto;
+    min-height: fit-content;
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+}
+
+.div-tres-int {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* border: 1px solid red; */
+    height: 50% auto;
+    min-height: fit-content;
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+}
+
+.precio-tachado {  /* el precio tachado en los productos con descuento */
+    margin: 0;
+    padding: 0;
+    color: rgb(134, 134, 134);
+    text-decoration: line-through;
+    text-decoration-thickness: 0.7px;
+    /* text-decoration-color: rgb(80, 80, 80); */
+    width: 100%;
+    font-size: 15px;
+    font-weight: 300;
+    /* border: 1px solid red; */
+    margin-top: 10px;
+    margin-bottom: 2.5px;
+    border: 1px solid white;
+}
+
+.precio {  /* el precio en negrita */
+    font-weight: 500;
+    width: fit-content;
+    font-size: 22px;
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    border: 1px solid white;
+}
+
+.div-boton-comprar {
+    text-align: center;
+    width: 100%;
+    /* border: 1px solid rgb(95, 22, 22); */
+    height: 80%;
+    margin-top: 10px; /* el mismo q el padding del articulo productos descuentos */
+}
+
+.boton-comprar, .boton-comprarSinAuth {
+    text-align: center;
+    /* background-color: #1e697b; */
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border: none;
+    /* border: 0.5px solid rgb(150, 150, 150); */
+    font-size: 15px;
+    padding: 5.5px;  /* decidi ponerle 1 punto mas q en index/detalle/carrito */
+    text-align: center;
+    margin: auto;
+    background: linear-gradient(90deg, #b5cacf 0%, #4d94a5 50%, #1e697b 100%);
+}
+
+/* ----------------------- */
+.etiqueta-comida-bicho-card {
+    color: white;
+    border: 0.5px solid white;
+    /* background-color: #5746d7; */
+    background: linear-gradient(90deg, #978eda 0%, #7c6fdf 35%, #4939c2 100%);
+}
+
+.etiqueta-accesorio-bicho-card {
+    color: white;
+    border: 0.5px solid white;
+    /* background-color: #29d5de; */
+    background: linear-gradient(90deg, #92d9db 0%, #4bd1d8 35%, #10b2bb 100%);
+}
+
+.etiqueta-higiene-bicho-card {
+    color: white;
+    border: 0.5px solid white;
+    /* background-color: #e8a62b; */
+    background: linear-gradient(90deg, #dfc79c 0%, #e4b560 35%, #ce8f1a 100%);
+}
+
+.etiqueta-juguete-bicho-card {
+    color: white;
+    border: 0.5px solid white;
+    /* background-color: #9b46d7; */
+    background: linear-gradient(90deg, #bfa2d3 0%, #b37adb 35%, #8a36c7 100%);
+}
+
+
+/* ---- otras cosas ---- */
+.div-btnver {
+    display: none;
+    /* opacity: 0.5; */
+}
+
+.btnver {
+    background-color: #3c47bd;
+    padding: 14px;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    width: 25%;
+    border-radius: 25px;
+    border: 1px solid black;
+    transition: 450ms;
+    margin-top: 5px;
+    box-shadow : 0px 0px 20px rgb(140, 140, 140);
+}
+
+.myBtn {
+    display: none;
+    opacity: 0;
+}
+
+/* footer {
+    margin-top: -80px;
+}
+ */
+
+@media (max-width: 296px) {
+
+    .prod-encontr {
+        opacity: 0;
+    }
+}
+
+
+@media (max-width: 394px) {
+
+    /* ------ Filtros Mobile ------ */
+    /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
+    .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
+        top: 30px;
+    }
+
+    .fa-chevron-down {  /* las flechitas */
+        margin-left: 4px;
+    }
+
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {
+        width: 100%;
+    }
+
+    .precio {
+        width: fit-content;
+        font-size: 20px;
+    }
+
+    .descuento {
+        width: 52%;
+        font-size: 14px;
+        margin-left: 4px;
+    }
+
+}
+
+@media (min-width: 500px) {
+
+    /* ------ Filtros Mobile ------ */
+    .btn-icon, .prod-encontr {   /* los botones de los filtros en mobile y tblet */
+        font-size: 16px;
+    }
+
+    /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
+    .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
+        right: 2%;
+        top: 36px;
+        box-shadow : 0px 0px 10px #9fafb2;
+        width: 280px; /* antes era 250px */
+        border-radius: 5px;
+        /* border : 1px solid blue; */
+        padding: 12px 0px; /* antes 10px */
+        height: 360px;  /* (12 padding + 38 primerodearriba + 264 (66 x 4) + 54 ultimodeabajo + 12 padding) *//* antes 345px */
+    }
+
+    .contendor_opciones-promo2 {
+        height: 297px;  /* 12 padding + 38 primerodearriba + 198 (66 x 3) + 54 ultimodeabajo + 12 padding */
+    }
+
+    .contendor_opciones-promoBicho2 {
+        height: 230px;  /* 12 padding + 38 primerodearriba + 132 (66 x 2) + 54 ultimodeabajo + 12 padding */
+    }
+
+    .contendor_opciones-categoria2 {
+        height: 295px;  /* 12 padding + 38 primerodearriba + 198 (66 x 3) + 54 ultimodeabajo + 12 padding */
+    }
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE PERRO O GATO -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo1 */ /* (el div de Ordenar por) */
+    .contendor_opciones2a {  /* al abrir el div de ordenar por */
+        height: 525px;  /* 360px del div original + 165px (3 x 55px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo2 */ /* (el div de Categorias) */
+    .contendor_opciones3a {  /* al abrir el div de categorias */
+        height: 580px;  /* 360px del div original + 220px (4 x 55px porq son 5 renglones del div oculto de categorias) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo3 */ /* (el div de Precios) */
+    .contendor_opciones4a {  /* al abrir el div de precio */
+        height: 580px;  /* 360px del div original + 220px (4 x 55px porq son 5 renglones del div oculto de precios) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo4 */ /* (el div de Descuentos) */
+    .contendor_opciones5a {  /* al abrir el div de descuentos */
+        height: 415px;  /* 360px del div original + 55px (1 x 55px porq son 2 renglones del div oculto de descuentos) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
+    .contendor_opciones6a {  /* al abrir el div de marcas */
+        height: 592px; /* 360px del div original + 220px de los 4 renglones de los filtros de marcas (5 x 55px) + 12px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas en GATO) */
+    .contendor_opciones6agato {  /* al abrir el div de marcas */
+        height: 647px; /* 360px del div original + 275px de los 5 renglones de los filtros de marcas (5 x 55px) + 12px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE PROMO -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+    .contendor_opciones-promo2a {  /* al abrir el div verde de ordenar por */
+        height: 462px;  /* 297px del div original + 165px (3 x 55px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo2 */ /* (el div verde de Categorias) */
+    .contendor_opciones-promo3a {  /* al abrir el div verde de categorias */
+        height: 517px;  /* 297px del div original + 220px (4 x 55px porq son 4 renglones del div oculto de categorias) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo3 */ /* (el div verde de Precios) */
+    .contendor_opciones-promo4a {  /* al abrir el div verde de precio */
+        height: 517px;  /* 297px del div original + 220px (4 x 55px porq son 4 renglones del div oculto de precios) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div verde de Mascota) */
+    .contendor_opciones-promo5a {  /* al abrir el div verde de mascotas */
+        height: 419px; /* 297px del div original + 110px de los 2 renglones de los filtros de mascotas (2 x 55px) + 12px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE PROMO DEL BICHO -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+    .contendor_opciones-promoBicho2a {  /* al abrir el div verde de ordenar por */
+        height: 395px;  /* 230px del div original + 165px (3 x 55px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo2 */ /* (el div verde de Categorias) */
+    .contendor_opciones-promoBicho3a {  /* al abrir el div verde de categorias */
+        height: 450px;  /* 230px del div original + 220px (4 x 55px porq son 4 renglones del div oculto de categorias) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promoBicho */ /* (el div verde de Precios) */
+    .contendor_opciones-promoBicho4a {  /* al abrir el div verde de precio */
+        height: 462px;  /* 230px del div original + + 220px (4 x 55px porq son 4 renglones del div oculto de precios) + 12px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE CATEGORIAS -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+    .contendor_opciones-categoria2a {  /* al abrir el div verde de ordenar por */
+        height: 460px;  /* 295px del div original + 165px (3 x 55px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo3 */ /* (el div verde de Precios) */
+    .contendor_opciones-categoria3a {  /* al abrir el div verde de precio */
+        height: 515px;  /* 295px del div original + 220px (4 x 55px porq son 4 renglones del div oculto de precios) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promo */ /* (el div verde de Descuento) */
+    .contendor_opciones-categoria4a {  /* al abrir el div verde de descuentos */
+        height: 350px; /* 295px del div original + 55px del renglon del filtro de mascotas (1 x 55px) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promo */ /* (el div verde de Mascota) */
+    .contendor_opciones-categoria5a {  /* al abrir el div verde de mascotas */
+        height: 417px; /* 295px del div original + 110px de los 2 renglones de los filtros de mascotas (2 x 55px) + 12px del padding de abajo de todo */
+        transition: 200ms;
+    }
+    
+
+    /* el div interior rojo */
+    .contendor_opciones-interior {  /* el div rojo dentro de .contenedor_opciones */
+        /* border : 1px solid red; */
+        height: 356px;  /* 38 primerodearriba + 264 (66 de cada div verde x 4) + 54 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones) menos los padding de arriba y abajo */
+    }
+
+    .contendor_opciones-interior-promo {
+        height: 290px;  /* 38 primerodearriba + 198 (66 de cada div verde x 3) + 54 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+    }
+
+    .contendor_opciones-interior-promoBicho {
+        height: 224px;  /* 38 primerodearriba + 132 (66 de cada div verde x 2) + 54 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+    }
+
+    .contendor_opciones-interior-categoria {
+        height: 290px;  /* 35 primerodearriba + 180 (60 de cada div verde x 3) + 50 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+    }
+
+
+    .opcion-filtro-tituloPpal {  /* el Filtrar por: */
+        font-size: 20px; /* antes 17px */
+        /* border : 1px solid green; */
+    }
+    
+    /* ----- los divs verdes ----- */
+    .contenedor-flechita-externo1, .contenedor-flechita-externo2, .contenedor-flechita-externo3, .contenedor-flechita-externo4, .contenedor-flechita-externo-ultimodeabajo, .contenedor-flechita-externo-primerodearriba, .contenedor-flechita-externo-ultimodeabajo-promo, .contenedor-flechita-externo-ultimodeabajo-promoBicho {  /* con este le doy el padding de arriba y abajo */
+        /* border : 1px solid green; */
+        padding: 12px 12px;  /* con esto le doy el padding a cada contenedor (arriba y abajo, y costados) */ /* antes 10px */
+        height: 66px; /* antes 60px */
+    }
+
+    .contenedor-flechita-externo-primerodearriba {
+        padding-top: 0;
+        height: 38px; /* antes 35px */
+    }
+    
+    .contenedor-flechita-externo-ultimodeabajo, .contenedor-flechita-externo-ultimodeabajo-promo, .contenedor-flechita-externo-ultimodeabajo-promoBicho {
+        padding-bottom: 0;
+        height: 54px; /* antes 50px */
+    }
+
+    /* la traslacion a partir del primer div oculto de los filtros, al hacer click en el div Ordenar por */
+    .contenedor-flechita-externo2a, .contenedor-flechita-externo3a, .contenedor-flechita-externo4a, .contenedor-flechita-externo-ultimodeabajoa, .contenedor-flechita-externo-ultimodeabajoa-promo, .contenedor-flechita-externo-ultimodeabajoa-promoBicho {
+        transform: translate(0, 167px); /* 55px x 3 *//* se calcula haciendo la cantidad de renglones q tenga de filtros x la altura de cada uno (q es 55px en este caso), entonces aca es 55px x 3 */
+        transition: 200ms;
+    }
+
+    /* la traslacion a partir del segundo div oculto de los filtros, al hacer click en el div Categoria */
+    .contenedor-flechita-externo3b, .contenedor-flechita-externo4b, .contenedor-flechita-externo-ultimodeabajob, .contenedor-flechita-externo-ultimodeabajob-promo, .contenedor-flechita-externo-ultimodeabajob-promoBicho {
+        transform: translate(0, 222px); /* 55px x 4 *//* para hacer el toggle en el archivo ordenar.js */
+        transition: 200ms;
+    }
+
+    /* la traslacion a partir del tercer div oculto de los filtros, al hacer click en el div Precio */
+    .contenedor-flechita-externo4c, .contenedor-flechita-externo-ultimodeabajoc, .contenedor-flechita-externo-ultimodeabajoc-promo {
+        transform: translate(0, 222px);   /* 55px x 4 *//* para hacer el toggle en el archivo ordenar.js */
+        transition: 200ms;
+    }
+
+    /* la traslacion a partir del cuarto div oculto de los filtros, al hacer click en el div Descuentos */
+    .contenedor-flechita-externo-ultimodeabajod {
+        transform: translate(0, 57px);   /* 55px x 1 *//* para hacer el toggle en el archivo ordenar.js */
+        transition: 200ms;
+    }
+
+    .opcion-filtro-titulo {  /* el Ordenar por: y Categoria y Precio, etc */
+        font-size: 15px; /* antes 14px */
+        width: 90%;  /* comparte el ancho con #flechita-contenedor-mobile */
+        padding-bottom: 0px; /* separa el titulo del filtro elegido azul */
+        /* border : 1px solid green; */
+    }
+
+    #flechita-contenedor-mobile {  /* las flechitas */
+        font-size: 15px; /* antes 14px */
+    }
+    
+    .opcion-filtro-elegido, .opcion-filtro-elegido1, .opcion-filtro-elegido2, .opcion-filtro-elegido3, .opcion-filtro-elegido4, .opcion-filtro-elegido5 {
+        font-size: 15px; /* antes 14px */
+        padding-left: 0;
+        padding-bottom: 0px;
+        /* border : 1px solid brown; */
+    }
+
+    /* -------- para sacar la altura en donde aparece cada div oculto al hacer click en cada div verde -------- */
+    .contendor_opciones-dentrodelotro1a {  /* el primer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo1 *//* (el div de Ordenar por) */
+        right: 0;
+        top: 117px; /* (12px padding + 38px del .contenedor-flechita-externo-primerodearriba + 66px del .contenedor-flechita-externo1 */
+        width: 280px; /* antes era 250px */
+    }
+
+    .contendor_opciones-dentrodelotro2a {  /* el segundo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo2 *//* (el div de Categorias) */
+        right: 0;
+        top: 183px; /* (mas 66 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 280px; /* antes era 250px */
+    }
+
+    .contendor_opciones-dentrodelotro3a {  /* el tercer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo3 *//* (el div de Precios) */
+        right: 0;
+        top: 249px; /* (mas 66 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 280px; /* antes era 250px */
+    }
+
+    .contendor_opciones-dentrodelotro4a {  /* el cuarto contenedor oculto, se abre al apretar en el .contenedor-flechita-externo4 *//* (el div de Descuentos) */
+        right: 0;
+        top: 315px; /* (mas 66 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 280px; /* antes era 250px */
+    }
+
+    .contendor_opciones-dentrodelotro5a {  /* el ultimo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
+        right: 0;
+        top: 381px; /* (mas 66 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 280px; /* antes era 250px */
+    }
+
+    /* los divs azules dentro del violeta */
+    .contenedor-opcion-con-checkbox, .contenedor-opcion-con-checkbox-OrdenarPorCategoria, .contenedor-opcion-con-checkbox-OrdenarPorMenorPrecio, .contenedor-opcion-con-checkbox-OrdenarPorMayorPrecio, .contenedor-opcion-con-checkbox-CategoriaAccesorios, .contenedor-opcion-con-checkbox-CategoriaComida, .contenedor-opcion-con-checkbox-CategoriaHigiene, .contenedor-opcion-con-checkbox-CategoriaJuguetes, .contenedor-opcion-con-checkbox-PrecioPrimerRango, .contenedor-opcion-con-checkbox-PrecioSegundoRango, .contenedor-opcion-con-checkbox-PrecioTercerRango, .contenedor-opcion-con-checkbox-PrecioCuartoRango, .contenedor-opcion-con-checkbox-ConDescuento, .contenedor-opcion-con-checkbox-MarcaEukanuba, .contenedor-opcion-con-checkbox-MarcaRoyal, .contenedor-opcion-con-checkbox-MarcaProPlan, .contenedor-opcion-con-checkbox-MarcaOtras, .contenedor-opcion-con-checkbox-MarcaCatit, .contenedor-opcion-con-checkbox-MarcaCancat, .contenedor-opcion-con-checkbox-MarcaPurina, .contenedor-opcion-con-checkbox-perro, .contenedor-opcion-con-checkbox-gato {  /* cada div con cada filtro dentro del contenedor oculto .contendor_opciones-dentrodelotro */
+        padding: 12px 12px;  /* con esto le doy el padding a cada contenedor (arriba y abajo, y costados) */ /* antes era 10px 10px */
+        height: 55px; /* antes era 50px */
+    }
+    
+    .opcion-filtro {  /* las opciones dentro del div .contenedor-opcion-con-checkbox */
+        font-size: 15px; /* antes 14px */
+        font-weight: 400;
+        padding-left: 0;
+    }
+
+    .checkboxFiltroMobile {
+        width: 13px;
+        height: 13px;
+        border-radius: 2px;
+    }
+
+    /* ----- Lista de productos ----- */
+    .h2-titulo {  /* el titulo de Productos Perro/Gato */
+        font-size: 22px;
+    }
+
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {
+        border-radius: 6px;
+        padding: 12px;
+        margin-bottom: 10px;  /* separacion entre filas de cards *//* el mismo q el padding de lista_desktop */ /* antes 10px */
+    }
+    
+    .div-etiqueta {
+        margin-bottom: 12px;   /* antes 10px *//* el mismo q el padding del articulo productos descuentos */
+    }
+
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        width: fit-content;
+        padding: 5.5px 11px;
+        font-size: 12.5px;
+    }
+
+    .contenedor_imagen {
+        height: 130px;  /* antes 120px */
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 6px;  /* antes 5px */
+    }
+
+    .texto_nombre_arriba {
+        max-height: 38px;  /* antes 35px */
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 300;  /* antes 300 */
+        font-size: 15px;  /* antes 14px */
+    }
+    
+    .texto_descripcion_arriba {
+        max-height: 38px;  /* antes 35px */
+    }
+
+    /* .div-tres */
+    .precio-tachado {
+        font-size: 16px;  /* antes 15px */
+        font-weight: 300;  /* antes 300 */
+        margin-top: 12px;  /* antes 10px *//* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 2.8px;  /* antes 2.5px */
+    }
+    
+    .precio {
+        font-weight: 500;
+        width: fit-content;
+        font-size: 23px;  /* antes 22px */
+    }
+
+    .descuento {
+        font-weight: 400;  /* antes 400 */
+        font-size: 15px;  /* antes 14px */
+        width: fit-content;
+        margin-left: 5px;
+    }
+
+    .div-boton-comprar {
+        margin-top: 12px;  /* antes 10px *//* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {  /* mismas medidas q en detalle.css */
+        border-radius: 4px;  /* antes 4px */
+        font-size: 16px;  /* antes 15px */
+        padding: 6.5px;  /* antes 5.5px */
+    }
+
+    /* ----- otras cosas ----- */
+    .numerito-carrito-mobile {
+        height: 12px;
+        width: 12px;
+        padding: 3px;
+        top: -9px;
+        right: -10px;
+        font-size: 10px;
+    }
+
+    .myBtn {
+        display: none;
+        opacity: 0;
+    }
+
+    /* footer {
+        margin-top: -80px;
+    } */
+}
+
+@media (min-width: 600px) {
+
+    /* ------ Filtros Mobile ------ */
+    .cantidad-producto {
+        margin-top: 1.5%;
+        margin-bottom: 0.5%;
+    }
+
+    .btn-icon, .prod-encontr {   /* los botones de los filtros en mobile y tblet */
+        font-size: 17px;
+    }
+
+    /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
+    .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
+        right: 2%;
+        top: 38px;
+        box-shadow : 0px 0px 10px #9fafb2;
+        width: 320px;
+        border-radius: 6px;
+        /* border : 1px solid blue; */
+        padding: 13px 0px;  /* el padding de arriba y abajo, y de los costados del contenedor ppal */  /* antes 12px */
+        height: 382px;  /* (13 padding + 41 primerodearriba + 280 (70 x 4) + 57 ultimodeabajo + 13 padding) *//* antes 380px */
+    }
+
+    .contendor_opciones-promo2 {
+        height: 315px;  /* 13 padding + 41 primerodearriba + 210 (70 x 3) + 57 ultimodeabajo + 13 padding */
+    }
+
+    .contendor_opciones-promoBicho2 {
+        height: 245px;  /* 13 padding + 41 primerodearriba + 140 (70 x 2) + 57 ultimodeabajo + 13 padding */
+    }
+
+    .contendor_opciones-categoria2 {
+        height: 314px;  /* 13 padding + 41 primerodearriba + 210 (70 x 3) + 57 ultimodeabajo + 13 padding */
+    }
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE PERRO O GATO -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo1 */ /* (el div de Ordenar por) */
+    .contendor_opciones2a {  /* al abrir el div de ordenar por */
+        height: 562px;  /* 382px del div original + 180px (3 x 60px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo2 */ /* (el div de Categorias) */
+    .contendor_opciones3a {  /* al abrir el div de categorias */
+        height: 622px;  /* 382px del div original + 240px (4 x 60px porq son 5 renglones del div oculto de categorias) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo3 */ /* (el div de Precios) */
+    .contendor_opciones4a {  /* al abrir el div de precio */
+        height: 622px;  /* 382px del div original + 240px (4 x 60px porq son 5 renglones del div oculto de precios) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo4 */ /* (el div de Descuentos) */
+    .contendor_opciones5a {  /* al abrir el div de descuentos */
+        height: 442px;  /* 382px del div original + 60px (1 x 60px porq son 1 renglones del div oculto de descuentos) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
+    .contendor_opciones6a {  /* al abrir el div de marcas */
+        height: 635px; /* 382px del div original + 240px de los 4 renglones de los filtros de marcas + 13px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas en GATO) */
+    .contendor_opciones6agato {  /* al abrir el div de marcas */
+        height: 695px; /* 382px del div original + 300px de los 5 renglones de los filtros de marcas (5 x 60px) + 13px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE PROMO -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+    .contendor_opciones-promo2a {  /* al abrir el div verde de ordenar por */
+        height: 495px;  /* 315px del div original + 180px (3 x 60px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo2 */ /* (el div verde de Categorias) */
+    .contendor_opciones-promo3a {  /* al abrir el div verde de categorias */
+        height: 555px;  /* 315px del div original + 240px (4 x 60px porq son 4 renglones del div oculto de categorias) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo3 */ /* (el div verde de Precios) */
+    .contendor_opciones-promo4a {  /* al abrir el div verde de precio */
+        height: 555px;  /* 315px del div original + 240px (4 x 60px porq son 4 renglones del div oculto de precios) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div verde de Mascota) */
+    .contendor_opciones-promo5a {  /* al abrir el div verde de mascotas */
+        height: 448px; /* 315px del div original + 120px de los 2 renglones de los filtros de mascotas (2 x 60px) + 13px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE PROMO DEL BICHO -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+    .contendor_opciones-promoBicho2a {  /* al abrir el div verde de ordenar por */
+        height: 425px;  /* 245px del div original + 180px (3 x 60px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo2 */ /* (el div verde de Categorias) */
+    .contendor_opciones-promoBicho3a {  /* al abrir el div verde de categorias */
+        height: 485px;  /* 245px del div original + 240px (4 x 60px porq son 4 renglones del div oculto de categorias) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promoBicho */ /* (el div verde de Precios) */
+    .contendor_opciones-promoBicho4a {  /* al abrir el div verde de precio */
+        height: 498px;  /* 245px del div original + + 240px (4 x 60px porq son 4 renglones del div oculto de precios) + 13px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE CATEGORIAS -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+    .contendor_opciones-categoria2a {  /* al abrir el div verde de ordenar por */
+        height: 494px;  /* 314px del div original + 180px (3 x 60px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo3 */ /* (el div verde de Precios) */
+    .contendor_opciones-categoria3a {  /* al abrir el div verde de precio */
+        height: 554px;  /* 314px del div original + 240px (4 x 60px porq son 4 renglones del div oculto de precios) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promo */ /* (el div verde de Descuento) */
+    .contendor_opciones-categoria4a {  /* al abrir el div verde de descuentos */
+        height: 374px; /* 314px del div original + 60px del renglon del filtro de mascotas (1 x 60px) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promo */ /* (el div verde de Mascota) */
+    .contendor_opciones-categoria5a {  /* al abrir el div verde de mascotas */
+        height: 447px; /* 314px del div original + 120px de los 2 renglones de los filtros de mascotas (2 x 60px) + 13px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* el div interior rojo */
+    .contendor_opciones-interior {  /* el div rojo dentro de .contenedor_opciones */
+        /* border : 1px solid red; */
+        height: 378px;  /* 41 primerodearriba + 280 (70 de cada div verde x 4) + 57 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones) menos los padding de arriba y abajo */
+    }
+
+    .contendor_opciones-interior-promo {
+        height: 308px;  /* 41 primerodearriba + 210 (70 de cada div verde x 3) + 57 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+    }
+
+    .contendor_opciones-interior-promoBicho {
+        height: 238px;  /* 41 primerodearriba + 140 (70 de cada div verde x 2) + 57 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+    }
+
+    .contendor_opciones-interior-categoria {
+        height: 308px;  /* 41 primerodearriba + 210 (70 de cada div verde x 3) + 57 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+    }
+
+
+    .opcion-filtro-tituloPpal {  /* el Filtrar por: */
+        font-size: 22px; /* antes 18px */
+        /* border : 1px solid green; */
+    }
+    
+    /* ----- los divs verdes ----- */
+    .contenedor-flechita-externo1, .contenedor-flechita-externo2, .contenedor-flechita-externo3, .contenedor-flechita-externo4, .contenedor-flechita-externo-ultimodeabajo, .contenedor-flechita-externo-primerodearriba, .contenedor-flechita-externo-ultimodeabajo-promo, .contenedor-flechita-externo-ultimodeabajo-promoBicho {  /* con este le doy el padding de arriba y abajo */
+        /* border : 1px solid green; */
+        padding: 13px 13px;  /* con esto le doy el padding a cada contenedor (arriba y abajo, y costados) */  /* antes 12px */
+        height: 70px; /* antes 66px */
+    }
+
+    .contenedor-flechita-externo-primerodearriba {
+        padding-top: 0;
+        height: 41px; /* antes 38px */
+    }
+    
+    .contenedor-flechita-externo-ultimodeabajo, .contenedor-flechita-externo-ultimodeabajo-promo, .contenedor-flechita-externo-ultimodeabajo-promoBicho {
+        padding-bottom: 0;
+        height: 57px; /* antes 54px */
+    }
+
+    /* la traslacion a partir del primer div oculto de los filtros, al hacer click en el div Ordenar por */
+    .contenedor-flechita-externo2a, .contenedor-flechita-externo3a, .contenedor-flechita-externo4a, .contenedor-flechita-externo-ultimodeabajoa, .contenedor-flechita-externo-ultimodeabajoa-promo, .contenedor-flechita-externo-ultimodeabajoa-promoBicho {
+        transform: translate(0, 182px); /* 60px x 3 *//* se calcula haciendo la cantidad de renglones q tenga de filtros x la altura de cada uno (q es 60px en este caso), entonces aca es 60px x 3 */
+        transition: 200ms;
+    }
+
+    /* la traslacion a partir del segundo div oculto de los filtros, al hacer click en el div Categoria */
+    .contenedor-flechita-externo3b, .contenedor-flechita-externo4b, .contenedor-flechita-externo-ultimodeabajob, .contenedor-flechita-externo-ultimodeabajob-promo, .contenedor-flechita-externo-ultimodeabajob-promoBicho {
+        transform: translate(0, 242px); /* 60px x 4 *//* para hacer el toggle en el archivo ordenar.js */
+        transition: 200ms;
+    }
+
+    /* la traslacion a partir del tercer div oculto de los filtros, al hacer click en el div Precio */
+    .contenedor-flechita-externo4c, .contenedor-flechita-externo-ultimodeabajoc, .contenedor-flechita-externo-ultimodeabajoc-promo {
+        transform: translate(0, 242px);   /* 60px x 4 *//* para hacer el toggle en el archivo ordenar.js */
+        transition: 200ms;
+    }
+
+    /* la traslacion a partir del cuarto div oculto de los filtros, al hacer click en el div Descuentos */
+    .contenedor-flechita-externo-ultimodeabajod {
+        transform: translate(0, 62px);   /* 60px x 1 *//* para hacer el toggle en el archivo ordenar.js */
+        transition: 200ms;
+    }
+
+    .opcion-filtro-titulo {  /* el Ordenar por: y Categoria y Precio, etc */
+        font-size: 16px;  /* antes 15px */
+        width: 90%;  /* comparte el ancho con #flechita-contenedor-mobile */
+        padding-bottom: 0px; /* separa el titulo del filtro elegido azul */
+        /* border : 1px solid green; */
+    }
+
+    #flechita-contenedor-mobile {  /* las flechitas */
+        font-size: 16px; /* antes 15px */
+    }
+    
+    .opcion-filtro-elegido, .opcion-filtro-elegido1, .opcion-filtro-elegido2, .opcion-filtro-elegido3, .opcion-filtro-elegido4, .opcion-filtro-elegido5 {
+        font-size: 16px;  /* antes 15px */
+        padding-left: 0;
+        padding-bottom: 0px;
+        /* border : 1px solid brown; */
+    }
+
+    /* --- para sacar la altura de donde aparezca cada div oculto al hacer click en cada div verde --- */
+    .contendor_opciones-dentrodelotro1a {  /* el primer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo1 */ /* (el div de Ordenar por) */
+        right: 0;
+        top: 125px; /* (13px padding + 41px del .contenedor-flechita-externo-primerodearriba + 70px del .contenedor-flechita-externo1 */
+        width: 320px; /* antes era 280px */
+    }
+
+    .contendor_opciones-dentrodelotro2a {  /* el segundo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo2 */ /* (el div de Categorias) */
+        right: 0;
+        top: 195px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 320px; /* antes era 280px */
+    }
+
+    .contendor_opciones-dentrodelotro3a {  /* el tercer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo3 */ /* (el div de Precios) */
+        right: 0;
+        top: 265px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 320px; /* antes era 280px */
+    }
+
+    .contendor_opciones-dentrodelotro4a {  /* el cuarto contenedor oculto, se abre al apretar en el .contenedor-flechita-externo4 */ /* (el div de Descuentos) */
+        right: 0;
+        top: 335px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 320px; /* antes era 280px */
+    }
+
+    .contendor_opciones-dentrodelotro5a {  /* el ultimo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
+        right: 0;
+        top: 405px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 320px; /* antes era 280px */
+    }
+
+
+    /* los divs azules dentro del violeta */
+    .contenedor-opcion-con-checkbox, .contenedor-opcion-con-checkbox-OrdenarPorCategoria, .contenedor-opcion-con-checkbox-OrdenarPorMenorPrecio, .contenedor-opcion-con-checkbox-OrdenarPorMayorPrecio, .contenedor-opcion-con-checkbox-CategoriaAccesorios, .contenedor-opcion-con-checkbox-CategoriaComida, .contenedor-opcion-con-checkbox-CategoriaHigiene, .contenedor-opcion-con-checkbox-CategoriaJuguetes, .contenedor-opcion-con-checkbox-PrecioPrimerRango, .contenedor-opcion-con-checkbox-PrecioSegundoRango, .contenedor-opcion-con-checkbox-PrecioTercerRango, .contenedor-opcion-con-checkbox-PrecioCuartoRango, .contenedor-opcion-con-checkbox-ConDescuento, .contenedor-opcion-con-checkbox-MarcaEukanuba, .contenedor-opcion-con-checkbox-MarcaRoyal, .contenedor-opcion-con-checkbox-MarcaProPlan, .contenedor-opcion-con-checkbox-MarcaOtras, .contenedor-opcion-con-checkbox-MarcaCatit, .contenedor-opcion-con-checkbox-MarcaCancat, .contenedor-opcion-con-checkbox-MarcaPurina, .contenedor-opcion-con-checkbox-perro, .contenedor-opcion-con-checkbox-gato {  /* cada div con cada filtro dentro del contenedor oculto .contendor_opciones-dentrodelotro */
+        padding: 13px 13px;  /* con esto le doy el padding a cada contenedor (arriba y abajo, y costados) */ /* antes era 12px 12px */
+        height: 60px; /* antes era 55px */
+    }
+    
+    .opcion-filtro {  /* las opciones dentro del div .contenedor-opcion-con-checkbox */
+        font-size: 16px; /* antes 15px */
+        font-weight: 400;
+        padding-left: 0;
+    }
+
+    .checkboxFiltroMobile {
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+    }
+
+    /* ----- Lista de productos ----- */
+    .h2-titulo {  /* el titulo de Productos Perro/Gato */
+        font-size: 23px;
+    }
+
+    .h3-sinResultados {
+        font-size: 16px;
+        padding-bottom: 10px
+    }
+
+    .lista_flexbox_desktop {  /* el box de los productos agrupados de determianda manera (visible, invisible, etc) */
+        /* ----- la manera en q las cards se separan ----- */
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    /* ---- CHECKBOXES en pagina de ppal de gato/perro ---- */
+    /* divs de productos todos por categoria */
+    .lista_flexbox_desktop---comida, .lista_flexbox_desktop---accesorio, .lista_flexbox_desktop---higiene, .lista_flexbox_desktop---juguete {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    .lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesoriosOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---juguetesOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;   
+    }
+    
+    .lista_flexbox_desktop---comidaGato, .lista_flexbox_desktop---accesoriosGato, .lista_flexbox_desktop---higieneGato, .lista_flexbox_desktop---juguetesGato {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;  
+    }
+    
+    .lista_flexbox_desktop---comidaPerro, .lista_flexbox_desktop---accesoriosPerro, .lista_flexbox_desktop---higienePerro, .lista_flexbox_desktop---juguetesPerro {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;  
+    }
+    
+    /* divs de productos todos por precio */
+    .lista_flexbox_desktop---de0a10, .lista_flexbox_desktop---de10a20, .lista_flexbox_desktop---de20a30, .lista_flexbox_desktop---de30aX {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;   
+    }
+    
+    /* div para filtros de productos con descuento */
+        .lista_flexbox_desktop---off {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    .lista_flexbox_desktop---offGato {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;  
+    }
+    
+    .lista_flexbox_desktop---offPerro {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;   
+    }
+    
+    .lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesorioOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---jugueteOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;   
+    }
+    
+    /* divs para filtros de marcas */
+    .lista_flexbox_desktop---checkboxCatitGato, .lista_flexbox_desktop---checkboxCancatGato, .lista_flexbox_desktop---checkboxPurinaGato, .lista_flexbox_desktop---checkboxProPlanGato, .lista_flexbox_desktop---checkboxOtrasMarcasGato, .lista_flexbox_desktop---checkboxEukanuba, .lista_flexbox_desktop---checkboxRoyal, .lista_flexbox_desktop---checkboxProPlanPerro, .lista_flexbox_desktop---checkboxOtrasMarcasPerro {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;   
+    }
+    
+    /* ---- CHECKBOXES en pagina ppal COMBINADOS ---- */
+    /* ---- COMBINACIONES DOBLES ---- */
+    /* divs para filtros de categorias con descuento */
+    .lista_flexbox_desktop---comidaConOff, .lista_flexbox_desktop---accesorioConOff, .lista_flexbox_desktop---higieneConOff, .lista_flexbox_desktop---jugueteConOff {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    /* divs para filtros de precios con descuento */
+    .lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%; 
+    }
+    
+    /* divs para filtros de categorias por precio */
+    .lista_flexbox_desktop---comida0a10, .lista_flexbox_desktop---accesorio0a10, .lista_flexbox_desktop---higiene0a10, .lista_flexbox_desktop---juguete0a10 {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;  
+    }
+    
+    .lista_flexbox_desktop---comida10a20, .lista_flexbox_desktop---accesorio10a20, .lista_flexbox_desktop---higiene10a20, .lista_flexbox_desktop---juguete10a20 {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;  
+    }
+    
+    .lista_flexbox_desktop---comida20a30, .lista_flexbox_desktop---accesorio20a30, .lista_flexbox_desktop---higiene20a30, .lista_flexbox_desktop---juguete20a30 {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;  
+    }
+    
+    .lista_flexbox_desktop---comida30aX, .lista_flexbox_desktop---accesorio30aX, .lista_flexbox_desktop---higiene30aX, .lista_flexbox_desktop---juguete30aX {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%; 
+    }
+    
+    /* EN PAGINA DE PROMOCIONES */
+    .lista_flexbox_desktop---comidaOffGato, .lista_flexbox_desktop---comidaOffPerro, .lista_flexbox_desktop---accesoriosOffGato, .lista_flexbox_desktop---accesoriosOffPerro, .lista_flexbox_desktop---higieneOffGato, .lista_flexbox_desktop---higieneOffPerro, .lista_flexbox_desktop---juguetesOffGato, .lista_flexbox_desktop---juguetesOffPerro {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    .lista_flexbox_desktop---de0a10OffGato, .lista_flexbox_desktop---de0a10OffPerro, .lista_flexbox_desktop---de10a20OffGato, .lista_flexbox_desktop---de10a20OffPerro, .lista_flexbox_desktop---de20a30OffGato, .lista_flexbox_desktop---de20a30OffPerro, .lista_flexbox_desktop---de30aXOffGato, .lista_flexbox_desktop---de30aXOffPerro {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    /* divs para filtros de categorias por precio y con descuento */
+    /* ---- COMBINACIONES TRIPLES ---- */
+    .lista_flexbox_desktop---comida0a10ConOff, .lista_flexbox_desktop---accesorio0a10ConOff, .lista_flexbox_desktop---higiene0a10ConOff, .lista_flexbox_desktop---juguete0a10ConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;   
+    }
+    
+    .lista_flexbox_desktop---comida10a20ConOff, .lista_flexbox_desktop---accesorio10a20ConOff, .lista_flexbox_desktop---higiene10a20ConOff, .lista_flexbox_desktop---juguete10a20ConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;    
+    }
+    
+    .lista_flexbox_desktop---comida20a30ConOff, .lista_flexbox_desktop---accesorio20a30ConOff, .lista_flexbox_desktop---higiene20a30ConOff, .lista_flexbox_desktop---juguete20a30ConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;   
+    }
+    
+    .lista_flexbox_desktop---comida30aXConOff, .lista_flexbox_desktop---accesorio30aXConOff, .lista_flexbox_desktop---higiene30aXConOff, .lista_flexbox_desktop---juguete30aXConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;   
+    }
+    
+    /* ----- EN PAGINAS DE CATEGORIAS ----- */
+    /* en pagina de categoria comida y por precio */
+    .lista_flexbox_desktop---de0a10comida, .lista_flexbox_desktop---de10a20comida, .lista_flexbox_desktop---de20a30comida, .lista_flexbox_desktop---de30aXcomida {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;    
+    }
+    
+    /* en pagina de categoria accesorios y por precio */
+    .lista_flexbox_desktop---de0a10accesorios, .lista_flexbox_desktop---de10a20accesorios, .lista_flexbox_desktop---de20a30accesorios, .lista_flexbox_desktop---de30aXaccesorios {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%; 
+    }
+    
+    /* en pagina de categoria juguetes y por precio */
+    .lista_flexbox_desktop---de0a10juguetes, .lista_flexbox_desktop---de10a20juguetes, .lista_flexbox_desktop---de20a30juguetes, .lista_flexbox_desktop---de30aXjuguetes {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;   
+    }
+    
+    /* en pagina de categoria higiene y por precio */
+    .lista_flexbox_desktop---de0a10higiene, .lista_flexbox_desktop---de10a20higiene, .lista_flexbox_desktop---de20a30higiene, .lista_flexbox_desktop---de30aXhigiene {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;  
+    }
+    
+    .lista_flexbox_desktop---de0a10comidaPerro {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    /* ---- CHECKBOXES EN PAGINA DE PROMOS ---- */
+    .lista_flexbox_desktop---contenedorPromoPerro, .lista_flexbox_desktop---contenedorPromoGato {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%; 
+    }
+    
+    /* ---- CHECKBOXES EN PAGINA DE MARCAS ---- */
+    .lista_flexbox_desktop---eukanuba, .lista_flexbox_desktop---proplan, .lista_flexbox_desktop---royal, .lista_flexbox_desktop---cancat, .lista_flexbox_desktop---catit {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    .lista_flexbox_desktop---gato, .lista_flexbox_desktop---perro {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    /* EN PAGINA DE CATRGORIAS */
+    .lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    .lista_flexbox_desktop---de0a10gato, .lista_flexbox_desktop---de10a20gato, .lista_flexbox_desktop---de20a30gato, .lista_flexbox_desktop---de30aXgato {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    .lista_flexbox_desktop---de0a10perro, .lista_flexbox_desktop---de10a20perro, .lista_flexbox_desktop---de20a30perro, .lista_flexbox_desktop---de30aXperro {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    .lista_flexbox_desktop---gatoOff, .lista_flexbox_desktop---perroOff {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+    
+    .lista_flexbox_desktop---menorPrecio, .lista_flexbox_desktop---mayorPrecio {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.97%;
+    }
+
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {  /* las cards pasan a ser 3 */
+        width: 32%;
+        border-radius: 6px;
+        padding: 12px;
+        margin-bottom: 10px;  /* separacion entre filas de cards *//* el mismo q el padding de lista_desktop */ /* antes 10px */
+    }
+
+    .div-etiqueta {
+        margin-bottom: 12px;   /* antes 12px *//* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        width: fit-content;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .contenedor_imagen {
+        height: 120px;  /* antes 120px */
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 6px;  /* antes 6px */
+    }
+
+    .texto_nombre_arriba {
+        max-height: 38px;  /* antes 35px */
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 300;  /* antes 300 */
+        font-size: 15px;  /* antes 14px */
+    }
+    
+    .texto_descripcion_arriba {
+        max-height: 38px;  /* antes 35px */
+    }
+
+    /* .div-tres */
+    .precio-tachado {
+        font-size: 14px;  /* antes 16px */
+        margin-top: 12px;  /* antes 12px *//* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 2.5px;  /* antes 2.8px */
+    }
+
+    .precio {
+        font-size: 22px;  /* antes 23px */
+    }
+
+    .descuento {
+        font-size: 14px;  /* antes 15px */
+        margin-left: 5px;  /* antes 4.5px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 12px;  /* antes 12px *//* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        border-radius: 5px;  /* antes 4px */
+        font-size: 15px;  /* antes 16px */
+        padding: 5.5px;  /* antes 6.5px */
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* ------ Filtros Mobile ------ */
+    .cantidad-producto {
+        margin-top: 2%;
+        margin-bottom: 0.5%;
+    }
+
+    .cantidad-producto p {
+        display: block;
+        /* padding-top: 12px; */
+    }
+
+    .btn-icon, .prod-encontr {   /* los botones de los filtros en mobile y tblet */
+        font-size: 20px;
+    }
+
+    /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
+    .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
+        right: 2%;
+        top: 48px;
+        box-shadow : 0px 0px 10px #9fafb2;
+        width: 400px; /* antes era 320px */
+        border-radius: 7px;
+        /* border : 1px solid blue; */
+        padding: 16px 0px;  /* el padding de arriba y abajo, y de los costados del contenedor ppal */  /* antes 13px */
+        height: 438px;  /* (16 padding + 47 primerodearriba + 320 (80 x 4) + 64 ultimodeabajo + 16 padding) *//* antes 404px */
+    }
+
+    .contendor_opciones-promo2 {
+        height: 360px;  /* 16 padding + 47 primerodearriba + 240 (80 x 3) + 64 ultimodeabajo + 16 padding */
+    }
+
+    .contendor_opciones-promoBicho2 {
+        height: 278px;  /* 16 padding + 47 primerodearriba + 160 (80 x 2) + 64 ultimodeabajo + 16 padding */
+    }
+
+    .contendor_opciones-categoria2 {
+        height: 360px;  /* 16 padding + 47 primerodearriba + 240 (80 x 3) + 64 ultimodeabajo + 16 padding */
+    }
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE PERRO O GATO -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo1 */ /* (el div de Ordenar por) */
+    .contendor_opciones2a {  /* al abrir el div de ordenar por */
+        height: 633px;  /* 438px del div original + 195px (3 x 65px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo2 */ /* (el div de Categorias) */
+    .contendor_opciones3a {  /* al abrir el div de categorias */
+        height: 698px;  /* 438px del div original + 260px (4 x 65px porq son 5 renglones del div oculto de categorias) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo3 */ /* (el div de Precios) */
+    .contendor_opciones4a {  /* al abrir el div de precio */
+        height: 698px;  /* 438px del div original + 260px (4 x 65px porq son 5 renglones del div oculto de precios) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo4 */ /* (el div de Descuentos) */
+    .contendor_opciones5a {  /* al abrir el div de descuentos */
+        height: 503px;  /* 438px del div original + 65px (1 x 65px porq son 2 renglones del div oculto de descuentos) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
+    .contendor_opciones6a {  /* al abrir el div de marcas */
+        height: 714px; /* 438px del div original + 260px de los 4 renglones de los filtros de marcas + 16px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas en GATO) */
+    .contendor_opciones6agato {  /* al abrir el div de marcas */
+        height: 779px; /* 438px del div original + 325px de los 5 renglones de los filtros de marcas (5 x 65px) + 16px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE PROMO -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+    .contendor_opciones-promo2a {  /* al abrir el div verde de ordenar por */
+        height: 555px;  /* 360px del div original + 195px (3 x 65px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo2 */ /* (el div verde de Categorias) */
+    .contendor_opciones-promo3a {  /* al abrir el div verde de categorias */
+        height: 620px;  /* 360px del div original + 260px (4 x 65px porq son 4 renglones del div oculto de categorias) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo3 */ /* (el div verde de Precios) */
+    .contendor_opciones-promo4a {  /* al abrir el div verde de precio */
+        height: 620px;  /* 360px del div original + 260px (4 x 65px porq son 4 renglones del div oculto de precios) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en contenedor-flechita-externo-ultimodeabajo */ /* (el div verde de Mascota) */
+    .contendor_opciones-promo5a {  /* al abrir el div verde de mascotas */
+        height: 506px; /* 360px del div original + 130px de los 2 renglones de los filtros de mascotas (2 x 65px) + 16px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE PROMO DEL BICHO -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+    .contendor_opciones-promoBicho2a {  /* al abrir el div verde de ordenar por */
+        height: 473px;  /* 278px del div original + 195px (3 x 65px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo2 */ /* (el div verde de Categorias) */
+    .contendor_opciones-promoBicho3a {  /* al abrir el div verde de categorias */
+        height: 538px;  /* 278px del div original + 260px (4 x 65px porq son 4 renglones del div oculto de categorias) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promoBicho */ /* (el div verde de Precios) */
+    .contendor_opciones-promoBicho4a {  /* al abrir el div verde de precio */
+        height: 554px;  /* 278px del div original + + 260px (4 x 65px porq son 4 renglones del div oculto de precios) + 16px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+    /* ------ para la altura del contenedor ppal azul (.contenedor_opciones) al apretar en cada div verde (.contenedor-flechita-externo) ------ */
+    /* ----------------------------------------------- EN PAGINA DE CATEGORIAS -------------------------------------------------------------- */
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo1 */ /* (el div verde de Ordenar por) */
+    .contendor_opciones-categoria2a {  /* al abrir el div verde de ordenar por */
+        height: 555px;  /* 360px del div original + 195px (3 x 65px porq son 3 renglones del div oculto de ordenar por) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo3 */ /* (el div verde de Precios) */
+    .contendor_opciones-categoria3a {  /* al abrir el div verde de precio */
+        height: 620px;  /* 360px del div original + 260px (4 x 65px porq son 4 renglones del div oculto de precios) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promo */ /* (el div verde de Descuento) */
+    .contendor_opciones-categoria4a {  /* al abrir el div verde de descuentos */
+        height: 425px; /* 360px del div original + 65px del renglon del filtro de mascotas (1 x 65px) */
+        transition: 200ms;
+    }
+
+    /* para la altura del contenedor ppal al apretar en .contenedor-flechita-externo-ultimodeabajo-promo */ /* (el div verde de Mascota) */
+    .contendor_opciones-categoria5a {  /* al abrir el div verde de mascotas */
+        height: 506px; /* 360px del div original + 130px de los 2 renglones de los filtros de mascotas (2 x 65px) + 16px del padding de abajo de todo */
+        transition: 200ms;
+    }
+
+
+
+    /* el div interior rojo */
+    .contendor_opciones-interior {  /* el div rojo dentro de .contenedor_opciones */
+        /* border : 1px solid red; */
+        height: 431px;  /* 47 primerodearriba + 320 (80 de cada div verde x 4) + 64 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones) menos los padding de arriba y abajo */
+    }
+
+    .contendor_opciones-interior-promo {
+        height: 351px;  /* 47 primerodearriba + 240 (80 de cada div verde x 3) + 64 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+    }
+
+    .contendor_opciones-interior-promoBicho {
+        height: 271px;  /* 47 primerodearriba + 160 (80 de cada div verde x 2) + 64 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+    }
+
+    .contendor_opciones-interior-categoria {
+        height: 351px;  /* 47 primerodearriba + 240 (80 de cada div verde x 3) + 64 ultimodeabajo */ /* el height del contendor azul (contenedor_oipciones-promo) menos los padding de arriba y abajo */
+    }
+
+
+    .opcion-filtro-tituloPpal {  /* el Filtrar por: */
+        font-size: 25px; /* antes 20px */
+        /* border : 1px solid green; */
+    }
+    
+    /* ----- los divs verdes ----- */
+    .contenedor-flechita-externo1, .contenedor-flechita-externo2, .contenedor-flechita-externo3, .contenedor-flechita-externo4, .contenedor-flechita-externo-ultimodeabajo, .contenedor-flechita-externo-primerodearriba, .contenedor-flechita-externo-ultimodeabajo-promo, .contenedor-flechita-externo-ultimodeabajo-promoBicho {  /* con este le doy el padding de arriba y abajo */
+        /* border : 1px solid green; */
+        padding: 16px 14px;  /* con esto le doy el padding a cada contenedor (arriba y abajo, y costados) */ /* antes 13px 13px */
+        height: 80px; /* antes 70px */
+    }
+
+    .contenedor-flechita-externo-primerodearriba {
+        padding-top: 0;
+        height: 47px; /* antes 41px */
+    }
+    
+    .contenedor-flechita-externo-ultimodeabajo, .contenedor-flechita-externo-ultimodeabajo-promo, .contenedor-flechita-externo-ultimodeabajo-promoBicho {
+        padding-bottom: 0;
+        height: 64px; /* antes 57px */
+    }
+
+    /* la traslacion a partir del primer div oculto de los filtros, al hacer click en el div Ordenar por */
+    .contenedor-flechita-externo2a, .contenedor-flechita-externo3a, .contenedor-flechita-externo4a, .contenedor-flechita-externo-ultimodeabajoa, .contenedor-flechita-externo-ultimodeabajoa-promo, .contenedor-flechita-externo-ultimodeabajoa-promoBicho {
+        transform: translate(0, 197px); /* 65px x 3 *//* se calcula haciendo la cantidad de renglones q tenga de filtros x la altura de cada uno (q es 65px en este caso), entonces aca es 65px x 3 */
+        transition: 200ms;
+    }
+
+    /* la traslacion a partir del segundo div oculto de los filtros, al hacer click en el div Categoria */
+    .contenedor-flechita-externo3b, .contenedor-flechita-externo4b, .contenedor-flechita-externo-ultimodeabajob, .contenedor-flechita-externo-ultimodeabajob-promo, .contenedor-flechita-externo-ultimodeabajob-promoBicho {
+        transform: translate(0, 262px); /* 65px x 4 *//* para hacer el toggle en el archivo ordenar.js */
+        transition: 200ms;
+    }
+
+    /* la traslacion a partir del tercer div oculto de los filtros, al hacer click en el div Precio */
+    .contenedor-flechita-externo4c, .contenedor-flechita-externo-ultimodeabajoc, .contenedor-flechita-externo-ultimodeabajoc-promo {
+        transform: translate(0, 262px);   /* 65px x 4 *//* para hacer el toggle en el archivo ordenar.js */
+        transition: 200ms;
+    }
+
+    /* la traslacion a partir del cuarto div oculto de los filtros, al hacer click en el div Descuentos */
+    .contenedor-flechita-externo-ultimodeabajod {
+        transform: translate(0, 67px);   /* 65px x 1 *//* para hacer el toggle en el archivo ordenar.js */
+        transition: 200ms;
+    }
+
+    .opcion-filtro-titulo {  /* el Ordenar por: y Categoria y Precio, etc */
+        font-size: 18px; /* antes 16px */
+        width: 90%;  /* comparte el ancho con #flechita-contenedor-mobile */
+        padding-bottom: 0px; /* separa el titulo del filtro elegido azul */
+        /* border : 1px solid green; */
+    }
+
+    #flechita-contenedor-mobile {  /* las flechitas */
+        font-size: 18px; /* antes 16px */
+    }
+    
+    .opcion-filtro-elegido, .opcion-filtro-elegido1, .opcion-filtro-elegido2, .opcion-filtro-elegido3, .opcion-filtro-elegido4, .opcion-filtro-elegido5 {
+        font-size: 18px; /* antes 16px */
+        padding-left: 0;
+        padding-bottom: 0px;
+        /* border : 1px solid brown; */
+    }
+
+    /* --- para sacar la altura de donde aparezca cada div oculto al hacer click en cada div verde --- */
+    .contendor_opciones-dentrodelotro1a {  /* el primer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo1 */ /* (el div de Ordenar por) */
+        right: 0;
+        top: 144px; /* (16px padding + 47px del .contenedor-flechita-externo-primerodearriba + 80px del .contenedor-flechita-externo1 */
+        width: 400px; /* antes era 320px */
+    }
+
+    .contendor_opciones-dentrodelotro2a {  /* el segundo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo2 */ /* (el div de Categorias) */
+        right: 0;
+        top: 224px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 400px; /* antes era 320px */
+    }
+
+    .contendor_opciones-dentrodelotro3a {  /* el tercer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo3 */ /* (el div de Precios) */
+        right: 0;
+        top: 304px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 400px; /* antes era 320px */
+    }
+
+    .contendor_opciones-dentrodelotro4a {  /* el cuarto contenedor oculto, se abre al apretar en el .contenedor-flechita-externo4 */ /* (el div de Descuentos) */
+        right: 0;
+        top: 384px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 400px; /* antes era 320px */
+    }
+
+    .contendor_opciones-dentrodelotro5a {  /* el ultimo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
+        right: 0;
+        top: 464px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
+        width: 400px; /* antes era 320px */
+    }
+
+
+    /* los divs azules dentro del violeta */
+    .contenedor-opcion-con-checkbox, .contenedor-opcion-con-checkbox-OrdenarPorCategoria, .contenedor-opcion-con-checkbox-OrdenarPorMenorPrecio, .contenedor-opcion-con-checkbox-OrdenarPorMayorPrecio, .contenedor-opcion-con-checkbox-CategoriaAccesorios, .contenedor-opcion-con-checkbox-CategoriaComida, .contenedor-opcion-con-checkbox-CategoriaHigiene, .contenedor-opcion-con-checkbox-CategoriaJuguetes, .contenedor-opcion-con-checkbox-PrecioPrimerRango, .contenedor-opcion-con-checkbox-PrecioSegundoRango, .contenedor-opcion-con-checkbox-PrecioTercerRango, .contenedor-opcion-con-checkbox-PrecioCuartoRango, .contenedor-opcion-con-checkbox-ConDescuento, .contenedor-opcion-con-checkbox-MarcaEukanuba, .contenedor-opcion-con-checkbox-MarcaRoyal, .contenedor-opcion-con-checkbox-MarcaProPlan, .contenedor-opcion-con-checkbox-MarcaOtras, .contenedor-opcion-con-checkbox-MarcaCatit, .contenedor-opcion-con-checkbox-MarcaCancat, .contenedor-opcion-con-checkbox-MarcaPurina, .contenedor-opcion-con-checkbox-perro, .contenedor-opcion-con-checkbox-gato {  /* cada div con cada filtro dentro del contenedor oculto .contendor_opciones-dentrodelotro */
+        padding: 16px 14px;  /* con esto le doy el padding a cada contenedor (arriba y abajo, y costados) */ /* antes 13px 13px */
+        height: 65px; /* antes era 60px */
+    }
+    
+    .opcion-filtro {  /* las opciones dentro del div .contenedor-opcion-con-checkbox */
+        font-size: 18px; /* antes 16px */
+        font-weight: 400;
+        padding-left: 0;
+    }
+
+    .checkboxFiltroMobile {
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+    }
+
+    /* ----- Lista de productos ----- */
+    .lista_desktop { /* el box de los productos */
+        padding: 12px;
+        border-radius: 6px;
+        padding-bottom: 0;
+        /* border: 1px solid red; */
+    }
+
+    .h2-titulo {  /* el titulo de Productos Perro/Gato */
+        font-size: 25px;
+    }
+
+    .h3-sinResultados {
+        font-size: 18px;
+        padding-bottom: 12px
+    }
+
+    .lista_flexbox_desktop {  /* el box de los productos agrupados de determianda manera (visible, invisible, etc) */
+        /* ----- la manera en q las cards se separan ----- */
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    /* ---- CHECKBOXES en pagina de ppal de gato/perro ---- */
+    /* divs de productos todos por categoria */
+    .lista_flexbox_desktop---comida, .lista_flexbox_desktop---accesorio, .lista_flexbox_desktop---higiene, .lista_flexbox_desktop---juguete {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    .lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesoriosOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---juguetesOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;    
+    }
+    
+    .lista_flexbox_desktop---comidaGato, .lista_flexbox_desktop---accesoriosGato, .lista_flexbox_desktop---higieneGato, .lista_flexbox_desktop---juguetesGato {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;   
+    }
+    
+    .lista_flexbox_desktop---comidaPerro, .lista_flexbox_desktop---accesoriosPerro, .lista_flexbox_desktop---higienePerro, .lista_flexbox_desktop---juguetesPerro {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;   
+    }
+    
+    /* divs de productos todos por precio */
+    .lista_flexbox_desktop---de0a10, .lista_flexbox_desktop---de10a20, .lista_flexbox_desktop---de20a30, .lista_flexbox_desktop---de30aX {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;    
+    }
+    
+    /* div para filtros de productos con descuento */
+        .lista_flexbox_desktop---off {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%; 
+    }
+    
+    .lista_flexbox_desktop---offGato {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;   
+    }
+    
+    .lista_flexbox_desktop---offPerro {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;    
+    }
+    
+    .lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesorioOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---jugueteOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;    
+    }
+    
+    /* divs para filtros de marcas */
+    .lista_flexbox_desktop---checkboxCatitGato, .lista_flexbox_desktop---checkboxCancatGato, .lista_flexbox_desktop---checkboxPurinaGato, .lista_flexbox_desktop---checkboxProPlanGato, .lista_flexbox_desktop---checkboxOtrasMarcasGato, .lista_flexbox_desktop---checkboxEukanuba, .lista_flexbox_desktop---checkboxRoyal, .lista_flexbox_desktop---checkboxProPlanPerro, .lista_flexbox_desktop---checkboxOtrasMarcasPerro {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;    
+    }
+    
+    /* ---- CHECKBOXES en pagina ppal COMBINADOS ---- */
+    /* ---- COMBINACIONES DOBLES ---- */
+    /* divs para filtros de categorias con descuento */
+    .lista_flexbox_desktop---comidaConOff, .lista_flexbox_desktop---accesorioConOff, .lista_flexbox_desktop---higieneConOff, .lista_flexbox_desktop---jugueteConOff {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    /* divs para filtros de precios con descuento */
+    .lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;  
+    }
+    
+    /* divs para filtros de categorias por precio */
+    .lista_flexbox_desktop---comida0a10, .lista_flexbox_desktop---accesorio0a10, .lista_flexbox_desktop---higiene0a10, .lista_flexbox_desktop---juguete0a10 {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;   
+    }
+    
+    .lista_flexbox_desktop---comida10a20, .lista_flexbox_desktop---accesorio10a20, .lista_flexbox_desktop---higiene10a20, .lista_flexbox_desktop---juguete10a20 {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;   
+    }
+    
+    .lista_flexbox_desktop---comida20a30, .lista_flexbox_desktop---accesorio20a30, .lista_flexbox_desktop---higiene20a30, .lista_flexbox_desktop---juguete20a30 {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;   
+    }
+    
+    .lista_flexbox_desktop---comida30aX, .lista_flexbox_desktop---accesorio30aX, .lista_flexbox_desktop---higiene30aX, .lista_flexbox_desktop---juguete30aX {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;  
+    }
+    
+    /* EN PAGINA DE PROMOCIONES */
+    .lista_flexbox_desktop---comidaOffGato, .lista_flexbox_desktop---comidaOffPerro, .lista_flexbox_desktop---accesoriosOffGato, .lista_flexbox_desktop---accesoriosOffPerro, .lista_flexbox_desktop---higieneOffGato, .lista_flexbox_desktop---higieneOffPerro, .lista_flexbox_desktop---juguetesOffGato, .lista_flexbox_desktop---juguetesOffPerro {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    .lista_flexbox_desktop---de0a10OffGato, .lista_flexbox_desktop---de0a10OffPerro, .lista_flexbox_desktop---de10a20OffGato, .lista_flexbox_desktop---de10a20OffPerro, .lista_flexbox_desktop---de20a30OffGato, .lista_flexbox_desktop---de20a30OffPerro, .lista_flexbox_desktop---de30aXOffGato, .lista_flexbox_desktop---de30aXOffPerro {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    /* divs para filtros de categorias por precio y con descuento */
+    /* ---- COMBINACIONES TRIPLES ---- */
+    .lista_flexbox_desktop---comida0a10ConOff, .lista_flexbox_desktop---accesorio0a10ConOff, .lista_flexbox_desktop---higiene0a10ConOff, .lista_flexbox_desktop---juguete0a10ConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;    
+    }
+    
+    .lista_flexbox_desktop---comida10a20ConOff, .lista_flexbox_desktop---accesorio10a20ConOff, .lista_flexbox_desktop---higiene10a20ConOff, .lista_flexbox_desktop---juguete10a20ConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;    
+    }
+    
+    .lista_flexbox_desktop---comida20a30ConOff, .lista_flexbox_desktop---accesorio20a30ConOff, .lista_flexbox_desktop---higiene20a30ConOff, .lista_flexbox_desktop---juguete20a30ConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;   
+    }
+    
+    .lista_flexbox_desktop---comida30aXConOff, .lista_flexbox_desktop---accesorio30aXConOff, .lista_flexbox_desktop---higiene30aXConOff, .lista_flexbox_desktop---juguete30aXConOff {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;   
+    }
+    
+    /* ----- EN PAGINAS DE CATEGORIAS ----- */
+    /* en pagina de categoria comida y por precio */
+    .lista_flexbox_desktop---de0a10comida, .lista_flexbox_desktop---de10a20comida, .lista_flexbox_desktop---de20a30comida, .lista_flexbox_desktop---de30aXcomida {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;    
+    }
+    
+    /* en pagina de categoria accesorios y por precio */
+    .lista_flexbox_desktop---de0a10accesorios, .lista_flexbox_desktop---de10a20accesorios, .lista_flexbox_desktop---de20a30accesorios, .lista_flexbox_desktop---de30aXaccesorios {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%; 
+    }
+    
+    /* en pagina de categoria juguetes y por precio */
+    .lista_flexbox_desktop---de0a10juguetes, .lista_flexbox_desktop---de10a20juguetes, .lista_flexbox_desktop---de20a30juguetes, .lista_flexbox_desktop---de30aXjuguetes {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;   
+    }
+    
+    /* en pagina de categoria higiene y por precio */
+    .lista_flexbox_desktop---de0a10higiene, .lista_flexbox_desktop---de10a20higiene, .lista_flexbox_desktop---de20a30higiene, .lista_flexbox_desktop---de30aXhigiene {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;  
+    }
+    
+    .lista_flexbox_desktop---de0a10comidaPerro {  
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    /* ---- CHECKBOXES EN PAGINA DE PROMOS ---- */
+    .lista_flexbox_desktop---contenedorPromoPerro, .lista_flexbox_desktop---contenedorPromoGato {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%; 
+    }
+    
+    /* ---- CHECKBOXES EN PAGINA DE MARCAS ---- */
+    .lista_flexbox_desktop---eukanuba, .lista_flexbox_desktop---proplan, .lista_flexbox_desktop---royal, .lista_flexbox_desktop---cancat, .lista_flexbox_desktop---catit {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    .lista_flexbox_desktop---gato, .lista_flexbox_desktop---perro {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    /* EN PAGINA DE CATRGORIAS */
+    .lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    .lista_flexbox_desktop---de0a10gato, .lista_flexbox_desktop---de10a20gato, .lista_flexbox_desktop---de20a30gato, .lista_flexbox_desktop---de30aXgato {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    .lista_flexbox_desktop---de0a10perro, .lista_flexbox_desktop---de10a20perro, .lista_flexbox_desktop---de20a30perro, .lista_flexbox_desktop---de30aXperro {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    .lista_flexbox_desktop---gatoOff, .lista_flexbox_desktop---perroOff {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+    
+    .lista_flexbox_desktop---menorPrecio, .lista_flexbox_desktop---mayorPrecio {
+        /* justify-content: space-between; */
+        justify-content: flex-start;    
+        gap: 1.2%;
+    }
+
+    
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {  /* las cards pasan a ser 3 */
+        width: 32.5%;  /* antes 32% */
+        border-radius: 6px;
+        padding: 13px;  /* antes 12px */
+        margin-bottom: 12px;  /* separacion entre filas de cards *//* el mismo q el padding de lista_desktop */ /* antes 10px */
+    }
+
+    .articulo-productos-descuentos {
+        border: 1.5px solid #6191de;
+    }
+
+    .div-etiqueta {
+        margin-bottom: 13px;   /* antes 12px *//* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        padding: 5.5px 10px;
+        font-size: 12px;
+    }
+
+    .contenedor_imagen {
+        height: 125px;  /* antes 120px */
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 6px;  /* antes 6px */
+    }
+
+    .texto_nombre_arriba {
+        max-height: 38px;  /* antes 35px */
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 300;  /* antes 300 */
+        font-size: 15px;  /* antes 14px */
+    }
+    
+    .texto_descripcion_arriba {
+        max-height: 38px;  /* antes 35px */
+    }
+
+    /* .div-tres */
+    .precio-tachado {
+        font-size: 16px;  /* antes 14px */
+        margin-top: 12px;  /* antes 12px *//* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 2.5px;  /* antes 2.8px */
+    }
+
+    .precio {
+        font-size: 23px;  /* antes 22px */
+    }
+
+    .descuento {
+        font-size: 15px;  /* antes 15px */
+        margin-left: 5px;  /* antes 4.5px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 13px;  /* antes 12px *//* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        border-radius: 5px;  /* antes 5px */
+        font-size: 16px;  /* antes 15px */
+        padding: 6.5px;  /* antes 5.5px */
+    }
+
+    /* ----- otras cosas ----- */
+    .myBtn {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@media (min-width: 800px){
+
+    /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
+    .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
+        top: 50px;
+    }
+}
+
+@media (min-width: 900px){
+
+    /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
+    .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
+        top: 52px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    html {   /* para hacer que el fondo no siga con el verde hasta muy alto, queda feo en desktop */
+        background: #f2f9fb;
+        background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);  
+    }
+
+    /* main {
+        margin-bottom: 140px;
+    } */
+
+    /* ------ Filtros Mobile ------ */
+    .cantidad-producto { /* el section con los botones de filtros mobile */
+        display: none;
+    }
+
+    .h2-titulo {  /* el titulo de Productos Perro/Gato en MOBILE */
+        display: none;
+    }
+
+    /* -------- Menus de filtros DESKTOP ------- */
+    .cantidad-producto-desktop-arriba {  /* el contenedor PADRE de Busquedas relacionadas en DESKTOP */
+        display: block;
+        /* border: 1px solid blue; */
+        border: 1px solid transparent;
+        margin-top: 0.5%;
+        margin-bottom: 0%;
+    }
+
+    .cantidad-producto-desktop {  /* el contenedor PADRE de Volver a home y del boton Ordenar por en DESKTOP */
+        display: block;
+        /* border: 1px solid blue; */
+        /* border: 1px solid transparent; */
+        margin-top: 1%;
+        margin-bottom: 0.5%;
+    }
+
+    .div-filtros-desktop {  /* div hijo dentro de .cantidad-producto-desktop de Volver a home y del boton Ordenar por en DESKTOP */
+        position: relative;
+        display: block;
+        /* z-index: 1; */
+        /* border: 1px solid violet; */
+        border: 1px solid transparent;
+    }
+
+    .rutas-filtros, .rutas-filtros2, .rutas-filtros3 {   /* los links de Busquedas relacionadas, el a de Volver a home y el a de Productos Perro/Gato */
+        display: block;
+        font-size: 13px;
+        color: rgb(50, 50, 50);
+        margin-left: 7px;
+        margin-right: 7px;
+        font-weight: 400;
+    }
+
+    .rutas-filtros2 {  /* el Volver a home */
+        margin-left: 0;
+    }
+
+    .rutas-filtros3 {  /* el Productos perro/gato */
+        color: #1f67da;
+    }
+
+    .rutas-filtros:hover {  /* los links del Busquedas relacionadas */
+        color: black;
+    }
+
+    .rutas-filtros2:hover {  /* el Volver a home */
+        color: #1f67da;
+    }
+
+    .rutas-filtros3:hover {  /* el Productos perro/gato */
+        color: #194da1;
+    }
+
+    .spanVerTambien {   /* el Ver tambien: */
+        margin-left: 7px; 
+        color: rgb(100, 100, 100);
+        font-size: 13px;
+        cursor: default;
+    }
+
+    .btn-icon-desktop {   /* boton de ordenar por y Busquedas relacionadas */
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .fa-chevron-down {  /* la flechita */
+        margin-left: 5px;
+        color: #1f67da;
+        transition: 250ms;
+    }
+
+    .fa-chevron-down2 {  /* la flechita cuando apretas (para el toggle) */
+        margin-left: 5px;
+        color: #1f67da;
+        rotate: 180deg;
+    }
+
+    .contendor_opciones-Desktop {
+        display: none;
+    }
+
+    .contendor_opciones-Desktop2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: absolute;
+        right: -12%;
+        top: 150%;
+        background-color: white;
+        box-shadow : 0px 0px 20px #9fafb2;
+        border : 1px solid #bacdd0;
+        width: 130px;
+        border-radius: 5px;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .opcion-filtro {
+        display: block;
+        color: rgb(69, 69, 69);
+        background-color: white;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 11px 0px;
+        /* padding-left: 0; */
+        margin: 0;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 0;
+        text-align: center;
+        /* border: 1px solid red; */
+    }
+
+    .opcion-filtro:hover {
+        /* background-color: rgb(238, 212, 147); */
+        background-color: #dde9ec;
+        color: black;
+    }
+
+    .filtro-elegido {  /* el span q muestra el filtro aplicado al lado de Ordenar por */
+        font-size: 14px;
+        font-weight: 400;
+        margin-left: 5px;
+        transition: 250ms;
+    }
+
+    .filtro-elegido:hover {
+        color: #1f67da;
+
+        #flechita-abajo {  /* las flechitas */
+            color: #6191de;
+        }
+    }
+
+    .ordenarPor-desactivado {
+        cursor: default;
+        color: rgb(70, 70, 70);
+        font-weight: 400;
+
+    }
+
+    /* Filtros Desktop + productos */
+    .contenedor_menu_productos_desktop { /* el contenedor PADRE (contiene los filtros y los productos) */
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        /* border: 1px solid maroon; */
+        gap: 0;
+        width: 90%;
+        margin: auto;
+        padding-bottom: 5%;  /* hace q el footer esté despegado ese % */
+    }
+
+    .contenedor-filtros-desktop { /* el contenedor del box de los filtros laterales */
+        width: 24%;
+        /* border: 1px solid #dde9ec; */
+        /* padding: 5px; */
+        display: flex;
+        align-items: flex-start;
+        /* background-color: #dde9ec; */
+        /* border: 1px solid red; */
+    }
+
+    .contenedor_menu_desktop { /* el box de los filtros */
+        display: block;
+        /* margin-left: 10px; */  /* separa al box del lateral del window */
+        /* margin-top: 80px; */
+        /* width: 24%; */
+        border: 1px rgb(180, 180, 180) solid;
+        border-radius: 6px;
+        height: fit-content;
+        width: 100%;
+        /* background-color: #f2f9fb; */
+        /* border: 1px solid blue; */
+        /* border: 1px solid #bacdd0; */ /* quise probar con este color de borde */
+        border: 1px solid transparent;
+        padding: 10px;
+        padding-left: 0;
+        /* padding-top: 0; */
+        /* margin: 0;
+        padding: 0; */
+    }
+
+    .contenedor_filtros { /* div hijo de .contenedor_menu_desktop */
+        display: block;
+        /* width: 85%; */
+        /* margin: 12px auto; */
+        /* border: 1px solid fuchsia; */
+        margin: 0;
+        padding: 0;
+    }
+
+    .lista_filtros_desktop {  /* los section de las agrupaciones de filtros */
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid grey; */
+        margin-top: 20px;
+    }
+
+    .h2-titulo-desktop {  /* el titulo de Productos Perro/Gato */
+        display: block;
+        font-size: 24px;
+        font-weight: 500;
+        margin: 0;
+        /* border: 1px solid gray; */
+    }
+
+    .prod-encontr-desktop {  /* indica la cantidad de productos */
+        /* border: 1px solid gray; */
+        color: rgb(85, 85, 85);
+        font-size: 14px;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    .lista_filtros_desktop h4 {  /* los titulos de filtros */
+        font-weight: 500;
+        font-size: 16px;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .flex_enlinea_menu {  /* los divs de cada p de cada filtro */
+        display: flex;
+        /* border: 1px solid green; */
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+        height: auto;
+    }
+
+    .flex_enlinea_menu-p, .flex_enlinea_menu-p a, .flex_enlinea_menu input {  /* los p de los nombres de cada filtro */
+        font-size: 14px;
+        font-weight: 400;
+        color: rgb(85, 85, 85);
+        margin: 0;
+        margin-bottom: 8px;
+        transition: 300ms;
+        /* color: red; */
+    }
+
+    .flex_enlinea_menu-p a:hover {  /* los p de los nombres de cada filtro */
+        color: black;
+    }
+
+    .cantidad-productos {  /* los numeros dentro de los parentesis al lado de cada p */
+        color: rgb(126, 126, 126);
+        font-size: 14px;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 8px;
+        margin-left: 3px;
+    }
+
+    .flex_enlinea_menu input {
+        margin-left: 3px;
+    }
+
+    /* --- diseño de los checkboxes (estan solo en los filtros en desktop) --- */
+    .checkboxFiltroDesktop {
+        appearance: none;
+        border: 1.5px solid gray;
+        background-color: #f2f9fb;
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='rgb(245, 245, 245)' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        background-size: 150% 150%;
+        background-position: center;
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+        transition: background-color 0.1s ease-in-out;
+    }
+    
+    .checkboxFiltroDesktop:checked {  /* checkeado */
+        background-color: #1f67da;
+        border-color: #1f67da;
+    }
+
+    .checkboxFiltroDesktop:disabled {  /* deshabilitado */
+        background-color: #d8e3e6;
+        border: 1.5px solid rgb(197, 197, 197);
+        background-image: none;
+    }
+
+    .checkboxFiltroDesktop:disabled:hover {  /* deshabilitado hover */
+        background-color: #d8e3e6;
+        border: 1.5px solid rgb(197, 197, 197);
+        background-image: none;
+    }
+
+    .checkboxFiltroDesktop:checked:disabled {  /* checkeado y deshabilitado */
+        background-color: #bccbe4;
+        border: 1.8px solid #9eb8e0;
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='rgb(245, 245, 245)' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    }
+
+    .checkboxFiltroDesktop:hover {
+        border-color: #1f67da;
+    }
+
+
+    /* -------- Productos ---------- */
+    .lista_desktop { /* el box de los productos */
+        /* width: 82%;
+        margin: auto; */
+        background-color: white;
+        /* margin-top: 4%; */
+        /* border: 1px solid red; */
+        border: 1px solid white;
+        padding: 10px;
+        padding-bottom: 0;
+        /* margin-bottom: 4%; */
+        /* margin-top: 0; */
+        margin: 0;
+        height: fit-content;
+        box-shadow : 0px 0px 20px rgb(180, 180, 180);
+    }
+
+    .div-lista-desktop { /* mismo q el de arriba + el titulo de Productos Perro/Gato */
+        /* border: 1px solid blue; */
+        position: relative;
+    }
+
+    .h3-sinResultados {
+        display: block;
+        font-weight: 300;
+        font-size: 15px;
+        margin: auto;
+        padding-bottom: 12px;
+    }
+
+    .lista_flexbox_desktop {  /* el box de los productos agrupados de determianda manera (visible, invisible, etc) */
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---invisible {   /* <<<<<<<<<<<<--------- para hacer el boton de mostrar mas ---------------||||||||||||| */
+        justify-content: flex-start;
+        gap: 1.25%;
+        transition: 450ms;
+    }
+
+    .lista_flexbox_desktop---comida {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---accesorio {  
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---higiene {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---juguete {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesoriosOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---juguetesOff {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+    
+    .lista_flexbox_desktop---comidaGato, .lista_flexbox_desktop---accesoriosGato, .lista_flexbox_desktop---higieneGato, .lista_flexbox_desktop---juguetesGato {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+    
+    .lista_flexbox_desktop---comidaPerro, .lista_flexbox_desktop---accesoriosPerro, .lista_flexbox_desktop---higienePerro, .lista_flexbox_desktop---juguetesPerro {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---de0a10 { 
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---de10a20 {  
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---de20a30 {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---de30aX {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---off {  
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---offGato {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+    
+    .lista_flexbox_desktop---offPerro {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesorioOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---jugueteOff {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---checkboxCatitGato {  
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---checkboxCancatGato {  
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---checkboxPurinaGato {  
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---checkboxProPlanGato {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---checkboxOtrasMarcasGato {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---checkboxEukanuba, .lista_flexbox_desktop---checkboxRoyal, .lista_flexbox_desktop---checkboxProPlanPerro, .lista_flexbox_desktop---checkboxOtrasMarcasPerro {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---comidaConOff {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---accesorioConOff {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---higieneConOff {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---jugueteConOff {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---de0a10ConOff {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---de10a20ConOff {  
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---de20a30ConOff {  
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---de30aXConOff {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    /* ---- CHECKBOXES en pagina ppal COMBINADOS ---- */
+    /* ---- COMBINACIONES DOBLES ---- */
+    /* divs para filtros de categorias con descuento */
+    .lista_flexbox_desktop---comidaConOff, .lista_flexbox_desktop---accesorioConOff, .lista_flexbox_desktop---higieneConOff, .lista_flexbox_desktop---jugueteConOff {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    /* divs para filtros de precios con descuento */
+    .lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    /* divs para filtros de categorias por precio */
+    .lista_flexbox_desktop---comida0a10, .lista_flexbox_desktop---accesorio0a10, .lista_flexbox_desktop---higiene0a10, .lista_flexbox_desktop---juguete0a10 {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---comida10a20, .lista_flexbox_desktop---accesorio10a20, .lista_flexbox_desktop---higiene10a20, .lista_flexbox_desktop---juguete10a20 {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---comida20a30, .lista_flexbox_desktop---accesorio20a30, .lista_flexbox_desktop---higiene20a30, .lista_flexbox_desktop---juguete20a30 {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---comida30aX, .lista_flexbox_desktop---accesorio30aX, .lista_flexbox_desktop---higiene30aX, .lista_flexbox_desktop---juguete30aX {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    /* divs para filtros de categorias por precio y con descuento */
+    /* ---- COMBINACIONES TRIPLES ---- */
+    .lista_flexbox_desktop---comida0a10ConOff, .lista_flexbox_desktop---accesorio0a10ConOff, .lista_flexbox_desktop---higiene0a10ConOff, .lista_flexbox_desktop---juguete0a10ConOff {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---comida10a20ConOff, .lista_flexbox_desktop---accesorio10a20ConOff, .lista_flexbox_desktop---higiene10a20ConOff, .lista_flexbox_desktop---juguete10a20ConOff {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---comida20a30ConOff, .lista_flexbox_desktop---accesorio20a30ConOff, .lista_flexbox_desktop---higiene20a30ConOff, .lista_flexbox_desktop---juguete20a30ConOff {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---comida30aXConOff, .lista_flexbox_desktop---accesorio30aXConOff, .lista_flexbox_desktop---higiene30aXConOff, .lista_flexbox_desktop---juguete30aXConOff {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    /* ----- EN PAGINAS DE CATEGORIAS ----- */
+    .lista_flexbox_desktop---de0a10comida {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---de10a20comida {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---de20a30comida {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---de30aXcomida {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---de0a10higiene {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---de10a20higiene {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---de20a30higiene {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---de30aXhigiene {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---de0a10accesorios {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---de10a20accesorios {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---de20a30accesorios {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---de30aXaccesorios {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---de0a10juguetes {  
+        justify-content: flex-start;
+        gap: 1.25%;   
+    }
+
+    .lista_flexbox_desktop---de10a20juguetes {  
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    .lista_flexbox_desktop---de20a30juguetes {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    .lista_flexbox_desktop---de30aXjuguetes {  
+        justify-content: flex-start;
+        gap: 1.25%;  
+    }
+
+    /* EN PAGINA DE PROMOCIONES */
+    .lista_flexbox_desktop---comidaOffGato, .lista_flexbox_desktop---comidaOffPerro, .lista_flexbox_desktop---accesoriosOffGato, .lista_flexbox_desktop---accesoriosOffPerro, .lista_flexbox_desktop---higieneOffGato, .lista_flexbox_desktop---higieneOffPerro, .lista_flexbox_desktop---juguetesOffGato, .lista_flexbox_desktop---juguetesOffPerro {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---de0a10OffGato, .lista_flexbox_desktop---de0a10OffPerro, .lista_flexbox_desktop---de10a20OffGato, .lista_flexbox_desktop---de10a20OffPerro, .lista_flexbox_desktop---de20a30OffGato, .lista_flexbox_desktop---de20a30OffPerro, .lista_flexbox_desktop---de30aXOffGato, .lista_flexbox_desktop---de30aXOffPerro {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---gato, .lista_flexbox_desktop---perro {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    /* EN PAGINA DE CATRGORIAS */
+    .lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---de0a10gato, .lista_flexbox_desktop---de10a20gato, .lista_flexbox_desktop---de20a30gato, .lista_flexbox_desktop---de30aXgato {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---de0a10perro, .lista_flexbox_desktop---de10a20perro, .lista_flexbox_desktop---de20a30perro, .lista_flexbox_desktop---de30aXperro {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---gatoOff, .lista_flexbox_desktop---perroOff {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    .lista_flexbox_desktop---menorPrecio, .lista_flexbox_desktop---mayorPrecio {
+        justify-content: flex-start;
+        gap: 1.25%; 
+    }
+
+    /* para hacer los filtros del boton de ordenar por */
+    .lista_flexbox_desktop---accesorioMePre, .lista_flexbox_desktop---accesorioMaPre, .lista_flexbox_desktop---comidaMePre, .lista_flexbox_desktop---comidaMaPre, .lista_flexbox_desktop---higieneMePre, .lista_flexbox_desktop---higieneMaPre, .lista_flexbox_desktop---jugueteMePre, .lista_flexbox_desktop---jugueteMaPre, .lista_flexbox_desktop---de0a10MePre, .lista_flexbox_desktop---de10a20MePre, .lista_flexbox_desktop---de20a30MePre, .lista_flexbox_desktop---de30aXMePre, .lista_flexbox_desktop---de0a10MaPre, .lista_flexbox_desktop---de10a20MaPre, .lista_flexbox_desktop---de20a30MaPre, .lista_flexbox_desktop---de30aXMaPre, .lista_flexbox_desktop---checkboxEukanubaMePre, .lista_flexbox_desktop---checkboxEukanubaMaPre, .lista_flexbox_desktop---checkboxRoyalMePre, .lista_flexbox_desktop---checkboxRoyalMaPre, .lista_flexbox_desktop---checkboxProPlanPerroMaPre, .lista_flexbox_desktop---checkboxProPlanPerroMePre, .lista_flexbox_desktop---checkboxOtrasMarcasPerroMaPre, .lista_flexbox_desktop---checkboxOtrasMarcasPerroMePre, .lista_flexbox_desktop---offMePre, .lista_flexbox_desktop---offMaPre, .lista_flexbox_desktop---comidaConOffMePre, .lista_flexbox_desktop---comidaConOffMaPre, .lista_flexbox_desktop---accesorioConOffMePre, .lista_flexbox_desktop---accesorioConOffMaPre, .lista_flexbox_desktop---higieneConOffMePre, .lista_flexbox_desktop---higieneConOffMaPre, .lista_flexbox_desktop---jugueteConOffMePre, .lista_flexbox_desktop---jugueteConOffMaPre, .lista_flexbox_desktop---de0a10ConOffMePre, .lista_flexbox_desktop---de0a10ConOffMaPre, .lista_flexbox_desktop---de10a20ConOffMePre, .lista_flexbox_desktop---de10a20ConOffMaPre, .lista_flexbox_desktop---de20a30ConOffMePre, .lista_flexbox_desktop---de20a30ConOffMaPre, .lista_flexbox_desktop---de30aXConOffMePre, .lista_flexbox_desktop---de30aXConOffMaPre, .lista_flexbox_desktop---accesorio0a10MePre, .lista_flexbox_desktop---accesorio0a10MaPre, .lista_flexbox_desktop---accesorio10a20MePre, .lista_flexbox_desktop---accesorio10a20MaPre, .lista_flexbox_desktop---accesorio20a30MePre, .lista_flexbox_desktop---accesorio20a30MaPre, .lista_flexbox_desktop---accesorio30aXMePre, .lista_flexbox_desktop---accesorio30aXMaPre, .lista_flexbox_desktop---comida0a10MePre, .lista_flexbox_desktop---comida0a10MaPre, .lista_flexbox_desktop---comida10a20MePre, .lista_flexbox_desktop---comida10a20MaPre, .lista_flexbox_desktop---comida20a30MePre, .lista_flexbox_desktop---comida20a30MaPre, .lista_flexbox_desktop---comida30aXMePre, .lista_flexbox_desktop---comida30aXMaPre, .lista_flexbox_desktop---higiene0a10MePre, .lista_flexbox_desktop---higiene0a10MaPre, .lista_flexbox_desktop---higiene10a20MePre, .lista_flexbox_desktop---higiene10a20MaPre, .lista_flexbox_desktop---higiene20a30MePre, .lista_flexbox_desktop---higiene20a30MaPre, .lista_flexbox_desktop---higiene30aXMePre, .lista_flexbox_desktop---higiene30aXMaPre, .lista_flexbox_desktop---juguete0a10MePre, .lista_flexbox_desktop---juguete0a10MaPre, .lista_flexbox_desktop---juguete10a20MePre, .lista_flexbox_desktop---juguete10a20MaPre, .lista_flexbox_desktop---juguete20a30MePre, .lista_flexbox_desktop---juguete20a30MaPre, .lista_flexbox_desktop---juguete30aXMePre, .lista_flexbox_desktop---juguete30aXMaPre {
+        justify-content: flex-start;
+        gap: 1.25%;
+    }
+
+    /* --- Card producto --- */ 
+    .articulo-productos-descuentos, .articulo-productos {  /* 3 cards a lo ancho */
+        width: 32.5%;
+        /* margin-left: 2.5%; */
+        margin-bottom: 12px;  /* separacion entre filas de cards */
+        transition: 200ms;
+    }
+
+    .articulo-productos-descuentos {
+        border: 1.5px solid #6191de;
+    }
+
+    /* .articulo-productos-descuentos:hover {
+        box-shadow : 0px 0px 20px rgb(140, 140, 140);
+    } */
+    
+    .articulo-productos:hover {
+        border: 1px solid #cedffc;
+        /* box-shadow : 0px 0px 16px rgb(186, 186, 186); */
+        .texto_nombre_arriba h4 {
+            color: #349fba;
+        }
+    }
+
+    .articulo-productos-descuentos:hover {
+        border: 1.5px solid #29d5de;
+        /* box-shadow : 0px 0px 16px rgb(186, 186, 186); */
+        .texto_nombre_arriba h4 {
+            color: #349fba;
+        }
+    }
+
+    /* .etiqueta-comida-bicho-card {
+        color: white;
+        background-color: #5746d7;
+    }
+    
+    .etiqueta-accesorio-bicho-card {
+        color: white;
+        background-color: #29d5de;
+    }
+    
+    .etiqueta-higiene-bicho-card {
+        color: white;
+        background-color: #e8a62b;
+    }
+    
+    .etiqueta-juguete-bicho-card {
+        color: white;
+        background-color: #9b46d7;
+    } */
+
+    .texto_nombre_arriba h4 {
+        font-weight: 400;
+        font-size: 15px;
+        transition: 200ms;
+    }
+
+    .texto_descripcion_arriba {
+        display: block;
+    }
+    
+    .descripcion {
+        margin-top: 11px;  /* para separarla del titulo */
+        font-size: 12px;
+        font-weight: 300;
+        /* border: 1px solid violet; */
+    }
+
+    .boton-comprar, .boton-comprarSinAuth {
+        transition: all 500ms ease-in-out;
+        cursor: pointer;
+    }
+
+    .boton-comprar:hover, .boton-comprarSinAuth:hover {
+        background: linear-gradient(90deg, #f0f2f3 0%, #d2e9ef 50%, #8dbdc9 100%);
+        color: rgb(147, 147, 147);
+        /* border: 1px solid rgb(208, 208, 208); */
+    }
+
+    /* ----- otras cosas ----- */
+    .myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: #1e697b; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 50%; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+    }
+      
+    .myBtn:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+    }
+
+    .div-btnver {
+        display: block;
+        /* margin: 0; */
+        /* border: 1px solid red; */
+        position: absolute;
+        bottom: 0;
+        backdrop-filter: blur(6px) saturate(180%);
+        -webkit-backdrop-filter: blur(3px) saturate(180%);
+        /* background-color: rgba(255, 255, 255, 0.65); */
+        /* height: 400px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .btnver {
+        background-color: #3c47bd;
+        padding: 14px;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        width: 20%;
+        border-radius: 25px;
+        border: 1px solid #1a2493;
+        transition: 450ms;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .btnver:hover {
+        background-color: #438cd0;
+    }
+
+    footer {
+        margin: 0;
+    }
+
+}
+
+@media (min-width: 1200px) { /* desde acá se muestran 4 cards a lo ancho */
+
+    /* -------- Menus de filtros DESKTOP ------- */
+    .contenedor_menu_productos_desktop, .cantidad-producto-desktop-arriba, .cantidad-producto-desktop {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .cantidad-producto-desktop-arriba {
+        margin-top: 0.5%;
+    }
+
+    .cantidad-producto-desktop {  /* el contenedor PADRE del boton Ordenar por en DESKTOP */
+        display: block;
+        /* border: 1px solid red; */
+        border: 1px solid transparent;
+        margin-top: 1%;
+        margin-bottom: 0.5%;
+    }
+
+    .rutas-filtros, .rutas-filtros2, .rutas-filtros3 {   /* las a de Busquedas relacionadas, el a de Volver a home y el a de Productos Perro/Gato */
+        font-size: 13.5px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .spanVerTambien {   /* el Ver tambien: */
+        margin: 0;
+        margin-left: 9px;
+        font-size: 13.5px
+    }
+
+    .btn-icon-desktop {   /* el p de busquedas relacionadas y el Ordenar por */
+        font-size: 14.5px;
+    }
+
+    .contenedor-filtros-desktop { /* el contenedor del box de los filtros laterales */
+        width: 20%;
+        /* border: 1px solid red; */
+    }
+
+    .contenedor_menu_desktop { /* el box de los filtros */
+        /* padding: 15px; */
+    }
+
+    /* --- diseño de los checkboxes --- */
+    .checkboxFiltroDesktop {
+        width: 12.3px;
+        height: 12.3px;
+        border-radius: 2px;
+    }
+    /* ------------------------------- */
+
+    .contendor_opciones-Desktop {
+        display: none;
+        right: -10%;
+        top: 150%;
+        min-width: 50px;
+        width: 130px;
+        z-index: 2;
+    }
+
+    .contendor_opciones-Desktop2 {
+        display: flex;
+        right: -10%;
+        top: 150%;
+        min-width: 50px;
+        width: 130px;
+        z-index: 2;
+    }
+
+    .opcion-filtro {
+        font-size: 14px;
+        padding: 11px;
+    }
+
+    .filtro-elegido {  /* el span q muestra el filtro aplicado al lado de Ordenar por */
+        font-size: 14px;
+        font-weight: 400;
+        margin-left: 5px;
+    }
+
+    /* -------- Productos ---------- */
+    .lista_desktop { /* el box de los productos */
+        margin-top: 0;
+        /* padding: 15px; */
+        padding-bottom: 0;
+    }
+
+    /* .lista_flexbox_desktop---de0a10comidaPerro {  
+        border: 1px solid white;
+        display: flex;
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-around;   
+    } */
+
+    .lista_flexbox_desktop {  /* el box de los productos agrupados de determianda manera (visible, invisible, etc) */
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---invisible {   /* <<<<<<<<<<<<--------- para hacer el boton de mostrar mas ---------------||||||||||||| */
+        justify-content: flex-start;
+        gap: 1%;
+        transition: 450ms;
+    }
+
+    .lista_flexbox_desktop---comida {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---accesorio {  
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---higiene {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---juguete {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesoriosOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---juguetesOff {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+    
+    .lista_flexbox_desktop---comidaGato, .lista_flexbox_desktop---accesoriosGato, .lista_flexbox_desktop---higieneGato, .lista_flexbox_desktop---juguetesGato {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+    
+    .lista_flexbox_desktop---comidaPerro, .lista_flexbox_desktop---accesoriosPerro, .lista_flexbox_desktop---higienePerro, .lista_flexbox_desktop---juguetesPerro {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---de0a10 { 
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---de10a20 {  
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---de20a30 {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---de30aX {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---off {  
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---offGato {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+    
+    .lista_flexbox_desktop---offPerro {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---comidaOff, .lista_flexbox_desktop---accesorioOff, .lista_flexbox_desktop---higieneOff, .lista_flexbox_desktop---jugueteOff {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---checkboxCatitGato {  
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---checkboxCancatGato {  
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---checkboxPurinaGato {  
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---checkboxProPlanGato {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---checkboxOtrasMarcasGato {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---checkboxEukanuba, .lista_flexbox_desktop---checkboxRoyal, .lista_flexbox_desktop---checkboxProPlanPerro, .lista_flexbox_desktop---checkboxOtrasMarcasPerro {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---comidaConOff {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---accesorioConOff {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---higieneConOff {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---jugueteConOff {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---de0a10ConOff {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---de10a20ConOff {  
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---de20a30ConOff {  
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---de30aXConOff {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    /* ---- CHECKBOXES en pagina ppal COMBINADOS ---- */
+    /* ---- COMBINACIONES DOBLES ---- */
+    /* divs para filtros de categorias con descuento */
+    .lista_flexbox_desktop---comidaConOff, .lista_flexbox_desktop---accesorioConOff, .lista_flexbox_desktop---higieneConOff, .lista_flexbox_desktop---jugueteConOff {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    /* divs para filtros de precios con descuento */
+    .lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    /* divs para filtros de categorias por precio */
+    .lista_flexbox_desktop---comida0a10, .lista_flexbox_desktop---accesorio0a10, .lista_flexbox_desktop---higiene0a10, .lista_flexbox_desktop---juguete0a10 {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---comida10a20, .lista_flexbox_desktop---accesorio10a20, .lista_flexbox_desktop---higiene10a20, .lista_flexbox_desktop---juguete10a20 {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---comida20a30, .lista_flexbox_desktop---accesorio20a30, .lista_flexbox_desktop---higiene20a30, .lista_flexbox_desktop---juguete20a30 {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---comida30aX, .lista_flexbox_desktop---accesorio30aX, .lista_flexbox_desktop---higiene30aX, .lista_flexbox_desktop---juguete30aX {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    /* divs para filtros de categorias por precio y con descuento */
+    /* ---- COMBINACIONES TRIPLES ---- */
+    .lista_flexbox_desktop---comida0a10ConOff, .lista_flexbox_desktop---accesorio0a10ConOff, .lista_flexbox_desktop---higiene0a10ConOff, .lista_flexbox_desktop---juguete0a10ConOff {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---comida10a20ConOff, .lista_flexbox_desktop---accesorio10a20ConOff, .lista_flexbox_desktop---higiene10a20ConOff, .lista_flexbox_desktop---juguete10a20ConOff {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---comida20a30ConOff, .lista_flexbox_desktop---accesorio20a30ConOff, .lista_flexbox_desktop---higiene20a30ConOff, .lista_flexbox_desktop---juguete20a30ConOff {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---comida30aXConOff, .lista_flexbox_desktop---accesorio30aXConOff, .lista_flexbox_desktop---higiene30aXConOff, .lista_flexbox_desktop---juguete30aXConOff {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    /* ----- EN PAGINAS DE CATEGORIAS ----- */
+    .lista_flexbox_desktop---de0a10comida {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---de10a20comida {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---de20a30comida {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---de30aXcomida {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---de0a10higiene {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---de10a20higiene {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---de20a30higiene {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---de30aXhigiene {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---de0a10accesorios {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---de10a20accesorios {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---de20a30accesorios {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---de30aXaccesorios {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---de0a10juguetes {  
+        justify-content: flex-start;
+        gap: 1%;   
+    }
+
+    .lista_flexbox_desktop---de10a20juguetes {  
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    .lista_flexbox_desktop---de20a30juguetes {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    .lista_flexbox_desktop---de30aXjuguetes {  
+        justify-content: flex-start;
+        gap: 1%;  
+    }
+
+    /* EN PAGINA DE PROMOCIONES */
+    .lista_flexbox_desktop---comidaOffGato, .lista_flexbox_desktop---comidaOffPerro, .lista_flexbox_desktop---accesoriosOffGato, .lista_flexbox_desktop---accesoriosOffPerro, .lista_flexbox_desktop---higieneOffGato, .lista_flexbox_desktop---higieneOffPerro, .lista_flexbox_desktop---juguetesOffGato, .lista_flexbox_desktop---juguetesOffPerro {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---de0a10OffGato, .lista_flexbox_desktop---de0a10OffPerro, .lista_flexbox_desktop---de10a20OffGato, .lista_flexbox_desktop---de10a20OffPerro, .lista_flexbox_desktop---de20a30OffGato, .lista_flexbox_desktop---de20a30OffPerro, .lista_flexbox_desktop---de30aXOffGato, .lista_flexbox_desktop---de30aXOffPerro {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---gato, .lista_flexbox_desktop---perro {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    /* EN PAGINA DE CATRGORIAS */
+    .lista_flexbox_desktop---de0a10ConOff, .lista_flexbox_desktop---de10a20ConOff, .lista_flexbox_desktop---de20a30ConOff, .lista_flexbox_desktop---de30aXConOff {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---de0a10gato, .lista_flexbox_desktop---de10a20gato, .lista_flexbox_desktop---de20a30gato, .lista_flexbox_desktop---de30aXgato {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---de0a10perro, .lista_flexbox_desktop---de10a20perro, .lista_flexbox_desktop---de20a30perro, .lista_flexbox_desktop---de30aXperro {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---gatoOff, .lista_flexbox_desktop---perroOff {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .lista_flexbox_desktop---menorPrecio, .lista_flexbox_desktop---mayorPrecio {
+        justify-content: flex-start;
+        gap: 1%; 
+    }
+
+    /* para hacer los filtros del boton de ordenar por */
+    .lista_flexbox_desktop---accesorioMePre, .lista_flexbox_desktop---accesorioMaPre, .lista_flexbox_desktop---comidaMePre, .lista_flexbox_desktop---comidaMaPre, .lista_flexbox_desktop---higieneMePre, .lista_flexbox_desktop---higieneMaPre, .lista_flexbox_desktop---jugueteMePre, .lista_flexbox_desktop---jugueteMaPre, .lista_flexbox_desktop---de0a10MePre, .lista_flexbox_desktop---de10a20MePre, .lista_flexbox_desktop---de20a30MePre, .lista_flexbox_desktop---de30aXMePre, .lista_flexbox_desktop---de0a10MaPre, .lista_flexbox_desktop---de10a20MaPre, .lista_flexbox_desktop---de20a30MaPre, .lista_flexbox_desktop---de30aXMaPre, .lista_flexbox_desktop---checkboxEukanubaMePre, .lista_flexbox_desktop---checkboxEukanubaMaPre, .lista_flexbox_desktop---checkboxRoyalMePre, .lista_flexbox_desktop---checkboxRoyalMaPre, .lista_flexbox_desktop---checkboxProPlanPerroMaPre, .lista_flexbox_desktop---checkboxProPlanPerroMePre, .lista_flexbox_desktop---checkboxOtrasMarcasPerroMaPre, .lista_flexbox_desktop---checkboxOtrasMarcasPerroMePre, .lista_flexbox_desktop---offMePre, .lista_flexbox_desktop---offMaPre, .lista_flexbox_desktop---comidaConOffMePre, .lista_flexbox_desktop---comidaConOffMaPre, .lista_flexbox_desktop---accesorioConOffMePre, .lista_flexbox_desktop---accesorioConOffMaPre, .lista_flexbox_desktop---higieneConOffMePre, .lista_flexbox_desktop---higieneConOffMaPre, .lista_flexbox_desktop---jugueteConOffMePre, .lista_flexbox_desktop---jugueteConOffMaPre, .lista_flexbox_desktop---de0a10ConOffMePre, .lista_flexbox_desktop---de0a10ConOffMaPre, .lista_flexbox_desktop---de10a20ConOffMePre, .lista_flexbox_desktop---de10a20ConOffMaPre, .lista_flexbox_desktop---de20a30ConOffMePre, .lista_flexbox_desktop---de20a30ConOffMaPre, .lista_flexbox_desktop---de30aXConOffMePre, .lista_flexbox_desktop---de30aXConOffMaPre, .lista_flexbox_desktop---accesorio0a10MePre, .lista_flexbox_desktop---accesorio0a10MaPre, .lista_flexbox_desktop---accesorio10a20MePre, .lista_flexbox_desktop---accesorio10a20MaPre, .lista_flexbox_desktop---accesorio20a30MePre, .lista_flexbox_desktop---accesorio20a30MaPre, .lista_flexbox_desktop---accesorio30aXMePre, .lista_flexbox_desktop---accesorio30aXMaPre, .lista_flexbox_desktop---comida0a10MePre, .lista_flexbox_desktop---comida0a10MaPre, .lista_flexbox_desktop---comida10a20MePre, .lista_flexbox_desktop---comida10a20MaPre, .lista_flexbox_desktop---comida20a30MePre, .lista_flexbox_desktop---comida20a30MaPre, .lista_flexbox_desktop---comida30aXMePre, .lista_flexbox_desktop---comida30aXMaPre, .lista_flexbox_desktop---higiene0a10MePre, .lista_flexbox_desktop---higiene0a10MaPre, .lista_flexbox_desktop---higiene10a20MePre, .lista_flexbox_desktop---higiene10a20MaPre, .lista_flexbox_desktop---higiene20a30MePre, .lista_flexbox_desktop---higiene20a30MaPre, .lista_flexbox_desktop---higiene30aXMePre, .lista_flexbox_desktop---higiene30aXMaPre, .lista_flexbox_desktop---juguete0a10MePre, .lista_flexbox_desktop---juguete0a10MaPre, .lista_flexbox_desktop---juguete10a20MePre, .lista_flexbox_desktop---juguete10a20MaPre, .lista_flexbox_desktop---juguete20a30MePre, .lista_flexbox_desktop---juguete20a30MaPre, .lista_flexbox_desktop---juguete30aXMePre, .lista_flexbox_desktop---juguete30aXMaPre {
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    colores {
+        color: #bccbe4;
+        color: #9eb8e0;
+        color: #6191de;
+        color: #1f67da;
+        color: #194da1;
+    }
+
+    /* --- Card producto --- */ 
+    .articulo-productos-descuentos, .articulo-productos {  /* 4 cards a lo ancho */
+        width: 24.2%;
+        margin-bottom: 10px;
+    }
+
+    /* .etiqueta-comida-bicho-card {
+        color: white;
+        border: 0.5px solid white;
+        background: linear-gradient(90deg, #978eda 0%, #7c6fdf 35%, #4939c2 100%);
+    }
+    
+    .etiqueta-accesorio-bicho-card {
+        color: white;
+        border: 0.5px solid white;
+        background: linear-gradient(90deg, #92d9db 0%, #4bd1d8 35%, #10b2bb 100%);
+    }
+    
+    .etiqueta-higiene-bicho-card {
+        color: white;
+        border: 0.5px solid white;
+        background: linear-gradient(90deg, #dfc79c 0%, #e4b560 35%, #ce8f1a 100%);
+    }
+    
+    .etiqueta-juguete-bicho-card {
+        color: white;
+        border: 0.5px solid white;
+        background: linear-gradient(90deg, #bfa2d3 0%, #b37adb 35%, #8a36c7 100%);
+    } */
+
+
+    .boton-comprar, .boton-comprarSinAuth {
+        border-radius: 5px;  /* antes 5px */
+        font-size: 15px;  /* antes 15px */
+        padding: 6.5px;  /* antes 5.5px */
+    }
+
+    /* ----- otras cosas ----- */
+    .btnver {
+        width: 18%;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+}
+
+@media (min-width: 1600px) {
+
+    .opcion-filtro {
+        padding: 12px;
+    }
+
+    .filtro-elegido {  /* el span q muestra el filtro aplicado al lado de Ordenar por */
+        font-size: 14px;
+    }
+
+    /* Filtros Desktop + productos */
+    .contenedor-filtros-desktop { /* el contenedor del box de los filtros laterales */
+        width: 19%;
+    }
+
+    .contenedor_menu_desktop { /* el box de los filtros */
+        /* margin-left: 12px; */
+        /* max-width: 300px;
+        width: 100%; */
+        /* padding: 15px; */
+    }
+
+    .contenedor_menu_productos_desktop { /* el contenedor PADRE (contiene los filtros y los productos) */
+        /* border: 1px solid maroon; */
+        padding-bottom: 4%;
+    }
+
+    .checkboxFiltroDesktop {
+        width: 12.7px;
+        height: 12.7px;
+        border-radius: 2.5px;
+    }
+
+    /* -------- Productos ---------- */
+    .lista_desktop { /* el box de los productos */
+        /* margin-bottom: 3%;
+        margin-top: 0;
+        padding: 15px;
+        padding: 0; */
+    }
+
+    .h3-sinResultados {
+        font-size: 16px;
+        padding-bottom: 12px;
+    }
+
+    /* --- Card producto --- */ 
+    .articulo-productos-descuentos, .articulo-productos {  /* 5 cards a lo ancho */
+        width: 19.2%;
+        padding: 12px;
+    }
+
+    .boton-comprar, .boton-comprarSinAuth {
+        border-radius: 5px;  /* antes 5px */
+        font-size: 15px;  /* antes 15px */
+        padding: 5.5px;  /* antes 5.5px */
+    }
+
+
+}

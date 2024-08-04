@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head.ejs", {cssSheet: "editar-producto", title: "Editar producto"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
+
+<body>
+
+    <%- include("./partials/header.ejs") %>    
+    <%- include("./partials/header2.ejs") %>
+
+    <main class="main-editar">
+
+        <article class="contenedor-alta">
+            <form class="formu" id="formulario" action="/productos/editar/<%= editarProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                <h4 class="titulo-ppal2">Edición de producto #<%= editarProducto.id %></h4>
+
+                <section class="flex-linea">
+                    <!-- Nombre producto -->
+                    <div class="flex-columna">
+                        <label for="nombre_producto" class='titulo-nombre'>Nombre del producto<span id="iconCheckNombre"><i class="fa-solid fa-circle-check"></i></span><span id="iconExclNombre"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorNombre"></small></label>
+                        <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Dog chow para perros pequeños" value="<%= editarProducto.nombre %>">
+                    </div>
+                    <!-- Precio -->
+                    <div class="flex-columna">
+                        <label for="precio_producto" class='titulo-precio'>Precio del producto<span id="iconCheckPrecio"><i class="fa-solid fa-circle-check"></i></span><span id="iconExclPrecio"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorPrecio"></small></label>
+                        <input type="number" id="precio_producto" name="precio_producto" placeholder="Ej: 50000" value="<%= editarProducto.precio %>">
+                    </div>
+                </section>
+
+                <section class="flex-linea">
+                    <!-- Marca -->
+                    <div class="flex-columna">
+                        <label for="marca" class='titulo-marca'>Selecciona una marca:<span id="iconCheckMarca"><i class="fa-solid fa-circle-check"></i></span><span id="iconExclMarca"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorMarca"></small></label>
+                        <select name="marca_id" id="marca">
+                            <% marcas.forEach(marca => { %> 
+                                <option value="<%= marca.id %>"><%= marca.marca %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <!-- Mascota -->
+                    <div class="flex-columna">
+                        <label for="mascota" class='titulo-mascota'>El productos es para:<span id="iconCheckMascota"><i class="fa-solid fa-circle-check"></i></span><span id="iconExclMascota"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorMascota"></small></label>
+                        <select name="tipo_mascota_id" id="mascota">
+                            <% tipos.forEach(tipo => { %> 
+                                <option value="<%= tipo.id %>"><%= tipo.mascota %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="flex-linea">
+                    <!-- Categoria -->
+                    <div class="flex-columna">    
+                        <label for="categoria" class='titulo-categoria'>Selecciona una categoria:<span id="iconCheckCategoria"><i class="fa-solid fa-circle-check"></i></span><span id="iconExclCategoria"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorCategoria"></small></label>
+                        <select name="categoria_id" id="categoria">
+                            <% categorias.forEach(categoria => { %> 
+                                <option value="<%= categoria.id %>"><%= categoria.categoria %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <!-- Descuento -->
+                    <div class="flex-columna">
+                        <label for="descuento" class='titulo-descuento'> ¿El producto tiene descuento?<span id="iconCheckDescuento"><i class="fa-solid fa-circle-check"></i></span><span id="iconExclDescuento"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorDescuento"></small></label>
+                        <select name="decuento_id" id="descuento">
+                            <% descuentos.forEach(descuento => { %> 
+                                <option value="<%= descuento.id %>"><%= descuento.nombre %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                </section>
+                
+                <section class="flex-linea">
+                    <!-- Peso -->
+                    <div class="flex-columna">
+                        <label for="peso_producto" class='titulo-peso'>Ingresa el peso</label>
+                        <input type="number" id="peso_producto" name="peso_producto" placeholder="Ej: 34" value="<%= editarProducto.peso %>">
+                    </div>
+                    <!-- Color -->
+                    <div class="flex-columna">
+                        <label for="color_producto" class='titulo-color'>Ingrese el color</label>
+                        <input type="text" id="color_producto" name="peso_producto" placeholder=" Ej: Negro" value="<%= editarProducto.color %>">
+                    </div>
+                </section>
+            
+                <section class="flex-linea-descrip">
+                    <!-- Descripcion -->
+                    <div class="flex-columna-descrip">
+                        <label for="descripcion">Descripción del producto:<span id="iconCheckDescripcion"><i class="fa-solid fa-circle-check"></i></span><span id="iconExclDescripcion"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorDescripcion"></small></label>
+                        <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto" ><%= editarProducto.descripcion %></textarea>
+                    </div>
+                </section>
+                
+                <section class="flex-linea-descrip">
+                    <!-- Imagen -->
+                    <div class="flex-columna-descrip">
+                        <label for="imagen-producto" class='titulo-descripcion'>Imagen de producto:</label>
+                        <input type="file" name="imagen_producto">
+                    </div>
+                </section>
+                
+                <section class="flex-linea-imagen">
+                    <!-- Imagen actual -->
+                    <p class="label-imagen-actual">Imagen actual de producto:</p>
+                    <div class="div-img">
+                        <img src="/img/productos/<%= editarProducto.imagen %>" alt="Imagen actual" class="mostrar_imagen">
+                    </div>
+                </section>
+
+                <button class="button" id="sumbit" type="submit">Guardar producto</button>
+            </form>
+        </article>
+    </main>
+
+<%- include("./partials/footer.ejs") %>
+
+<script src="/js/validacion-edicion-producto.js"></script>
+
+</body>
+</html>

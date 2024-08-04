@@ -1,0 +1,762 @@
+* body {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: #f2f9fb;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+    
+    /* la magia para q el footer se pegue SIEMPRE en la parte de abajo sin importar el tamaño de pantalla, y en el footer.css ponerle al footer margin-top:auto */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------------------------- */
+.main2 {  /* para el js panel.js */
+    opacity: 0.2;
+    transition: all 1s ease;
+    z-index: 1;
+    display: none;
+}
+
+.footer-chau {  /* para el js panel.js */
+    display: none;
+}
+
+.body2 {  /* para el js panel.js */
+    background-image: none;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+}
+/* ---------------------------------------------------------------------------------- */
+
+.main-alta {
+    background: #f2f9fb;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+    padding: 5% 0;  /* la separacion del main con el header y el footer */
+    height: auto;  /* el alto se ajusta dependiendo del alto de los contenedores hijos */
+}
+
+.titulo-ppal, .titulo-ppal2 {
+    display: none;
+    width: 90%;
+    margin: 0;
+    margin: auto;
+    color: black;
+    text-align: center;
+    border: 1px solid white;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.titulo-ppal2 {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contenedor-alta {
+    height: auto;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 15px 15px 15px 15px;
+    backdrop-filter: blur(0) saturate(180%);
+    -webkit-backdrop-filter: blur(0) saturate(180%);
+    background-color: white;
+    box-shadow : 0px 0px 20px rgb(180, 180, 180);
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+/* --- formulario --- */
+.formu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    height: max-content;
+    border: 1px solid white;
+    padding: 0;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.flex-linea, .flex-linea-imagen, .flex-linea-descrip {  /* section en flex q contiene 2 divs cada uno con un input, cada dos inputs un flex-linea */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* gap: 12px; */
+    height: auto;
+    border: 1px solid white;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flex-linea-imagen {  /* section en flex q contiene 2 divs cada uno con un input, cada dos inputs un flex-linea */
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.div-img {  /* el div q contiene la imagen .mostrar_imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid white;
+    margin: 0;
+    padding: 0;
+    /* text-align: center; */
+    box-sizing: border-box;
+}
+
+/* imagen actual */
+.mostrar_imagen {
+    height: 100px;
+    width: 100px;
+    padding: 8px;
+    /* margin-top: 12px; */
+    outline: 1px solid rgb(184, 184, 184);
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.flex-columna, .flex-columna-descrip {  /* cada div q contiene el label con el input */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada texto arriba del input */
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-top: 18px;
+    margin-bottom: 3px;
+    color: rgb(50, 50, 50);
+    border: 1px solid white;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Inputs */
+.formu input, textarea, .formu input[type=file] {
+    font-size: 13px; /* cambia el tamaño del texto en el input */
+    border: 1px solid #acb1b1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    background-color: rgb(220, 220, 220);
+    height: 22px;
+}
+
+/* --- input imagen --- */
+.formu input[type=file]{
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    height: 22px;
+}
+
+.formu input:hover, textarea:hover, select:hover {  /* en desktop */
+    border: 1px solid #398ddb;
+}
+
+.formu input[type=file]:hover {
+    border: 1px solid transparent;
+}
+
+.formu input:focus, textarea:focus, select:focus {
+    outline: none;
+    border: 1px solid #00505F;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px; */
+    background-color: rgb(221, 230, 237);
+}
+
+.formu input[type=file]:focus {
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.formu input::placeholder, textarea::placeholder, select::placeholder {
+    color: #757d80;   /* cuando hay un ejemplo de lo q podes escribir en el input */
+    font-weight: 300;
+    font-size: 13px; /* el mismo q el font size del input */
+}
+
+/* --- textarea - Descripcion de producto --- */
+textarea {
+    height: 80px;
+}
+
+/* --- selects --- */
+select {
+    font-size: 13px; /* cambia el tamaño del texto en el input */
+    border: 1px solid #acb1b1;
+    border-radius: 6px;
+    padding: 12px 14px;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    background-color: rgb(220, 220, 220);
+}
+
+/* button */
+.button {
+    border-radius: 6px;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    font-size: 17px; 
+    font-weight: 400;
+    height: 44px;  
+    margin: 0;
+    cursor: pointer;
+    transition: 350ms;
+    margin-bottom: 0; 
+    margin-top: 15px;
+}
+
+.button {
+    color: white;
+    background: conic-gradient(from 180deg, #b5cacf 20%, #4d94a5 35%, #1e697b 75%, #0e414f);
+    border: none;
+}
+
+.button:hover {
+    color: rgb(61, 61, 61);
+    font-weight: 300;
+    background: conic-gradient(from 180deg, #f3f5f5 10%, #bce1eb 25%, #5f9cac 75%, #318ba4);
+    border: none;
+}
+
+/* ----- validaciones en el front ----- */
+/* cada small, el texto con el error */ /* los small estan dentro del p con el texto arriba del input,despues de los span con los signitos */
+.errorNombre, .errorPrecio, .errorMarca, .errorMascota, .errorCategoria, .errorDescuento, .errorDescripcion {
+    font-weight: 400;
+    font-size: 13px; /* tenia 14px */
+    /* margin-left: 10px; */
+    color: red;
+}
+
+/* cada span contiene los icons con los signitos de exclamacion y de check */ /* los span estan dentro del p con el texto arriba del input */
+#iconCheckNombre, #iconExclNombre, #iconExclPrecio, #iconCheckPrecio, #iconExclMarca, #iconCheckMarca, #iconExclMascota, #iconCheckMascota, #iconExclCategoria, #iconCheckCategoria, #iconExclDescuento, #iconCheckDescuento, #iconExclDescripcion, #iconCheckDescripcion {
+    display: none;
+}
+
+/* el icon de exclamacion cuando hay un error */
+.fa-circle-exclamation {
+    color: red;
+    font-size: 13px; /* tenia 14px */
+    /* margin-bottom: 5px; */
+    margin-left: 4px;
+    margin-right: 3px;
+}
+
+/* el icon del check cuando no hay error */
+.fa-circle-check {
+    color: green;
+    font-size: 13px; /* tenia 14px */
+    /* margin-bottom: 5px; */
+    margin-left: 4px;
+    margin-right: 3px;
+}
+
+@media (max-width: 389px){
+
+    .main-alta {
+        padding: 4% 4%;  /* la separacion del main con el header y el footer */
+    }
+
+    .contenedor-alta {
+        width: 100%;
+        border-radius: 6.5px; /* antes 8 */
+        padding: 14px 14px 14px 14px; /* antes 15px 15px 15px 15px; */
+    }
+
+    .titulo-ppal2 {
+        font-size: 15px;
+    }
+
+    /* imagen actual */
+    .mostrar_imagen {
+        height: 90px;
+        width: 90px;
+        padding: 7px;
+        border-radius: 5px;
+    }
+
+    label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada texto arriba del input */
+        font-size: 12px; /* antes 13.5 */
+        margin-top: 17px; /* antes 18 */
+        margin-bottom: 2.8px; /* antes 3 */
+    }
+
+    /* Inputs */
+    .formu input, textarea, .formu input[type=file] {
+        font-size: 11px; /* antes 13 */ /* este modifica el texto del Choose file y el texto q le sigue */
+        border-radius: 5px; /* antes 6 */
+        padding: 10px 10px; /* antes 10px 14px */
+        height: 17px; /* antes 22 */
+    }
+
+    .formu input::placeholder, textarea::placeholder, select::placeholder {
+        font-size: 12px; /* antes 13 */ /* este modifica el texto del input */
+    }
+    
+    /* --- textarea - Descripcion de producto --- */
+    textarea {
+        height: 60px;
+    }
+
+    /* --- selects --- */
+    select {
+        font-size: 11px; /* cambia el tamaño del texto en el input */
+        border-radius: 5px;
+        padding: 11px 10px;
+    }
+
+    /* --- input imagen --- */
+    .formu input[type=file]{
+        border-radius: 5px;
+        padding: 10px 10px;
+        font-size: 11px;
+        height: 17px;
+    }
+
+    /* button */
+    .button {
+        border-radius: 5px;   /* antes 6 */
+        padding: 10px 32px;    /* antes 10px 32px */
+        font-size: 15.5px;    /* antes 16 */
+        font-weight: 400;  /* antes 300 */
+        height: 40px;    /* antes 44 */
+    }
+
+    /* ----- validaciones en el front ----- */
+    .errorNombre, .errorPrecio, .errorMarca, .errorMascota, .errorCategoria, .errorDescuento, .errorDescripcion {  /* los errores rojos al lado del simbolo de exclamation */
+        font-weight: 400;  /* antes 400 */
+        font-size: 12px;  /* antes 13 */
+    }
+    
+    .fa-circle-exclamation {
+        font-size: 12.5px;  /* antes 13 */
+        margin-left: 3.8px;  /* antes 4 */
+        margin-right: 2.8px;  /* antes 3 */
+    }
+    
+    .fa-circle-check {
+        font-size: 12.5px;  /* antes 13 */
+        margin-left: 3.8px;  /* antes 4 */
+        margin-right: 2.8px;  /* antes 3 */
+    }
+
+}
+
+@media (min-width: 500px){
+
+    .main-alta {
+        padding: 5% 0;  /* la separacion del main con el header y el footer */
+    }
+
+    .contenedor-alta {
+        width: 90%;
+        border-radius: 10px; /* antes 8 */
+        padding: 16px 16px 16px 16px; /* antes 15px 15px 15px 15px; */
+    }
+
+    .titulo-ppal2 {
+        font-size: 18px;
+    }
+
+    /* imagen actual */
+    .mostrar_imagen {
+        height: 110px;
+        width: 110px;
+        padding: 9px;
+        border-radius: 6.5px;
+    }
+
+    label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada texto arriba del input */
+        font-size: 14px; /* antes 13.5 */
+        margin-top: 20px; /* antes 18 */
+        margin-bottom: 3.5px; /* antes 3 */
+    }
+
+    /* Inputs */
+    .formu input, textarea, .formu input[type=file] {
+        font-size: 14px; /* antes 13 */
+        border-radius: 7px; /* antes 6 */
+        padding: 10px 14px; /* antes 10px 14px */
+        height: 24px; /* antes 22 */
+    }
+
+    .formu input::placeholder, textarea::placeholder, select::placeholder {
+        font-size: 14px; /* antes 13 */ /* este modifica el texto del input */
+    }
+    
+    /* --- textarea - Descripcion de producto --- */
+    textarea {
+        height: 90px;
+    }
+
+    /* --- selects --- */
+    select {
+        font-size: 14px; /* cambia el tamaño del texto en el input */
+        border-radius: 7px;
+        padding: 14px 14px;
+    }
+
+    /* --- input imagen --- */
+    .formu input[type=file]{
+        border-radius: 7px;
+        padding: 10px 14px;
+        font-size: 14px;
+        height: 24px;
+    }
+
+    /* button */
+    .button {
+        border-radius: 7px;   /* antes 6 */
+        padding: 10px 32px;    /* antes 10px 32px */
+        font-size: 16.5px;    /* antes 16 */
+        font-weight: 400;  /* antes 300 */
+        height: 45px;    /* antes 42 */
+    }
+
+    /* ----- validaciones en el front ----- */
+    .errorNombre, .errorPrecio, .errorMarca, .errorMascota, .errorCategoria, .errorDescuento, .errorDescripcion {  /* los errores rojos al lado del simbolo de exclamation */
+        font-weight: 400;  /* antes 400 */
+        font-size: 13.5px;  /* antes 13 */
+    }
+    
+    .fa-circle-exclamation {
+        font-size: 13.5px;  /* antes 13 */
+        margin-left: 4.3px;  /* antes 4 */
+        margin-right: 3.3px;  /* antes 3 */
+    }
+    
+    .fa-circle-check {
+        font-size: 13.5px;  /* antes 13 */
+        margin-left: 4.3px;  /* antes 4 */
+        margin-right: 3.3px;  /* antes 3 */
+    }
+
+}
+
+@media (min-width: 600px){
+
+    .main-alta {
+        padding: 5% 0;  /* la separacion del main con el header y el footer */
+    }
+
+    .contenedor-alta {
+        width: 75%; /* antes 90 */ 
+        border-radius: 11px; /* antes 10 */
+        padding: 18px 18px 18px 18px; /* antes 16px 16px 16px 16px; */
+    }
+
+    .titulo-ppal2 {
+        font-size: 20px;
+    }
+
+    /* imagen actual */
+    .mostrar_imagen {
+        height: 120px;
+        width: 120px;
+        padding: 10px;
+        border-radius: 7px;
+    }
+
+    label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada texto arriba del input */
+        font-size: 14.5px; /* antes 14 */
+        margin-top: 22px; /* antes 21 */
+        margin-bottom: 4px; /* antes 3.5 */
+    }
+
+    /* Inputs */
+    .formu input, textarea, .formu input[type=file] {
+        font-size: 14.5px; /* antes 14 */ /* este modifica el texto del Choose file y el texto q le sigue */
+        border-radius: 7.5px; /* antes 7 */
+        padding: 10px 14px; /* antes 10px 14px */
+        height: 26px; /* antes 24 */
+    }
+
+    .formu input::placeholder, textarea::placeholder, select::placeholder {
+        font-size: 14.5px; /* antes 14 */ /* este modifica el texto del input */
+    }
+    
+    /* --- textarea - Descripcion de producto --- */
+    textarea {
+        height: 95px;
+    }
+
+    /* --- selects --- */
+    select {
+        font-size: 14.5px; /* antes 14 */ /* cambia el tamaño del texto en el input */
+        border-radius: 7.5px; /* antes 7 */
+        padding: 13px 14px;
+    }
+
+    /* --- input imagen --- */
+    .formu input[type=file]{
+        border-radius: 7.5px; /* antes 7 */
+        padding: 10px 14px;
+        font-size: 14.5px; /* antes 14 */
+        height: 26px;
+    }
+
+    /* button */
+    .button {
+        border-radius: 7.5px;   /* antes 7 */
+        padding: 10px 32px;    /* antes 10px 32px */
+        font-size: 17px;    /* antes 16.5 */
+        font-weight: 400;  /* antes 400 */
+        height: 46px;    /* antes 45 */
+    }
+
+    /* ----- validaciones en el front ----- */
+    .errorNombre, .errorPrecio, .errorMarca, .errorMascota, .errorCategoria, .errorDescuento, .errorDescripcion {  /* los errores rojos al lado del simbolo de exclamation */
+        font-weight: 400;  /* antes 400 */
+        font-size: 14px;  /* antes 13.5 */
+    }
+    
+    .fa-circle-exclamation {
+        font-size: 14px;  /* antes 13.5 */
+        margin-left: 4.5px;  /* antes 4.3 */
+        margin-right: 3.5px;  /* antes 3.3 */
+    }
+    
+    .fa-circle-check {
+        font-size: 14px;  /* antes 13.5 */
+        margin-left: 4.5px;  /* antes 4.3 */
+        margin-right: 3.5px;  /* antes 3.3 */
+    }
+
+}
+
+
+@media (min-width: 768px) {
+
+    .main-alta {
+        padding: 5% 0;  /* la separacion del main con el header y el footer */
+    }
+
+    .titulo-ppal2 {
+        font-size: 22px;
+    }
+
+    .contenedor-alta {
+        width: 90%;  /* antes 75% */
+        padding: 20px 20px 20px 20px; /* antes 18px 18px 18px 18px; */
+    }
+
+    /* imagen actual */
+    .mostrar_imagen {
+        height: 135px;
+        width: 135px;
+        padding: 12px;
+        border-radius: 6.5px;
+    }
+
+    .flex-linea-descrip {
+        border: 1px solid white;
+    }
+
+    .flex-linea {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .flex-columna-descrip {
+        border: 1px solid white;
+    }
+
+    .flex-columna {
+        width: 50%;
+    }
+
+    label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada texto arriba del input */
+        font-size: 14.5px; /* antes 14.5 */
+        margin-top: 23px; /* antes 22 */
+        margin-bottom: 4.3px; /* antes 4 */
+    }
+
+    /* Inputs */
+    .formu input, textarea, .formu input[type=file] {
+        font-size: 13px; /* antes 14.5 */ /* este modifica el texto del Choose file y el texto q le sigue */
+        border-radius: 6.5px; /* antes 7.5 */
+        padding: 10px 14px; /* antes 10px 14px */
+        height: 22px; /* antes 26 */
+    }
+
+    .formu input::placeholder, textarea::placeholder, select::placeholder {
+        font-size: 13px; /* antes 14.5 */ /* este modifica el texto del input */
+    }
+    
+    /* --- textarea - Descripcion de producto --- */
+    textarea {
+        height: 70px;
+        font-size: 13.5px;
+        /* width: 100%; */
+    }
+
+    /* --- selects --- */
+    select {
+        font-size: 13px; /* antes 14.5 */ /* cambia el tamaño del texto en el input */
+        border-radius: 6.5px; /* antes 7.5 */
+        padding: 12px 14px;
+    }
+
+    /* --- input imagen --- */
+    .formu input[type=file]{
+        border-radius: 6.5px; /* antes 7.5 */
+        padding: 10px 14px;
+        font-size: 13px; /* antes 14.5 */
+        height: 22px; /* antes 26 */
+    }
+
+    /* button */
+    .button {
+        border-radius: 6.5px;   /* antes 7 */
+        padding: 10px 32px;    /* antes 10px 32px */
+        font-size: 17px;    /* antes 16.5 */
+        font-weight: 400;  /* antes 400 */
+        height: 46px;    /* antes 45 */
+    }
+
+    /* ----- validaciones en el front ----- */
+    .errorNombre, .errorPrecio, .errorMarca, .errorMascota, .errorCategoria, .errorDescuento, .errorDescripcion {  /* los errores rojos al lado del simbolo de exclamation */
+        font-weight: 400;  /* antes 400 */
+        font-size: 14.5px;  /* antes 14 */
+    }
+    
+    .fa-circle-exclamation {
+        font-size: 14.5px;  /* antes 14 */
+        margin-left: 4.8px;  /* antes 4.5 */
+        margin-right: 3.8px;  /* antes 3.5 */
+    }
+    
+    .fa-circle-check {
+        font-size: 14.5px;  /* antes 14 */
+        margin-left: 4.8px;  /* antes 4.5 */
+        margin-right: 3.8px;  /* antes 3.5 */
+    }
+}
+
+@media (min-width: 1024px){
+
+    .main-alta {
+        padding: 30px 0; /* antes 5% 0 */
+    }
+
+    .contenedor-alta {
+        width: 80%;  /* antes 75% */
+        max-width: 1200px;
+        padding: 18px 20px 20px 20px; /* antes 18px 18px 18px 18px; */
+    }
+
+    .titulo-ppal2 {
+        font-size: 22px;
+        text-align: right;
+    }
+
+    label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada texto arriba del input */
+        font-size: 14.5px; /* antes 14.5 */
+        margin-top: 23px; /* antes 22 */
+        margin-bottom: 4.3px; /* antes 4 */
+    }
+
+    /* --- textarea - Descripcion de producto --- */
+    textarea {
+        height: 70px;
+        padding: 12px 14px;
+        /* width: 100%; */
+    }
+
+    /* imagen actual */
+    .mostrar_imagen {
+        height: 125px;
+        width: 125px;
+        padding: 12px;
+        border-radius: 6.5px;
+    }
+
+}
+
+@media (min-width: 1200px){
+
+    label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada texto arriba del input */
+        font-size: 15px; /* antes 14.5 */
+        margin-top: 24px; /* antes 22 */
+    }
+
+    /* Inputs */
+    .formu input, textarea, .formu input[type=file] {
+        font-size: 14.5px; /* antes 14.5 */ /* este modifica el texto del Choose file y el texto q le sigue */
+        border-radius: 6.5px; /* antes 7.5 */
+        padding: 10px 14px; /* antes 10px 14px */
+        height: 23px; /* antes 26 */
+    }
+
+    .formu input::placeholder, textarea::placeholder, select::placeholder {
+        font-size: 14px; /* antes 14.5 */ /* este modifica el texto del input */
+    }
+
+    /* --- selects --- */
+    select {
+        font-size: 14.5px; /* antes 14.5 */ /* cambia el tamaño del texto en el input */
+        border-radius: 6.5px; /* antes 7.5 */
+        padding: 12.5px 13px;
+    }
+
+    /* --- textarea - Descripcion de producto --- */
+    textarea {
+        height: 70px;
+        font-size: 14.5px;
+        /* width: 100%; */
+    }
+
+    /* imagen actual */
+    .mostrar_imagen {
+        height: 125px;
+        width: 125px;
+        padding: 12px;
+        border-radius: 6.5px;
+    }
+
+    /* button */
+    .button {
+        border-radius: 6.5px;   /* antes 7 */
+        padding: 10px 32px;    /* antes 10px 32px */
+        font-size: 17px;    /* antes 16.5 */
+        font-weight: 400;  /* antes 400 */
+        height: 48px;    /* antes 45 */
+    }
+
+
+}
+
+

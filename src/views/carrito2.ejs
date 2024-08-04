@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head.ejs", {cssSheet: "carrito2", title: "Carrito - PATITAS"}) %>
+    <link rel="stylesheet" href="/css/header-footerRegister.css">
+
+<body>
+    
+    <%- include("./partials/header.ejs") %>
+    <%- include("./partials/header2.ejs") %>
+
+    <main>
+        <div class="all">
+            <section class="contenedor-producto">
+                <button onclick="vaciarCarrito()" class="boton-vaciar" style="margin-bottom: 0px;">Vaciar carrito</button>
+            </section>
+
+            <section class="contenedor-proceder-pago">
+                <div class="textos2">
+                    <p class="resumen-compra">Resumen de compra</p>
+                    <p class="subtotal-titulo">Subtotal</p> <p class="subtotal">$ 0</p>
+                    <p class="gratis-titulo">Envío</p> <p class="gratis">Gratis</p>
+                    <p class="total-titulo">Total</p> <p class="total">$ 0</p>
+                </div>
+                <div class="botonDePago">
+                    <form action="/users/carrito2" method="get">   
+                        <button type="submit" class="btn">Proceder a pagar</button>
+                    </form>
+                </div> 
+            </section>
+        </div>
+
+        <!--- Seccion productos con descuentos -->
+        <section class="section-productos-descuentos">
+            <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark slider-nav-autoplay slider-nav-autopause" data-slider-nav-autoplay-interval="1000">
+                <h2>Productos con descuentos</h2>
+                <div class="div-section-productos-descuentos">
+                    <ul class="slider-container">
+                        <% productosConDescuento.forEach(producto => {%>
+                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %> <!-- si tienen descuentos los productos -->
+                                <article class="articulo-productos-descuentos"> <!-- las cards con borde azul -->
+                            <% } else { %> <!-- si no tienen descuentos los productos -->
+                                <article class="articulo-productos"> <!-- las cards con borde normal -->
+                            <% } %>
+                                <!-- para saber el contenido de la etiqueta -->
+                                <div class="div-etiqueta">
+                                    <% if(producto.categorias[0].id == 1) { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                    <% } else if(producto.categorias[0].id == 2) { %>
+                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                    <% } else if(producto.categorias[0].id == 3) { %>
+                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                    <% } else if(producto.categorias[0].id == 4) { %>
+                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                    <% } %>
+                                </div>
+                                <!-- hasta acá etiqueta -->
+                                <div class="contenedor_imagen">
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <% if(producto.categorias[0].categoria == "comida") { %> 
+                                            <a href="/productos/perro/comida/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                            <a href="/productos/perro/higiene/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% } %>
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <% if(producto.categorias[0].categoria == "comida") { %> 
+                                            <a href="/productos/gato/comida/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                            <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                            <a href="/productos/gato/higiene/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                            <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                        <% } %>
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto"> 
+                                            </a>
+                                    <% } %>  
+                                </div>
+                                <div class="div-card">
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                        
+                                    <div class="texto_descripcion_arriba">
+                                        <p class="descripcion"><%= producto.descripcion %></p>
+                                    </div>
+                                    <div class="div-precios">
+                                        <p class="precio-tachado">$ <%= producto.precio %></p>
+                                        <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                        <p class="descuento">20% OFF</p>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                        <% if(userALoguearse){ %>
+                                            <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
+                                        <% } else { %>
+                                            <a href="/users/login"><button class="boton-comprarSinAuth" type="submit">Agregar</button></a>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </article>
+                        <%})%>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <ul class="slider-indicators">
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class="active"></li>
+                    </ul>
+                </div>
+            </div>
+            <h3 class="h3-ver-todos"><a href="/productos/promociones">Ver todas las Promos</a></h3>
+        </section>
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+
+    <script src="/js/carrito2.js"></script>
+    
+</body>

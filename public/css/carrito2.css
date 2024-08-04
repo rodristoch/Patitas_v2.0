@@ -1,0 +1,2079 @@
+* body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+body {
+    background: #f2f9fb;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------------------------- */
+.main2 {  /* para el js panel.js */
+    opacity: 0.2;
+    transition: all 1s ease;
+    z-index: 1;
+    display: none;
+}
+
+.footer-chau {  /* para el js panel.js */
+    display: none;
+}
+
+.body2 {  /* para el js panel.js */
+    background-image: none;
+    background: linear-gradient(90deg, #f2f9fb 0%, #dde9ec 35%, #bfd2d6 100%);
+}
+/* ---------------------------------------------------------------------------------- */
+
+.all {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 4.5%;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    /* border: 1px solid red; */
+    height: auto;
+}
+
+/* 1er contenedor */
+.contenedor-producto {  /* contenedor padre (igual metido dentro de .all) */
+    /* width: 100%; */
+    background-color: #fede87;
+    border: 1px solid #FECF53;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    height: auto;
+    font-size: 14px;
+}
+
+.contenedor1 {  /* contenedor padre: contenedor-producto  */ /* el contenedor que tiene UN SOLO producto en el carrito */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    border-radius: 6px;
+    background-color: #fae5a8;
+    border: 1px solid #fede87;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.contenedorMasDeUno {  /* contenedor padre: contenedor-producto  */ /* el contenedor que tiene cada producto */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    border-radius: 6px;
+    background-color: #fae5a8;
+    border: 1px solid #fede87;
+    padding: 5px;
+    /* padding-left: 0; */
+    box-sizing: border-box;
+}
+
+.contenedor-img {   /* contenedor padre: contenedor1  */
+    width: 20%;
+    margin: 0;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 5px; */
+}
+
+.imagen {   /* contenedor padre: contenedor-img  */
+    width: 90%;
+    height: 100%;
+}
+
+.texto {   /* contenedor padre: contenedor1  */
+    width: 75%;
+    padding: 5px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.titulo-cantidad {  /* el div del titulo ppal y la cantidad *//* contenedor padre: texto  */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* border: 1px solid red; */
+    padding-bottom: 0;
+}
+
+.precio-con-descto {   /* contenedor padre: texto  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+.arriba {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 1px solid blue; */
+    width: 90%;
+    /* border: 1px solid red; */
+}
+
+.abajo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 1px solid blue; */
+    width: 90%;
+    /* border: 1px solid red; */
+}
+
+.div-botones {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 0;
+    /* margin-top: 0; */
+    margin-bottom: 20px;
+    /* border: 1px solid red; */
+}
+
+.boton-eliminar, .botton-comprar {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1e697b;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 450ms;
+}
+
+.boton-eliminar:hover, .botton-comprar:hover {
+    color: black;
+}
+
+.boton-vaciar {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1e697b;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 450ms;
+    padding-bottom: 5px;
+}
+
+.boton-vaciar:hover {
+    color: black;
+}
+
+/* textos del 1er contenedor */
+.titulo-nombre-producto {  /* titulo */
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+    text-align: left;
+    /* border: 1px solid red; */
+    padding: 0;
+}
+
+.titulo-descrip {  /* titulo descripcion */
+    font-size: 14px;
+    text-decoration: underline;
+    color: rgb(57, 57, 57);
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 8px;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.descrip {   /* descripcion producto */
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 25px;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.precio-tachado-detalle {  /* precio tachado */
+    text-decoration: line-through;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-left: 8px;
+    /* width: 58%; */
+    text-align: left;
+}
+
+.precio-oferta {   /* texto de precio en oferta!! */
+    color: #18515f;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 13px;
+    margin: 0;
+    text-align: left;
+}
+
+.precio-detalle {   /* el precio final */
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.precio-detalle2 {   /* el precio final del producto sin dscto */
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.descuento-precio {   /* el texto del 20 OFF */
+    color: #18515f;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 0;
+    margin-left: 5px;
+    width: 25%;
+    text-align: left;
+}
+
+.precio-regular {   /* El div del precio regular */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+}
+
+.precio-normal {   /* texto de precio regular */
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    text-align: left;
+}
+
+.precio-normal2 {   /* texto de precio */
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+    /* border: 1px solid red; */
+}
+
+.descripcion2 {   /* texto de descripcion */
+    font-weight: 300;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* border: 1px solid red; */
+}
+
+.ruta {
+    color: #1e697b;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.ruta:hover {
+    color: black;
+}
+
+.ruta-barras {
+    display: none;
+    font-size: 14px;
+}
+
+/* 2do contenedor */
+.contenedor-proceder-pago {  /* contenedor padre (igual metido dentro de .all) */
+    background-color: #fede87;
+    border: 1px solid #FECF53;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 0;
+    padding: 10px;
+    /* width: 100%; */
+    height: auto;
+}
+
+.textos2 {   /* contenedor padre: contenedor-proceder-pago */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+
+/* textos del 2do contenedor */
+.resumen-compra {
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+    font-weight: 300;
+    margin-top: 0;
+    text-decoration: underline;
+    color: rgb(57, 57, 57);;
+}
+
+.subtotal-titulo {
+    font-size: 14px;
+    width: 30%;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.subtotal {
+    font-size: 14px;
+    width: 50%;
+    text-align: right;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.gratis-titulo {
+    font-size: 12px;
+    width: 30%;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.gratis {
+    font-size: 12px;
+    color: #1e697b;
+    width: 50%;
+    text-align: right;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.total-titulo {
+    font-size: 16px;
+    width: 30%;
+    margin: 0;
+    text-align: left;
+    font-weight: 500;
+}
+
+.total {
+    font-size: 16px;
+    width: 50%;
+    text-align: right;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* boton de pago */
+.botonDePago {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    margin-top: 15px;
+    /* border: 1px solid red; */
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1e697b;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 450ms;
+    border: 1px solid #18515f;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #349fba;
+}
+
+/* .eliminar-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #ff5555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} */
+
+/* .eliminar-btn:hover {
+    background-color: #ff0000;
+} */
+
+
+/* seccion producto */
+.section-productos-descuentos {
+    width: 90%;
+    margin: auto;
+    border: 1px solid blue;
+    margin-top: 5%; /* lo mismo q de cada lado del main */
+    margin-bottom: 5%; /* lo mismo q de cada lado del main */
+    background-color: white;
+    box-shadow : 0px 0px 20px rgb(180, 180, 180);
+    border-radius: 5px;
+    padding: 12px;
+    box-sizing: border-box;
+    /* border: 1px solid #bfd2d6; */
+}
+
+section h2 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 12px; /* lo mismo q el padding del section productos descuentos */
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.div-section-productos-descuentos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.h3-ver-todos { 
+    margin-bottom: 0;  /* porq ya tiene el padding del section ppal */
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 12px; /* el mismo q el padding del section ppal */
+}
+
+.h3-ver-todos a {
+    color: #24768b;
+}
+
+/* card producto */
+.articulo-productos-descuentos, .articulo-productos {
+    background-color: white;
+    /* background-color: white; */
+    width: 85%;
+    height: auto;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 5px;
+    padding: 10px;
+    /* margin-bottom: 15px; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+}
+
+.articulo-productos-descuentos {
+    border: 1px solid #6191de;
+}
+
+.div-etiqueta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border: 1px solid white;
+    margin-bottom: 10px; /* el mismo q el padding del articulo productos descuentos */
+}
+
+.etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+    font-weight: 400;
+    font-size: 11px;  
+    padding: 5.5px 8px;
+    border-radius: 4px;
+    width: fit-content;
+    text-align: center;
+    margin: 0;
+    /* margin-bottom: 15px; */
+}
+
+.contenedor_imagen {
+    background-color: white;
+    height: 140px;
+    /* width: auto; */
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid white;
+    height: 90px;
+
+}
+
+.img-productos-descuentos {
+    border-radius: 5px;
+    border: 1px solid white;
+    width: 100%;
+    height: 100%;
+    /* height: 110.40px; */
+    /* margin-top: 12%; */
+}
+
+.div-card {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
+    max-height: 35px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid white;
+}
+
+.texto_nombre_arriba h4 {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.texto_descripcion_arriba {
+    display: none;
+    max-height: 35px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid white;
+}
+
+.div-precios {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    border: 1px solid white;
+}
+
+.precio-tachado {  /* el precio tachado en los productos con descuento */
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 300;
+    width: 100%;  /* ocupa todo el renglón */
+    margin-top: 10px; /* el mismo q el padding del articulo productos descuentos */
+    margin-bottom: 2.5px;
+    color: rgb(134, 134, 134);
+    text-decoration: line-through;
+    text-decoration-thickness: 0.7px;
+    /* text-decoration-color: rgb(80, 80, 80); */
+    border: 1px solid white;
+}
+
+.precio-d {  /* el precio en negrita */
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    width: fit-content;
+    font-size: 20px;
+    border: 1px solid white;
+}
+
+.descuento {  /* el 20% OFF */
+    padding: 0;
+    margin: 0;
+    /* margin-top: -10px; */
+    color: #349fba;
+    font-weight: 400;
+    font-size: 13px;
+    width: fit-content;
+    text-align: left;
+    margin-left: 5px;
+    border: 1px solid white;
+}
+
+.div-boton-comprar {
+    text-align: center;
+    margin-top: 10px;  /* el mismo q el padding del articulo productos descuentos */
+    width: 100%;
+}
+
+.boton-comprar, .boton-comprarSinAuth {
+    text-align: center;
+    background-color: #1e697b;
+    color: white;
+    width: 100%;
+    height: 40%;
+    border-radius: 4px;
+    border: none;
+    /* border: 0.5px solid rgb(150, 150, 150); */
+    font-size: 15px;
+    padding: 4.5px;
+    background: linear-gradient(90deg, #b5cacf 0%, #4d94a5 50%, #1e697b 100%);
+}
+
+/* ----------------------- */
+.etiqueta-comida-bicho-card {
+    color: white;
+    border: 0.5px solid white;
+    /* background-color: #5746d7; */
+    background: linear-gradient(90deg, #978eda 0%, #7c6fdf 35%, #4939c2 100%);
+}
+
+.etiqueta-accesorio-bicho-card {
+    color: white;
+    border: 0.5px solid white;
+    /* background-color: #29d5de; */
+    background: linear-gradient(90deg, #92d9db 0%, #4bd1d8 35%, #10b2bb 100%);
+}
+
+.etiqueta-higiene-bicho-card {
+    color: white;
+    border: 0.5px solid white;
+    /* background-color: #e8a62b; */
+    background: linear-gradient(90deg, #dfc79c 0%, #e4b560 35%, #ce8f1a 100%);
+}
+
+.etiqueta-juguete-bicho-card {
+    color: white;
+    border: 0.5px solid white;
+    /* background-color: #9b46d7; */
+    background: linear-gradient(90deg, #bfa2d3 0%, #b37adb 35%, #8a36c7 100%);
+}
+/* hasta aca card producto */
+
+@media (max-width: 290px){
+
+    /* card producto */
+    .div-etiqueta {
+        display: none;
+    }
+
+}
+
+@media (max-width: 390px){
+
+    /* seccion producto */
+    .section-productos-descuentos {
+        width: 92%;  /* antes 90% */
+        margin-top: 4%;  /* antes 5% */ /* lo mismo q de cada lado del main */
+        margin-bottom: 4%;  /* antes 5% */ /* lo mismo q de cada lado del main */
+        border-radius: 4px;  /* antes 5px */
+        padding: 8px;  /* antes 12px */
+    }
+
+    section h2 {
+        padding-bottom: 8px;  /* antes 12px */ /* lo mismo q el padding del section productos descuentos */
+        font-weight: 400;  /* antes 500 */
+        font-size: 15px;  /* antes 20px */
+    }
+
+    .h3-ver-todos {
+        font-weight: 400;  /* antes 500 */
+        font-size: 12px;  /* antes 14px */
+        margin-top: 8px;  /* antes 12px */ /* el mismo q el padding del section ppal */
+    }
+
+    /* card producto */
+    .articulo-productos-descuentos, .articulo-productos {
+        width: 90%; /* antes 85% */
+        border-radius: 4px;  /* antes 5px */
+        padding: 7px;  /* antes 10px */
+    }
+
+    .div-etiqueta {
+        margin-bottom: 7px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-weight: 400;  /* antes 400 */
+        font-size: 10px;  /* antes 11px */
+        padding: 3px 5px;  /* antes 5px 8px */
+        border-radius: 3px;  /* antes 4px */
+        width: fit-content;
+    }
+
+    .contenedor_imagen {
+        height: 110px;  /* antes 150px */
+        height: 86px;  /* antes 110px */
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 4px;  /* antes 5px */
+        width: 100%;  /* antes lo mismo */
+        height: 100%;  /* antes lo mismo */
+        /* margin-top: 12%; */  /* antes lo mismo */
+    }
+
+    .texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
+        max-height: 30px;   /* antes 35px */
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 300;  /* antes igual */
+        font-size: 12px;  /* antes 14px */
+    }
+    
+    .texto_descripcion_arriba {
+        display: none;
+        max-height: 30px;  /* antes 35px */
+    }
+
+    .precio-tachado {  /* el precio tachado en los productos con descuento */
+        font-size: 12px;  /* antes 15px */
+        margin-top: 7px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 1.5px;  /* antes 2.5px */
+        text-decoration-thickness: 0.6px;  /* antes 0.7px */
+    }
+
+    .precio-d {  /* el precio en negrita */
+        font-size: 17px;  /* antes 20px */
+    }
+    
+    .descuento {  /* el 20% OFF */
+        font-weight: 400;  /* antes 400 */
+        font-size: 10px;  /* antes 13px */
+        margin-left: 3.5px;  /* antes 5px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 7px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        height: 40%;
+        border-radius: 3px;  /* antes 4px */
+        font-size: 13px;  /* antes 15px */
+        font-weight: 300;  /* antes 400 */
+        padding: 3.5px;  /* antes 4px */
+    }
+}
+
+@media (min-width: 450px){
+
+    .contenedor_imagen {
+        height: 100px;
+    }
+}
+
+@media (min-width: 500px){
+
+    /* seccion producto */
+    .section-productos-descuentos {
+        border: 1px solid blue;
+        margin-top: 5%;  /* antes igual */ /* lo mismo q de cada lado del main */
+        margin-bottom: 5%;  /* antes igual */ /* lo mismo q de cada lado del main */
+        border-radius: 5px;  /* antes 5px */
+        padding: 13.5px;  /* antes 12px */
+    }
+
+    section h2 {
+        padding-bottom: 13.5px;  /* antes 12px */ /* lo mismo q el padding del section productos descuentos */
+        font-weight: 500;  /* antes igual */
+        font-size: 19px;  /* antes 18px */
+    }
+
+    .h3-ver-todos {
+        font-weight: 500;  /* antes 500 */
+        font-size: 15px;  /* antes 14px */
+        margin-top: 13.5px;  /* antes 12px */ /* el mismo q el padding del section ppal */
+    }
+
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {
+        width: 85%;  /* antes 85% */
+        height: auto;
+        border-radius: 5px;  /* antes 5px */
+        padding: 12px;  /* antes 10px */
+        border: 1px solid red;
+    }
+
+    .div-etiqueta {
+        border: 1px solid red;
+        margin-bottom: 12px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-weight: 400;  /* antes 400 */
+        font-size: 12.5px;  /* antes 11px */
+        padding: 6px 8px;  /* antes 5px 8px */
+        border-radius: 4.5px;  /* antes 4px */
+        width: fit-content;
+    }
+
+    .contenedor_imagen {
+        border: 1px solid red;
+        height: 118px;  /* antes 110px */
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 6px;  /* antes 5px */
+        border: 1px solid red;
+    }
+
+    .texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
+        max-height: 38px;  /* antes 35px */ 
+        border: 1px solid red;
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 350;  /* antes 300 */
+        font-size: 15px;  /* antes 14px */
+    }
+    
+    .texto_descripcion_arriba {
+        display: none;
+        max-height: 38px;  /* antes 35px */
+        border: 1px solid red;
+    }
+
+    .precio-tachado {  /* el precio tachado en los productos con descuento */
+        font-size: 16px;  /* antes 15px */
+        margin-top: 12px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 3px;  /* antes 2.5px */
+        text-decoration-thickness: 0.73px;  /* antes 0.7px */
+    }
+
+    .precio-d {  /* el precio en negrita */
+        font-size: 22px;  /* antes 20px */
+    }
+    
+    .descuento {  /* el 20% OFF */
+        font-weight: 400;  /* antes 400 */
+        font-size: 15px;  /* antes 13px */
+        margin-left: 5px;  /* antes 5px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 12px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        height: 40%;
+        border-radius: 4px;  /* antes 4px */
+        font-size: 16px;  /* antes 15px */
+        padding: 5.5px;  /* antes 4.5px */
+    }
+
+}
+
+@media (min-width: 600px){
+
+    /* seccion producto */
+    .section-productos-descuentos {
+        margin-top: 5%;  /* antes 5 */ /* lo mismo q de cada lado del main */
+        margin-bottom: 5%;  /* antes 5 */ /* lo mismo q de cada lado del main */
+        border-radius: 5px;  /* antes 5px */
+        padding: 15px;  /* antes 13.5px */
+    }
+
+    section h2 {  /* el titulo del section productos descuentos */
+        padding-bottom: 15px;  /* antes 13.5px */ /* lo mismo q el padding del section productos descuentos */
+        font-weight: 500;  /* antes igual */
+        font-size: 20px;  /* antes 19px */
+    }
+
+    .h3-ver-todos {
+        font-weight: 500;  /* antes 500 */
+        font-size: 16px;  /* antes 15px */
+        margin-top: 15px;  /* antes 13.5px */ /* el mismo q el padding del section ppal */
+    }
+
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {
+        width: 80%;  /* antes 85% */
+        height: auto;
+        border-radius: 5px;  /* antes 5px */
+        padding: 15px;  /* antes 12px */
+    }
+
+    .div-etiqueta {
+        margin-bottom: 15px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-weight: 400;  /* antes 400 */
+        font-size: 14px;  /* antes 12.5px */
+        padding: 8px 8px;  /* antes 6px 8px */
+        border-radius: 5px;  /* antes 4.5px */
+        width: fit-content;
+    }
+
+    .contenedor_imagen {
+        height: 140px;  /* antes 118px */
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 7px;  /* antes 6px */
+    }
+
+    .texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
+        max-height: 42px;  /* antes 38px */
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 350;  /* antes 350 */
+        font-size: 17px;  /* antes 15px */
+    }
+    
+    .texto_descripcion_arriba {
+        display: none;
+        max-height: 42px;  /* antes 38px */
+    }
+
+    .precio-tachado {  /* el precio tachado en los productos con descuento */
+        font-size: 17px;  /* antes 16px */
+        margin-top: 15px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 4px;  /* antes 3px */
+        text-decoration-thickness: 0.75px;  /* antes 0.73px */
+    }
+
+    .precio-d {  /* el precio en negrita */
+        font-size: 24px;  /* antes 22px */
+    }
+    
+    .descuento {  /* el 20% OFF */
+        font-weight: 400;  /* antes 400 */
+        font-size: 16px;  /* antes 15px */
+        margin-left: 5.5px;  /* antes 5px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 15px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        height: 42%;
+        border-radius: 4px;  /* antes 4px */
+        font-size: 17px;  /* antes 16px */
+        padding: 6.5px;  /* antes 5.5px */
+    }
+
+}
+
+/* --------------------------------------------- tablet ----------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+    /* .cantidad {
+        border: 1px solid blue;
+    } */
+
+    .all {  /* el contenedor de todo, contiene los contenedores de contenedor-producto y contenedor-proceder-pago */
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        height: auto;
+    }
+    
+    /* 1er contenedor */
+    .contenedor-producto {  /* contenedor padre (igual metido dentro de .all) */
+        width: 70%;
+        display: flex;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        height: auto;
+    }
+
+    .div-botones {
+        margin-bottom: 20px;
+    }
+    
+    .boton-eliminar, .botton-comprar {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    /* textos del 1er contenedor */
+    .titulo-nombre-producto {  /* titulo */
+        font-size: 14px;
+        /* margin-bottom: 13px; */
+    }
+
+    .titulo-descrip {  /* titulo descripcion */
+        font-size: 12px;
+        text-decoration: underline;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .descrip {   /* descripcion producto */
+        font-size: 11px;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    .precio-tachado-detalle {  /* precio tachado */
+        font-size: 12px;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 10px;
+        margin-left: 8px;
+        /* width: 70%; */
+    }
+
+    .precio-oferta {   /* texto de precio en oferta!! */
+        font-weight: 300;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .precio-normal {   /* texto de precio regular */
+        font-weight: 300;
+        font-size: 12px;
+        margin: 0;
+        /* margin-bottom: 15px; */
+    }
+
+    .precio-detalle {   /* el precio final */
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        margin-left: 5px;
+    }
+
+    .precio-detalle2 {   /* el precio final */
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        margin-left: 5px;
+    }
+
+    .descuento-precio {   /* el texto del 20 OFF */
+        font-weight: 400;
+        font-size: 12px;
+        margin: 0;
+        margin-left: 5px;
+        width: 25%;
+    }
+
+    .precio-normal2 {   /* texto de precio */
+        font-weight: 300;
+        font-size: 12px;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    
+    .subtitulo2, .precio {
+        margin-top: 1px;
+    }
+    
+    .titulo, .subtitulo, .subtitulo2 {
+        color: #18515f;
+    }
+    
+    .cantidad {
+        display: flex;
+        justify-content: flex-end; 
+        align-items: center;
+        /* margin-top: 20px; */
+        padding-left: 90px;
+    }
+    
+    select {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+    
+    /* 2do contenedor */
+    .contenedor-proceder-pago {
+        width: 28%;
+        margin-left: 5px;
+        padding: 10px;
+        height: auto;
+        /* border-radius: 6px; */
+    }
+
+    
+
+    .textos2 {
+        height: auto;
+    }
+
+    /* textos del 2do contenedor */
+    .resumen-compra {
+        font-size: 12px;
+    }
+
+    .subtotal-titulo {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .subtotal {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .gratis-titulo {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .gratis {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .total-titulo {
+        font-size: 14px;
+    }
+
+    .total {
+        font-size: 14px;
+    }
+
+    /* boton de pago */
+    .botonDePago {
+        width: 100%;
+        margin: 0;
+        /* margin-top: 40px; */
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 7px;
+    }
+    
+    /* seccion producto */
+    .section-productos-descuentos {
+        margin-top: 5%;  /* antes 5 */ /* lo mismo q de cada lado del main */
+        margin-bottom: 5%;  /* antes 5 */ /* lo mismo q de cada lado del main */
+        border-radius: 6px;  /* antes 5px */
+        padding: 15px;  /* antes 15px */ /* no lo aumento porq aca aparecen 4 cards a lo ancho y sino le resto ancho a las cards */
+    }
+
+    section h2 {  /* el titulo del section productos descuentos */
+        padding-bottom: 15px;  /* antes 15px */ /* lo mismo q el padding del section productos descuentos */
+        font-weight: 500;  /* antes igual */
+        font-size: 21px;  /* antes 20px */
+    }
+
+    .h3-ver-todos {
+        font-weight: 500;  /* antes 500 */
+        font-size: 17px;  /* antes 16px */
+        margin-top: 15px;  /* antes 15px */ /* el mismo q el padding del section ppal */
+    }
+
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {
+        width: 86%;  /* antes 80% */
+        border-radius: 6px;  /* antes 5px */
+        padding: 10px;  /* antes 15px */
+    }
+
+    .div-etiqueta {
+        margin-bottom: 10px;  /* antes 15px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-weight: 400;  /* antes 400 */
+        font-size: 13px;  /* antes 14px */
+        padding: 6px 8px;  /* antes 8px 8px */
+        border-radius: 4px;  /* antes 5px */
+        width: fit-content;
+    }
+
+    .contenedor_imagen {
+        height: 110px;  /* antes 130px */
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 6px;  /* antes 7px */
+    }
+
+    .texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
+        max-height: 38px;  /* antes 42px */ 
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 350;  /* antes 350 */
+        font-size: 15px;  /* antes 17px */
+    }
+    
+    .texto_descripcion_arriba {
+        display: none;
+        max-height: 38px;  /* antes 42px */
+    }
+
+    .precio-tachado {  /* el precio tachado en los productos con descuento */
+        font-size: 15px;  /* antes 17px */
+        margin-top: 10px;  /* antes 15px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 3px;  /* antes 4px */
+        text-decoration-thickness: 0.73px;  /* antes 0.75px */
+    }
+
+    .precio-d {  /* el precio en negrita */
+        font-size: 22px;  /* antes 24px */
+    }
+    
+    .descuento {  /* el 20% OFF */
+        font-weight: 400;  /* antes 400 */
+        font-size: 15px;  /* antes 16px */
+        margin-left: 5px;  /* antes 5.5px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 10px;  /* antes 15px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        height: 40%;
+        border-radius: 5px;  /* antes 4px */
+        font-size: 15px;  /* antes 17px *//* menos porq son 4 cards aca */
+        padding: 5.5px;  /* antes 6.5px *//* menos porq son 4 cards aca */
+    }
+}
+
+@media (min-width: 993px){
+
+    /* seccion producto */
+    .section-productos-descuentos {
+        margin-top: 4%;  /* antes 5 */ /* le reduzco un 1% q a lo de los costados del main */
+        margin-bottom: 4%;  /* antes 5 */ /* le reduzco un 1% q a lo de los costados del main */
+        border-radius: 6px;  /* antes 6px */
+        padding: 15px;  /* antes 15px */ /* no lo aumento porq aca aparecen 6 cards a lo ancho y sino le resto ancho a las cards */
+    }
+
+    section h2 {  /* el titulo del section productos descuentos */
+        padding-bottom: 15px;  /* antes 15px */ /* lo mismo q el padding del section productos descuentos */
+        font-weight: 500;  /* antes igual */
+        font-size: 21px;  /* antes 21px */
+    }
+
+    .h3-ver-todos {
+        font-weight: 500;  /* antes 500 */
+        font-size: 17px;  /* antes 17px */
+        margin-top: 15px;  /* antes 15px */ /* el mismo q el padding del section ppal */
+    }
+
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {
+        width: 90%;  /* antes 86% */
+        border-radius: 5px;  /* antes 6px */
+        padding: 8px;  /* antes 10px */
+    }
+
+    .div-etiqueta {
+        margin-bottom: 8px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-weight: 400;  /* antes 400 */
+        font-size: 12px;  /* antes 13px */
+        padding: 6px 8px;  /* antes 6px 8px */
+        border-radius: 4px;  /* antes 4px */
+        width: fit-content;
+    }
+
+    .contenedor_imagen {
+        height: 90px;  /* antes 110px */
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 5px;  /* antes 6px */
+    }
+
+    .texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
+        max-height: 35px;  /* antes 38px */ 
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 350;  /* antes 350 */
+        font-size: 14px;  /* antes 15px */
+    }
+    
+    .texto_descripcion_arriba {
+        display: none;
+        max-height: 35px;  /* antes 38px */
+    }
+
+    .precio-tachado {  /* el precio tachado en los productos con descuento */
+        font-size: 15px;  /* antes 15px */
+        margin-top: 8px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 2.5px;  /* antes 3px */
+        text-decoration-thickness: 0.7px;  /* antes 0.73px */
+    }
+
+    .precio-d {  /* el precio en negrita */
+        font-size: 20px;  /* antes 22px */
+    }
+    
+    .descuento {  /* el 20% OFF */
+        font-weight: 400;  /* antes 400 */
+        font-size: 13px;  /* antes 15px */
+        margin-left: 4px;  /* antes 5px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 8px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        height: 40%;
+        border-radius: 4px;  /* antes 5px */
+        font-size: 14px;  /* antes 15px */
+        padding: 5px;  /* antes 5.5px */
+    }
+
+    footer {
+        margin-top: 0px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    /* main {
+        margin-bottom: 140px;
+    } */
+
+    .div-botones {
+        margin-bottom: 20px;
+    }
+    
+    .boton-eliminar, .botton-comprar {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .contenedor-proceder-pago, .contenedor-producto, .contenedor1, .contenedorMasDeUno {
+        transition: 450ms;
+    }
+
+    .contenedor1, .contenedorMasDeUno {
+        padding: 10px;
+        padding-left: 5px;
+    }
+
+    .contenedor1:hover {
+        background-color: #fede87;
+    }
+
+    .contenedorMasDeUno:hover {
+        background-color: #fede87;
+    }
+
+    .contenedor-proceder-pago:hover  {
+        background-color: #ffd151;
+    }
+    
+    .contenedor-producto:hover {
+        background-color: #ffd151;
+    }
+
+    .titulo-nombre-producto {
+        font-size: 16px;
+    }
+
+    .titulo-descrip {
+        font-size: 15px;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .descrip {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    .precio-detalle {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0;
+        margin-left: 10px;
+    }
+
+    .precio-detalle2 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0;
+        margin-left: 10px;
+    }
+
+    .descripcion2 {   /* texto de descripcion */
+        font-weight: 300;
+        font-size: 12px;
+    }
+
+    .precio-tachado-detalle {
+        font-size: 12px;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 10px;
+        margin-left: 8px;
+        /* width: 70%; */
+    }
+
+    .precio-normal {
+        font-weight: 400;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .precio-normal2 {
+        font-weight: 300;
+        font-size: 12px;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .precio-oferta {
+        font-weight: 400;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .descuento-precio {
+        font-weight: 500;
+        font-size: 13px;
+        margin: 0;
+        margin-left: 10px;
+        width: 30%;
+    }
+
+    .ruta {
+        color: #1e697b;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    
+    .ruta:hover {
+        color: black;
+    }
+    
+    .ruta-barras {
+        display: block;
+        font-size: 13px;
+        margin-bottom: -10px;
+        margin-left: 13px;
+    }
+
+    /* textos del 2do contenedor */
+    .resumen-compra {
+        font-size: 14px;
+    }
+
+    .subtotal-titulo {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .subtotal {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .gratis-titulo {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .gratis {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .total-titulo {
+        font-size: 16px;
+    }
+
+    .total {
+        font-size: 16px;
+    }
+
+    /* boton de pago */
+    .botonDePago {
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* seccion productos */
+    .section-productos-descuentos {
+        margin-top: 4%;  /* antes 4 */ /* le reduzco un 1% q a lo de los costados del main */
+        margin-bottom: 4%;  /* antes 4 */ /* le reduzco un 1% q a lo de los costados del main */
+        border-radius: 6px;  /* antes 6px */
+        padding: 15px;  /* antes 15px */ /* no lo aumento porq aca aparecen 6 cards a lo ancho y sino le resto ancho a las cards */
+    }
+
+    section h2 {  /* el titulo del section productos descuentos */
+        padding-bottom: 15px;  /* antes 15px */ /* lo mismo q el padding del section productos descuentos */
+        font-weight: 500;  /* antes igual */
+        font-size: 20px;  /* antes 21px */
+    }
+
+    .h3-ver-todos {
+        font-weight: 500;  /* antes 500 */
+        font-size: 16px;  /* antes 17px */
+        margin-top: 15px;  /* antes 15px */ /* el mismo q el padding del section ppal */
+    }
+
+    .h3-ver-todos a {
+        transition: 450ms;
+    }
+
+    .h3-ver-todos a:hover {
+        color: black;
+    }
+    
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {
+        width: 90%;  /* antes 90% */
+        border-radius: 5px;  /* antes 5px */
+        padding: 8px;  /* antes 8px */
+        transition: 300ms;
+    }
+
+    .articulo-productos-descuentos {
+        border: 1px solid #6191de;
+    }
+
+    .articulo-productos:hover {
+        border: 1px solid #cedffc;
+        /* box-shadow : 0px 0px 16px rgb(186, 186, 186); */
+        .texto_nombre_arriba h4 {
+            color: #349fba;
+        }
+    }
+
+    .articulo-productos-descuentos:hover {
+        border: 1px solid #29d5de;
+        /* box-shadow : 0px 0px 16px rgb(186, 186, 186); */
+        .texto_nombre_arriba h4 {
+            color: #349fba;
+        }
+    }
+
+    .div-etiqueta {
+        margin-bottom: 10px;  /* antes 8px */ /* el mismo q el padding del articulo productos descuentos + 2px */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-weight: 400;  /* antes 400 */
+        font-size: 12px;  /* antes 12px */
+        padding: 5.5px 8px;  /* antes 6px 8px */
+        border-radius: 4px;  /* antes 4px */
+        width: fit-content;
+    }
+
+    .contenedor_imagen {
+        height: 90px;  /* antes 90px */
+        cursor: pointer;
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 5px;  /* antes 5px */
+        cursor: pointer;
+    }
+
+    .texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
+        max-height: 35px;  /* antes 35px */ 
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 400;  /* antes 350 */
+        font-size: 14px;  /* antes 14px */
+    }
+    
+    .texto_descripcion_arriba {
+        display: block;
+        max-height: 35px;  /* antes 35px */
+    }
+
+    .descripcion {
+        margin-top: 8px;  /* el mismo q el padding del articulo productos descuentos */
+        font-size: 12px;
+        font-weight: 300;
+        /* border: 1px solid violet; */
+    }
+
+    .precio-tachado {  /* el precio tachado en los productos con descuento */
+        font-size: 14px;  /* antes 15px */
+        margin-top: 8px;  /* antes 8px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 2.5px;  /* antes 2.5px */
+        text-decoration-thickness: 0.7px;  /* antes 0.7px */
+    }
+
+    .precio-d {  /* el precio en negrita */
+        font-size: 20px;  /* antes 20px */
+    }
+    
+    .descuento {  /* el 20% OFF */
+        font-weight: 400;  /* antes 400 */
+        font-size: 13px;  /* antes 13px */
+        margin-left: 4px;  /* antes 4px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 8px;  /* antes 8px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        height: 40%;
+        border-radius: 4px;  /* antes 4px */
+        font-size: 14px;  /* antes 14px */
+        padding: 4px;  /* antes 5px */
+        transition: all 400ms ease-in-out;
+        cursor: pointer;
+    }
+
+    button {
+        cursor: pointer;
+    }
+    
+    .boton-comprar:hover, .boton-comprarSinAuth:hover {
+        background: linear-gradient(90deg, #f0f2f3 0%, #d2e9ef 50%, #8dbdc9 100%);
+        color: rgb(147, 147, 147);
+        /* border: 1px solid rgb(223, 223, 223); */
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+
+    .all {
+        max-width: 1200px;
+        /* margin: auto; */
+        margin-top: 4%;
+    }
+
+    .boton-eliminar, .botton-comprar {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .div-botones {
+        margin-bottom: 25px;
+    }
+
+    .titulo-nombre-producto {
+        font-size: 18px;
+        /* margin-bottom: 14px; */
+    }
+
+    .titulo-descrip {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .descrip {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .precio-detalle {
+        font-size: 18px;
+        margin-left: 12px;
+    }
+
+    .precio-detalle2 {
+        font-size: 18px;
+        margin-left: 12px;
+    }
+
+    .descripcion2 {   /* texto de descripcion */
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    .precio-tachado-detalle {
+        font-size: 14px;
+        margin-bottom: 12px;
+        margin-left: 10px;
+        width: 70%;
+    }
+
+    .precio-normal {
+        font-size: 16px;
+    }
+
+    .precio-normal2 {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .precio-oferta {
+        font-size: 16px;
+    }
+
+    .descuento-precio {
+        font-size: 15px;
+        margin-left: 10px;
+        width: 40%;
+    }
+
+    .ruta {
+        opacity: 1;
+        color: #1e697b;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    
+    .ruta:hover {
+        color: black;
+    }
+    
+    .ruta-barras {
+        opacity: 1;
+        font-size: 15px;
+        margin-bottom: -10px;
+        margin-left: 15px;
+    }
+
+    .boton-vaciar {
+        font-size: 15px;
+    }
+
+    /* textos 2do contenedor */
+    .resumen-compra {
+        font-size: 16px;
+    }
+
+    .subtotal {
+        font-size: 15px;
+        width: 50%;
+        text-align: right;
+        margin: 0;
+        margin-bottom: 13px;
+    }
+
+    .total {
+        font-size: 17px;
+        width: 50%;
+        text-align: right;
+        margin: 0;
+        margin-bottom: 13px;
+    }
+
+    .gratis {
+        font-size: 13px;
+        color: #1e697b;
+        width: 50%;
+        text-align: right;
+        margin: 0;
+        margin-bottom: 13px;
+    }
+
+    .subtotal-titulo {
+        font-size: 15px;
+        width: 30%;
+        margin: 0;
+        margin-bottom: 13px;
+    }
+
+    .total-titulo {
+        font-size: 17px;
+        width: 30%;
+        margin: 0;
+        margin-bottom: 13px;
+    }
+
+    .gratis-titulo {
+        font-size: 13px;
+        width: 30%;
+        margin: 0;
+        margin-bottom: 13px;
+    }
+
+    /* boton de pago */
+    .botonDePago {
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 16px;
+    }
+
+    /* seccion productos */
+    .section-productos-descuentos {
+        max-width: 1200px;
+        margin-top: 4%;  /* antes 4 */ /* le reduzco un 1% q a lo de los costados del main */
+        margin-bottom: 4%;  /* antes 4 */ /* le reduzco un 1% q a lo de los costados del main */
+        border-radius: 6px;  /* antes 6px */
+        padding: 15px;  /* antes 15px */ /* no lo aumento porq aca aparecen 6 cards a lo ancho y sino le resto ancho a las cards */
+    }
+
+    section h2 {  /* el titulo del section productos descuentos */
+        padding-bottom: 16px;  /* antes 15px */ /* lo mismo q el padding del section productos descuentos */
+        font-weight: 500;  /* antes igual */
+        font-size: 21px;  /* antes 20px */
+    }
+
+    .h3-ver-todos {
+        font-weight: 500;  /* antes 500 */
+        font-size: 17px;  /* antes 16px */
+        margin-top: 16px;  /* antes 15px */ /* el mismo q el padding del section ppal */
+    }
+
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {
+        width: 88%;  /* antes 90% */
+        border-radius: 5px;  /* antes 5px */
+        padding: 10px;  /* antes 8px */
+        transition: 300ms;
+    }
+
+    .div-etiqueta {
+        margin-bottom: 12px;  /* antes 8px */ /* el mismo q el padding del articulo productos descuentos + 2px */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-weight: 400;  /* antes 400 */
+        font-size: 12px;  /* antes 12px */
+        padding: 5.5px 8px;  /* antes 6px 8px */
+        border-radius: 4px;  /* antes 4px */
+        width: fit-content;
+    }
+
+    .contenedor_imagen {
+        height: 95px;  /* antes 90px */
+        cursor: pointer;
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 6px;  /* antes 5px */
+        cursor: pointer;
+    }
+
+    .texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
+        max-height: 36px;  /* antes 35px */ 
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 400;  /* antes 350 */
+        font-size: 15px;  /* antes 14px */
+    }
+    
+    .texto_descripcion_arriba {
+        display: block;
+        max-height: 40px;  /* antes 35px */
+    }
+
+    .descripcion {
+        margin-top: 10px;  /* antes 8px *//* el mismo q el padding del articulo productos descuentos */
+        font-size: 13px;  /* antes 12px */
+        font-weight: 300;  /* antes 300 */
+        /* border: 1px solid violet; */
+    }
+
+    .precio-tachado {  /* el precio tachado en los productos con descuento */
+        font-size: 15px;  /* antes 14px */
+        margin-top: 10px;  /* antes 8px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 2.5px;  /* antes 2.5px */
+        text-decoration-thickness: 0.7px;  /* antes 0.7px */
+    }
+
+    .precio-d {  /* el precio en negrita */
+        font-size: 22px;  /* antes 20px */
+    }
+    
+    .descuento {  /* el 20% OFF */
+        font-weight: 400;  /* antes 400 */
+        font-size: 14px;  /* antes 13px */
+        margin-left: 4px;  /* antes 4px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 10px;  /* antes 8px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        height: 40%;  /* antes 40 */
+        border-radius: 4px;  /* antes 4px */
+        font-size: 15px;  /* antes 14px */
+        padding: 5px;  /* antes 4px */
+    }
+
+}
+
+@media (min-width: 1440px){
+
+    /* seccion productos */
+    .section-productos-descuentos {
+        margin-top: 4%;  /* antes 4 */ /* le reduzco un 1% q a lo de los costados del main */
+        margin-bottom: 4%;  /* antes 4 */ /* le reduzco un 1% q a lo de los costados del main */
+        border-radius: 6px;  /* antes 6px */
+        padding: 15px;  /* antes 15px */ /* no lo aumento porq aca aparecen 6 cards a lo ancho y sino le resto ancho a las cards */
+    }
+
+    section h2 {  /* el titulo del section productos descuentos */
+        padding-bottom: 16px;  /* antes 16px */ /* lo mismo q el padding del section productos descuentos */
+        font-weight: 500;  /* antes igual */
+        font-size: 21px;  /* antes 21px */
+    }
+
+    .h3-ver-todos {
+        font-weight: 500;  /* antes 500 */
+        font-size: 17px;  /* antes 17px */
+        margin-top: 16px;  /* antes 16px */ /* el mismo q el padding del section ppal */
+    }
+
+    /* --- Card producto --- */
+    .articulo-productos-descuentos, .articulo-productos {
+        width: 85%;  /* antes 88% */
+        border-radius: 5px;  /* antes 5px */
+        padding: 12px;  /* antes 10px */
+        transition: 300ms;
+    }
+
+    .div-etiqueta {
+        margin-bottom: 14px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos + 2px */
+    }
+    
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-weight: 400;  /* antes 400 */
+        font-size: 12px;  /* antes 12px */
+        padding: 5.5px 8px;  /* antes 5.5px 8px */
+        border-radius: 4px;  /* antes 4px */
+        width: fit-content;
+    }
+
+    .contenedor_imagen {
+        height: 100px;  /* antes 95px */
+        cursor: pointer;
+    }
+    
+    .img-productos-descuentos {
+        border-radius: 6px;  /* antes 6px */
+        cursor: pointer;
+    }
+
+    .texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
+        max-height: 38px;  /* antes 36px */ 
+    }
+    
+    .texto_nombre_arriba h4 {
+        font-weight: 400;  /* antes 350 */
+        font-size: 16px;  /* antes 15px */
+    }
+    
+    .texto_descripcion_arriba {
+        display: block;
+        max-height: 45px;  /* antes 40px */
+    }
+
+    .descripcion {
+        margin-top: 12px;  /* antes 10px *//* el mismo q el padding del articulo productos descuentos */
+        font-size: 14px;  /* antes 13px */
+        font-weight: 300;  /* antes 300 */
+        /* border: 1px solid violet; */
+    }
+
+    .precio-tachado {  /* el precio tachado en los productos con descuento */
+        font-size: 16px;  /* antes 15px */
+        margin-top: 12px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-bottom: 3px;  /* antes 2.5px */
+        text-decoration-thickness: 0.7px;  /* antes 0.7px */
+    }
+
+    .precio-d {  /* el precio en negrita */
+        font-size: 25px;  /* antes 22px */
+    }
+    
+    .descuento {  /* el 20% OFF */
+        font-weight: 400;  /* antes 400 */
+        font-size: 15px;  /* antes 14px */
+        margin-left: 5px;  /* antes 4px */
+    }
+
+    .div-boton-comprar {
+        margin-top: 12px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
+    }
+    
+    .boton-comprar, .boton-comprarSinAuth {
+        height: 40%;  /* antes 40 */
+        border-radius: 4px;  /* antes 4px */
+        font-size: 15.5px;  /* antes 15px */
+        padding: 5.5px;  /* antes 5px */
+    }
+
+}
+
+@media (min-width: 1600px){
+
+    .all {
+        margin-top: 3%;
+    }
+
+    /* seccion productos */
+    .section-productos-descuentos {
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+
+    /* card producto */
+    .precio-d, .precio {
+        font-size: 22px;
+    }
+
+    .descuento {
+        font-size: 15px;
+    }
+
+    
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head.ejs", {cssSheet: "registerLogin_style", title: "Página Register"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
+
+<body>
+
+    <%- include("./partials/header.ejs") %>
+    <%- include("./partials/header2.ejs") %>
+
+    <% if(locals.usuario && locals.userALoguearse){ %>
+        <main class="main-perfil">
+
+            <article class="contenedor-perfil">
+                <!--Registro-->
+                <form class="formulario" action="" method="POST">
+                    <div class="centrado">
+                        <div>
+                            <article class="flex-enlinea-titulo">
+                                <img src="/img/header/logoV.png" alt="Logo" class="logo">
+                                <h2 class="editar-titulo">Mi perfil</h2>
+                            </article>
+            
+                            <div class="flex-datosusuario"> <!-- el blue con border radius -->
+
+                                <div class="flex-datosusuario-interno"> <!-- 50% --> <!-- el violeta -->
+                                    <div class="flex-nombreusuario" style="margin: 0; padding: 0;">
+                                        <p class="usuario-patitas">Usuario patitas #<%= userALoguearse.id %></p>
+                                    </div>
+                                    <div class="flex-nombreusuario">
+                                        <h3 class="texto-usuario">Usuario: </h3>
+                                        <h3 class="nombre-usuario-logueado"><%= userALoguearse.nombre %> <%= userALoguearse.apellido %></h3>
+                                    </div>
+                                    <div class="flex-emailusuario">
+                                        <h3  class="texto-email">Email: </h3>
+                                        <h3  class="email-usuario-logueado"><%= userALoguearse.email %></h3>
+                                    </div>
+                                </div>
+
+                                <div class="flex-imagenusuario"> <!-- 50% -->
+                                    <div class="div-imagenDePerfil">
+                                        <img src="<%= `http://localhost:3300/img/usersImage/${userALoguearse.imagen}` %>" alt="" class="imagenDePerfil">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <a href="/users/edit/<%= userALoguearse.id %>">
+                                <button type="button" class="btnEditarDatos">Editá tus datos</button>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </article>
+        </main>
+    <% } else { %>
+        <main class="main-ya-podes-loguearte">
+            <article class="contenedor-ya-podes-loguearte">
+                <!--Registro-->
+                <form class="formulario" action="" method="POST">
+                    <div class="centrado">
+                        <div>
+                            <article class="flex-enlinea-titulo">
+
+                                <h3 class="titulo-yapodesloguearte">Ya podés loguearte</h3>
+
+                            </article>
+
+                                <a href="/users/login">
+                                    <button type="button" class="btnIniciarSesion">Login</button>
+                                </a>
+                        </div>
+                    </div>
+                </form>
+            </article>
+        </main>
+    <% }  %>
+
+<%- include("./partials/footer.ejs") %>
+    
+</body>
+</html>

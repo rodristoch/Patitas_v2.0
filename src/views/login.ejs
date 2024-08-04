@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head.ejs", {cssSheet: "registerLogin_style", title: "Login"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
+    
+<body>
+    
+    <%- include("./partials/header.ejs") %>
+    <%- include("./partials/header2.ejs") %>
+
+    <main class="main-login">
+        
+        <article class="contenedor-login">
+            
+            <!--Login-->
+            <form action="/users/login" method="POST" class="formulario">
+                <div class="centrado">
+                    <!--Logo + texto-->
+                    <article class="flex-enlinea-titulo">
+                        <img src="/img/header/logoV.png" alt="Logo" class="logo">
+                        <h2 class="editar-titulo">Bienvenido a Patitas</h2>
+                    </article>
+
+                    <div>
+                        <!-- errores del back -->
+                        <% if(locals.errors){ %> 
+                            <% for(let error in errors) { %>
+                                <p style="color: red; font-size: 16px; font-weight: 500;" > <%= errors[error].msg %> </p> 
+                            <% } %>
+                        <% } %>
+                    </div>
+
+                    <!--Input email-->
+                    <p class="<%= (locals.errors && locals.errors.email) ? 'titulo-error' : 'titulo-email' %>">Email<span id="span3"><i class="fa-solid fa-circle-check"></i></span><span id="span32"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorEmail"></small></p>
+                    <input type="email" name="email" id="email" placeholder="" class="<%= (locals.errors && locals.errors.email) ? 'input_error' : '' %>" value="<%= locals.oldData ? oldData.email : null %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="div-small" style="margin-top: 5px; height: 0;"><label class="errorEmail"></label></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.email) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.email.msg %></label>
+                    <% } %>
+
+                    <!--Input contraseña-->
+                    <p class="<%= (locals.errors && locals.errors.email) ? 'titulo-error' : 'titulo-pass' %>">Contraseña<span id="span4"><i class="fa-solid fa-circle-check"></i></span><span id="span42"><i class="fa-sharp fa-solid fa-circle-exclamation" id="exclamation"></i></span><small class="errorPassword"></small></p>
+                    <input type="password" style="margin-bottom: 5px;" name="password" id="password" placeholder="" class="<%= (locals.errors && locals.errors.password) ? 'input_error' : '' %>">
+                    <!-- div para mostrar errores de validacion del front -->
+                    <!-- <div class="div-small" class="div-small"><small class="errorPassword"></small></div> -->
+                    <!-- errores del back -->
+                    <% if (locals.errors && locals.errors.password) { %>
+                        <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.password.msg %></label>
+                    <% } %>
+
+                    <a href="#" class="leer-terminos">¿Olvidaste la contraseña?</a>
+
+                    <!--Recordarme -->
+                    <section class="flex-enlinea">
+                        <input type="checkbox" name="recordarme" id="recordarme" style="margin-left: 0;">
+                        <label for="recordarme" class="label-recordarme"><p class="recordar">Recordarme</p></label>
+                    </section>
+
+                    <button id="btnSubmit" class="btnIniciarSesion" type="submit">Iniciar sesión</button>
+
+                    <hr class="hr-login">
+                    
+                    <p class="recordar">¿No tenés cuenta?</p>
+                    <a href="/users/register">
+                        <button type="button" class="btnCrearCuenta">Crear cuenta</button>
+                    </a>
+                </div>
+            </form>
+        </article>
+
+    </main> 
+
+    <%- include("./partials/footer.ejs") %>
+    
+    <!-- <script src="/js/validacionlogin.js"></script> -->
+
+</body>
+</html>
