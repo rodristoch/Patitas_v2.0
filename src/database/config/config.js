@@ -1,3 +1,36 @@
+module.exports = {
+  "development": {
+    "username": "uo3yzhs6quxkvczi",
+    "password": "JSJtw1oCuDibZvZ97JM",
+    "database": "bilnzy2ojwvvqbdgmaye",
+    "host": "bilnzy2ojwvvqbdgmaye-mysql.services.clever-cloud.com",
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
+  },
+  "test": {
+    "username": "uo3yzhs6quxkvczi",
+    "password": "JSJtw1oCuDibZvZ97JM",
+    "database": "bilnzy2ojwvvqbdgmaye",
+    "host": "bilnzy2ojwvvqbdgmaye-mysql.services.clever-cloud.com",
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
+  },
+  "production": {
+    "username": "uo3yzhs6quxkvczi",
+    "password": "JSJtw1oCuDibZvZ97JM",
+    "database": "bilnzy2ojwvvqbdgmaye",
+    "host": "bilnzy2ojwvvqbdgmaye-mysql.services.clever-cloud.com",
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
+  }
+}
+
 /* module.exports = {
   "development": {
     "username": "uhkmtzipchxmu85k",
@@ -31,7 +64,7 @@
   }
 } */
 
-module.exports = {
+/* module.exports = {
   "development": {
     "username": "root",
     "password": null,
@@ -62,4 +95,4 @@ module.exports = {
       "timestamps": false
     }
   }
-}
+} */
