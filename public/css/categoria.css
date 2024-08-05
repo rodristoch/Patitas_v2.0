@@ -3593,6 +3593,7 @@ main {
 
     .texto_descripcion_arriba {
         display: block;
+        max-height: 42px;  /* antes 35px */
     }
     
     .descripcion {
