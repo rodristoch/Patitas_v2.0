@@ -12,7 +12,7 @@ module.exports = {
   "test": {
     "username": "uhkmtzipchxmu85k",
     "password": "hxq5EhOxtVCIzVpjWdxW",
-    "database": "database_test",
+    "database": "b2jz7bbxzhcmo0r2cwkd",
     "host": "b2jz7bbxzhcmo0r2cwkd-mysql.services.clever-cloud.com",
     "dialect": "mysql",
     "define": {
@@ -22,7 +22,7 @@ module.exports = {
   "production": {
     "username": "uhkmtzipchxmu85k",
     "password": "hxq5EhOxtVCIzVpjWdxW",
-    "database": "database_production",
+    "database": "b2jz7bbxzhcmo0r2cwkd",
     "host": "b2jz7bbxzhcmo0r2cwkd-mysql.services.clever-cloud.com",
     "dialect": "mysql",
     "define": {
