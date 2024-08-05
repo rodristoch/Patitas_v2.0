@@ -5,7 +5,7 @@ const methodOverride = require('method-override');   //para requerir path (para 
 const session = require("express-session");
 const cookieParser = require("cookie-parser")
 const cors = require ('cors');
-const port = process.env.PORT || 3300;  //para hacer el deploy
+const port = /* process.env.PORT || */ 3300;  //para hacer el deploy
 
 // *********** Middleware recordarme module *************
 const recordarme = require("./middlewares/recordarme.js");
