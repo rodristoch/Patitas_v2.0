@@ -81,7 +81,7 @@ INSERT INTO `productos` VALUES
 (17,'Purina Proplan Kitten','Alimento seco para gatitos de la marca_id Purina Proplan.',NULL,1,19.99,'Purina-Proplan-kitten.jpg',1,5),
 (18,'Purina Proplan Reducido Calorías','Alimento seco reducido en calorías para gatos de la marca_id Purina Proplan.',NULL,1,39.99,'Purina-Proplan-reducido-calorias.jpg',1,5),
 (19,'Arena Aglomerante Sanicat Strong Clumps 7Kg','Arena aglomerante de la marca_id Sanicat, formato de 7 kg.',NULL,NULL,19.99,'arena-aglomerante-sanicat-strong-clumps-7Kg.jpg',1,8),
-(20,'Bandeja Sanitaria Litera','Bandeja sanitaria tipo litera para gatos.',NULL,NULL,23.99,'bandeja-sanitaria-litera.jpg',1,1),
+(20,'Bandeja Sanitaria Litera','Bandeja sanitaria tipo litera para gatos.',NULL,NULL,23.99,'Bandeja-Sanitaria-Litera.jpg',1,1),
 (21,'Bandeja Sanitaria Litera Baño Cerrada Para Gato','Bandeja sanitaria tipo litera con baño cerrado para gatos, color gris.',NULL,NULL,29.99,'bandeja-sanitaria-litera-bano-cerrada-para-gato.jpg',1,1),
 (22,'Cardina Cepillo Saca Pelo Mascota Premium Autolimpiante Aseo','Cardina cepillo saca pelo para mascotas premium, autolimpiante para el cuidado del aseo.',NULL,NULL,16.99,'cardina-cepillo-saca-pelo-mascota-premium-autolimpiante-aseo.jpg',1,1),
 (23,'Cat-It Alfombra Para Baño Sanitario Grande 60x90cm','Alfombra para baño sanitario grande de la marca_id Cat-It, dimensiones 60x90 cm, color gris.',NULL,NULL,34.99,'catit-alfombra-para-bano-sanitario-grande-60x90cm.jpg',1,16),
