@@ -228,7 +228,7 @@ a:hover {
 .contendor_ppal-azul {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
     display: none;
     right: 0;
-    top: 60px;  /* tiene q ser el mismo q el height del header */
+    top: 59px;  /* tiene q ser el mismo q el height del header */
     transition: all 1s ease;
     position: absolute;
     /* right: 85px; */
@@ -253,7 +253,7 @@ a:hover {
 .contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
     display: none;
     right: 0;
-    top: 127px;  /* 60px del header + 67px del .contendor_ppal-azul */
+    top: 134px;  /* 60px del header + 74px del .contendor_ppal-azul */
     /* transition: all 2s ease-in-out; */
     transition: all 1s ease;
     position: absolute;
@@ -278,7 +278,7 @@ a:hover {
 .contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
     display: none;
     right: 0;
-    top: 170px;  /* 60px del header + 110px del .contendor_ppal-azul */
+    top: 176px;  /* 60px del header + 116px del .contendor_ppal-azul */
     /* transition: all 2s ease-in-out; */
     transition: all 1s ease;
     position: absolute;
@@ -345,7 +345,7 @@ a:hover {
 
 .contendor_opcion-verde, .contendor_opcion-verde-user {
     /* border: 1px solid green; */
-    padding: 10px 5px;
+    padding: 12px 5px;
 }
 
 .contendor_opcion-verde-user {
@@ -374,13 +374,13 @@ a:hover {
 
 .contendor_opcion-verde-titulo {
     /* border: 1px solid green; */
-    padding: 20px 5px 10px;
+    padding: 20px 5px 12px;
     /* padding-bottom: 0; */
 }
 
 /* el contenedor verde de Crear producto */
 .contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
-    padding: 12px 5px 12px;
+    padding: 14px 5px 14px;
     border-radius: 5px;
 }
 
@@ -479,13 +479,13 @@ a:hover {
 }
 
 .texto-opcion-user-nombre { /* el nombre del usuario en negrita */
-    font-size: 16px;
+    font-size: 16.5px;
     font-weight: 500;
     color: #FECF53; 
 }
 
 .texto-opcion-user {  /* el texto "Activo" */
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     width: max-content;
     color: rgb(211, 211, 211);  
@@ -504,7 +504,7 @@ a:hover {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     color: rgb(50, 50, 50);
     text-align: left;
@@ -544,7 +544,7 @@ a:hover {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     color: rgb(130, 130, 130);
     text-align: left;
@@ -786,7 +786,7 @@ footer p {  /* los textos del footer */
     margin-right: 10px;
 }
 
-@media (max-width: 389px) {
+@media (max-width: 380px) {
 
     .flex-top {  /* contenedor de los 2 divs */
         height: 45px;
@@ -804,12 +804,12 @@ footer p {  /* los textos del footer */
     
     .contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
         right: 0;
-        top: 102px;  /* 45px del header + 57px del .contendor_ppal-azul */
+        top: 109px;  /* 45px del header + 64px del .contendor_ppal-azul */
     }
 
     .contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
         right: 0;
-        top: 137px;  /* 45px del header + 92px del .contendor_ppal-azul */
+        top: 143px;  /* 45px del header + 98px del .contendor_ppal-azul */
     }
 
     .contendor_ppal-azul2, .contendor_ppal-azulabajo2, .contendor_ppal-azulabajo-logueado2 {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
@@ -823,7 +823,7 @@ footer p {  /* los textos del footer */
     }
 
     .contendor_opcion-verde, .contendor_opcion-verde-user {
-        padding: 8px 4px;
+        padding: 10px 4px;
     }
 
     .contendor_opcion-verde-user {
@@ -831,7 +831,7 @@ footer p {  /* los textos del footer */
     }
     
     .contendor_opcion-verde-titulo {
-        padding: 15px 4px 8px;
+        padding: 15px 4px 10px;
         /* padding-bottom: 0; */
     }
 
@@ -859,7 +859,6 @@ footer p {  /* los textos del footer */
     
     .imagen-user {
         width: 100%;
-        height: 100%;
         border-radius: 8px;
     }
 
@@ -879,7 +878,7 @@ footer p {  /* los textos del footer */
     }
 
     .texto-opcion, .texto-opcion-micuenta, .div-icon, .div-icon-user, .div-icon-micuenta {
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 400;
     }
 
@@ -896,13 +895,13 @@ footer p {  /* los textos del footer */
     .texto-opcion-titulo {
         margin: 0;
         padding: 0;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 400;
     }
 
     /* el contenedor verde de Crear producto en el panel */
     .contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
-        padding: 10px 4px 10px;
+        padding: 12px 4px 12px;
         border-radius: 4px;
     }
 
@@ -1026,12 +1025,12 @@ footer p {  /* los textos del footer */
     
     .contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
         right: 0;
-        top: 147px;  /* 65px del header + 82px del .contendor_ppal-azul */
+        top: 153px;  /* 65px del header + 88px del .contendor_ppal-azul */
     }
 
     .contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
         right: 0;
-        top: 194px;  /* 65px del header + 129px del .contendor_ppal-azul */
+        top: 198px;  /* 65px del header + 133px del .contendor_ppal-azul */
     }
 
     .contendor_ppal-azul2, .contendor_ppal-azulabajo2, .contendor_ppal-azulabajo-logueado2 {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
@@ -1045,7 +1044,7 @@ footer p {  /* los textos del footer */
     }
 
     .contendor_opcion-verde, .contendor_opcion-verde-user {
-        padding: 12px 8px;
+        padding: 13px 8px;  /* antes 12px 5px */
     }
 
     .contendor_opcion-verde-user {
@@ -1053,7 +1052,7 @@ footer p {  /* los textos del footer */
     }
     
     .contendor_opcion-verde-titulo {
-        padding: 22px 8px 12px;
+        padding: 22px 8px 13px;  /* antes 20 8 12 */
         /* padding-bottom: 0; */
     }
     
@@ -1079,17 +1078,17 @@ footer p {  /* los textos del footer */
     }
 
     .texto-opcion-user-nombre { /* el nombre del usuario en negrita */
-        font-size: 18px;
+        font-size: 18px;  /* antes 16.5px */
         font-weight: 500;
     }
     
     .texto-opcion-user { /* el texto "Activo" */
-        font-size: 15px;
+        font-size: 15px;  /* antes 14px */
         /* font-weight: 300; */
     }
 
     .texto-opcion, .texto-opcion-micuenta, .div-icon, .div-icon-user, .div-icon-micuenta {
-        font-size: 15px;
+        font-size: 16px;  /* antes 15px */
         font-weight: 400;
         color: rgb(50, 50, 50);
     }
@@ -1107,14 +1106,14 @@ footer p {  /* los textos del footer */
     .texto-opcion-titulo {
         margin: 0;
         padding: 0;
-        font-size: 14px;
+        font-size: 15px;  /* antes 14px */
         font-weight: 500;
         color: rgb(130, 130, 130);
     }
 
     /* el contenedor verde de Crear producto */
     .contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
-        padding: 15px 8px 15px;
+        padding: 16px 8px 16px;  /* antes 14 5 14 */
         border-radius: 6px;
     }
     
@@ -1143,12 +1142,12 @@ footer p {  /* los textos del footer */
     
     .contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
         right: 0;
-        top: 166px;  /* 70px del header + 96px del .contendor_ppal-azul */
+        top: 170px;  /* 70px del header + 100px del .contendor_ppal-azul */
     }
 
     .contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
         right: 0;
-        top: 221px;  /* 70px del header + 151px del .contendor_ppal-azul */
+        top: 225px;  /* 70px del header + 155px del .contendor_ppal-azul */
     }
 
     .contendor_ppal-azul2, .contendor_ppal-azulabajo2, .contendor_ppal-azulabajo-logueado2 {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
@@ -1162,7 +1161,7 @@ footer p {  /* los textos del footer */
     }
 
     .contendor_opcion-verde, .contendor_opcion-verde-user {
-        padding: 13px 9px;
+        padding: 14px 9px;  /* antes 13px 8px */
     }
 
     .contendor_opcion-verde-user {
@@ -1170,7 +1169,7 @@ footer p {  /* los textos del footer */
     }
     
     .contendor_opcion-verde-titulo {
-        padding: 25px 9px 13px;
+        padding: 25px 9px 14px;
         /* padding-bottom: 0; */
     }
 
@@ -1207,7 +1206,7 @@ footer p {  /* los textos del footer */
     }
 
     .texto-opcion, .texto-opcion-micuenta, .div-icon, .div-icon-user, .div-icon-micuenta {
-        font-size: 16.5px;
+        font-size: 17px;
         font-weight: 400;
     }
 
@@ -1224,13 +1223,13 @@ footer p {  /* los textos del footer */
     .texto-opcion-titulo {
         margin: 0;
         padding: 0;
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 500;
     }
 
     /* el contenedor verde de Crear producto */
     .contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
-        padding: 16px 9px 16px;
+        padding: 18px 9px 18px;  /* antes 16 8 16 */
         border-radius: 6px;
     }
     
@@ -1259,7 +1258,7 @@ footer p {  /* los textos del footer */
     
     .contendor_ppal-azulabajo {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
         right: 0;
-        top: 194px;  /* 80px del header + 114px del .contendor_ppal-azul */
+        top: 200px;  /* 80px del header + 120px del .contendor_ppal-azul */
     }
 
     .contendor_ppal-azulabajo-logueado {  /* el primer contenedor oculto, se abre al apretar en el Menu Hamb */
@@ -1278,7 +1277,7 @@ footer p {  /* los textos del footer */
     }
 
     .contendor_opcion-verde, .contendor_opcion-verde-user {
-        padding: 16px 10px;
+        padding: 18px 10px;
     }
 
     .contendor_opcion-verde-user {
@@ -1286,7 +1285,7 @@ footer p {  /* los textos del footer */
     }
     
     .contendor_opcion-verde-titulo {
-        padding: 30px 10px 16px;
+        padding: 30px 10px 18px;
         /* padding-bottom: 0; */
     }
 
@@ -1324,7 +1323,7 @@ footer p {  /* los textos del footer */
     }
 
     .texto-opcion, .texto-opcion-micuenta, .div-icon, .div-icon-user, .div-icon-micuenta {
-        font-size: 18px;
+        font-size: 18.5px;  /* antes 17px */
         font-weight: 400;
     }
     
@@ -1341,13 +1340,13 @@ footer p {  /* los textos del footer */
     .texto-opcion-titulo {
         margin: 0;
         padding: 0;
-        font-size: 16px;
+        font-size: 17.5px;  /* antes 16px */
         font-weight: 500;
     }
 
     /* el contenedor verde de Crear producto */
     .contendor_opcion-verde-crear {  /* el contenedor verde de Crear producto */
-        padding: 18px 10px 18px;
+        padding: 23px 10px 23px;  /* antes 18 9 18 */
         border-radius: 6.5px;
     }
     

@@ -45,7 +45,7 @@ a {
 
 .titulo-ppal, .titulo-ppal2 {
     display: none;
-    width: 90%;
+    width: 92%;
     margin: 0;
     margin: auto;
     color: black;
@@ -63,7 +63,7 @@ a {
 
 .contenedor-alta {
     height: auto;
-    width: 90%;
+    width: 92%;
     margin: auto;
     overflow: hidden;
     border-radius: 8px;
@@ -166,7 +166,7 @@ label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada te
     color: rgb(0, 0, 0);
     font-weight: 400;
     background-color: rgb(220, 220, 220);
-    height: 22px;
+    height: 26px;
 }
 
 /* --- input imagen --- */
@@ -177,7 +177,7 @@ label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada te
     padding: 10px 14px;
     color: rgb(0, 0, 0);
     font-size: 12px;
-    height: 22px;
+    height: 26px;
 }
 
 .formu input:hover, textarea:hover, select:hover {  /* en desktop */
@@ -231,7 +231,7 @@ select {
     width: 100%;
     font-size: 17px; 
     font-weight: 400;
-    height: 44px;  
+    height: 48px;  
     margin: 0;
     cursor: pointer;
     transition: 350ms;
@@ -284,14 +284,18 @@ select {
     margin-right: 3px;
 }
 
-@media (max-width: 389px){
+@media (max-width: 380px){
 
     .main-alta {
-        padding: 4% 4%;  /* la separacion del main con el header y el footer */
+        padding: 5% 0%;  /* la separacion del main con el header y el footer */
+    }
+
+    .titulo-ppal, .titulo-ppal2 {
+        width: 94%;
     }
 
     .contenedor-alta {
-        width: 100%;
+        width: 94%;
         border-radius: 6.5px; /* antes 8 */
         padding: 14px 14px 14px 14px; /* antes 15px 15px 15px 15px; */
     }
@@ -319,7 +323,7 @@ select {
         font-size: 11px; /* antes 13 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 5px; /* antes 6 */
         padding: 10px 10px; /* antes 10px 14px */
-        height: 17px; /* antes 22 */
+        height: 22px; /* antes 26 */
     }
 
     .formu input::placeholder, textarea::placeholder, select::placeholder {
@@ -343,7 +347,7 @@ select {
         border-radius: 5px;
         padding: 10px 10px;
         font-size: 11px;
-        height: 17px;
+        height: 22px;
     }
 
     /* button */
@@ -352,7 +356,7 @@ select {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 15.5px;    /* antes 16 */
         font-weight: 400;  /* antes 300 */
-        height: 40px;    /* antes 44 */
+        height: 45px;    /* antes 48 */
     }
 
     /* ----- validaciones en el front ----- */
@@ -379,6 +383,10 @@ select {
 
     .main-alta {
         padding: 5% 0;  /* la separacion del main con el header y el footer */
+    }
+
+    .titulo-ppal, .titulo-ppal2 {
+        width: 90%;
     }
 
     .contenedor-alta {
@@ -410,7 +418,7 @@ select {
         font-size: 14px; /* antes 13 */
         border-radius: 7px; /* antes 6 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 24px; /* antes 22 */
+        height: 30px; /* antes 26 */
     }
 
     .formu input::placeholder, textarea::placeholder, select::placeholder {
@@ -434,7 +442,7 @@ select {
         border-radius: 7px;
         padding: 10px 14px;
         font-size: 14px;
-        height: 24px;
+        height: 30px;
     }
 
     /* button */
@@ -443,7 +451,7 @@ select {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 16.5px;    /* antes 16 */
         font-weight: 400;  /* antes 300 */
-        height: 45px;    /* antes 42 */
+        height: 50px;    /* antes 48 */
     }
 
     /* ----- validaciones en el front ----- */
@@ -501,7 +509,7 @@ select {
         font-size: 14.5px; /* antes 14 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 7.5px; /* antes 7 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 26px; /* antes 24 */
+        height: 32px; /* antes 30 */
     }
 
     .formu input::placeholder, textarea::placeholder, select::placeholder {
@@ -525,7 +533,7 @@ select {
         border-radius: 7.5px; /* antes 7 */
         padding: 10px 14px;
         font-size: 14.5px; /* antes 14 */
-        height: 26px;
+        height: 32px;
     }
 
     /* button */
@@ -534,7 +542,7 @@ select {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 17px;    /* antes 16.5 */
         font-weight: 400;  /* antes 400 */
-        height: 46px;    /* antes 45 */
+        height: 52px;    /* antes 50 */
     }
 
     /* ----- validaciones en el front ----- */
@@ -609,7 +617,7 @@ select {
         font-size: 13px; /* antes 14.5 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 6.5px; /* antes 7.5 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 22px; /* antes 26 */
+        height: 25px; /* antes 26 */
     }
 
     .formu input::placeholder, textarea::placeholder, select::placeholder {
@@ -635,7 +643,7 @@ select {
         border-radius: 6.5px; /* antes 7.5 */
         padding: 10px 14px;
         font-size: 13px; /* antes 14.5 */
-        height: 22px; /* antes 26 */
+        height: 25px; /* antes 26 */
     }
 
     /* button */
@@ -644,7 +652,7 @@ select {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 17px;    /* antes 16.5 */
         font-weight: 400;  /* antes 400 */
-        height: 46px;    /* antes 45 */
+        height: 48px;    /* antes 45 */
     }
 
     /* ----- validaciones en el front ----- */
@@ -718,7 +726,7 @@ select {
         font-size: 14.5px; /* antes 14.5 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 6.5px; /* antes 7.5 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 23px; /* antes 26 */
+        height: 24px; /* antes 26 */
     }
 
     .formu input::placeholder, textarea::placeholder, select::placeholder {

@@ -15,7 +15,7 @@
         <article class="contenedor-alta">
             <div style="padding: 24px;">
                 <% if(user.imagen) { %>
-                    <img src="<%= `http://localhost:3300/img/usersImage/${user.imagen}` %>" alt="Imagen de <%= user.nombre %> <%= user.apellido %>" style="width:48px; height: 48px;">
+                    <img src="<%= `/img/usersImage/${user.imagen}` %>" alt="Imagen de <%= user.nombre %> <%= user.apellido %>" style="width:48px; height: 48px;">
                 <% } else { %>
                     <p>Imagen no disponible</p>
                 <% } %>

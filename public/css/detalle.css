@@ -89,7 +89,7 @@ body {
 
 .nuevo, .nuevo-medio {
     color: rgb(130, 130, 130);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     margin: 0;
     padding: 0;
@@ -104,7 +104,7 @@ body {
 .contenedor_mobile {  /* el contenedor PAADRE de la parte del detalle de producto */
     margin: auto;
     display: block;
-    width: 90%;
+    width: 92%;
     /* margin-top: 5%; */
     margin-bottom: 5%;
     background-color: white;
@@ -134,7 +134,7 @@ body {
 .titulo_nombre-mobile {
     color: rgb(40, 40, 40);
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     margin: 0;
     padding: 0;
 }
@@ -150,8 +150,8 @@ body {
 
 .etiqueta-comida-bicho, .etiqueta-accesorio-bicho, .etiqueta-higiene-bicho, .etiqueta-juguete-bicho {
     font-weight: 400;
-    font-size: 9.5px;
-    padding: 3.5px;
+    font-size: 10px;
+    padding: 4px;
     border-radius: 3px;
     width: fit-content;
     text-align: center;
@@ -166,7 +166,7 @@ body {
     justify-content: center;
     align-items: center;
     /* width: 65%; */
-    height: 200px;
+    height: 250px;
     width: fit-content;
     margin: 0px auto;
     border: 1px solid white;
@@ -188,7 +188,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 10px;  /* lo separa del contenedor del detalle, q empieza con el div del precio tachado */
 }
 
@@ -201,7 +201,7 @@ body {
 
 .color, .color-desktop {  /* el Color: */
     color: black;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     margin: 0;
     border: 1px solid rgb(240, 240, 240);
@@ -209,7 +209,7 @@ body {
 
 .color-seleccionado {
     color: black;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     margin: 0;
     border: 1px solid rgb(240, 240, 240);
@@ -228,6 +228,8 @@ body {
     border: 1px solid white;
     justify-content: flex-start;
     height: fit-content;
+    margin-bottom: 2px;  /* lo separa del contenedor del div-tres con el precio en negrita */
+    /* border: 1px solid red; */
 }
 
 .precio-tachado-detalle {
@@ -237,7 +239,7 @@ body {
     text-decoration: line-through;
     text-decoration-thickness: 0.8px;
     text-decoration-color: rgb(43, 43, 43);
-    font-size: 15px; 
+    font-size: 16px; 
 }
 
 .div-tres {  /* contiene el precio y el 20% OFF en flex */
@@ -247,13 +249,14 @@ body {
     justify-content: flex-start;
     /* height: 50px; */
     border: 1px solid white;
+    /* border: 1px solid red; */
     margin-bottom: 5px;  /* lo separa del contenedor del div-medios de pago */
 }
 
 .precio-detalle {  /* el precio en negrita */
     margin: 0;
     padding: 0;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 400;
     border: 1px solid white;
 }
@@ -262,7 +265,7 @@ body {
     margin: 0;
     color: #349fba;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     margin-left: 5px;
     border: 1px solid white;
 }
@@ -278,7 +281,7 @@ body {
 
 .medios {
     color: #1f67da;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 400;
     margin: 0;
 }
@@ -291,7 +294,7 @@ body {
 
 .stock {
     color: black;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     padding: 0;
     margin: 0;
@@ -305,7 +308,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px;
+    padding: 10px;
     /* el boton de comprar tiene el margin top q lo separa */
 }
 
@@ -318,14 +321,14 @@ body {
 
 .cantidad {  /* el Cantidad: */
     color: black;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     margin: 0;
 }
 
 .cantidad-numero {
     color: black;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     margin: 0;
     margin-left: 6px;  /* mismo q el padding del contenedor */
@@ -334,21 +337,21 @@ body {
 
 .cantidad-disponibles {
     color: rgb(130, 130, 130);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     margin: 0;
 }
 
 .cantidad-flechita {  /* el contenedor de la flechita */
     color: black;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     margin: 0;
 }
 
 .fa-chevron-right {
     color: #1f67da;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     margin: 0;
 }
@@ -362,10 +365,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 10px;
-    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px;
+    border-radius: 5px;
     width: 100%;
     margin: auto;
     text-align: center;
@@ -381,16 +384,16 @@ body {
 /* --- Descripcion del producto --- */
 .titulo_descripción {  /* el titulo Descripcion de producto */
     text-decoration-color: rgb(156, 156, 156);
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
     color: rgb(7, 7, 7);
     /* border: 1px solid red; */
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .descripcion-detalle {  /* el texto de la Descripcion de producto */
-    font-size: 12px;
+    font-size: 14px;
     color: rgb(95, 95, 95);
     font-weight: 400;
     /* border: 1px solid red; */
@@ -419,17 +422,18 @@ body {
     border: 1px solid #9b46d7;
 }
 
-.boton_comprarConAuth, .boton_comprarSinAuth, .boton_comprarConAuth2 {
+.boton_comprarConAuth, .boton_comprarSinAuth, .boton_comprarConAuth2, .boton_comprarSinAuth2 {
     color: white;
     background-color: #1e697b;
-    border: 1px solid black;
+    border: 1px solid #1e697b;
+    font-size: 16px;
     margin-top: 15px;  /* lo separa del div-cantidad */
 }
 
 .boton_agregarConAuth, .boton_agregarSinAuth, .boton_agregarConAuth2 {
     color: #1e697b;
     background-color: #d4ebf1;
-    border: 1px solid #c6e0e7;
+    border: 1px solid #d4ebf1;
     margin-top: 10px;  /* lo separa del boton de comprar */
 }
 
@@ -461,7 +465,7 @@ body {
 /* --- Reel productos ---  */
 /* seccion producto */
 .section-productos-descuentos {
-    width: 90%;
+    width: 92%;
     margin: auto;
     /* border: 1px solid blue; */
     margin-top: 5%; /* lo mismo q de cada lado del main */
@@ -493,7 +497,7 @@ section h2 {
 .h3-ver-todos { 
     margin-bottom: 0;  /* porq ya tiene el padding del section ppal */
     font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 12px; /* el mismo q el padding del section ppal */
 }
 
@@ -505,11 +509,11 @@ section h2 {
 .articulo-productos-descuentos, .articulo-productos {
     background-color: white;
     /* background-color: white; */
-    width: 85%;
+    width: 90%;
     height: auto;
     border: 1px solid rgb(235, 235, 235);
     border-radius: 5px;
-    padding: 10px;
+    padding: 9px;
     /* margin-bottom: 15px; */
     display: flex;
     align-items: flex-start;
@@ -554,7 +558,7 @@ section h2 {
     box-sizing: border-box;
     text-align: center;
     border: 1px solid white;
-    height: 90px;
+    height: 100px;
 
 }
 
@@ -583,7 +587,7 @@ section h2 {
 
 .texto_nombre_arriba h4 {
     font-weight: 300;
-    font-size: 14px;
+    font-size: 15px;
     /* border: 1px solid red; */
 }
 
@@ -608,7 +612,7 @@ section h2 {
 .precio-tachado {  /* el precio tachado en los productos con descuento */
     padding: 0;
     margin: 0;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 300;
     width: 100%;  /* ocupa todo el renglón */
     margin-top: 10px; /* el mismo q el padding del articulo productos descuentos */
@@ -625,7 +629,7 @@ section h2 {
     margin: 0;
     font-weight: 500;
     width: fit-content;
-    font-size: 20px;
+    font-size: 21px;
     border: 1px solid white;
 }
 
@@ -635,7 +639,7 @@ section h2 {
     /* margin-top: -10px; */
     color: #349fba;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     width: fit-content;
     text-align: left;
     margin-left: 5px;
@@ -653,12 +657,12 @@ section h2 {
     background-color: #1e697b;
     color: white;
     width: 100%;
-    height: 40%;
+    height: 44%;
     border-radius: 4px;
     border: none;
     /* border: 0.5px solid rgb(150, 150, 150); */
     font-size: 15px;
-    padding: 4.5px;
+    padding: 5px;
     background: linear-gradient(90deg, #b5cacf 0%, #4d94a5 50%, #1e697b 100%);
 }
 
@@ -701,10 +705,10 @@ section h2 {
 
 }
 
-@media (max-width: 390px){
+@media (max-width: 380px){
 
     .nuevo, .nuevo-medio {
-        font-size: 10px;
+        font-size: 12px;  /* antes 13px */
     }
     
     .nuevo-medio {
@@ -714,7 +718,7 @@ section h2 {
     
     /* Contenedor ppal */
     .contenedor_mobile {  /* el contenedor PAADRE de la parte del detalle de producto */
-        width: 90%;
+        width: 94%;  /* antes 92% */
         margin-bottom: 5%;  /* es el mismo q a los costados del main */
         border-radius: 4px;
         padding: 8px; /* es el mimso q en paginas de categorias perro/gato */
@@ -727,7 +731,7 @@ section h2 {
     }
     
     .titulo_nombre-mobile {
-        font-size: 12px;
+        font-size: 14px;  /* antes 15px */
     }
     
     /* Etiqueta */
@@ -736,16 +740,15 @@ section h2 {
     }
     
     .etiqueta-comida-bicho, .etiqueta-accesorio-bicho, .etiqueta-higiene-bicho, .etiqueta-juguete-bicho {
-        font-size: 8px;
-        padding: 3px;
-        border-radius: 2px;
+        font-size: 9px;  /* antes 10px */
+        padding: 3.5px;  /* antes 4px */
+        border-radius: 3px;
         margin-left: 8px;
     }
     
     /* imagen producto MOBILE */
     .contenedor_imagen_mobile {
-        height: 160px;
-        width: fit-content;
+        height: 200px;  /* antes 250px */
         margin-bottom: 8px;  /* lo separa del div del color */
     }
     
@@ -758,23 +761,23 @@ section h2 {
     /* Color */
     .div-color-mobile {  /* contenedor de .div-izquierda-cantidad y la flechita */ /* hace el flex con esos 2 contenedores */
         border-radius: 3px;
-        padding: 6.5px;
+        padding: 8.5px;  /* antes 10px */
         margin-bottom: 8px;  /* lo separa del contenedor del detalle, q empieza con el div del precio tachado */
     }
     
     .color, .color-desktop {  /* el Color: */
-        font-size: 11px;
+        font-size: 13px;  /* antes 14px */
     }
     
     .color-seleccionado, .color-seleccionado-desktop {
-        font-size: 10px;
+        font-size: 12px;  /* antes 13px */
     }
     
     /* ------ Aca empieza el 2do black ------ */
     /* -- Detalle de producto - 2do black --  */
     .precio-tachado-detalle {
         text-decoration-thickness: 0.7px;
-        font-size: 13px; 
+        font-size: 15px;  /* antes 16px */
     }
     
     .div-tres {  /* contiene el precio y el 20% OFF en flex */
@@ -782,11 +785,11 @@ section h2 {
     }
     
     .precio-detalle {  /* el precio en negrita */
-        font-size: 22px;
+        font-size: 25px;  /* antes 28px */
     }
     
     .descuento-precio {  /* el 20% OFF */
-        font-size: 13px;
+        font-size: 15px;  /* antes 16px */
         margin-left: 4px;
     }
     
@@ -796,7 +799,7 @@ section h2 {
     }
     
     .medios {
-        font-size: 9px;
+        font-size: 12px;  /* antes 13px */
     }
     
     /* Stock */
@@ -805,46 +808,48 @@ section h2 {
     }
     
     .stock {
-        font-size: 10px;
+        font-size: 13px;  /* antes 14px */
     }
     
     /* Cantidad */
     .div-cantidad {  /* contenedor de .div-izquierda-cantidad y la flechita */ /* hace el flex con esos 2 contenedores */
         border-radius: 3px;
-        padding: 6.5px;
+        padding: 8.5px;  /* antes 10px */
     }
     
     .cantidad {  /* el Cantidad: */
-        font-size: 11px;
+        font-size: 13px;  /* antes 14px */
     }
     
     .cantidad-numero {
-        font-size: 10px;
+        font-size: 12px;  /* antes 13px */
         margin-left: 4.5px;  /* mismo q el padding del contenedor */
         margin-right: 6px;  /* mismo q el padding del contenedor */
     }
     
     .cantidad-disponibles {
-        font-size: 10px;
+        font-size: 12px;  /* antes 13px */
     }
     
     .cantidad-flechita {  /* el contenedor de la flechita */
-        font-size: 10px;
+        font-size: 12px;  /* antes 13px */
     }
     
     .fa-chevron-right {
-        font-size: 10px;
+        font-size: 12px;  /* antes 13px */
     }
     
     /* --- Botones ---  */
     .boton_agregarConAuth, .boton_agregarSinAuth, .boton_comprarConAuth, .boton_comprarSinAuth, .boton_editar, .boton_eliminar, .boton_comprarConAuth2, .boton_comprarSinAuth2, .boton_agregarConAuth2 {
-        font-size: 12px;
-        padding: 8px;
-        border-radius: 3px;
+        font-size: 14px;  /* antes 15px */
+        padding: 12px;  /* antes 13px */
+        font-weight: 400;
+        border-radius: 4px;  /* antes 5px */
     }  
 
-    .boton_comprarConAuth, .boton_comprarSinAuth {
+    .boton_comprarConAuth, .boton_comprarSinAuth, .boton_comprarConAuth2, .boton_comprarSinAuth2 {
         margin-top: 12px;  /* lo separa del div-cantidad */
+        font-size: 15px;  /* antes 16px */
     }
     
     .boton_agregarConAuth, .boton_agregarSinAuth {
@@ -862,41 +867,41 @@ section h2 {
     
     /* --- Descripcion del producto --- */
     .titulo_descripción {  /* el titulo Descripcion de producto */
-        font-size: 14px;
-        margin-bottom: 8px;
+        font-size: 16px;   /* antes 17px */
+        margin-bottom: 10px;   /* antes 12px */
     }
     
     .descripcion-detalle {  /* el texto de la Descripcion de producto */
-        font-size: 10px;
+        font-size: 12px;   /* antes 14px */
     }
 
     /* --- Reel productos ---  */
     /* seccion producto */
     .section-productos-descuentos {
-        width: 92%;  /* antes 90% */
+        width: 94%;  /* antes 92% */
         margin-top: 4%;  /* antes 5% */ /* lo mismo q de cada lado del main */
         margin-bottom: 4%;  /* antes 5% */ /* lo mismo q de cada lado del main */
         border-radius: 4px;  /* antes 5px */
-        padding: 8px;  /* antes 12px */
+        padding: 10px;  /* antes 12px */
     }
 
     section h2 {
-        padding-bottom: 8px;  /* antes 12px */ /* lo mismo q el padding del section productos descuentos */
+        padding-bottom: 10px;  /* antes 12px */ /* lo mismo q el padding del section productos descuentos */
         font-weight: 400;  /* antes 500 */
-        font-size: 15px;  /* antes 20px */
+        font-size: 16px;  /* antes 20px */
     }
 
     .h3-ver-todos {
         font-weight: 400;  /* antes 500 */
-        font-size: 12px;  /* antes 14px */
-        margin-top: 8px;  /* antes 12px */ /* el mismo q el padding del section ppal */
+        font-size: 14px;  /* antes 14px */
+        margin-top: 10px;  /* antes 12px */ /* el mismo q el padding del section ppal */
     }
 
     /* card producto */
     .articulo-productos-descuentos, .articulo-productos {
         width: 90%; /* antes 85% */
         border-radius: 4px;  /* antes 5px */
-        padding: 7px;  /* antes 10px */
+        padding: 7px;  /* antes 9px */
     }
 
     .div-etiqueta {
@@ -912,8 +917,7 @@ section h2 {
     }
 
     .contenedor_imagen {
-        height: 110px;  /* antes 150px */
-        height: 86px;  /* antes 110px */
+        height: 90px;  /* antes 100px */
     }
     
     .img-productos-descuentos {
@@ -929,7 +933,7 @@ section h2 {
     
     .texto_nombre_arriba h4 {
         font-weight: 300;  /* antes igual */
-        font-size: 12px;  /* antes 14px */
+        font-size: 13px;  /* antes 15px */
     }
     
     .texto_descripcion_arriba {
@@ -938,19 +942,19 @@ section h2 {
     }
 
     .precio-tachado {  /* el precio tachado en los productos con descuento */
-        font-size: 12px;  /* antes 15px */
+        font-size: 15px;  /* antes 16px */
         margin-top: 7px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
         margin-bottom: 1.5px;  /* antes 2.5px */
         text-decoration-thickness: 0.6px;  /* antes 0.7px */
     }
 
     .precio-d {  /* el precio en negrita */
-        font-size: 17px;  /* antes 20px */
+        font-size: 20px;  /* antes 21px */
     }
     
     .descuento {  /* el 20% OFF */
         font-weight: 400;  /* antes 400 */
-        font-size: 10px;  /* antes 13px */
+        font-size: 13px;  /* antes 14px */
         margin-left: 3.5px;  /* antes 5px */
     }
 
@@ -959,11 +963,11 @@ section h2 {
     }
     
     .boton-comprar, .boton-comprarSinAuth {
-        height: 40%;
+        height: 44%;
         border-radius: 3px;  /* antes 4px */
-        font-size: 13px;  /* antes 15px */
-        font-weight: 300;  /* antes 400 */
-        padding: 3.5px;  /* antes 4px */
+        font-size: 13.5px;  /* antes 15px */
+        font-weight: 400;  /* antes 400 */
+        padding: 5px;  /* antes 4px */
     }
 }
 
@@ -977,7 +981,7 @@ section h2 {
 @media (min-width: 500px){
 
     .nuevo, .nuevo-medio {
-        font-size: 13px;
+        font-size: 14px;  /* antes 13px */
     }
     
     .nuevo-medio {
@@ -987,7 +991,6 @@ section h2 {
     
     /* Contenedor ppal */
     .contenedor_mobile {  /* el contenedor PAADRE de la parte del detalle de producto */
-        width: 90%;
         margin-bottom: 5%;  /* es el mismo q a los costados del main */
         border-radius: 5px;
         padding: 10px; /* es el mimso q en paginas de categorias perro/gato */
@@ -1000,7 +1003,7 @@ section h2 {
     }
     
     .titulo_nombre-mobile {
-        font-size: 15px;
+        font-size: 16px;  /* antes 15px */
     }
     
     /* Etiqueta */
@@ -1009,16 +1012,15 @@ section h2 {
     }
     
     .etiqueta-comida-bicho, .etiqueta-accesorio-bicho, .etiqueta-higiene-bicho, .etiqueta-juguete-bicho {
-        font-size: 10px;
-        padding: 3.5px;
+        font-size: 11px;  /* antes 10px */
+        padding: 4px;  /* antes 4px */
         border-radius: 3px;
         margin-left: 10px;
     }
     
     /* imagen producto MOBILE */
     .contenedor_imagen_mobile {
-        height: 250px;
-        width: fit-content;
+        height: 280px;  /* antes 250px */
         margin-bottom: 10px;  /* lo separa del div del color */
     }
     
@@ -1031,23 +1033,23 @@ section h2 {
     /* Color */
     .div-color-mobile {  /* contenedor de .div-izquierda-cantidad y la flechita */ /* hace el flex con esos 2 contenedores */
         border-radius: 4px;
-        padding: 8px;
+        padding: 11px;  /* antes 10px */
         margin-bottom: 10px;  /* lo separa del contenedor del detalle, q empieza con el div del precio tachado */
     }
     
     .color, .color-desktop {  /* el Color: */
-        font-size: 14px;
+        font-size: 15px;  /* antes 14px */
     }
     
     .color-seleccionado, .color-seleccionado-desktop {
-        font-size: 13px;
+        font-size: 14px;  /* antes 13px */
     }
 
     /* ------ Aca empieza el 2do black ------ */
     /* -- Detalle de producto - 2do black --  */
     .precio-tachado-detalle {
         text-decoration-thickness: 0.8px;
-        font-size: 16px; 
+        font-size: 17px;  /* antes 16px */
     }
     
     .div-tres {  /* contiene el precio y el 20% OFF en flex */
@@ -1055,13 +1057,13 @@ section h2 {
     }
     
     .precio-detalle {  /* el precio en negrita */
-        font-size: 27px;
+        font-size: 30px;  /* antes 28px */
         font-weight: 400;
     }
     
     .descuento-precio {  /* el 20% OFF */
         font-weight: 400;
-        font-size: 16px;
+        font-size: 17px;  /* antes 16px */
         margin-left: 5px;
     }
     
@@ -1071,7 +1073,7 @@ section h2 {
     }
     
     .medios {
-        font-size: 12px;
+        font-size: 14px;  /* antes 13px */
     }
     
     /* Stock */
@@ -1080,44 +1082,48 @@ section h2 {
     }
     
     .stock {
-        font-size: 13px;
+        font-size: 15px;  /* antes 14px */
     }
     
     /* Cantidad */
     .div-cantidad {  /* contenedor de .div-izquierda-cantidad y la flechita */ /* hace el flex con esos 2 contenedores */
         border-radius: 4px;
-        padding: 8px;
+        padding: 11px;  /* antes 10px */
     }
 
     .cantidad {  /* el Cantidad: */
-        font-size: 14px;
+        font-size: 15px;  /* antes 14px */
     }
     
     .cantidad-numero {
-        font-size: 13px;
+        font-size: 14px;  /* antes 13px */
         margin-left: 6.5px;  /* mismo q el padding del contenedor */
         margin-right: 8.5px;  /* mismo q el padding del contenedor */
     }
     
     .cantidad-disponibles {
-        font-size: 13px;
+        font-size: 14px;  /* antes 13px */
     }
     
     .cantidad-flechita {  /* el contenedor de la flechita */
-        font-size: 13px;
+        font-size: 14px;  /* antes 13px */
     }
     
     .fa-chevron-right {
-        font-size: 13px;
+        font-size: 14px;  /* antes 13px */
     }
     
     /* --- Botones ---  */
     .boton_agregarConAuth, .boton_agregarSinAuth, .boton_comprarConAuth, .boton_comprarSinAuth, .boton_editar, .boton_eliminar, .boton_comprarConAuth2, .boton_comprarSinAuth2, .boton_agregarConAuth2 {
-        font-size: 15px;
-        font-weight: 400;
-        padding: 10px;
-        border-radius: 4px;
+        font-size: 16px;  /* antes 15px */
+        font-weight: 500;
+        padding: 14px;  /* antes 13px */
+        border-radius: 5.5px;  /* antes 5px */
     }  
+
+    .boton_comprarConAuth, .boton_comprarSinAuth, .boton_comprarConAuth2, .boton_comprarSinAuth2 {
+        font-size: 17px;  /* antes 16px */
+    } 
 
     .linea {  /* el hr q separa los botones de la descripcion de producto */
         margin-top: 32px;
@@ -1126,12 +1132,12 @@ section h2 {
     
     /* --- Descripcion del producto --- */
     .titulo_descripción {  /* el titulo Descripcion de producto */
-        font-size: 17px;
-        margin-bottom: 10px;
+        font-size: 18px;  /* antes 17px */
+        margin-bottom: 12px;  /* antes 12px */
     }
     
     .descripcion-detalle {  /* el texto de la Descripcion de producto */
-        font-size: 13px;
+        font-size: 15px;  /* antes 14px */
     }
 
     /* seccion productos relacionados */
@@ -1152,7 +1158,7 @@ section h2 {
 
     .h3-ver-todos {
         font-weight: 500;  /* antes 500 */
-        font-size: 15px;  /* antes 14px */
+        font-size: 16px;  /* antes 15px */
         margin-top: 13.5px;  /* antes 12px */ /* el mismo q el padding del section ppal */
     }
 
@@ -1180,7 +1186,7 @@ section h2 {
 
     .contenedor_imagen {
         /* border: 1px solid red; */
-        height: 118px;  /* antes 110px */
+        height: 115px;  /* antes 100px */
     }
     
     .img-productos-descuentos {
@@ -1195,7 +1201,7 @@ section h2 {
     
     .texto_nombre_arriba h4 {
         font-weight: 350;  /* antes 300 */
-        font-size: 15px;  /* antes 14px */
+        font-size: 15.5px;  /* antes 15px */
     }
     
     .texto_descripcion_arriba {
@@ -1205,19 +1211,19 @@ section h2 {
     }
 
     .precio-tachado {  /* el precio tachado en los productos con descuento */
-        font-size: 16px;  /* antes 15px */
+        font-size: 17px;  /* antes 16px */
         margin-top: 12px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
         margin-bottom: 3px;  /* antes 2.5px */
         text-decoration-thickness: 0.73px;  /* antes 0.7px */
     }
 
     .precio-d {  /* el precio en negrita */
-        font-size: 22px;  /* antes 20px */
+        font-size: 24px;  /* antes 21px */
     }
     
     .descuento {  /* el 20% OFF */
         font-weight: 400;  /* antes 400 */
-        font-size: 15px;  /* antes 13px */
+        font-size: 17px;  /* antes 14px */
         margin-left: 5px;  /* antes 5px */
     }
 
@@ -1226,10 +1232,10 @@ section h2 {
     }
     
     .boton-comprar, .boton-comprarSinAuth {  /* mismas medidas q en categoria.css */
-        /* height: 40%; */
+        height: 45%;  /* antes 44% */
         border-radius: 4px;  /* antes 4px */
-        font-size: 16px;  /* antes 15px */
-        padding: 5.5px;  /* antes 4.5px */
+        font-size: 16.5px;  /* antes 15px */
+        padding: 6px;  /* antes 5px */
     }
 }
 
@@ -1242,7 +1248,7 @@ section h2 {
     }
 
     .nuevo, .nuevo-medio {
-        font-size: 15px;
+        font-size: 15px;  /* antes 14px */
     }
     
     .nuevo-medio {
@@ -1265,7 +1271,7 @@ section h2 {
     }
     
     .titulo_nombre-mobile {
-        font-size: 17px;
+        font-size: 17px;  /* antes 16px */
     }
     
     /* Etiqueta */
@@ -1274,15 +1280,15 @@ section h2 {
     }
     
     .etiqueta-comida-bicho, .etiqueta-accesorio-bicho, .etiqueta-higiene-bicho, .etiqueta-juguete-bicho {
-        font-size: 10.5px;
-        padding: 3.5px;
+        font-size: 12px;  /* antes 11px */
+        padding: 4.5px;  /* antes 4px */
         border-radius: 3.5px;
         margin-left: 10px;
     }
     
     /* imagen producto MOBILE */
     .contenedor_imagen_mobile {
-        height: 280px;
+        height: 300px;  /* antes 280px */
         width: fit-content;
         margin-bottom: 10px;  /* lo separa del div del color */
     }
@@ -1296,23 +1302,23 @@ section h2 {
     /* Color */
     .div-color-mobile {  /* contenedor de .div-izquierda-cantidad y la flechita */ /* hace el flex con esos 2 contenedores */
         border-radius: 4px;
-        padding: 10px;
+        padding: 12px;  /* antes 11px */
         margin-bottom: 10px;  /* lo separa del contenedor del detalle, q empieza con el div del precio tachado */
     }
     
     .color, .color-desktop {  /* el Color: */
-        font-size: 16px;
+        font-size: 16px;  /* antes 15px */
     }
     
     .color-seleccionado, .color-seleccionado-desktop {
-        font-size: 15px;
+        font-size: 15px;  /* antes 14px */
     }
     
     /* ------ Aca empieza el 2do black ------ */
     /* -- Detalle de producto - 2do black --  */
     .precio-tachado-detalle {
         text-decoration-thickness: 0.8px;
-        font-size: 18px; 
+        font-size: 18px;  /* antes 17px */
     }
     
     .div-tres {  /* contiene el precio y el 20% OFF en flex */
@@ -1320,13 +1326,13 @@ section h2 {
     }
     
     .precio-detalle {  /* el precio en negrita */
-        font-size: 30px;
+        font-size: 32px;  /* antes 30px */
         font-weight: 400;
     }
     
     .descuento-precio {  /* el 20% OFF */
         font-weight: 400;
-        font-size: 18px;
+        font-size: 18px;  /* antes 17px */
         margin-left: 5.3px;
     }
     
@@ -1336,7 +1342,7 @@ section h2 {
     }
     
     .medios {
-        font-size: 14px;
+        font-size: 15px;  /* antes 14px */
     }
     
     /* Stock */
@@ -1345,45 +1351,49 @@ section h2 {
     }
     
     .stock {
-        font-size: 15px;
+        font-size: 16px;  /* antes 15px */
     }
     
     /* Cantidad */
     .div-cantidad {  /* contenedor de .div-izquierda-cantidad y la flechita */ /* hace el flex con esos 2 contenedores */
         border-radius: 4px;
-        padding: 10px;
+        padding: 12px;  /* antes 11px */
         /* el boton de comprar tiene el margin top q lo separa */
     }
 
     .cantidad {  /* el Cantidad: */
-        font-size: 16px;
+        font-size: 16px;  /* antes 15px */
     }
     
     .cantidad-numero {
-        font-size: 15px;
+        font-size: 15px;  /* antes 14px */
         margin-left: 6.5px;  /* mismo q el padding del contenedor */
         margin-right: 8.5px;  /* mismo q el padding del contenedor */
     }
     
     .cantidad-disponibles {
-        font-size: 15px;
+        font-size: 15px;  /* antes 14px */
     }
     
     .cantidad-flechita {  /* el contenedor de la flechita */
-        font-size: 15px;
+        font-size: 15px;  /* antes 14px */
     }
     
     .fa-chevron-right {
-        font-size: 14px;
+        font-size: 15px;  /* antes 14px */
     }
     
     /* --- Botones ---  */
     .boton_agregarConAuth, .boton_agregarSinAuth, .boton_comprarConAuth, .boton_comprarSinAuth, .boton_editar, .boton_eliminar, .boton_comprarConAuth2, .boton_comprarSinAuth2, .boton_agregarConAuth2 {
-        font-size: 16.5px;
-        font-weight: 400;
-        padding: 12px;
-        border-radius: 4px;
+        font-size: 16.5px;  /* antes 16px */
+        font-weight: 500;
+        padding: 14px;  /* antes 14px */
+        border-radius: 5.5px;  /* antes 5.5px */
     }  
+
+    .boton_comprarConAuth, .boton_comprarSinAuth, .boton_comprarConAuth2, .boton_comprarSinAuth2 {
+        font-size: 17.5px;  /* antes 17px */
+    }
     
     .linea {  /* el hr q separa los botones de la descripcion de producto */
         margin-top: 34px;
@@ -1392,17 +1402,18 @@ section h2 {
     
     /* --- Descripcion del producto --- */
     .titulo_descripción {  /* el titulo Descripcion de producto */
-        font-size: 18px;
-        margin-bottom: 11px;
+        font-size: 20px;  /* antes 18px */
+        margin-bottom: 13px;  /* antes 12px */
     }
     
     .descripcion-detalle {  /* el texto de la Descripcion de producto */
-        font-size: 14px;
+        font-size: 16px;  /* antes 15px */
     }
 
     /* --- Reel productos ---  */
     /* seccion producto */
     .section-productos-descuentos {
+        width: 90%;
         margin-top: 5%;  /* antes 5 */ /* lo mismo q de cada lado del main */
         margin-bottom: 5%;  /* antes 5 */ /* lo mismo q de cada lado del main */
         border-radius: 5px;  /* antes 5px */
@@ -1417,7 +1428,7 @@ section h2 {
 
     .h3-ver-todos {
         font-weight: 500;  /* antes 500 */
-        font-size: 16px;  /* antes 15px */
+        font-size: 17px;  /* antes 16px */
         margin-top: 15px;  /* antes 13.5px */ /* el mismo q el padding del section ppal */
     }
 
@@ -1426,7 +1437,7 @@ section h2 {
         width: 80%;  /* antes 85% */
         height: auto;
         border-radius: 5px;  /* antes 5px */
-        padding: 15px;  /* antes 12px */
+        padding: 14px;  /* antes 12px */
     }
 
     .div-etiqueta {
@@ -1442,7 +1453,7 @@ section h2 {
     }
 
     .contenedor_imagen {
-        height: 140px;  /* antes 118px */
+        height: 140px;  /* antes 115px */
     }
     
     .img-productos-descuentos {
@@ -1455,7 +1466,7 @@ section h2 {
     
     .texto_nombre_arriba h4 {
         font-weight: 350;  /* antes 350 */
-        font-size: 17px;  /* antes 15px */
+        font-size: 17px;  /* antes 15.5px */
     }
     
     .texto_descripcion_arriba {
@@ -1464,31 +1475,31 @@ section h2 {
     }
 
     .precio-tachado {  /* el precio tachado en los productos con descuento */
-        font-size: 17px;  /* antes 16px */
-        margin-top: 15px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
+        font-size: 18px;  /* antes 17px */
+        margin-top: 14px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
         margin-bottom: 4px;  /* antes 3px */
         text-decoration-thickness: 0.75px;  /* antes 0.73px */
     }
 
     .precio-d {  /* el precio en negrita */
-        font-size: 24px;  /* antes 22px */
+        font-size: 25px;  /* antes 24px */
     }
     
     .descuento {  /* el 20% OFF */
         font-weight: 400;  /* antes 400 */
-        font-size: 16px;  /* antes 15px */
+        font-size: 18px;  /* antes 17px */
         margin-left: 5.5px;  /* antes 5px */
     }
 
     .div-boton-comprar {
-        margin-top: 15px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-top: 14px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
     }
     
     .boton-comprar, .boton-comprarSinAuth {
-        height: 42%;
+        height: 45%;  /* antes 45% */
         border-radius: 4px;  /* antes 4px */
-        font-size: 17px;  /* antes 16px */
-        padding: 6.5px;  /* antes 5.5px */
+        font-size: 17px;  /* antes 16.5px */
+        padding: 7px;  /* antes 6px */
     }
 
 }
@@ -1534,15 +1545,15 @@ section h2 {
     }
     
     .etiqueta-comida-bicho, .etiqueta-accesorio-bicho, .etiqueta-higiene-bicho, .etiqueta-juguete-bicho {
-        font-size: 11px;
-        padding: 3.8px;
+        font-size: 12.5px;  /* antes 12px */
+        padding: 4.8px;  /* antes 4.5px */
         border-radius: 4px;
         margin-left: 12px;
     }
     
     /* imagen producto MOBILE */
     .contenedor_imagen_mobile {
-        height: 320px;
+        height: 330px;
         width: fit-content;
         margin-bottom: 12px;  /* lo separa del div del color */
     }
@@ -1556,23 +1567,23 @@ section h2 {
     /* Color */
     .div-color-mobile {  /* contenedor de .div-izquierda-cantidad y la flechita */ /* hace el flex con esos 2 contenedores */
         border-radius: 5px;
-        padding: 11px;
+        padding: 13px;  /* antes 12px */
         margin-bottom: 12px;  /* lo separa del contenedor del detalle, q empieza con el div del precio tachado */
     }
     
     .color, .color-desktop {  /* el Color: */
-        font-size: 17.5px;
+        font-size: 17.5px;  /* antes 16px */
     }
     
     .color-seleccionado, .color-seleccionado-desktop {
-        font-size: 16.5px;
+        font-size: 16.5px;  /* antes 15px */
     }
     
     /* ------ Aca empieza el 2do black ------ */
     /* -- Detalle de producto - 2do black --  */
     .precio-tachado-detalle {
         text-decoration-thickness: 0.8px;
-        font-size: 20px; 
+        font-size: 20px;  /* antes 18px */
     }
     
     .div-tres {  /* contiene el precio y el 20% OFF en flex */
@@ -1581,13 +1592,13 @@ section h2 {
     }
     
     .precio-detalle {  /* el precio en negrita */
-        font-size: 34px;
+        font-size: 34px;  /* antes 32px */
         font-weight: 400;
     }
     
     .descuento-precio {  /* el 20% OFF */
         font-weight: 400;
-        font-size: 20px;
+        font-size: 20px;  /* antes 18px */
         margin-left: 5.5px;
     }
     
@@ -1597,7 +1608,7 @@ section h2 {
     }
     
     .medios {
-        font-size: 15.5px;
+        font-size: 16.5px;  /* antes 15px */
     }
     
     /* Stock */
@@ -1606,48 +1617,49 @@ section h2 {
     }
     
     .stock {
-        font-size: 16.5px;
+        font-size: 17.5px;  /* antes 16px */
     }
     
     /* Cantidad */
     .div-cantidad {  /* contenedor de .div-izquierda-cantidad y la flechita */ /* hace el flex con esos 2 contenedores */
         border-radius: 5px;
-        padding: 11px;
+        padding: 13px;  /* antes 12px */
         margin-bottom: 20px;  /* lo separa del boton de comprar */
     }
 
     .cantidad {  /* el Cantidad: */
-        font-size: 17.5px;
+        font-size: 17.5px;  /* antes 16px */
     }
     
     .cantidad-numero {
-        font-size: 16.5px;
+        font-size: 16.5px;  /* antes 15px */
         margin-left: 7px;  /* mismo q el padding del contenedor */
         margin-right: 9px;  /* mismo q el padding del contenedor */
     }
     
     .cantidad-disponibles {
-        font-size: 16.5px;
+        font-size: 16.5px;  /* antes 15px */
     }
     
     .cantidad-flechita {  /* el contenedor de la flechita */
-        font-size: 16.5px;
+        font-size: 16.5px;  /* antes 15px */
     }
     
     .fa-chevron-right {
-        font-size: 15px;
+        font-size: 15px;  /* antes 15px */
     }
     
     /* --- Botones ---  */
     .boton_agregarConAuth, .boton_agregarSinAuth, .boton_comprarConAuth, .boton_comprarSinAuth, .boton_editar, .boton_eliminar, .boton_comprarConAuth2, .boton_comprarSinAuth2, .boton_agregarConAuth2 {
-        font-size: 17.5px;
-        font-weight: 400;
-        padding: 13px;
-        border-radius: 5px;
+        font-size: 17.5px;  /* antes 16.5px */
+        font-weight: 500;
+        padding: 14.5px;  /* antes 14px */
+        border-radius: 6px;  /* antes 5.5px */
     }  
 
     .boton_comprarConAuth, .boton_comprarSinAuth, .boton_comprarConAuth2, .boton_comprarSinAuth2 {
         margin-top: 0;
+        font-size: 18px;  /* antes 17.5px */
     }
     
     .boton_agregarConAuth, .boton_agregarSinAuth {
@@ -1665,12 +1677,12 @@ section h2 {
     
     /* --- Descripcion del producto --- */
     .titulo_descripción {  /* el titulo Descripcion de producto */
-        font-size: 20px;
-        margin-bottom: 12.5px;
+        font-size: 22px;  /* antes 20px */
+        margin-bottom: 14px;  /* antes 13px */
     }
     
     .descripcion-detalle {  /* el texto de la Descripcion de producto */
-        font-size: 16px;
+        font-size: 17px;  /* antes 16px */
     }
 
     /* --- Reel productos ---  */
@@ -1690,7 +1702,7 @@ section h2 {
 
     .h3-ver-todos {
         font-weight: 500;  /* antes 500 */
-        font-size: 17px;  /* antes 16px */
+        font-size: 18px;  /* antes 17px */
         margin-top: 15px;  /* antes 15px */ /* el mismo q el padding del section ppal */
     }
 
@@ -1736,19 +1748,19 @@ section h2 {
     }
 
     .precio-tachado {  /* el precio tachado en los productos con descuento */
-        font-size: 15px;  /* antes 17px */
+        font-size: 16px;  /* antes 18px */
         margin-top: 10px;  /* antes 15px */ /* el mismo q el padding del articulo productos descuentos */
         margin-bottom: 3px;  /* antes 4px */
         text-decoration-thickness: 0.73px;  /* antes 0.75px */
     }
 
     .precio-d {  /* el precio en negrita */
-        font-size: 22px;  /* antes 24px */
+        font-size: 23px;  /* antes 25px */
     }
     
     .descuento {  /* el 20% OFF */
         font-weight: 400;  /* antes 400 */
-        font-size: 15px;  /* antes 16px */
+        font-size: 16px;  /* antes 18px */
         margin-left: 5px;  /* antes 5.5px */
     }
 

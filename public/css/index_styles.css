@@ -195,7 +195,7 @@ main {
 
 /* seccion botones perro/gato */
 .section-filtro-perro-gato {
-    width: 90%;
+    width: 92%;
     margin: auto;
     margin-top: 4.5%;
     /* border: 1px solid red; */
@@ -320,7 +320,7 @@ main {
 
 /* seccion producto */
 .section-productos-descuentos {
-    width: 90%;
+    width: 92%;
     margin: auto;
     /* border: 1px solid blue; */
     margin-top: 5%; /* lo mismo q de cada lado del main */
@@ -352,7 +352,7 @@ section h2 {
 .h3-ver-todos { 
     margin-bottom: 0;  /* porq ya tiene el padding del section ppal */
     font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 12px; /* el mismo q el padding del section ppal */
 }
 
@@ -364,11 +364,11 @@ section h2 {
 .articulo-productos-descuentos, .articulo-productos {
     background-color: white;
     /* background-color: white; */
-    width: 85%;
+    width: 90%;
     height: auto;
     border: 1px solid rgb(235, 235, 235);
     border-radius: 5px;
-    padding: 10px;
+    padding: 9px;
     /* margin-bottom: 15px; */
     display: flex;
     align-items: flex-start;
@@ -412,8 +412,8 @@ section h2 {
     box-sizing: border-box;
     text-align: center;
     border: 1px solid white;
-    height: 90px;
-
+    /* border: 1px solid red; */
+    height: 100px;
 }
 
 .img-productos-descuentos {
@@ -421,6 +421,7 @@ section h2 {
     border: 1px solid white;
     width: 100%;
     height: 100%;
+    /* border: 1px solid blue; */
     /* height: 110.40px; */
     /* margin-top: 12%; */
 }
@@ -440,7 +441,7 @@ section h2 {
 
 .texto_nombre_arriba h4 {
     font-weight: 300;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .texto_descripcion_arriba {
@@ -464,7 +465,7 @@ section h2 {
 .precio-tachado {  /* el precio tachado en los productos con descuento */
     padding: 0;
     margin: 0;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 300;
     width: 100%;  /* ocupa todo el renglón */
     margin-top: 10px; /* el mismo q el padding del articulo productos descuentos */
@@ -481,7 +482,7 @@ section h2 {
     margin: 0;
     font-weight: 500;
     width: fit-content;
-    font-size: 20px;
+    font-size: 21px;
     border: 1px solid white;
 }
 
@@ -491,7 +492,7 @@ section h2 {
     /* margin-top: -10px; */
     color: #349fba;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     width: fit-content;
     text-align: left;
     margin-left: 5px;
@@ -509,12 +510,12 @@ section h2 {
     background-color: #1e697b;
     color: white;
     width: 100%;
-    height: 40%;
+    height: 44%;
     border-radius: 4px;
     border: none;
     /* border: 0.5px solid rgb(150, 150, 150); */
     font-size: 15px;
-    padding: 4.5px;
+    padding: 5px;
     background: linear-gradient(90deg, #b5cacf 0%, #4d94a5 50%, #1e697b 100%);
 }
 
@@ -569,11 +570,12 @@ footer {
 
 }
 
-@media (max-width: 390px){
+@media (max-width: 380px){
 
     /* seccion botones perro/gato */
     .section-filtro-perro-gato {
-        width: 92%;
+        width: 94%;
+        margin-top: 3.5%;
     }
 
     .img-boton-izq {
@@ -619,30 +621,30 @@ footer {
 
     /* seccion producto */
     .section-productos-descuentos {
-        width: 92%;  /* antes 90% */
+        width: 94%;  /* antes 90% */
         margin-top: 4%;  /* antes 5% */ /* lo mismo q de cada lado del main */
         margin-bottom: 4%;  /* antes 5% */ /* lo mismo q de cada lado del main */
         border-radius: 4px;  /* antes 5px */
-        padding: 8px;  /* antes 12px */
+        padding: 10px;  /* antes 12px */
     }
 
     section h2 {
-        padding-bottom: 8px;  /* antes 12px */ /* lo mismo q el padding del section productos descuentos */
+        padding-bottom: 10px;  /* antes 12px */ /* lo mismo q el padding del section productos descuentos */
         font-weight: 400;  /* antes 500 */
-        font-size: 15px;  /* antes 20px */
+        font-size: 16px;  /* antes 20px */
     }
 
     .h3-ver-todos {
         font-weight: 400;  /* antes 500 */
-        font-size: 12px;  /* antes 14px */
-        margin-top: 8px;  /* antes 12px */ /* el mismo q el padding del section ppal */
+        font-size: 14px;  /* antes 14px */
+        margin-top: 10px;  /* antes 12px */ /* el mismo q el padding del section ppal */
     }
 
     /* card producto */
     .articulo-productos-descuentos, .articulo-productos {
         width: 90%; /* antes 85% */
         border-radius: 4px;  /* antes 5px */
-        padding: 7px;  /* antes 10px */
+        padding: 7px;  /* antes 9px */
     }
 
     .div-etiqueta {
@@ -658,8 +660,7 @@ footer {
     }
 
     .contenedor_imagen {
-        height: 110px;  /* antes 150px */
-        height: 86px;  /* antes 110px */
+        height: 90px;  /* antes 100px */
     }
     
     .img-productos-descuentos {
@@ -675,7 +676,7 @@ footer {
     
     .texto_nombre_arriba h4 {
         font-weight: 300;  /* antes igual */
-        font-size: 12px;  /* antes 14px */
+        font-size: 13px;  /* antes 15px */
     }
     
     .texto_descripcion_arriba {
@@ -684,19 +685,19 @@ footer {
     }
 
     .precio-tachado {  /* el precio tachado en los productos con descuento */
-        font-size: 12px;  /* antes 15px */
+        font-size: 15px;  /* antes 16px */
         margin-top: 7px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
         margin-bottom: 1.5px;  /* antes 2.5px */
         text-decoration-thickness: 0.6px;  /* antes 0.7px */
     }
 
     .precio-d {  /* el precio en negrita */
-        font-size: 17px;  /* antes 20px */
+        font-size: 20px;  /* antes 21px */
     }
     
     .descuento {  /* el 20% OFF */
         font-weight: 400;  /* antes 400 */
-        font-size: 10px;  /* antes 13px */
+        font-size: 13px;  /* antes 14px */
         margin-left: 3.5px;  /* antes 5px */
     }
 
@@ -705,11 +706,11 @@ footer {
     }
     
     .boton-comprar, .boton-comprarSinAuth {
-        height: 40%;
+        height: 44%;
         border-radius: 3px;  /* antes 4px */
-        font-size: 13px;  /* antes 15px */
-        font-weight: 300;  /* antes 400 */
-        padding: 3.5px;  /* antes 4px */
+        font-size: 13.5px;  /* antes 15px */
+        font-weight: 400;  /* antes 400 */
+        padding: 5px;  /* antes 4px */
     }
 }
 
@@ -781,7 +782,7 @@ footer {
 
     .h3-ver-todos {
         font-weight: 500;  /* antes 500 */
-        font-size: 15px;  /* antes 14px */
+        font-size: 16px;  /* antes 15px */
         margin-top: 13.5px;  /* antes 12px */ /* el mismo q el padding del section ppal */
     }
 
@@ -809,7 +810,7 @@ footer {
 
     .contenedor_imagen {
         /* border: 1px solid red; */
-        height: 118px;  /* antes 110px */
+        height: 115px;  /* antes 100px */
     }
     
     .img-productos-descuentos {
@@ -824,7 +825,7 @@ footer {
     
     .texto_nombre_arriba h4 {
         font-weight: 350;  /* antes 300 */
-        font-size: 15px;  /* antes 14px */
+        font-size: 15.5px;  /* antes 15px */
     }
     
     .texto_descripcion_arriba {
@@ -834,19 +835,19 @@ footer {
     }
 
     .precio-tachado {  /* el precio tachado en los productos con descuento */
-        font-size: 16px;  /* antes 15px */
+        font-size: 17px;  /* antes 16px */
         margin-top: 12px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
         margin-bottom: 3px;  /* antes 2.5px */
         text-decoration-thickness: 0.73px;  /* antes 0.7px */
     }
 
     .precio-d {  /* el precio en negrita */
-        font-size: 22px;  /* antes 20px */
+        font-size: 24px;  /* antes 21px */
     }
     
     .descuento {  /* el 20% OFF */
         font-weight: 400;  /* antes 400 */
-        font-size: 15px;  /* antes 13px */
+        font-size: 17px;  /* antes 14px */
         margin-left: 5px;  /* antes 5px */
     }
 
@@ -855,10 +856,10 @@ footer {
     }
     
     .boton-comprar, .boton-comprarSinAuth {
-        height: 40%;
+        height: 45%;  /* antes 44% */
         border-radius: 4px;  /* antes 4px */
-        font-size: 16px;  /* antes 15px */
-        padding: 5.5px;  /* antes 4.5px */
+        font-size: 16.5px;  /* antes 15px */
+        padding: 6px;  /* antes 5px */
     }
 
 }
@@ -866,6 +867,10 @@ footer {
 @media (min-width: 600px){
 
     /* seccion botones perro/gato */
+    .section-filtro-perro-gato {
+        width: 90%;
+    }
+
     .img-boton-izq {
         border-radius: 5px;  /* antes 6px */
     }
@@ -909,6 +914,7 @@ footer {
 
     /* seccion producto */
     .section-productos-descuentos {
+        width: 90%;
         margin-top: 5%;  /* antes 5 */ /* lo mismo q de cada lado del main */
         margin-bottom: 5%;  /* antes 5 */ /* lo mismo q de cada lado del main */
         border-radius: 5px;  /* antes 5px */
@@ -923,7 +929,7 @@ footer {
 
     .h3-ver-todos {
         font-weight: 500;  /* antes 500 */
-        font-size: 16px;  /* antes 15px */
+        font-size: 17px;  /* antes 16px */
         margin-top: 15px;  /* antes 13.5px */ /* el mismo q el padding del section ppal */
     }
 
@@ -932,7 +938,7 @@ footer {
         width: 80%;  /* antes 85% */
         height: auto;
         border-radius: 5px;  /* antes 5px */
-        padding: 15px;  /* antes 12px */
+        padding: 14px;  /* antes 12px */
     }
 
     .div-etiqueta {
@@ -948,7 +954,7 @@ footer {
     }
 
     .contenedor_imagen {
-        height: 140px;  /* antes 118px */
+        height: 140px;  /* antes 115px */
     }
     
     .img-productos-descuentos {
@@ -961,7 +967,7 @@ footer {
     
     .texto_nombre_arriba h4 {
         font-weight: 350;  /* antes 350 */
-        font-size: 17px;  /* antes 15px */
+        font-size: 17px;  /* antes 15.5px */
     }
     
     .texto_descripcion_arriba {
@@ -970,31 +976,31 @@ footer {
     }
 
     .precio-tachado {  /* el precio tachado en los productos con descuento */
-        font-size: 17px;  /* antes 16px */
-        margin-top: 15px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
+        font-size: 18px;  /* antes 17px */
+        margin-top: 14px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
         margin-bottom: 4px;  /* antes 3px */
         text-decoration-thickness: 0.75px;  /* antes 0.73px */
     }
 
     .precio-d {  /* el precio en negrita */
-        font-size: 24px;  /* antes 22px */
+        font-size: 25px;  /* antes 24px */
     }
     
     .descuento {  /* el 20% OFF */
         font-weight: 400;  /* antes 400 */
-        font-size: 16px;  /* antes 15px */
+        font-size: 18px;  /* antes 17px */
         margin-left: 5.5px;  /* antes 5px */
     }
 
     .div-boton-comprar {
-        margin-top: 15px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
+        margin-top: 14px;  /* antes 12px */ /* el mismo q el padding del articulo productos descuentos */
     }
     
     .boton-comprar, .boton-comprarSinAuth {
-        height: 42%;
+        height: 45%;  /* antes 45% */
         border-radius: 4px;  /* antes 4px */
-        font-size: 17px;  /* antes 16px */
-        padding: 6.5px;  /* antes 5.5px */
+        font-size: 17px;  /* antes 16.5px */
+        padding: 7px;  /* antes 6px */
     }
 
 }
@@ -1080,7 +1086,7 @@ footer {
 
     .h3-ver-todos {
         font-weight: 500;  /* antes 500 */
-        font-size: 17px;  /* antes 16px */
+        font-size: 18px;  /* antes 17px */
         margin-top: 15px;  /* antes 15px */ /* el mismo q el padding del section ppal */
     }
 
@@ -1126,19 +1132,19 @@ footer {
     }
 
     .precio-tachado {  /* el precio tachado en los productos con descuento */
-        font-size: 15px;  /* antes 17px */
+        font-size: 16px;  /* antes 18px */
         margin-top: 10px;  /* antes 15px */ /* el mismo q el padding del articulo productos descuentos */
         margin-bottom: 3px;  /* antes 4px */
         text-decoration-thickness: 0.73px;  /* antes 0.75px */
     }
 
     .precio-d {  /* el precio en negrita */
-        font-size: 22px;  /* antes 24px */
+        font-size: 23px;  /* antes 25px */
     }
     
     .descuento {  /* el 20% OFF */
         font-weight: 400;  /* antes 400 */
-        font-size: 15px;  /* antes 16px */
+        font-size: 16px;  /* antes 18px */
         margin-left: 5px;  /* antes 5.5px */
     }
 

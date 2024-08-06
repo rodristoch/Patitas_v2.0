@@ -79,7 +79,7 @@ main, .main-login, .main-perfil, .main-ya-podes-loguearte {
 /* --- Contenedor --- */
 .contenedor, .contenedor-login, .contenedor-perfil, .contenedor-ya-podes-loguearte {  /* el contenedor entre el main y el centrado del formulario */
     /* position: absolute; */
-    width: 90%;
+    width: 92%;
     /* border: 1px solid blue; */
     /* display: flex;
     align-items: center;
@@ -202,7 +202,7 @@ h2 {  /* el titulo de bienvenido y crear cuenta */
     border-radius: 6px; /* 8px tenia */
     padding: 10px 14px; /* 12px 16px tenia */
     /* padding-left: 16px; */
-    height: 44px; /* 48px tenia */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+    height: 48px; /* 48px tenia */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
     width: 100%;
     color: rgb(0, 0, 0);
     font-weight: 400;
@@ -213,7 +213,7 @@ h2 {  /* el titulo de bienvenido y crear cuenta */
 .input_imagen {
     border: 1px solid transparent;
     background-color: transparent;
-    height: 44px; /* 48px tenia */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+    height: 48px; /* 48px tenia */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
     width: 100%;
     font-size: 12px; /* 16px tenia */
     border-radius: 6px; /* 8px tenia */
@@ -457,7 +457,7 @@ input[type="checkbox"]:checked {
     width: 100%;
     font-size: 17px;  /* tenia 18px */
     font-weight: 400;
-    height: 44px;  /* tenia 48px */
+    height: 48px;  /* tenia 48px */
     margin: 0px 0px 0px 0px;  /* tenia 16px 0 16px 0 */
     cursor: pointer;
     transition: 350ms;
@@ -652,19 +652,19 @@ input[type="checkbox"]:checked {
     margin-top: 15px;  /* lo mismo q el padding del contenedor azul ppal */
 }
 
-@media (max-width: 389px){
+@media (max-width: 380px){
 
     main, .main-login, .main-perfil {
         height: auto;  /* el alto se ajusta dependiendo del alto de los contenedores hijos */
-        padding: 4% 4%;  /* la separacion del main con el header y el footer */
+        padding: 5% 0%;  /* la separacion del main con el header y el footer */
     }
 
     .main-login {
-        padding: 4% 4% 30%;  /* la separacion del main con el header y el footer */
+        padding: 5% 0% 30%;  /* la separacion del main con el header y el footer */
     }
 
     .main-perfil {
-        padding: 4% 4% 80%;  /* la separacion del main con el header y el footer */
+        padding: 5% 0% 80%;  /* la separacion del main con el header y el footer */
     }
 
     .main-ya-podes-loguearte {
@@ -672,7 +672,7 @@ input[type="checkbox"]:checked {
     }
 
     .contenedor, .contenedor-login, .contenedor-perfil {  /* el contenedor entre el main y el centrado del formulario */
-        width: 100%;
+        width: 94%;
         border-radius: 6.5px; /* antes 8 */
         padding: 14px 14px 14px 14px; /* antes 15px 15px 15px 15px; */
     }
@@ -709,7 +709,7 @@ input[type="checkbox"]:checked {
         font-size: 11px; /* antes 13 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 5px; /* antes 6 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 40px; /* antes 44 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+        height: 45px; /* antes 48 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
         line-height: 22px;
     }
     
@@ -752,7 +752,7 @@ input[type="checkbox"]:checked {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 15.5px;    /* antes 16 */
         font-weight: 400;  /* antes 300 */
-        height: 40px;    /* antes 44 */
+        height: 45px;    /* antes 48 */
         margin: 0px 0px 0px 0px;  /* antes 0 0 16px 0 */
         line-height: 22px;
     }
@@ -931,7 +931,7 @@ input[type="checkbox"]:checked {
         font-size: 14px; /* antes 13 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 7px; /* antes 6 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 46px; /* antes 44 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+        height: 50px; /* antes 48 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
         line-height: 26px;
     }
     
@@ -974,7 +974,7 @@ input[type="checkbox"]:checked {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 16.5px;    /* antes 16 */
         font-weight: 400;  /* antes 300 */
-        height: 46px;    /* antes 44 */
+        height: 50px;    /* antes 48 */
         margin: 0px 0px 0px 0px;  /* antes 0 0 16px 0 */
         line-height: 26px;
     }
@@ -1153,7 +1153,7 @@ input[type="checkbox"]:checked {
         font-size: 14.5px; /* antes 14 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 7.5px; /* antes 7 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 48px; /* antes 46 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+        height: 52px; /* antes 50 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
         line-height: 28px;
     }
     
@@ -1196,7 +1196,7 @@ input[type="checkbox"]:checked {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 17px;    /* antes 16.5 */
         font-weight: 400;  /* antes 400 */
-        height: 48px;    /* antes 46 */
+        height: 52px;    /* antes 50 */
         margin: 0px 0px 0px 0px;  /* antes 0 0 0 0 */
         line-height: 28px;
     }
@@ -1351,7 +1351,7 @@ input[type="checkbox"]:checked {
         font-size: 14.8px; /* antes 14.5 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 8px; /* antes 7.5 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 50px; /* antes 48 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
+        height: 55px; /* antes 52 */ /* <----- esto hace q la barra de busqueda se me agrande en las paginas de perfil, editar y login y register */
         line-height: 30px;
     }
     
@@ -1394,7 +1394,7 @@ input[type="checkbox"]:checked {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 18px;    /* antes 17 */
         font-weight: 400;  /* antes 400 */
-        height: 50px;    /* antes 48 */
+        height: 55px;    /* antes 52 */
         margin: 0px 0px 0px 0px;  /* antes 0 0 0 0 */
         line-height: 30px;
     }

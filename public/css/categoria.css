@@ -69,7 +69,7 @@ main {
 /* ------ Filtros MOBILE ------ */
 .cantidad-producto, .cantidad-producto-desktop, .cantidad-producto-desktop-arriba {   /* el contenedor de los filtros en mobile */
     /* border: 1px solid blue; */
-    width: 90%;
+    width: 92%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -78,6 +78,8 @@ main {
     margin: auto;
     margin-top: 1.8%;
     margin-bottom: 0.5%;
+    /* margin-top: 8.5px;
+    margin-bottom: 2px; */
     padding: 0;
     border: 1px solid transparent;
 }
@@ -566,7 +568,7 @@ main {
 
 /* ----- Lista de productos ----- */
 .lista_desktop { /* el box de los productos */
-    width: 90%;
+    width: 92%;
     margin: auto;
     /* margin-top: 4.5%; */  /* NO porq estan los botones de los filtros */
     background-color: white;
@@ -1034,7 +1036,7 @@ main {
 .descuento, .descuento-descrip {  /* el 20% OFF */
     color: #349fba;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     /* border: 1px solid red; */
     width: 100%;
     margin: 0;
@@ -1129,7 +1131,7 @@ main {
     border: none;
     /* border: 0.5px solid rgb(150, 150, 150); */
     font-size: 15px;
-    padding: 5.5px;  /* decidi ponerle 1 punto mas q en index/detalle/carrito */
+    padding: 6px;  /* decidi ponerle 1 punto mas q en index/detalle/carrito */
     text-align: center;
     margin: auto;
     background: linear-gradient(90deg, #b5cacf 0%, #4d94a5 50%, #1e697b 100%);
@@ -1204,7 +1206,7 @@ main {
 }
 
 
-@media (max-width: 394px) {
+@media (max-width: 380px) {
 
     /* ------ Filtros Mobile ------ */
     /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
@@ -1214,6 +1216,10 @@ main {
 
     .fa-chevron-down {  /* las flechitas */
         margin-left: 4px;
+    }
+
+    .cantidad-producto, .cantidad-producto-desktop, .cantidad-producto-desktop-arriba, .lista_desktop {   /* el contenedor de los filtros en mobile */
+        width: 94%;
     }
 
     /* --- Card producto --- */
@@ -1232,6 +1238,12 @@ main {
         margin-left: 4px;
     }
 
+    .boton-comprar, .boton-comprarSinAuth {
+        border-radius: 4px;
+        font-size: 15px;
+        padding: 6.5px;
+    }
+
 }
 
 @media (min-width: 500px) {
@@ -1239,6 +1251,10 @@ main {
     /* ------ Filtros Mobile ------ */
     .btn-icon, .prod-encontr {   /* los botones de los filtros en mobile y tblet */
         font-size: 16px;
+    }
+
+    .cantidad-producto, .cantidad-producto-desktop, .cantidad-producto-desktop-arriba, .lista_desktop {   /* el contenedor de los filtros en mobile */
+        width: 92%;
     }
 
     /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
@@ -1570,7 +1586,7 @@ main {
 
     .descuento {
         font-weight: 400;  /* antes 400 */
-        font-size: 15px;  /* antes 14px */
+        font-size: 16px;  /* antes 15px */
         width: fit-content;
         margin-left: 5px;
     }
@@ -1615,6 +1631,10 @@ main {
 
     .btn-icon, .prod-encontr {   /* los botones de los filtros en mobile y tblet */
         font-size: 17px;
+    }
+
+    .cantidad-producto, .cantidad-producto-desktop, .cantidad-producto-desktop-arriba, .lista_desktop {   /* el contenedor de los filtros en mobile */
+        width: 90%;  /* antes 92% */
     }
 
     /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
@@ -2177,7 +2197,7 @@ main {
 
     /* .div-tres */
     .precio-tachado {
-        font-size: 14px;  /* antes 16px */
+        font-size: 15px;  /* antes 16px */
         margin-top: 12px;  /* antes 12px *//* el mismo q el padding del articulo productos descuentos */
         margin-bottom: 2.5px;  /* antes 2.8px */
     }
@@ -2187,7 +2207,7 @@ main {
     }
 
     .descuento {
-        font-size: 14px;  /* antes 15px */
+        font-size: 15px;  /* antes 16px */
         margin-left: 5px;  /* antes 4.5px */
     }
 
@@ -2198,7 +2218,7 @@ main {
     .boton-comprar, .boton-comprarSinAuth {
         border-radius: 5px;  /* antes 4px */
         font-size: 15px;  /* antes 16px */
-        padding: 5.5px;  /* antes 6.5px */
+        padding: 6.5px;  /* antes 6.5px */
     }
 }
 
@@ -2208,6 +2228,8 @@ main {
     .cantidad-producto {
         margin-top: 2%;
         margin-bottom: 0.5%;
+        /* margin-top: 10px;
+        margin-bottom: 2.5px; */
     }
 
     .cantidad-producto p {
@@ -4159,7 +4181,7 @@ main {
 
     .boton-comprar, .boton-comprarSinAuth {
         border-radius: 5px;  /* antes 5px */
-        font-size: 15px;  /* antes 15px */
+        font-size: 15.5px;  /* antes 15px */
         padding: 6.5px;  /* antes 5.5px */
     }
 
@@ -4227,7 +4249,7 @@ main {
     .boton-comprar, .boton-comprarSinAuth {
         border-radius: 5px;  /* antes 5px */
         font-size: 15px;  /* antes 15px */
-        padding: 5.5px;  /* antes 5.5px */
+        padding: 6.5px;  /* antes 5.5px */
     }
 
 
