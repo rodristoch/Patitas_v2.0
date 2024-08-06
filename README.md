@@ -12,3 +12,5 @@ Changes:
 - new burger menu usability.
 
 - new user interactions on burger menu and filters.
+
+- new input verifications when typing.
