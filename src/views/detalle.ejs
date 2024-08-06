@@ -19,7 +19,7 @@
         <!-- Ruta DESKTOP -->
         <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
             <p class="ruta-barras">
-                <a class="ruta-v" href="/productos/perro">Volver al listado</a> | <a class="ruta" href="/productos" style="margin-left: 10px;">Productos</a><i class="fa-solid fa-chevron-right" id="flechita-en-ruta"></i><a class="ruta" href="/productos/perro">Perro</a><i class="fa-solid fa-chevron-right" id="flechita-en-ruta"></i>
+                <a class="ruta-v" href="/productos/perro">Volver al listado</a> | <a class="ruta" href="#" style="margin-left: 10px;">Productos</a><i class="fa-solid fa-chevron-right" id="flechita-en-ruta"></i><a class="ruta" href="/productos/perro">Perro</a><i class="fa-solid fa-chevron-right" id="flechita-en-ruta"></i>
                 <% if(producto.categorias && producto.categorias[0]) { %>
                     <% if(producto.categorias[0].categoria == "comida"){ %>
                         <a class="ruta" href="/productos/perro/comida">Comida</a>
@@ -36,7 +36,7 @@
             </p>
         <% } else { %> <!-- si el tipo de mascota es gato -->
             <p class="ruta-barras">
-                <a class="ruta-v" href="/productos/gato">Volver al listado</a> | <a class="ruta" href="/productos" style="margin-left: 10px;">Productos</a><i class="fa-solid fa-chevron-right" id="flechita-en-ruta"></i><a class="ruta" href="/productos/gato">Gato</a><i class="fa-solid fa-chevron-right" id="flechita-en-ruta"></i>
+                <a class="ruta-v" href="/productos/gato">Volver al listado</a> | <a class="ruta" href="#" style="margin-left: 10px;">Productos</a><i class="fa-solid fa-chevron-right" id="flechita-en-ruta"></i><a class="ruta" href="/productos/gato">Gato</a><i class="fa-solid fa-chevron-right" id="flechita-en-ruta"></i>
                 <% if(producto.categorias && producto.categorias[0]) { %>
                     <% if(producto.categorias[0].categoria == "comida"){ %>
                         <a class="ruta" href="/productos/gato/comida">Comida</a>
