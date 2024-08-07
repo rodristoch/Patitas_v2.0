@@ -166,7 +166,7 @@ label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada te
     color: rgb(0, 0, 0);
     font-weight: 400;
     background-color: rgb(220, 220, 220);
-    height: 26px;
+    height: 27px;
 }
 
 /* --- input imagen --- */
@@ -177,7 +177,7 @@ label, .label-imagen-actual, .label-1er-titulo, .label-2do-titulo  {  /* cada te
     padding: 10px 14px;
     color: rgb(0, 0, 0);
     font-size: 12px;
-    height: 26px;
+    height: 27px;
 }
 
 .formu input:hover, textarea:hover, select:hover {  /* en desktop */
@@ -220,6 +220,7 @@ select {
     color: rgb(0, 0, 0);
     font-weight: 400;
     background-color: rgb(220, 220, 220);
+    height: 48px;
 }
 
 /* button */
@@ -323,7 +324,7 @@ select {
         font-size: 11px; /* antes 13 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 5px; /* antes 6 */
         padding: 10px 10px; /* antes 10px 14px */
-        height: 22px; /* antes 26 */
+        height: 23px; /* antes 27 */
     }
 
     .formu input::placeholder, textarea::placeholder, select::placeholder {
@@ -340,6 +341,7 @@ select {
         font-size: 11px; /* cambia el tamaño del texto en el input */
         border-radius: 5px;
         padding: 11px 10px;
+        height: 44px;    /* antes 48 */
     }
 
     /* --- input imagen --- */
@@ -347,7 +349,7 @@ select {
         border-radius: 5px;
         padding: 10px 10px;
         font-size: 11px;
-        height: 22px;
+        height: 23px; /* antes 27 */
     }
 
     /* button */
@@ -418,7 +420,7 @@ select {
         font-size: 14px; /* antes 13 */
         border-radius: 7px; /* antes 6 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 30px; /* antes 26 */
+        height: 30px; /* antes 27 */
     }
 
     .formu input::placeholder, textarea::placeholder, select::placeholder {
@@ -435,6 +437,7 @@ select {
         font-size: 14px; /* cambia el tamaño del texto en el input */
         border-radius: 7px;
         padding: 14px 14px;
+        height: 50px;    /* antes 48 */
     }
 
     /* --- input imagen --- */
@@ -442,7 +445,7 @@ select {
         border-radius: 7px;
         padding: 10px 14px;
         font-size: 14px;
-        height: 30px;
+        height: 30px; /* antes 27 */
     }
 
     /* button */
@@ -526,6 +529,7 @@ select {
         font-size: 14.5px; /* antes 14 */ /* cambia el tamaño del texto en el input */
         border-radius: 7.5px; /* antes 7 */
         padding: 13px 14px;
+        height: 52px;    /* antes 50 */
     }
 
     /* --- input imagen --- */
@@ -617,7 +621,7 @@ select {
         font-size: 13px; /* antes 14.5 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 6.5px; /* antes 7.5 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 25px; /* antes 26 */
+        height: 27px; /* antes 32 */
     }
 
     .formu input::placeholder, textarea::placeholder, select::placeholder {
@@ -636,6 +640,7 @@ select {
         font-size: 13px; /* antes 14.5 */ /* cambia el tamaño del texto en el input */
         border-radius: 6.5px; /* antes 7.5 */
         padding: 12px 14px;
+        height: 48px;    /* antes 52 */
     }
 
     /* --- input imagen --- */
@@ -643,7 +648,7 @@ select {
         border-radius: 6.5px; /* antes 7.5 */
         padding: 10px 14px;
         font-size: 13px; /* antes 14.5 */
-        height: 25px; /* antes 26 */
+        height: 27px; /* antes 32 */
     }
 
     /* button */
@@ -652,7 +657,7 @@ select {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 17px;    /* antes 16.5 */
         font-weight: 400;  /* antes 400 */
-        height: 48px;    /* antes 45 */
+        height: 48px;    /* antes 52 */
     }
 
     /* ----- validaciones en el front ----- */
@@ -726,7 +731,7 @@ select {
         font-size: 14.5px; /* antes 14.5 */ /* este modifica el texto del Choose file y el texto q le sigue */
         border-radius: 6.5px; /* antes 7.5 */
         padding: 10px 14px; /* antes 10px 14px */
-        height: 24px; /* antes 26 */
+        height: 27px; /* antes 27 */
     }
 
     .formu input::placeholder, textarea::placeholder, select::placeholder {
@@ -738,6 +743,7 @@ select {
         font-size: 14.5px; /* antes 14.5 */ /* cambia el tamaño del texto en el input */
         border-radius: 6.5px; /* antes 7.5 */
         padding: 12.5px 13px;
+        height: 48px;    /* antes 48 */
     }
 
     /* --- textarea - Descripcion de producto --- */
@@ -745,6 +751,11 @@ select {
         height: 70px;
         font-size: 14.5px;
         /* width: 100%; */
+    }
+
+    /* --- input imagen --- */
+    .formu input[type=file]{
+        height: 27px; /* antes 27 */
     }
 
     /* imagen actual */
@@ -761,7 +772,7 @@ select {
         padding: 10px 32px;    /* antes 10px 32px */
         font-size: 17px;    /* antes 16.5 */
         font-weight: 400;  /* antes 400 */
-        height: 48px;    /* antes 45 */
+        height: 48px;    /* antes 48 */
     }
 
 

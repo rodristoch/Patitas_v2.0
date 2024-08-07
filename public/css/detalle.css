@@ -75,16 +75,20 @@ body {
 /* el contenedor de Nuevo | +5 vendidos MOBILE  */
 .flex-detalle-mobile {
     border: 1px solid transparent;
-    width: 90%;
+    width: 92%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
     align-items: center;
     margin: auto;
-    margin-top: 2.8%;  /* es mas q en pagina de categoria porq el font size del texto aca es mas chico */
-    margin-bottom: 0.5%;
+    /* margin-top: 2.8%; */  /* es mas q en pagina de categoria porq el font size del texto aca es mas chico */
+    /* margin-bottom: 0.5%; */
     padding: 0;
+    padding-top: 13px;
+    padding-bottom: 2px;
+    /* border: 1px solid red; */
+    /* height: 32px; */
 }
 
 .nuevo, .nuevo-medio {
@@ -707,6 +711,10 @@ section h2 {
 
 @media (max-width: 380px){
 
+    .flex-detalle-mobile {
+        width: 94%;  /* antes 92% */
+    }
+
     .nuevo, .nuevo-medio {
         font-size: 12px;  /* antes 13px */
     }
@@ -980,6 +988,13 @@ section h2 {
 
 @media (min-width: 500px){
 
+    /* el contenedor de Nuevo | +5 vendidos MOBILE  */
+    .flex-detalle-mobile {
+        padding: 0;
+        padding-top: 13px;
+        padding-bottom: 2px;
+    }
+
     .nuevo, .nuevo-medio {
         font-size: 14px;  /* antes 13px */
     }
@@ -1241,10 +1256,12 @@ section h2 {
 
 @media (min-width: 600px){
 
-    .flex-detalle-mobile {  /* el contenedor de Nuevo | +5 vendidos MOBILE  */
+    /* el contenedor de Nuevo | +5 vendidos MOBILE  */
+    .flex-detalle-mobile {
         width: 90%;
-        margin-top: 2.5%;
-        margin-bottom: 0.5%;
+        padding: 0;
+        padding-top: 16px;
+        padding-bottom: 2px;
     }
 
     .nuevo, .nuevo-medio {
@@ -1506,10 +1523,12 @@ section h2 {
 
 @media (min-width: 768px) {
 
-    .flex-detalle-mobile {  /* el contenedor de Nuevo | +5 vendidos MOBILE  */
+    /* el contenedor de Nuevo | +5 vendidos MOBILE  */
+    .flex-detalle-mobile {
         width: 90%;
-        margin-top: 2.5%;
-        margin-bottom: 0.5%;
+        padding: 0;
+        padding-top: 20px;
+        padding-bottom: 3px;
     }
 
     .nuevo, .nuevo-medio {
@@ -1913,9 +1932,12 @@ section h2 {
     .div-filtros-desktop {  /* el contenedor de las Busquedas relacionadas */
         display: block;
         width: 90%;
-        border: 1px solid transparent;
+        /* border: 2px solid blue; */
+        border: 2px solid transparent;
         margin: auto;
         margin-top: 0.5%;
+        margin-bottom: 0%;
+        padding: 0;
     }
 
     .btn-icon-desktop {   /* el p de las Busquedas relacionadas, dentro de .div-filtros-desktop */
@@ -1931,6 +1953,8 @@ section h2 {
         margin: auto;
         font-weight: 500;
         border: 1px solid transparent;
+        /* border: 1px solid violet; */
+        padding: 0;
     }
 
     .rutas-filtros {   /* los links en Busquedas relacionadas */
@@ -1949,18 +1973,22 @@ section h2 {
     /* Ruta */
     .ruta-barras {   /* todo el p contenedor de la ruta */
         display: flex;
-        align-items: baseline;
+        align-items: center;
         justify-content: flex-start;
         margin: auto;
         margin-top: 1%;
         margin-bottom: 0.5%;
         color: rgb(142, 142, 142);
-        border: 1px solid transparent;
+        border: 2px solid transparent;
+        /* border: 2px solid blue; */
         font-weight: 400;
+        padding: 0;
     }
 
     .ruta, .ruta-v {  /* ruta-v es el link de Volver al listado, ruta es el link de Productos y Perro/Gato */
         font-size: 13px;
+        /* border: 1px solid fuchsia; */
+        border: 1px solid transparent;
     }
 
     .ruta {  /* el link de Productos y Perro/Gato */

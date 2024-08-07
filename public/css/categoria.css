@@ -76,12 +76,19 @@ main {
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 1.8%;
-    margin-bottom: 0.5%;
+    padding: 0;
+    /* padding-top: 1.8%;
+    padding-bottom: 0.5%; */
+    padding-top: 10px;
+    padding-bottom: 2px;
     /* margin-top: 8.5px;
     margin-bottom: 2px; */
-    padding: 0;
     border: 1px solid transparent;
+    /* border: 1px solid blue; */
+}
+
+.cantidad-producto {   /* el contenedor de los filtros en mobile */
+    height: 32px;
 }
 
 .div-filtros {
@@ -100,6 +107,7 @@ main {
     justify-content: space-between;
     padding: 0;
     gap: 12px;  /* la separacion entre los 2 botones */
+    border: 1px solid transparent;
     /* border: 1px solid red; */
 }
 
@@ -129,7 +137,7 @@ main {
     font-weight: 500;
 }
 
-.prod-encontr {   /* el NN resultados en MOBILE */
+.prod-encontr {   /* el x resultados en MOBILE */
     color: rgb(130, 130, 130);
     font-size: 14px;
     font-weight: 400;
@@ -160,12 +168,12 @@ main {
 .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en filtrar */
     display: block;
     position: absolute;
-    right: 2%;
+    right: 1%;
     top: 32px;
     background-color: white;
     box-shadow : 0px 0px 10px #9fafb2;
     border : 1px solid #bacdd0;
-    width: 250px;
+    width: 70%;
     border-radius: 5px;
     z-index: 2;
     text-align: center;
@@ -457,7 +465,7 @@ main {
     position: absolute;
     background-color: rgb(230, 230, 230);
     /* box-shadow : 0px 0px 10px #9fafb2; */
-    width: 250px;
+    width: 100%;  /* el 100% del ancho del contenedor ppal */
     z-index: 3;
     text-align: center;
     border: 1px solid white;
@@ -533,6 +541,7 @@ main {
     background-size: 150% 150%;
     background-position: center;
     width: 12px;
+    min-width: 12px;
     height: 12px;
     border-radius: 2px;
     transition: background-color 0.15s ease-in-out;
@@ -1209,9 +1218,19 @@ main {
 @media (max-width: 380px) {
 
     /* ------ Filtros Mobile ------ */
+    .cantidad-producto, .cantidad-producto-desktop, .cantidad-producto-desktop-arriba {   /* el contenedor de los filtros en mobile */
+        /* border: 1px solid blue; */
+        width: 94%;
+        padding-top: 8px;
+        padding-bottom: 1.5px;
+        /* border: 1px solid blue; */
+        height: 30px;
+    }
+
     /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
     .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
         top: 30px;
+        /* width: 240px; */  /* antes 280px */
     }
 
     .fa-chevron-down {  /* las flechitas */
@@ -1254,15 +1273,19 @@ main {
     }
 
     .cantidad-producto, .cantidad-producto-desktop, .cantidad-producto-desktop-arriba, .lista_desktop {   /* el contenedor de los filtros en mobile */
-        width: 92%;
+        width: 92%;  /* sigue igual */
+    }
+
+    .cantidad-producto {
+        height: 34px;
     }
 
     /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
     .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
-        right: 2%;
-        top: 36px;
+        right: 1%;
+        top: 34px;
         box-shadow : 0px 0px 10px #9fafb2;
-        width: 280px; /* antes era 250px */
+        /* width: 330px; */ /* antes era 280px */
         border-radius: 5px;
         /* border : 1px solid blue; */
         padding: 12px 0px; /* antes 10px */
@@ -1482,31 +1505,31 @@ main {
     .contendor_opciones-dentrodelotro1a {  /* el primer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo1 *//* (el div de Ordenar por) */
         right: 0;
         top: 117px; /* (12px padding + 38px del .contenedor-flechita-externo-primerodearriba + 66px del .contenedor-flechita-externo1 */
-        width: 280px; /* antes era 250px */
+        /* width: 330px; */ /* antes era 280px */
     }
 
     .contendor_opciones-dentrodelotro2a {  /* el segundo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo2 *//* (el div de Categorias) */
         right: 0;
         top: 183px; /* (mas 66 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 280px; /* antes era 250px */
+        /* width: 330px; */ /* antes era 280px */
     }
 
     .contendor_opciones-dentrodelotro3a {  /* el tercer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo3 *//* (el div de Precios) */
         right: 0;
         top: 249px; /* (mas 66 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 280px; /* antes era 250px */
+        /* width: 330px; */ /* antes era 280px */
     }
 
     .contendor_opciones-dentrodelotro4a {  /* el cuarto contenedor oculto, se abre al apretar en el .contenedor-flechita-externo4 *//* (el div de Descuentos) */
         right: 0;
         top: 315px; /* (mas 66 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 280px; /* antes era 250px */
+        /* width: 330px; */ /* antes era 280px */
     }
 
     .contendor_opciones-dentrodelotro5a {  /* el ultimo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
         right: 0;
         top: 381px; /* (mas 66 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 280px; /* antes era 250px */
+        /* width: 330px; */ /* antes era 280px */
     }
 
     /* los divs azules dentro del violeta */
@@ -1624,11 +1647,6 @@ main {
 @media (min-width: 600px) {
 
     /* ------ Filtros Mobile ------ */
-    .cantidad-producto {
-        margin-top: 1.5%;
-        margin-bottom: 0.5%;
-    }
-
     .btn-icon, .prod-encontr {   /* los botones de los filtros en mobile y tblet */
         font-size: 17px;
     }
@@ -1637,12 +1655,16 @@ main {
         width: 90%;  /* antes 92% */
     }
 
+    .cantidad-producto {
+        height: 38px;
+    }
+
     /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
     .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
-        right: 2%;
+        right: 1%;
         top: 38px;
         box-shadow : 0px 0px 10px #9fafb2;
-        width: 320px;
+        width: 65%;  /* antes era 70% */
         border-radius: 6px;
         /* border : 1px solid blue; */
         padding: 13px 0px;  /* el padding de arriba y abajo, y de los costados del contenedor ppal */  /* antes 12px */
@@ -1862,31 +1884,31 @@ main {
     .contendor_opciones-dentrodelotro1a {  /* el primer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo1 */ /* (el div de Ordenar por) */
         right: 0;
         top: 125px; /* (13px padding + 41px del .contenedor-flechita-externo-primerodearriba + 70px del .contenedor-flechita-externo1 */
-        width: 320px; /* antes era 280px */
+        /* width: 380px; */  /* antes era 330px */
     }
 
     .contendor_opciones-dentrodelotro2a {  /* el segundo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo2 */ /* (el div de Categorias) */
         right: 0;
         top: 195px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 320px; /* antes era 280px */
+        /* width: 380px; */  /* antes era 330px */
     }
 
     .contendor_opciones-dentrodelotro3a {  /* el tercer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo3 */ /* (el div de Precios) */
         right: 0;
         top: 265px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 320px; /* antes era 280px */
+        /* width: 380px; */  /* antes era 330px */
     }
 
     .contendor_opciones-dentrodelotro4a {  /* el cuarto contenedor oculto, se abre al apretar en el .contenedor-flechita-externo4 */ /* (el div de Descuentos) */
         right: 0;
         top: 335px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 320px; /* antes era 280px */
+        /* width: 380px; */  /* antes era 330px */
     }
 
     .contendor_opciones-dentrodelotro5a {  /* el ultimo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
         right: 0;
         top: 405px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 320px; /* antes era 280px */
+        /* width: 380px; */  /* antes era 330px */
     }
 
 
@@ -2225,11 +2247,13 @@ main {
 @media (min-width: 768px) {
 
     /* ------ Filtros Mobile ------ */
-    .cantidad-producto {
+    /* .cantidad-producto {
         margin-top: 2%;
         margin-bottom: 0.5%;
-        /* margin-top: 10px;
-        margin-bottom: 2.5px; */
+    } */
+
+    .cantidad-producto {
+        height: 44px;
     }
 
     .cantidad-producto p {
@@ -2243,10 +2267,10 @@ main {
 
     /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
     .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
-        right: 2%;
-        top: 48px;
+        right: 1%;
+        top: 44px;
         box-shadow : 0px 0px 10px #9fafb2;
-        width: 400px; /* antes era 320px */
+        /* width: 450px; */ /* antes era 380px */
         border-radius: 7px;
         /* border : 1px solid blue; */
         padding: 16px 0px;  /* el padding de arriba y abajo, y de los costados del contenedor ppal */  /* antes 13px */
@@ -2467,31 +2491,31 @@ main {
     .contendor_opciones-dentrodelotro1a {  /* el primer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo1 */ /* (el div de Ordenar por) */
         right: 0;
         top: 144px; /* (16px padding + 47px del .contenedor-flechita-externo-primerodearriba + 80px del .contenedor-flechita-externo1 */
-        width: 400px; /* antes era 320px */
+        /* width: 450px; */ /* antes era 380px */
     }
 
     .contendor_opciones-dentrodelotro2a {  /* el segundo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo2 */ /* (el div de Categorias) */
         right: 0;
         top: 224px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 400px; /* antes era 320px */
+        /* width: 450px; */ /* antes era 380px */
     }
 
     .contendor_opciones-dentrodelotro3a {  /* el tercer contenedor oculto, se abre al apretar en el .contenedor-flechita-externo3 */ /* (el div de Precios) */
         right: 0;
         top: 304px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 400px; /* antes era 320px */
+        /* width: 450px; */ /* antes era 380px */
     }
 
     .contendor_opciones-dentrodelotro4a {  /* el cuarto contenedor oculto, se abre al apretar en el .contenedor-flechita-externo4 */ /* (el div de Descuentos) */
         right: 0;
         top: 384px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 400px; /* antes era 320px */
+        /* width: 450px; */ /* antes era 380px */
     }
 
     .contendor_opciones-dentrodelotro5a {  /* el ultimo contenedor oculto, se abre al apretar en el .contenedor-flechita-externo-ultimodeabajo */ /* (el div de Marcas) */
         right: 0;
         top: 464px; /* (mas 70 del anterior porq cada .contenedor-flechita-externo mide 66px) */
-        width: 400px; /* antes era 320px */
+        /* width: 450px; */ /* antes era 380px */
     }
 
 
@@ -2844,21 +2868,6 @@ main {
     }
 }
 
-@media (min-width: 800px){
-
-    /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
-    .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
-        top: 50px;
-    }
-}
-
-@media (min-width: 900px){
-
-    /* ----- Cosas para hacer el Filtrar en MOBILE ----- */
-    .contendor_opciones2, .contendor_opciones-promo2, .contendor_opciones-promoBicho2, .contendor_opciones-categoria2 {  /* el primer contenedor oculto, se abre al apretar en Filtrar */
-        top: 52px;
-    }
-}
 
 @media (min-width: 1024px) {
 
@@ -2885,16 +2894,21 @@ main {
         display: block;
         /* border: 1px solid blue; */
         border: 1px solid transparent;
+        border-left: none;  /* para q quede igual q en la pag de detalle */
         margin-top: 0.5%;
         margin-bottom: 0%;
+        padding: 0;
     }
 
     .cantidad-producto-desktop {  /* el contenedor PADRE de Volver a home y del boton Ordenar por en DESKTOP */
         display: block;
         /* border: 1px solid blue; */
-        /* border: 1px solid transparent; */
+        border: 1px solid transparent;
+        border-left: none;  /* para q quede igual q en la pag de detalle */
+        border-bottom: none;  /* para q quede igual q en la pag de detalle */
         margin-top: 1%;
         margin-bottom: 0.5%;
+        padding: 0;
     }
 
     .div-filtros-desktop {  /* div hijo dentro de .cantidad-producto-desktop de Volver a home y del boton Ordenar por en DESKTOP */
@@ -2903,6 +2917,8 @@ main {
         /* z-index: 1; */
         /* border: 1px solid violet; */
         border: 1px solid transparent;
+        border-left: none;  /* para q quede igual q en la pag de detalle */
+        padding: 0;
     }
 
     .rutas-filtros, .rutas-filtros2, .rutas-filtros3 {   /* los links de Busquedas relacionadas, el a de Volver a home y el a de Productos Perro/Gato */
@@ -3716,7 +3732,6 @@ main {
     .cantidad-producto-desktop {  /* el contenedor PADRE del boton Ordenar por en DESKTOP */
         display: block;
         /* border: 1px solid red; */
-        border: 1px solid transparent;
         margin-top: 1%;
         margin-bottom: 0.5%;
     }
