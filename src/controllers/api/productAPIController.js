@@ -14,7 +14,7 @@ const productAPIController = {
             
             return res.status(200).json({
                 meta: {
-                    link: 'http://localhost:3100/api/productos',
+                    link: 'https://patitas-v2.onrender.com/api/productos',
                     status : 200,
                     total: products.length,
                 },
@@ -32,7 +32,7 @@ const productAPIController = {
 
                 return res.status(200).json({
                     meta: {
-                        link: 'http://localhost:3100/api/productos/:id',
+                        link: 'https://patitas-v2.onrender.com/api/productos/:id',
                         status: 200,
                         /* total: product.length */
                     },

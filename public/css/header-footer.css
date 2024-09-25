@@ -1496,18 +1496,25 @@ footer p {  /* los textos del footer */
         margin: 0;
         padding: 0;
         width: 30%;
-        scale: 85%;
+        text-align: center;
+        /* display: flex;
+        align-items: center;
+        justify-content: flex-start; */
+        /* scale: 85%; */
     }
 
     .div-logo-desktop a {
-        display: flex;
-        flex-wrap: wrap;
+        text-align: left;
     }
     
     .logo-desktop {
-        width: 100%;
+        /* border: 1px solid blue; */
+        width: 70%;
         margin: 0;
         padding: 0;
+        margin-top: 5px;
+        margin-left: 36px;
+        /* scale: 60%; */ 
     }
 
     .izquierda {  /* div de la izq */  /* contiene el logo y la barra  */
@@ -1736,10 +1743,15 @@ footer p {  /* los textos del footer */
 @media(min-width: 1200px) {
 
     /* ----------------------------- cosas desktop q se ven --------------------------------- */
+    .logo-desktop {
+        width: 60%;
+        margin-top: 4px;
+        margin-left: 36px;
+    }
     
     .derecha {
         justify-content: right;
-        padding-right: 15px;
+        padding-right: 16px;
     }
 
     .mis-compras, .mi-cuenta, .crear-producto {
@@ -1835,6 +1847,10 @@ footer p {  /* los textos del footer */
 }
 
 @media(min-width: 1500px){
+
+    .logo-desktop {
+        width: 52%;
+    }
 
     .numerito-carrito {
         right: 25px;

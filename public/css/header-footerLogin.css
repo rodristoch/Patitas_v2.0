@@ -1498,13 +1498,25 @@ footer p {  /* los textos del footer */
         margin: 0;
         padding: 0;
         width: 30%;
-        scale: 85%;
+        text-align: center;
+        /* display: flex;
+        align-items: center;
+        justify-content: flex-start; */
+        /* scale: 85%; */
+    }
+
+    .div-logo-desktop a {
+        text-align: left;
     }
     
     .logo-desktop {
-        width: 100%;
+        /* border: 1px solid blue; */
+        width: 70%;
         margin: 0;
         padding: 0;
+        margin-top: 5px;
+        margin-left: 36px;
+        /* scale: 60%; */ 
     }
 
     .izquierda {  /* div de la izq */  /* contiene el logo y la barra  */
@@ -1610,11 +1622,12 @@ footer p {  /* los textos del footer */
     }
 
     .dropbtn {
-        font-size: 14px;
+        font-size: 12px;
+        /* padding: 0; */
     }
 
     .dropdown-content {
-        font-size: 14px;
+        font-size: 12px;
     }
     
     /* ---------------------------------------------------------footer----------------------------------------------------------------- */
@@ -1727,13 +1740,18 @@ footer p {  /* los textos del footer */
 }
 
 
-@media(min-width:1200px){
+@media(min-width: 1200px){
 
     /* ----------------------------- cosas desktop q se ven --------------------------------- */
+    .logo-desktop {
+        width: 60%;
+        margin-top: 4px;
+        margin-left: 36px;
+    }
     
     .derecha {
         justify-content: right;
-        padding-right: 15px;
+        padding-right: 16px;
     }
 
     .mis-compras, .mi-cuenta, .crear-producto {
@@ -1814,21 +1832,25 @@ footer p {  /* los textos del footer */
 
 }
 
-@media(min-width:1320px){
+@media(min-width: 1320px){
 
     .numerito-carrito {
         right: 18px;
     }
 }
 
-@media(min-width:1400px){
+@media(min-width: 1400px){
 
     .numerito-carrito {
         right: 20px;
     }
 }
 
-@media(min-width:1500px){
+@media(min-width: 1500px){
+
+    .logo-desktop {
+        width: 52%;
+    }
 
     .numerito-carrito {
         right: 25px;
@@ -1839,7 +1861,7 @@ footer p {  /* los textos del footer */
     }
 }
 
-@media(min-width:1600px){
+@media(min-width: 1600px){
 
     .flex-top {
         height: 110px;
@@ -1896,11 +1918,11 @@ footer p {  /* los textos del footer */
     /* ------------------------------------------------------------- header2 -------------------------------------------------------------- */
     
     .dropbtn {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .dropdown-content {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     /* ------------------------------------------------------------- footer -------------------------------------------------------------- */
