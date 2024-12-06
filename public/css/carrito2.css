@@ -45,7 +45,7 @@ body {
     padding-right: 0;
     flex-direction: column;
     text-align: center;
-    width: 90%;
+    width: 92%;
     /* border: 1px solid red; */
     height: auto;
 }
@@ -456,7 +456,7 @@ body {
     background-color: #ff0000;
 } */
 
-
+/* --- Reel productos ---  */
 /* seccion producto */
 .section-productos-descuentos {
     width: 92%;
@@ -699,6 +699,10 @@ section h2 {
 
 @media (max-width: 380px){
 
+    .all {
+        width: 94%;
+    }
+
     /* seccion producto */
     .section-productos-descuentos {
         width: 94%;  /* antes 92% */
@@ -805,8 +809,7 @@ section h2 {
 
     /* seccion producto */
     .section-productos-descuentos {
-        border: 1px solid blue;
-        width: 92%;  /* antes 92% */
+        /* border: 1px solid blue; */
         margin-top: 5%;  /* antes igual */ /* lo mismo q de cada lado del main */
         margin-bottom: 5%;  /* antes igual */ /* lo mismo q de cada lado del main */
         border-radius: 5px;  /* antes 5px */
@@ -831,11 +834,11 @@ section h2 {
         height: auto;
         border-radius: 5px;  /* antes 5px */
         padding: 12px;  /* antes 10px */
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .div-etiqueta {
-        border: 1px solid red;
+        /* border: 1px solid red; */
         margin-bottom: 12px;  /* antes 10px */ /* el mismo q el padding del articulo productos descuentos */
     }
     
@@ -848,18 +851,18 @@ section h2 {
     }
 
     .contenedor_imagen {
-        border: 1px solid red;
+        /* border: 1px solid red; */
         height: 115px;  /* antes 100px */
     }
     
     .img-productos-descuentos {
         border-radius: 6px;  /* antes 5px */
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .texto_nombre_arriba {   /* el div q contiene el h4 con el nombre */
         max-height: 38px;  /* antes 35px */ 
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
     
     .texto_nombre_arriba h4 {
@@ -870,7 +873,7 @@ section h2 {
     .texto_descripcion_arriba {
         display: none;
         max-height: 38px;  /* antes 35px */
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .precio-tachado {  /* el precio tachado en los productos con descuento */
@@ -904,6 +907,10 @@ section h2 {
 }
 
 @media (min-width: 600px){
+
+    .all {
+        width: 90%;
+    }
 
     /* seccion producto */
     .section-productos-descuentos {

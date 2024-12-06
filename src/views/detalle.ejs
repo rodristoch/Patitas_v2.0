@@ -221,7 +221,7 @@
                 
                             <!-- Boton Agregar al carrito -->
                             <% if(userALoguearse){ %>
-                                <button class="boton_agregarConAuth" type="submit" data-id="<%= producto.id %>">Agregar al carrito</button>
+                                <button class="boton_agregarConAuth" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar al carrito</button>
                             <% } else { %>
                                 <a href="/users/login"><button class="boton_agregarSinAuth" type="submit">Agregar al carrito</button></a>
                             <% } %>

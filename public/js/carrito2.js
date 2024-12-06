@@ -42,7 +42,7 @@ if(localStorage.carrito) {
 
                 "<div class=" + "contenedor1" + ">" +
                     "<div class=" + "contenedor-img" + ">" +
-                        "<img src=" + `http://localhost:3100/img/productos/${productos.data.imagen}` + " class=" + "imagen" + ">" +
+                        "<img src=" + `http://localhost:3300/img/productos/${productos.data.imagen}` + " class=" + "imagen" + ">" +
                     "</div>" +
                     "<div class=" + "texto" + ">" +
                         "<div class=" + "titulo-cantidad" + ">" +
@@ -91,7 +91,7 @@ if(localStorage.carrito) {
 
                 "<div class=" + "contenedorMasDeUno" + ">" +
                     "<div class=" + "contenedor-img" + ">" +
-                        "<img src=" + `http://localhost:3100/img/productos/${productos.data.imagen}` + " class=" + "imagen" + ">" +
+                        "<img src=" + `http://localhost:3300/img/productos/${productos.data.imagen}` + " class=" + "imagen" + ">" +
                     "</div>" +
                     "<div class=" + "texto" + ">" +
                         "<div class=" + "titulo-cantidad" + ">" +
