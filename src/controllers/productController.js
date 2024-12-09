@@ -10459,7 +10459,8 @@ const productController = {
 
         Promise.all([productos, tipos, marcas, categorias, descuentos])
         .then(([editarProducto, tipos, marcas, categorias, descuentos]) => {
-                return res.render('alta-producto.ejs', {editarProducto, tipos, marcas, categorias, descuentos, userALoguearse})
+            /* console.log(categorias) */
+            return res.render('alta-producto.ejs', {editarProducto, tipos, marcas, categorias, descuentos, userALoguearse})
         })
     },
 
@@ -10475,11 +10476,11 @@ const productController = {
                color: req.body.color_producto,
                peso: req.body.peso_producto,
                precio: req.body.precio_producto,
-               imagen: req.file != undefined ? req.file.filename : "/img/Producto.webp",
+               imagen: req.file != undefined ? req.file.filename : "Producto.webp",
                tipo_mascota_id: req.body.tipo_mascota_id,
                marca_id: req.body.marca_id,
             })
-            
+
         .then(() => {res.redirect("/")})
     },
 

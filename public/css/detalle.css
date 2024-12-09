@@ -2548,6 +2548,10 @@ section h2 {
         margin: auto;
     }
 
+    .contenedor_mobile {
+        margin-bottom: 4%;
+    }
+
     /* Busquedas relacionadas */
     .div-filtros-desktop {  /* el contenedor de las Busquedas relacionadas */
         margin-top: 0.5%; /* (igual) */
@@ -2789,6 +2793,10 @@ section h2 {
 }
 
 @media (min-width: 1600px){
+
+    .contenedor_mobile {
+        margin-bottom: 3%;
+    }
 
     /* seccion productos */
     .section-productos-descuentos {

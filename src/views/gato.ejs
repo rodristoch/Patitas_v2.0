@@ -250,15 +250,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -314,7 +318,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -347,15 +351,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -407,7 +415,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -433,15 +441,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -493,7 +505,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -521,15 +533,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -581,7 +597,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -607,15 +623,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -667,7 +687,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -693,15 +713,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -753,7 +777,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -779,15 +803,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -839,7 +867,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -867,15 +895,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -927,7 +959,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -953,15 +985,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1013,7 +1049,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1039,15 +1075,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1099,7 +1139,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1125,15 +1165,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1185,7 +1229,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1209,15 +1253,19 @@
                             <article class="articulo-productos-descuentos">
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1269,7 +1317,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1297,15 +1345,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1357,7 +1409,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1383,15 +1435,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1443,7 +1499,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1469,15 +1525,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1529,7 +1589,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1555,15 +1615,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1615,7 +1679,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1641,15 +1705,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1701,7 +1769,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1730,15 +1798,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1790,7 +1862,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1816,15 +1888,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1876,7 +1952,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1902,15 +1978,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -1962,7 +2042,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -1988,15 +2068,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -2048,7 +2132,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -2076,15 +2160,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -2136,7 +2224,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -2162,15 +2250,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -2222,7 +2314,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -2248,15 +2340,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -2308,7 +2404,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -2334,15 +2430,19 @@
                             <% } %>
                                 <!-- para saber el contenido de la etiqueta -->
                                 <div class="div-etiqueta">
-                                    <% if(producto.categorias[0].id == 1) { %>
-                                        <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 2) { %>
-                                        <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 3) { %>
-                                        <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } else if(producto.categorias[0].id == 4) { %>
-                                        <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
-                                    <% } %>
+                                    <% if(producto.categorias && producto.categorias[0]) { %>
+                                        <% if(producto.categorias[0].id == 1) { %>
+                                            <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 2) { %>
+                                            <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 3) { %>
+                                            <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } else if(producto.categorias[0].id == 4) { %>
+                                            <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %></p>
+                                        <% } %>  
+                                    <% } else { %>
+                                        <p class="etiqueta-comida-bicho-card"><%= "comida" %></p>
+                                    <% } %>  
                                 </div>
                                 <!-- hasta acá etiqueta -->
                                 <div class="contenedor_imagen">
@@ -2394,7 +2494,7 @@
                                                 <p class="descuento" style="color: white;">20% OFF</p>
                                             </div>
                                             <div class="div-dos">
-                                                <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                             </div>
                                             <div class="div-boton-comprar">
                                                 <% if(userALoguearse){ %>
@@ -2483,7 +2583,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -2573,7 +2673,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -2663,7 +2763,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -2753,7 +2853,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -2844,7 +2944,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -2934,7 +3034,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3024,7 +3124,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3114,7 +3214,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3205,7 +3305,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3295,7 +3395,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3385,7 +3485,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3475,7 +3575,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3566,7 +3666,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3656,7 +3756,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3746,7 +3846,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3836,7 +3936,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -3929,7 +4029,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4019,7 +4119,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4109,7 +4209,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4199,7 +4299,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4290,7 +4390,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4380,7 +4480,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4470,7 +4570,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4560,7 +4660,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4651,7 +4751,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4741,7 +4841,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4831,7 +4931,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -4921,7 +5021,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -5012,7 +5112,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -5102,7 +5202,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -5192,7 +5292,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>
@@ -5282,7 +5382,7 @@
                                                     <p class="descuento" style="color: white;">20% OFF</p>
                                                 </div>
                                                 <div class="div-dos">
-                                                    <p class="descuento-descrip" style="color: white;"><%= producto.descuentos[0].descripcion %></p>
+                                                    <p class="descuento-descrip" style="color: white;"><%= "Sin descuento" %></p>
                                                 </div>
                                                 <div class="div-boton-comprar">
                                                     <% if(userALoguearse){ %>

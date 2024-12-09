@@ -69,7 +69,7 @@
                         <select name="decuento_id" id="decuento_id">
                             <option value="-1">Seleccionar ...</option>
                             <% descuentos.forEach(descuento => { %> 
-                                <option value="<%= descuento.id %>"><%= descuento.nombre %></option>
+                                <option value="<%= descuento.id %>"><%= descuento.nombre == null ? "Sin descuento" : "Con descuento" %></option>
                             <% }) %>
                         </select>
                     </div>
