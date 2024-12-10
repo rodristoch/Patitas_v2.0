@@ -10481,6 +10481,7 @@ const productController = {
                marca_id: req.body.marca_id,
             })
 
+
         .then(() => {res.redirect("/")})
     },
 

@@ -61,6 +61,11 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: 'categoria_id'
         });
 
+        /* Producto.belongsTo(models.Categoria, {
+            as: 'categorias',
+            foreignKey: 'categoria_id'
+        }); */
+
         // Asociación con tabla intermedia producto_descuento
         Producto.belongsToMany(models.Descuento, {
             as: 'descuentos',
@@ -68,6 +73,11 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'producto_id',
             otherKey: 'descuento_id'
         });
+
+        /* Producto.belongsTo(models.Descuento, {
+            as: 'descuentos',
+            foreignKey: 'descuento_id'
+        }); */
     };
 
 
