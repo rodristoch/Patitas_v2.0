@@ -109,8 +109,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20 = db.Producto.findAll({
@@ -127,8 +127,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30 = db.Producto.findAll({
@@ -145,8 +145,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aX = db.Producto.findAll({
@@ -163,8 +163,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let checkbox20Off = db.Producto.findAll({
@@ -181,7 +181,8 @@ const productController = {
                 where: {
                     id: 2 // ID descuento de SQL
                 }
-            }]
+            }],
+            order: [['precio', 'asc']],
         })
 
         let gato = db.Producto.findAll({
@@ -198,8 +199,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 1,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         })
 
         let perro = db.Producto.findAll({
@@ -216,8 +217,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 2,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         
         })
 
@@ -238,8 +239,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20Off = db.Producto.findAll({
@@ -259,8 +260,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30Off = db.Producto.findAll({
@@ -280,8 +281,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXOff = db.Producto.findAll({
@@ -301,8 +302,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de0a10gato = db.Producto.findAll({
@@ -320,8 +321,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20gato = db.Producto.findAll({
@@ -339,8 +340,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30gato = db.Producto.findAll({
@@ -358,8 +359,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXgato = db.Producto.findAll({
@@ -377,8 +378,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de0a10perro = db.Producto.findAll({
@@ -396,8 +397,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20perro = db.Producto.findAll({
@@ -415,8 +416,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30perro = db.Producto.findAll({
@@ -434,8 +435,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXperro = db.Producto.findAll({
@@ -453,8 +454,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let gatoOff = db.Producto.findAll({
@@ -474,8 +475,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 1,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         })
 
         let perroOff = db.Producto.findAll({
@@ -495,8 +496,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 2,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         
         })
 
@@ -576,8 +577,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20 = db.Producto.findAll({
@@ -594,8 +595,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30 = db.Producto.findAll({
@@ -612,8 +613,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aX = db.Producto.findAll({
@@ -630,8 +631,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let checkbox20Off = db.Producto.findAll({
@@ -648,7 +649,8 @@ const productController = {
                 where: {
                     id: 2 // ID descuento de SQL
                 }
-            }]
+            }],
+            order: [['precio', 'asc']],
         })
 
         let gato = db.Producto.findAll({
@@ -665,8 +667,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 1,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         })
 
         let perro = db.Producto.findAll({
@@ -683,8 +685,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 2,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         
         })
 
@@ -705,8 +707,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20Off = db.Producto.findAll({
@@ -726,8 +728,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30Off = db.Producto.findAll({
@@ -747,8 +749,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXOff = db.Producto.findAll({
@@ -768,8 +770,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de0a10gato = db.Producto.findAll({
@@ -787,8 +789,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20gato = db.Producto.findAll({
@@ -806,8 +808,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30gato = db.Producto.findAll({
@@ -825,8 +827,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXgato = db.Producto.findAll({
@@ -844,8 +846,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de0a10perro = db.Producto.findAll({
@@ -863,8 +865,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20perro = db.Producto.findAll({
@@ -882,8 +884,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30perro = db.Producto.findAll({
@@ -901,8 +903,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXperro = db.Producto.findAll({
@@ -920,8 +922,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let gatoOff = db.Producto.findAll({
@@ -941,8 +943,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 1,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         })
 
         let perroOff = db.Producto.findAll({
@@ -962,8 +964,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 2,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         
         })
 
@@ -1043,8 +1045,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20 = db.Producto.findAll({
@@ -1061,8 +1063,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30 = db.Producto.findAll({
@@ -1079,8 +1081,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aX = db.Producto.findAll({
@@ -1097,8 +1099,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let checkbox20Off = db.Producto.findAll({
@@ -1115,7 +1117,8 @@ const productController = {
                 where: {
                     id: 2 // ID descuento de SQL
                 }
-            }]
+            }],
+            order: [['precio', 'asc']],
         })
 
         let gato = db.Producto.findAll({
@@ -1132,8 +1135,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 1,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         })
 
         let perro = db.Producto.findAll({
@@ -1150,8 +1153,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 2,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         
         })
 
@@ -1172,8 +1175,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20Off = db.Producto.findAll({
@@ -1193,8 +1196,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30Off = db.Producto.findAll({
@@ -1214,8 +1217,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXOff = db.Producto.findAll({
@@ -1235,8 +1238,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de0a10gato = db.Producto.findAll({
@@ -1254,8 +1257,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20gato = db.Producto.findAll({
@@ -1273,8 +1276,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30gato = db.Producto.findAll({
@@ -1292,8 +1295,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXgato = db.Producto.findAll({
@@ -1311,8 +1314,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de0a10perro = db.Producto.findAll({
@@ -1330,8 +1333,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20perro = db.Producto.findAll({
@@ -1349,8 +1352,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30perro = db.Producto.findAll({
@@ -1368,8 +1371,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXperro = db.Producto.findAll({
@@ -1387,8 +1390,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let gatoOff = db.Producto.findAll({
@@ -1408,8 +1411,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 1,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         })
 
         let perroOff = db.Producto.findAll({
@@ -1429,8 +1432,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 2,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         
         })
 
@@ -1510,8 +1513,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20 = db.Producto.findAll({
@@ -1528,8 +1531,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30 = db.Producto.findAll({
@@ -1546,8 +1549,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aX = db.Producto.findAll({
@@ -1564,8 +1567,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let checkbox20Off = db.Producto.findAll({
@@ -1582,7 +1585,8 @@ const productController = {
                 where: {
                     id: 2 // ID descuento de SQL
                 }
-            }]
+            }],
+            order: [['precio', 'asc']],
         })
 
         let gato = db.Producto.findAll({
@@ -1599,8 +1603,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 1,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         })
 
         let perro = db.Producto.findAll({
@@ -1617,8 +1621,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 2,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         
         })
 
@@ -1639,8 +1643,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20Off = db.Producto.findAll({
@@ -1660,8 +1664,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30Off = db.Producto.findAll({
@@ -1681,8 +1685,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXOff = db.Producto.findAll({
@@ -1702,8 +1706,8 @@ const productController = {
             }],
             where: {
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de0a10gato = db.Producto.findAll({
@@ -1721,8 +1725,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20gato = db.Producto.findAll({
@@ -1740,8 +1744,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30gato = db.Producto.findAll({
@@ -1759,8 +1763,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXgato = db.Producto.findAll({
@@ -1778,8 +1782,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de0a10perro = db.Producto.findAll({
@@ -1797,8 +1801,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.lte]: 10}  /* Less than or equal to */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de10a20perro = db.Producto.findAll({
@@ -1816,8 +1820,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.between]: [11, 20]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de20a30perro = db.Producto.findAll({
@@ -1835,8 +1839,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.between]: [21, 30]}, /* between */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let de30aXperro = db.Producto.findAll({
@@ -1854,8 +1858,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 precio: {[Op.gt]: 30}, /* Greater than */
-            }/* ,
-            order: [['precio', 'asc']], */
+            },
+            order: [['precio', 'asc']],
         })
 
         let gatoOff = db.Producto.findAll({
@@ -1875,8 +1879,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 1,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         })
 
         let perroOff = db.Producto.findAll({
@@ -1896,8 +1900,8 @@ const productController = {
             }],
             where: {
                 tipo_mascota_id: 2,
-            }/* ,
-            limit: 4 */
+            },
+            order: [['precio', 'asc']],
         
         })
 

@@ -1,5 +1,5 @@
 /* patitas en clever-cloud */
-/* module.exports = {  
+module.exports = {  
   "development": {
     "username": "ulvfcjkcngolkkp8",
     "password": "2HfSJYoXgECuB5WlzS08",
@@ -30,14 +30,13 @@
       "timestamps": false
     }
   }
-} */
+}
 
-module.exports = {
+/* module.exports = {
   "development": {
     "username": "root",
     "password": null,
     "database": "patitasDB",
-    /* "database": "patitasDB2", */
     "host": "127.0.0.1",
     "dialect": "mysql",
     "define": {
@@ -64,4 +63,4 @@ module.exports = {
       "timestamps": false
     }
   }
-}
+} */
